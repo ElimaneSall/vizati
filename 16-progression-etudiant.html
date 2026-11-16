@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>VIZATI — Ma Progression &amp; Performances Académiques</title>
+    <!-- Google Fonts: Manrope & Inter -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Manrope:wght@500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Material Symbols Outlined -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-high": "#dfe8ff",
+                        "inverse-surface": "#273143",
+                        "on-primary": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed-variant": "#5f4100",
+                        "outline-variant": "#c4c6ce",
+                        "secondary": "#436083",
+                        "surface-variant": "#d9e3fb",
+                        "on-secondary": "#ffffff",
+                        "surface-container": "#e8eeff",
+                        "surface-tint": "#4a607d",
+                        "inverse-on-surface": "#ecf0ff",
+                        "primary-fixed-dim": "#b2c8ea",
+                        "on-surface-variant": "#44474d",
+                        "on-surface": "#111c2d",
+                        "on-primary-fixed": "#031c37",
+                        "secondary-container": "#b9d7ff",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed-variant": "#324864",
+                        "secondary-fixed-dim": "#abc9f1",
+                        "tertiary-fixed-dim": "#edbf73",
+                        "primary": "#00162f",
+                        "tertiary-container": "#3a2600",
+                        "primary-fixed": "#d3e3ff",
+                        "surface-container-low": "#f0f3ff",
+                        "on-secondary-container": "#405d80",
+                        "on-background": "#111c2d",
+                        "secondary-fixed": "#d2e4ff",
+                        "on-secondary-fixed-variant": "#2a486a",
+                        "surface-bright": "#f9f9ff",
+                        "background": "#f9f9ff",
+                        "inverse-primary": "#b2c8ea",
+                        "on-primary-container": "#7d93b3",
+                        "tertiary": "#201300",
+                        "outline": "#74777e",
+                        "on-tertiary-fixed": "#271900",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-container": "#b38a44",
+                        "surface-dim": "#d0daf2",
+                        "error": "#ba1a1a",
+                        "surface": "#f9f9ff",
+                        "on-secondary-fixed": "#001d37",
+                        "surface-container-highest": "#d9e3fb",
+                        "error-container": "#ffdad6",
+                        "primary-container": "#142b46",
+                        "tertiary-fixed": "#ffdeab"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "space-sm": "0.5rem",
+                        "space-xs": "0.25rem",
+                        "space-md": "1rem",
+                        "gutter-mobile": "1rem",
+                        "space-lg": "1.5rem",
+                        "margin-mobile": "1rem",
+                        "margin": "3rem",
+                        "gutter": "1.5rem",
+                        "space-2xl": "4rem",
+                        "space-xl": "2.5rem"
+                    },
+                    "fontFamily": {
+                        "label-lg": ["Inter"],
+                        "headline-xl": ["Manrope"],
+                        "body-xl": ["Inter"],
+                        "code-num": ["Inter"],
+                        "display-hero-mobile": ["Manrope"],
+                        "label-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "display-hero": ["Manrope"],
+                        "label-xs": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "headline-lg": ["Manrope"],
+                        "body-md": ["Inter"],
+                        "headline-sm": ["Manrope"],
+                        "headline-md": ["Manrope"],
+                        "headline-xl-mobile": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+                        "headline-xl": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-xl": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "code-num": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+                        "display-hero-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "display-hero": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "label-xs": ["10px", { "lineHeight": "14px", "letterSpacing": "0.06em", "fontWeight": "700" }],
+                        "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }],
+                        "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "headline-sm": ["18px", { "lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "600" }],
+                        "headline-md": ["22px", { "lineHeight": "30px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "headline-xl-mobile": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.015em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body
+    class="bg-background text-on-surface font-body-md text-body-md antialiased min-h-screen flex flex-col selection:bg-tertiary-fixed-dim selection:text-primary">
+    <!-- ==================== SIDENAVBAR COMPONENT ==================== -->
+    <aside
+        class="fixed top-0 left-0 h-screen w-64 md:w-72 flex flex-col bg-surface-container-lowest border-r border-outline-variant shadow-sm z-40">
+        <div class="flex flex-col h-full justify-between p-space-md">
+            <!-- Brand & Header -->
+            <div>
+                <div class="flex items-center gap-space-sm pb-space-lg mb-space-md border-b border-outline-variant">
+                    <div
+                        class="w-10 h-10 rounded-lg bg-primary-container text-tertiary-fixed-dim flex items-center justify-center border border-tertiary-fixed-dim/30 shadow-sm">
+                        <span class="material-symbols-outlined text-2xl"
+                            data-icon="account_balance">account_balance</span>
+                    </div>
+                    <div>
+                        <div
+                            class="font-headline-md text-headline-md tracking-wider font-bold text-primary leading-tight">
+                            VIZATI</div>
+                        <div class="font-label-xs text-label-xs text-on-surface-variant font-medium tracking-wider">
+                            Institut &amp; Intelligence</div>
+                    </div>
+                </div>
+                <!-- Navigation Tabs -->
+                <nav class="space-y-1">
+                    <!-- Item 1: Vue d'ensemble -->
+                    <a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container hover:text-primary transition-colors duration-150"
+                        href="./14-dashboard-etudiant.html">
+                        <span class="material-symbols-outlined text-lg" data-icon="dashboard">dashboard</span>
+                        <span>Vue d'ensemble</span>
+                    </a>
+                    <!-- Item 2: Mes formations (Active target based on academic performance context) -->
+                    <a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg bg-surface-container-high text-primary font-bold border-l-4 border-tertiary-fixed-dim"
+                        href="./16-progression-etudiant.html">
+                        <span class="material-symbols-outlined text-lg text-primary" data-icon="school">school</span>
+                        <span>Mes formations</span>
+                    </a>
+                    <!-- Item 3: Catalogue -->
+                    <a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container hover:text-primary transition-colors duration-150"
+                        href="./13-catalogue-etudiant.html">
+                        <span class="material-symbols-outlined text-lg" data-icon="auto_stories">auto_stories</span>
+                        <span>Catalogue</span>
+                    </a>
+                    <!-- Item 4: Mon calendrier -->
+                    <a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container hover:text-primary transition-colors duration-150"
+                        href="./15-calendrier-etudiant.html">
+                        <span class="material-symbols-outlined text-lg" data-icon="calendar_today">calendar_today</span>
+                        <span>Mon calendrier</span>
+                    </a>
+                    <!-- Item 5: Mes évaluations -->
+                    <a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container hover:text-primary transition-colors duration-150"
+                        href="./17-evaluation.html">
+                        <span class="material-symbols-outlined text-lg" data-icon="fact_check">fact_check</span>
+                        <span>Mes évaluations</span>
+                    </a>
+                    <!-- Item 6: Mes certificats -->
+                    <a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container hover:text-primary transition-colors duration-150"
+                        href="./18-mes-certificats.html">
+                        <span class="material-symbols-outlined text-lg" data-icon="verified">verified</span>
+                        <span>Mes certificats</span>
+                    </a>
+                    <!-- Item 7: Bibliothèque -->
+                    <a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container hover:text-primary transition-colors duration-150"
+                        href="./07-bibliotheque.html">
+                        <span class="material-symbols-outlined text-lg" data-icon="local_library">local_library</span>
+                        <span>Bibliothèque</span>
+                    </a>
+                    <!-- Item 8: Mon profil -->
+                    <a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container hover:text-primary transition-colors duration-150"
+                        href="./19-profil.html">
+                        <span class="material-symbols-outlined text-lg" data-icon="account_circle">account_circle</span>
+                        <span>Mon profil</span>
+                    </a>
+                </nav>
+            </div>
+            <!-- Sidenav Bottom Cluster & CTA -->
+            <div class="space-y-space-md pt-space-md border-t border-outline-variant">
+                <div class="bg-primary-container p-space-md rounded-xl text-on-primary">
+                    <div class="flex items-center gap-2 mb-1.5">
+                        <span class="material-symbols-outlined text-tertiary-fixed-dim text-sm"
+                            data-icon="stars">stars</span>
+                        <span
+                            class="font-label-xs text-label-xs text-tertiary-fixed-dim uppercase tracking-wider">Accréditation</span>
+                    </div>
+                    <p class="font-body-sm text-body-sm text-surface-container-high leading-snug mb-3">Cursus Executive
+                        validé par les instances régionales foncières.</p>
+                    <a class="inline-flex items-center justify-center w-full py-1.5 px-space-sm bg-tertiary-fixed-dim text-tertiary font-label-md text-label-md font-bold rounded-lg hover:brightness-105 transition-all"
+                        href="#">
+                        Espace Pro &amp; Intelligence
+                    </a>
+                </div>
+                <a class="flex items-center gap-space-sm px-space-md py-2 rounded-lg text-on-surface-variant hover:text-error hover:bg-error-container/30 transition-colors font-label-md text-label-md"
+                    href="#">
+                    <span class="material-symbols-outlined text-lg" data-icon="logout">logout</span>
+                    <span>Déconnexion</span>
+                </a>
+            </div>
+        </div>
+    </aside>
+    <!-- ==================== TOPNAVBAR COMPONENT ==================== -->
+    <header
+        class="flex justify-between items-center w-full pl-72 pr-space-lg py-space-sm fixed top-0 right-0 z-30 bg-surface-container-lowest border-b border-outline-variant shadow-sm h-16">
+        <!-- Left Section: Search & Product Label -->
+        <div class="flex items-center gap-space-lg">
+            <div
+                class="hidden lg:flex items-center gap-2 text-primary font-headline-sm text-headline-sm font-bold tracking-tight">
+                <span>VIZATI Learner OS</span>
+                <span
+                    class="text-xs font-label-xs bg-surface-container-high text-primary px-2 py-0.5 rounded border border-outline-variant">v2.4
+                    Exec</span>
+            </div>
+            <div class="relative w-72">
+                <span
+                    class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-lg"
+                    data-icon="search">search</span>
+                <input
+                    class="w-full pl-9 pr-3 py-1.5 text-body-md bg-surface-container-low rounded-lg border border-outline-variant focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container"
+                    placeholder="Rechercher un module, code cadastre, note..." type="text" />
+            </div>
+        </div>
+        <!-- Center Navigation Links -->
+        <nav class="hidden xl:flex items-center gap-space-lg">
+            <a class="text-on-surface-variant font-label-md text-label-md hover:text-primary transition-colors pb-1"
+                href="#">Institut &amp; Programmes</a>
+            <a class="border-b-2 border-tertiary-fixed-dim text-primary font-bold font-label-md text-label-md pb-1"
+                href="#">Espace Pro &amp; Intelligence</a>
+        </nav>
+        <!-- Right Actions & Profile -->
+        <div class="flex items-center gap-space-md">
+            <div
+                class="hidden sm:flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-low border border-outline-variant text-on-surface-variant font-label-xs text-label-xs">
+                <span class="material-symbols-outlined text-sm text-emerald-700" data-icon="lock"
+                    data-weight="fill">lock</span>
+                <span>Session Chiffrée SSL</span>
+            </div>
+            <button class="relative p-2 rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors"
+                title="Notifications">
+                <span class="material-symbols-outlined text-xl" data-icon="notifications">notifications</span>
+                <span
+                    class="absolute top-1.5 right-1.5 w-2 h-2 bg-error rounded-full ring-2 ring-surface-container-lowest"></span>
+            </button>
+            <button class="p-2 rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors"
+                title="Assistance">
+                <span class="material-symbols-outlined text-xl" data-icon="help_outline">help_outline</span>
+            </button>
+            <div class="h-6 w-px bg-outline-variant"></div>
+            <!-- Profile: Aminata Diallo -->
+            <div class="flex items-center gap-2.5 pl-1 cursor-pointer">
+                <img class="w-9 h-9 rounded-full object-cover border-2 border-tertiary-fixed-dim shadow-xs"
+                    data-alt="Portrait professionnel soigné d'Aminata Diallo, cadre supérieure en immobilier ouest-africain, vêtue d'un tailleur bleu marine élégant avec des reflets dorés subtils dans un bureau exécutif moderne à Abidjan, éclairage doux et professionnel de jour."
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCdoVkJt6LQ2anKB9yqe-iiP-VGvIcSwggsgKNEqSsLXOSY-O8S8Q6cgk94EToPakAOkVvFodPg-VU75qqX3gl3sTTSh2e7HvhJqkm8x-EZQ1MNcjlYq48HAc2a4uo5MIid5fugO3JYJuXzyObr_CUnRpf7_Y3f5fkh7zj8JUTAWBvmOdGpUbivuQicGSQ-4gA7gHu0MEsmfgNjXov5N6toXM12GBckpeYUBTv3Uo" />
+                <div class="hidden sm:block text-left">
+                    <div class="font-label-md text-label-md font-bold text-primary leading-tight">Aminata Diallo</div>
+                    <div class="font-label-xs text-label-xs text-on-surface-variant">Analyste Foncier Senior</div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ==================== MAIN LEARNER PROGRESSION CANVAS ==================== -->
+    <main class="ml-64 md:ml-72 mt-16 p-space-md md:p-space-xl flex-1 max-w-[1440px] space-y-space-xl">
+        <!-- Title and Executive Action Header -->
+        <section
+            class="flex flex-col md:flex-row md:items-center justify-between gap-space-md pb-space-md border-b border-outline-variant">
+            <div>
+                <div
+                    class="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-surface-container-high text-primary font-label-xs text-label-xs font-semibold mb-2">
+                    <span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed-dim"></span>
+                    Tableau Pédagogique Institutionnel
+                </div>
+                <h1 class="font-headline-xl text-headline-xl text-primary font-extrabold tracking-tight">Ma progression
+                </h1>
+                <p class="font-body-md text-body-md text-on-surface-variant mt-1 max-w-2xl">
+                    Suivez vos performances, vos compétences validées et votre calendrier d'obtention de certification
+                    exécutive.
+                </p>
+            </div>
+            <div class="flex items-center gap-space-sm self-start md:self-center">
+                <button
+                    class="inline-flex items-center gap-2 px-space-lg py-2.5 rounded-lg bg-surface-container-lowest border border-outline-variant hover:border-primary-container text-primary font-label-md text-label-md shadow-sm hover:shadow transition-all group">
+                    <span
+                        class="material-symbols-outlined text-tertiary-fixed-dim text-lg group-hover:scale-110 transition-transform"
+                        data-icon="picture_as_pdf">picture_as_pdf</span>
+                    <span>Télécharger mon relevé académique officiel (PDF)</span>
+                </button>
+            </div>
+        </section>
+        <!-- SECTION 1: 5 KPI CARDS ROW -->
+        <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-space-md">
+            <!-- KPI 1: Progression générale -->
+            <div
+                class="bg-surface-container-lowest p-space-md rounded-xl border border-outline-variant shadow-sm flex flex-col justify-between relative overflow-hidden">
+                <div
+                    class="absolute -right-4 -bottom-4 w-16 h-16 bg-surface-container-low rounded-full pointer-events-none">
+                </div>
+                <div class="flex items-center justify-between mb-2">
+                    <span class="font-label-md text-label-md text-on-surface-variant font-medium">Progression
+                        globale</span>
+                    <span
+                        class="material-symbols-outlined text-primary p-1.5 rounded-lg bg-surface-container-low text-xl"
+                        data-icon="donut_large">donut_large</span>
+                </div>
+                <div>
+                    <div class="font-headline-lg text-headline-lg font-extrabold text-primary">68%</div>
+                    <div
+                        class="flex items-center gap-1 mt-1 font-label-xs text-label-xs text-emerald-700 font-semibold">
+                        <span class="material-symbols-outlined text-xs" data-icon="trending_up">trending_up</span>
+                        <span>+12% ce mois</span>
+                    </div>
+                </div>
+                <div class="w-full bg-surface-container-low rounded-full h-1.5 mt-3 overflow-hidden">
+                    <div class="bg-tertiary-fixed-dim h-full rounded-full" style="width: 68%;"></div>
+                </div>
+            </div>
+            <!-- KPI 2: Formations en cours & terminées -->
+            <div
+                class="bg-surface-container-lowest p-space-md rounded-xl border border-outline-variant shadow-sm flex flex-col justify-between">
+                <div class="flex items-center justify-between mb-2">
+                    <span class="font-label-md text-label-md text-on-surface-variant font-medium">Parcours
+                        d'études</span>
+                    <span
+                        class="material-symbols-outlined text-primary p-1.5 rounded-lg bg-surface-container-low text-xl"
+                        data-icon="auto_stories">auto_stories</span>
+                </div>
+                <div>
+                    <div class="font-headline-lg text-headline-lg font-extrabold text-primary">3 <span
+                            class="font-body-md text-body-md text-on-surface-variant font-normal">au total</span></div>
+                    <div class="font-label-xs text-label-xs text-on-surface-variant mt-1 flex items-center gap-1.5">
+                        <span class="inline-block w-2 h-2 rounded-full bg-emerald-600"></span> 1 certifiée
+                        <span class="inline-block w-2 h-2 rounded-full bg-tertiary-fixed-dim ml-1"></span> 2 en cours
+                    </div>
+                </div>
+                <div class="flex gap-1 mt-3">
+                    <div class="h-1.5 flex-1 bg-emerald-600 rounded-full"></div>
+                    <div class="h-1.5 flex-1 bg-primary-container rounded-full"></div>
+                    <div class="h-1.5 flex-1 bg-primary-container rounded-full"></div>
+                </div>
+            </div>
+            <!-- KPI 3: Modules validés -->
+            <div
+                class="bg-surface-container-lowest p-space-md rounded-xl border border-outline-variant shadow-sm flex flex-col justify-between">
+                <div class="flex items-center justify-between mb-2">
+                    <span class="font-label-md text-label-md text-on-surface-variant font-medium">Modules validés</span>
+                    <span
+                        class="material-symbols-outlined text-primary p-1.5 rounded-lg bg-surface-container-low text-xl"
+                        data-icon="task_alt">task_alt</span>
+                </div>
+                <div>
+                    <div class="font-headline-lg text-headline-lg font-extrabold text-primary">14 <span
+                            class="font-headline-sm text-headline-sm text-on-surface-variant font-semibold">/ 22</span>
+                    </div>
+                    <div class="font-label-xs text-label-xs text-on-surface-variant mt-1">
+                        8 restants avant jury final
+                    </div>
+                </div>
+                <div class="w-full bg-surface-container-low rounded-full h-1.5 mt-3 overflow-hidden">
+                    <div class="bg-primary h-full rounded-full" style="width: 63.6%;"></div>
+                </div>
+            </div>
+            <!-- KPI 4: Évaluations réalisées -->
+            <div
+                class="bg-surface-container-lowest p-space-md rounded-xl border border-outline-variant shadow-sm flex flex-col justify-between">
+                <div class="flex items-center justify-between mb-2">
+                    <span class="font-label-md text-label-md text-on-surface-variant font-medium">Évaluations
+                        passées</span>
+                    <span
+                        class="material-symbols-outlined text-primary p-1.5 rounded-lg bg-surface-container-low text-xl"
+                        data-icon="quiz">quiz</span>
+                </div>
+                <div>
+                    <div class="font-headline-lg text-headline-lg font-extrabold text-primary">6 <span
+                            class="font-headline-sm text-headline-sm text-emerald-700 font-semibold">/ 6 réussies</span>
+                    </div>
+                    <div
+                        class="font-label-xs text-label-xs text-emerald-800 font-semibold mt-1 flex items-center gap-1">
+                        <span class="material-symbols-outlined text-xs" data-icon="verified"
+                            data-weight="fill">verified</span>
+                        <span>100% au 1er ou 2e essai</span>
+                    </div>
+                </div>
+                <div class="w-full bg-surface-container-low rounded-full h-1.5 mt-3 overflow-hidden">
+                    <div class="bg-emerald-600 h-full rounded-full" style="width: 100%;"></div>
+                </div>
+            </div>
+            <!-- KPI 5: Moyenne générale -->
+            <div
+                class="bg-primary-container p-space-md rounded-xl border border-tertiary-fixed-dim/40 shadow-sm flex flex-col justify-between text-on-primary">
+                <div class="flex items-center justify-between mb-2">
+                    <span class="font-label-md text-label-md text-surface-container-high font-medium">Moyenne
+                        générale</span>
+                    <span class="material-symbols-outlined text-tertiary-fixed-dim p-1.5 rounded-lg bg-primary text-xl"
+                        data-icon="workspace_premium" data-weight="fill">workspace_premium</span>
+                </div>
+                <div>
+                    <div
+                        class="font-headline-lg text-headline-lg font-extrabold text-on-primary flex items-baseline gap-1">
+                        16.8 <span class="text-sm font-label-md text-tertiary-fixed-dim">/ 20</span>
+                    </div>
+                    <div class="font-label-xs text-label-xs text-surface-container-high mt-1 flex items-center gap-1">
+                        <span class="px-1.5 py-0.5 rounded bg-tertiary-fixed-dim text-primary font-bold">84%</span>
+                        <span>Mention Très Bien</span>
+                    </div>
+                </div>
+                <div class="w-full bg-primary rounded-full h-1.5 mt-3 overflow-hidden">
+                    <div class="bg-tertiary-fixed-dim h-full rounded-full" style="width: 84%;"></div>
+                </div>
+            </div>
+        </section>
+        <!-- SECTION 2: BENTO GRID - ANALYTICAL DATA & CHARTS -->
+        <section class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+            <!-- Graphique A: Barres Comparatives Horizontales (7 cols) -->
+            <div
+                class="lg:col-span-7 bg-surface-container-lowest p-space-lg rounded-xl border border-outline-variant shadow-sm flex flex-col justify-between">
+                <div class="flex items-center justify-between pb-space-md border-b border-outline-variant/60">
+                    <div>
+                        <h2 class="font-headline-sm text-headline-sm font-bold text-primary">Progression détaillée par
+                            formation</h2>
+                        <p class="font-body-sm text-body-sm text-on-surface-variant">État d'avancement des parcours
+                            certifiants enregistrés</p>
+                    </div>
+                    <span class="material-symbols-outlined text-on-surface-variant"
+                        data-icon="bar_chart">bar_chart</span>
+                </div>
+                <div class="space-y-5 my-4">
+                    <!-- Formation 1 -->
+                    <div>
+                        <div class="flex justify-between items-start mb-1.5">
+                            <div>
+                                <span class="font-label-md text-label-md font-bold text-primary">Gestionnaire de
+                                    portefeuille locatif &amp; actifs tertiaires</span>
+                                <div
+                                    class="flex items-center gap-2 font-label-xs text-label-xs text-on-surface-variant mt-0.5">
+                                    <span
+                                        class="bg-surface-container-high text-primary px-1.5 py-0.5 rounded font-medium">8/12
+                                        modules</span>
+                                    <span>•</span>
+                                    <span>Date cible : Janv 2025</span>
+                                </div>
+                            </div>
+                            <span class="font-code-num text-code-num font-bold text-primary">64%</span>
+                        </div>
+                        <div class="w-full bg-surface-container rounded-full h-2.5 overflow-hidden">
+                            <div class="bg-primary-container h-full rounded-full transition-all duration-500"
+                                style="width: 64%;"></div>
+                        </div>
+                    </div>
+                    <!-- Formation 2 -->
+                    <div>
+                        <div class="flex justify-between items-start mb-1.5">
+                            <div>
+                                <span class="font-label-md text-label-md font-bold text-primary">Montage d'opérations et
+                                    financements structurés UEMOA</span>
+                                <div
+                                    class="flex items-center gap-2 font-label-xs text-label-xs text-on-surface-variant mt-0.5">
+                                    <span
+                                        class="bg-surface-container-high text-primary px-1.5 py-0.5 rounded font-medium">3/8
+                                        modules</span>
+                                    <span>•</span>
+                                    <span>Date cible : Mars 2025</span>
+                                </div>
+                            </div>
+                            <span class="font-code-num text-code-num font-bold text-primary">35%</span>
+                        </div>
+                        <div class="w-full bg-surface-container rounded-full h-2.5 overflow-hidden">
+                            <div class="bg-secondary h-full rounded-full transition-all duration-500"
+                                style="width: 35%;"></div>
+                        </div>
+                    </div>
+                    <!-- Formation 3 -->
+                    <div class="p-3 bg-surface-container-low rounded-lg border border-tertiary-fixed-dim/30">
+                        <div class="flex justify-between items-start mb-1.5">
+                            <div>
+                                <div class="flex items-center gap-2">
+                                    <span class="font-label-md text-label-md font-bold text-primary">Pratique des Baux
+                                        Commerciaux OHADA</span>
+                                    <span
+                                        class="inline-flex items-center gap-1 font-label-xs text-label-xs text-emerald-800 bg-emerald-100 px-1.5 py-0.5 rounded font-bold">
+                                        <span class="material-symbols-outlined text-xs"
+                                            data-icon="check_circle">check_circle</span> Certifié
+                                    </span>
+                                </div>
+                                <div class="font-label-xs text-label-xs text-on-surface-variant mt-0.5">
+                                    Certificat émis : <code
+                                        class="font-code-num text-code-num text-primary font-semibold">#VZ-CERT-2024-098</code>
+                                </div>
+                            </div>
+                            <span class="font-code-num text-code-num font-bold text-emerald-700">100%</span>
+                        </div>
+                        <div class="w-full bg-surface-container-highest rounded-full h-2.5 overflow-hidden">
+                            <div class="bg-tertiary-fixed-dim h-full rounded-full" style="width: 100%;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="pt-space-sm border-t border-outline-variant flex items-center justify-between font-label-xs text-label-xs text-on-surface-variant">
+                    <span>Cadence globale : 1.8 module / quinzaine</span>
+                    <a class="text-primary font-bold hover:underline" href="#">Accéder aux syllabus complets →</a>
+                </div>
+            </div>
+            <!-- Graphique B: Évolution Chronologique des Résultats (5 cols) -->
+            <div
+                class="lg:col-span-5 bg-surface-container-lowest p-space-lg rounded-xl border border-outline-variant shadow-sm flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center justify-between pb-space-sm border-b border-outline-variant/60 mb-3">
+                        <div>
+                            <h2 class="font-headline-sm text-headline-sm font-bold text-primary">Courbe d'excellence
+                                académique</h2>
+                            <p class="font-body-sm text-body-sm text-on-surface-variant">Scores obtenus aux 6 dernières
+                                épreuves</p>
+                        </div>
+                        <div
+                            class="flex items-center gap-1 text-emerald-700 bg-emerald-50 px-2 py-1 rounded text-xs font-semibold">
+                            <span class="material-symbols-outlined text-xs" data-icon="north_east">north_east</span>
+                            <span>+14 pts</span>
+                        </div>
+                    </div>
+                    <!-- Stylized Curve SVG -->
+                    <div class="relative pt-4 pb-2">
+                        <div class="flex justify-between text-xs font-label-xs text-on-surface-variant mb-1">
+                            <span>95%</span>
+                            <span class="text-tertiary-fixed-dim font-bold">Moyenne : 84%</span>
+                        </div>
+                        <div class="h-32 w-full flex items-end">
+                            <svg class="w-full h-full overflow-visible" viewbox="0 0 320 120">
+                                <!-- Grid Lines -->
+                                <line stroke="#E4E7EC" stroke-dasharray="3,3" stroke-width="1" x1="0" x2="320" y1="20"
+                                    y2="20"></line>
+                                <line stroke="#E4E7EC" stroke-dasharray="3,3" stroke-width="1" x1="0" x2="320" y1="60"
+                                    y2="60"></line>
+                                <line stroke="#E4E7EC" stroke-dasharray="3,3" stroke-width="1" x1="0" x2="320" y1="100"
+                                    y2="100"></line>
+                                <!-- Area Gradient Fill -->
+                                <defs>
+                                    <lineargradient id="scoreGrad" x1="0" x2="0" y1="0" y2="1">
+                                        <stop offset="0%" stop-color="#C49A52" stop-opacity="0.35"></stop>
+                                        <stop offset="100%" stop-color="#C49A52" stop-opacity="0.0"></stop>
+                                    </lineargradient>
+                                </defs>
+                                <polygon fill="url(#scoreGrad)"
+                                    points="10,85 70,80 130,68 190,52 250,42 310,20 310,120 10,120"></polygon>
+                                <!-- Line -->
+                                <polyline fill="none" points="10,85 70,80 130,68 190,52 250,42 310,20" stroke="#142B46"
+                                    stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></polyline>
+                                <!-- Dots with scores -->
+                                <circle cx="10" cy="85" fill="#142B46" r="4"></circle>
+                                <circle cx="70" cy="80" fill="#142B46" r="4"></circle>
+                                <circle cx="130" cy="68" fill="#142B46" r="4"></circle>
+                                <circle cx="190" cy="52" fill="#142B46" r="4"></circle>
+                                <circle cx="250" cy="42" fill="#142B46" r="4"></circle>
+                                <circle cx="310" cy="20" fill="#C49A52" r="5" stroke="#142B46" stroke-width="2">
+                                </circle>
+                            </svg>
+                        </div>
+                        <!-- Labels -->
+                        <div
+                            class="flex justify-between font-label-xs text-label-xs text-on-surface-variant pt-2 border-t border-outline-variant">
+                            <span>Exam 1 (78%)</span>
+                            <span>Exam 2 (80%)</span>
+                            <span>Exam 3 (82%)</span>
+                            <span>Exam 4 (85%)</span>
+                            <span>Exam 5 (88%)</span>
+                            <span class="font-bold text-primary">Dernier (92.5%)</span>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="mt-3 p-2.5 bg-surface-container-low rounded-lg text-xs font-body-sm text-on-surface flex items-center gap-2">
+                    <span class="material-symbols-outlined text-base text-tertiary-fixed-dim"
+                        data-icon="lightbulb">lightbulb</span>
+                    <span>Trajectoire ascendante continue sur l'analyse contractuelle approfondie.</span>
+                </div>
+            </div>
+            <!-- Graphique C: Matrice & Jauges des Compétences Acquises (7 cols) -->
+            <div
+                class="lg:col-span-7 bg-surface-container-lowest p-space-lg rounded-xl border border-outline-variant shadow-sm">
+                <div class="flex items-center justify-between pb-space-sm border-b border-outline-variant/60 mb-4">
+                    <div>
+                        <h2 class="font-headline-sm text-headline-sm font-bold text-primary">Référentiel des compétences
+                            exécutives</h2>
+                        <p class="font-body-sm text-body-sm text-on-surface-variant">Taux de maîtrise consolidé par
+                            pilier sectoriel</p>
+                    </div>
+                    <span class="material-symbols-outlined text-on-surface-variant" data-icon="radar">radar</span>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <!-- Competence 1 -->
+                    <div class="p-3 bg-surface-container-low/60 rounded-lg border border-outline-variant/50">
+                        <div class="flex justify-between text-xs font-semibold mb-1 text-primary">
+                            <span class="flex items-center gap-1.5">
+                                <span class="material-symbols-outlined text-sm text-primary"
+                                    data-icon="gavel">gavel</span>
+                                Cadre juridique OHADA
+                            </span>
+                            <span class="font-code-num text-code-num font-bold">90%</span>
+                        </div>
+                        <div class="w-full bg-surface-container-highest rounded-full h-2">
+                            <div class="bg-primary h-2 rounded-full" style="width: 90%;"></div>
+                        </div>
+                        <span class="font-label-xs text-label-xs text-emerald-700 font-medium block mt-1">Niveau :
+                            Maîtrise Avancée</span>
+                    </div>
+                    <!-- Competence 2 -->
+                    <div class="p-3 bg-surface-container-low/60 rounded-lg border border-outline-variant/50">
+                        <div class="flex justify-between text-xs font-semibold mb-1 text-primary">
+                            <span class="flex items-center gap-1.5">
+                                <span class="material-symbols-outlined text-sm text-primary"
+                                    data-icon="payments">payments</span>
+                                Ingénierie financière &amp; Loyers
+                            </span>
+                            <span class="font-code-num text-code-num font-bold">75%</span>
+                        </div>
+                        <div class="w-full bg-surface-container-highest rounded-full h-2">
+                            <div class="bg-secondary h-2 rounded-full" style="width: 75%;"></div>
+                        </div>
+                        <span class="font-label-xs text-label-xs text-primary font-medium block mt-1">Niveau : Pratique
+                            Autonome</span>
+                    </div>
+                    <!-- Competence 3 -->
+                    <div class="p-3 bg-surface-container-low/60 rounded-lg border border-outline-variant/50">
+                        <div class="flex justify-between text-xs font-semibold mb-1 text-primary">
+                            <span class="flex items-center gap-1.5">
+                                <span class="material-symbols-outlined text-sm text-primary"
+                                    data-icon="real_estate_agent">real_estate_agent</span>
+                                Fiscalité locale SN / CI
+                            </span>
+                            <span class="font-code-num text-code-num font-bold">85%</span>
+                        </div>
+                        <div class="w-full bg-surface-container-highest rounded-full h-2">
+                            <div class="bg-primary-container h-2 rounded-full" style="width: 85%;"></div>
+                        </div>
+                        <span class="font-label-xs text-label-xs text-emerald-700 font-medium block mt-1">Niveau :
+                            Maîtrise Avancée</span>
+                    </div>
+                    <!-- Competence 4 -->
+                    <div class="p-3 bg-surface-container-low/60 rounded-lg border border-outline-variant/50">
+                        <div class="flex justify-between text-xs font-semibold mb-1 text-primary">
+                            <span class="flex items-center gap-1.5">
+                                <span class="material-symbols-outlined text-sm text-primary"
+                                    data-icon="handshake">handshake</span>
+                                Négociation &amp; Contentieux
+                            </span>
+                            <span class="font-code-num text-code-num font-bold">80%</span>
+                        </div>
+                        <div class="w-full bg-surface-container-highest rounded-full h-2">
+                            <div class="bg-primary-container h-2 rounded-full" style="width: 80%;"></div>
+                        </div>
+                        <span class="font-label-xs text-label-xs text-primary font-medium block mt-1">Niveau : Pratique
+                            Autonome</span>
+                    </div>
+                    <!-- Competence 5 (Needs improvement) -->
+                    <div
+                        class="p-3 bg-surface-container-low/60 rounded-lg border border-outline-variant/50 md:col-span-2">
+                        <div class="flex justify-between text-xs font-semibold mb-1 text-primary">
+                            <span class="flex items-center gap-1.5">
+                                <span class="material-symbols-outlined text-sm text-tertiary-fixed-dim"
+                                    data-icon="apartment">apartment</span>
+                                Audit technique &amp; Copropriété
+                            </span>
+                            <span class="font-code-num text-code-num font-bold text-on-surface-variant">60%</span>
+                        </div>
+                        <div class="w-full bg-surface-container-highest rounded-full h-2">
+                            <div class="bg-tertiary-fixed-dim h-2 rounded-full" style="width: 60%;"></div>
+                        </div>
+                        <span
+                            class="font-label-xs text-label-xs text-tertiary-fixed-dim font-bold block mt-1">Recommandation
+                            : Renforcement suggéré avant certification</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Graphique D: Cadence Mensuelle (Histogramme) (5 cols) -->
+            <div
+                class="lg:col-span-5 bg-surface-container-lowest p-space-lg rounded-xl border border-outline-variant shadow-sm flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center justify-between pb-space-sm border-b border-outline-variant/60 mb-4">
+                        <div>
+                            <h2 class="font-headline-sm text-headline-sm font-bold text-primary">Cadence de validation
+                            </h2>
+                            <p class="font-body-sm text-body-sm text-on-surface-variant">Volume de modules validés par
+                                mois</p>
+                        </div>
+                        <span class="material-symbols-outlined text-on-surface-variant"
+                            data-icon="date_range">date_range</span>
+                    </div>
+                    <!-- Histogram -->
+                    <div class="h-44 flex items-end justify-between px-6 pt-6 pb-2 border-b border-outline-variant">
+                        <!-- Septembre -->
+                        <div class="flex flex-col items-center gap-2 flex-1">
+                            <span class="font-code-num text-code-num font-bold text-primary">3 mod.</span>
+                            <div class="w-12 bg-secondary-fixed-dim rounded-t-lg transition-all" style="height: 55px;">
+                            </div>
+                            <span class="font-label-xs text-label-xs text-on-surface-variant">Septembre</span>
+                        </div>
+                        <!-- Octobre -->
+                        <div class="flex flex-col items-center gap-2 flex-1">
+                            <span class="font-code-num text-code-num font-bold text-primary">5 mod.</span>
+                            <div class="w-12 bg-secondary rounded-t-lg transition-all" style="height: 90px;"></div>
+                            <span class="font-label-xs text-label-xs text-on-surface-variant">Octobre</span>
+                        </div>
+                        <!-- Novembre -->
+                        <div class="flex flex-col items-center gap-2 flex-1">
+                            <span class="font-code-num text-code-num font-bold text-primary flex items-center gap-0.5">
+                                6 mod. <span class="material-symbols-outlined text-xs text-tertiary-fixed-dim"
+                                    data-icon="bolt">bolt</span>
+                            </span>
+                            <div class="w-12 bg-primary-container rounded-t-lg transition-all border-t-2 border-tertiary-fixed-dim"
+                                style="height: 110px;"></div>
+                            <span class="font-label-xs text-label-xs text-primary font-bold">Novembre</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-4 flex items-center justify-between text-xs text-on-surface-variant">
+                    <span class="flex items-center gap-1">
+                        <span class="w-2 h-2 rounded-full bg-primary-container"></span> Rythme actuel : <strong
+                            class="text-primary font-semibold">Soutenu</strong>
+                    </span>
+                    <span
+                        class="font-label-xs text-label-xs bg-surface-container px-2 py-0.5 rounded text-primary font-medium">Objectif
+                        déc. : 4 mod.</span>
+                </div>
+            </div>
+        </section>
+        <!-- SECTION 3: FULL PEDAGOGICAL HISTORY TABLE -->
+        <section class="bg-surface-container-lowest rounded-xl border border-outline-variant shadow-sm overflow-hidden">
+            <!-- Table Header & Controls -->
+            <div
+                class="p-space-lg border-b border-outline-variant flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+                <div>
+                    <h2 class="font-headline-sm text-headline-sm font-bold text-primary">Historique pédagogique complet
+                    </h2>
+                    <p class="font-body-sm text-body-sm text-on-surface-variant">Relevé chronologique des examens,
+                        contrôles continus et attestations</p>
+                </div>
+                <!-- Filter Tools -->
+                <div class="flex flex-wrap items-center gap-space-sm">
+                    <div class="relative">
+                        <span
+                            class="material-symbols-outlined absolute left-2.5 top-1/2 -translate-y-1/2 text-on-surface-variant text-sm"
+                            data-icon="filter_alt">filter_alt</span>
+                        <select
+                            class="pl-8 pr-7 py-1.5 text-body-sm bg-surface-container-low rounded-lg border border-outline-variant focus:outline-none focus:border-primary text-on-surface font-medium">
+                            <option>Tous les parcours</option>
+                            <option>Gestion de portefeuille</option>
+                            <option>Montage UEMOA</option>
+                            <option>Baux Commerciaux OHADA</option>
+                        </select>
+                    </div>
+                    <div class="relative">
+                        <select
+                            class="pl-3 pr-7 py-1.5 text-body-sm bg-surface-container-low rounded-lg border border-outline-variant focus:outline-none focus:border-primary text-on-surface font-medium">
+                            <option>Tous les statuts</option>
+                            <option>Validé avec mention</option>
+                            <option>Validé</option>
+                            <option>En rattrapage</option>
+                        </select>
+                    </div>
+                    <button
+                        class="p-1.5 rounded-lg border border-outline-variant hover:bg-surface-container text-on-surface-variant"
+                        title="Actualiser le relevé">
+                        <span class="material-symbols-outlined text-lg" data-icon="refresh">refresh</span>
+                    </button>
+                </div>
+            </div>
+            <!-- Table Body -->
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr
+                            class="bg-surface-container-low/70 border-b border-outline-variant text-on-surface-variant font-label-xs text-label-xs uppercase tracking-wider">
+                            <th class="py-3 px-space-md font-semibold">Formation</th>
+                            <th class="py-3 px-space-md font-semibold">Module</th>
+                            <th class="py-3 px-space-md font-semibold">Évaluation passée</th>
+                            <th class="py-3 px-space-md font-semibold">Score obtenu</th>
+                            <th class="py-3 px-space-md font-semibold">Date</th>
+                            <th class="py-3 px-space-md font-semibold">Statut</th>
+                            <th class="py-3 px-space-md font-semibold text-right">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-outline-variant/60 font-body-sm text-body-sm">
+                        <!-- Row 1 -->
+                        <tr class="hover:bg-surface-container-low/40 transition-colors">
+                            <td class="py-3.5 px-space-md">
+                                <span class="font-bold text-primary block">Baux Commerciaux OHADA</span>
+                                <span class="font-label-xs text-label-xs text-on-surface-variant">Certificat
+                                    Professionnel</span>
+                            </td>
+                            <td class="py-3.5 px-space-md font-medium text-on-surface">
+                                Module 3 : Résiliation et contentieux CCJA
+                            </td>
+                            <td class="py-3.5 px-space-md">
+                                <span
+                                    class="inline-flex items-center gap-1 font-label-xs text-label-xs bg-surface-container px-2 py-0.5 rounded text-primary font-medium">
+                                    Évaluation finale
+                                </span>
+                            </td>
+                            <td class="py-3.5 px-space-md">
+                                <div class="font-code-num text-code-num font-bold text-primary">18.5 / 20</div>
+                                <div class="font-label-xs text-label-xs text-emerald-700 font-semibold">92.5%</div>
+                            </td>
+                            <td class="py-3.5 px-space-md text-on-surface-variant font-code-num text-code-num">
+                                12 Nov 2024
+                            </td>
+                            <td class="py-3.5 px-space-md">
+                                <span
+                                    class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-emerald-800 bg-emerald-100 font-label-xs text-label-xs font-bold border border-emerald-300">
+                                    <span class="material-symbols-outlined text-xs" data-icon="stars"
+                                        data-weight="fill">stars</span>
+                                    Validé avec mention
+                                </span>
+                            </td>
+                            <td class="py-3.5 px-space-md text-right">
+                                <button
+                                    class="inline-flex items-center gap-1 text-primary hover:text-secondary font-label-md text-label-md font-semibold">
+                                    <span>Voir le corrigé</span>
+                                    <span class="material-symbols-outlined text-sm"
+                                        data-icon="arrow_forward">arrow_forward</span>
+                                </button>
+                            </td>
+                        </tr>
+                        <!-- Row 2 -->
+                        <tr class="hover:bg-surface-container-low/40 transition-colors">
+                            <td class="py-3.5 px-space-md">
+                                <span class="font-bold text-primary block">Gestion portefeuille locatif</span>
+                                <span class="font-label-xs text-label-xs text-on-surface-variant">Executive
+                                    Masterclass</span>
+                            </td>
+                            <td class="py-3.5 px-space-md font-medium text-on-surface">
+                                Module 1 : Fondamentaux de la gestion
+                            </td>
+                            <td class="py-3.5 px-space-md">
+                                <span
+                                    class="inline-flex items-center gap-1 font-label-xs text-label-xs bg-surface-container px-2 py-0.5 rounded text-primary font-medium">
+                                    Quiz de synthèse
+                                </span>
+                            </td>
+                            <td class="py-3.5 px-space-md">
+                                <div class="font-code-num text-code-num font-bold text-primary">17.0 / 20</div>
+                                <div class="font-label-xs text-label-xs text-emerald-700 font-semibold">85.0%</div>
+                            </td>
+                            <td class="py-3.5 px-space-md text-on-surface-variant font-code-num text-code-num">
+                                05 Nov 2024
+                            </td>
+                            <td class="py-3.5 px-space-md">
+                                <span
+                                    class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-emerald-800 bg-emerald-50 font-label-xs text-label-xs font-bold border border-emerald-200">
+                                    <span class="material-symbols-outlined text-xs" data-icon="check">check</span>
+                                    Validé
+                                </span>
+                            </td>
+                            <td class="py-3.5 px-space-md text-right">
+                                <button
+                                    class="inline-flex items-center gap-1 text-primary hover:text-secondary font-label-md text-label-md font-semibold">
+                                    <span>Voir le corrigé</span>
+                                    <span class="material-symbols-outlined text-sm"
+                                        data-icon="arrow_forward">arrow_forward</span>
+                                </button>
+                            </td>
+                        </tr>
+                        <!-- Row 3 -->
+                        <tr class="hover:bg-surface-container-low/40 transition-colors">
+                            <td class="py-3.5 px-space-md">
+                                <span class="font-bold text-primary block">Gestion portefeuille locatif</span>
+                                <span class="font-label-xs text-label-xs text-on-surface-variant">Executive
+                                    Masterclass</span>
+                            </td>
+                            <td class="py-3.5 px-space-md font-medium text-on-surface">
+                                Module 2 : Relation propriétaire-locataire
+                            </td>
+                            <td class="py-3.5 px-space-md">
+                                <span
+                                    class="inline-flex items-center gap-1 font-label-xs text-label-xs bg-surface-container px-2 py-0.5 rounded text-primary font-medium">
+                                    Examen écrit
+                                </span>
+                            </td>
+                            <td class="py-3.5 px-space-md">
+                                <div class="font-code-num text-code-num font-bold text-primary">16.0 / 20</div>
+                                <div class="font-label-xs text-label-xs text-emerald-700 font-semibold">80.0%</div>
+                            </td>
+                            <td class="py-3.5 px-space-md text-on-surface-variant font-code-num text-code-num">
+                                28 Oct 2024
+                            </td>
+                            <td class="py-3.5 px-space-md">
+                                <span
+                                    class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-emerald-800 bg-emerald-50 font-label-xs text-label-xs font-bold border border-emerald-200">
+                                    <span class="material-symbols-outlined text-xs" data-icon="check">check</span>
+                                    Validé
+                                </span>
+                            </td>
+                            <td class="py-3.5 px-space-md text-right">
+                                <button
+                                    class="inline-flex items-center gap-1 text-primary hover:text-secondary font-label-md text-label-md font-semibold">
+                                    <span>Voir le corrigé</span>
+                                    <span class="material-symbols-outlined text-sm"
+                                        data-icon="arrow_forward">arrow_forward</span>
+                                </button>
+                            </td>
+                        </tr>
+                        <!-- Row 4 -->
+                        <tr class="hover:bg-surface-container-low/40 transition-colors">
+                            <td class="py-3.5 px-space-md">
+                                <span class="font-bold text-primary block">Montage d'opérations</span>
+                                <span class="font-label-xs text-label-xs text-on-surface-variant">Ingénierie
+                                    UEMOA</span>
+                            </td>
+                            <td class="py-3.5 px-space-md font-medium text-on-surface">
+                                Module 1 : Véhicules d'investissement OPCI
+                            </td>
+                            <td class="py-3.5 px-space-md">
+                                <span
+                                    class="inline-flex items-center gap-1 font-label-xs text-label-xs bg-surface-container px-2 py-0.5 rounded text-primary font-medium">
+                                    Test initial
+                                </span>
+                            </td>
+                            <td class="py-3.5 px-space-md">
+                                <div class="font-code-num text-code-num font-bold text-primary">15.5 / 20</div>
+                                <div class="font-label-xs text-label-xs text-emerald-700 font-semibold">77.5%</div>
+                            </td>
+                            <td class="py-3.5 px-space-md text-on-surface-variant font-code-num text-code-num">
+                                20 Oct 2024
+                            </td>
+                            <td class="py-3.5 px-space-md">
+                                <span
+                                    class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-emerald-800 bg-emerald-50 font-label-xs text-label-xs font-bold border border-emerald-200">
+                                    <span class="material-symbols-outlined text-xs" data-icon="check">check</span>
+                                    Validé
+                                </span>
+                            </td>
+                            <td class="py-3.5 px-space-md text-right">
+                                <button
+                                    class="inline-flex items-center gap-1 text-primary hover:text-secondary font-label-md text-label-md font-semibold">
+                                    <span>Revoir la leçon</span>
+                                    <span class="material-symbols-outlined text-sm"
+                                        data-icon="play_lesson">play_lesson</span>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- Table Footer / Pagination -->
+            <div
+                class="p-space-md border-t border-outline-variant bg-surface-container-low/30 flex items-center justify-between text-on-surface-variant font-label-xs text-label-xs">
+                <div>Affichage de 4 évaluations récentes sur 6 validées</div>
+                <div class="flex items-center gap-1">
+                    <button
+                        class="px-2.5 py-1 rounded border border-outline-variant bg-surface-container-lowest text-primary font-bold">1</button>
+                    <button
+                        class="px-2.5 py-1 rounded border border-outline-variant hover:bg-surface-container">2</button>
+                    <button
+                        class="px-2.5 py-1 rounded border border-outline-variant hover:bg-surface-container">Suivant</button>
+                </div>
+            </div>
+        </section>
+        <!-- SECTION 4: OBJECTIFS ET PROCHAINES ÉTAPES RECOMMANDÉES -->
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-space-lg pb-space-xl">
+            <!-- Card 1: Prochain jalon critique -->
+            <div
+                class="bg-surface-container-lowest p-space-lg rounded-xl border border-outline-variant shadow-sm relative overflow-hidden flex flex-col justify-between">
+                <div class="absolute top-0 left-0 w-1.5 h-full bg-error"></div>
+                <div>
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="font-label-xs text-label-xs uppercase font-bold text-error tracking-wider">Jalon
+                            critique imminent</span>
+                        <span class="material-symbols-outlined text-error"
+                            data-icon="event_upcoming">event_upcoming</span>
+                    </div>
+                    <h3 class="font-headline-sm text-headline-sm font-bold text-primary mb-1">
+                        Examen de synthèse Module 4
+                    </h3>
+                    <p class="font-body-md text-body-md text-on-surface-variant mb-4">
+                        Thématique : Fiscalité et régularisation des actifs fonciers.
+                    </p>
+                </div>
+                <div
+                    class="p-3 bg-error-container/20 border border-error-container rounded-lg flex items-center justify-between">
+                    <div class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-error text-lg" data-icon="schedule">schedule</span>
+                        <span class="font-label-md text-label-md font-bold text-error">Prévu dans 5 jours</span>
+                    </div>
+                    <a class="font-label-xs text-label-xs font-bold text-primary hover:underline" href="#">Réviser les
+                        fiches →</a>
+                </div>
+            </div>
+            <!-- Card 2: Badge d'éligibilité -->
+            <div
+                class="bg-surface-container-lowest p-space-lg rounded-xl border border-tertiary-fixed-dim/50 shadow-sm relative overflow-hidden flex flex-col justify-between">
+                <div class="absolute top-0 left-0 w-1.5 h-full bg-tertiary-fixed-dim"></div>
+                <div>
+                    <div class="flex items-center justify-between mb-2">
+                        <span
+                            class="font-label-xs text-label-xs uppercase font-bold text-tertiary-container tracking-wider">Accréditation
+                            VIZATI</span>
+                        <span class="material-symbols-outlined text-tertiary-fixed-dim" data-icon="military_tech"
+                            data-weight="fill">military_tech</span>
+                    </div>
+                    <h3 class="font-headline-sm text-headline-sm font-bold text-primary mb-1">
+                        Diplôme Exécutif Supérieur
+                    </h3>
+                    <p class="font-body-md text-body-md text-on-surface-variant mb-3">
+                        Vous êtes à <span class="font-bold text-primary">6 modules</span> de l'obtention officielle et
+                        de la remise par le comité consultatif.
+                    </p>
+                </div>
+                <div class="flex items-center gap-3 pt-3 border-t border-outline-variant/60">
+                    <div
+                        class="w-10 h-10 rounded-full bg-primary-container text-tertiary-fixed-dim flex items-center justify-center font-bold text-sm shrink-0 border border-tertiary-fixed-dim">
+                        88%
+                    </div>
+                    <div class="font-label-xs text-label-xs text-on-surface-variant leading-tight">
+                        Seuil de validation globale dépassé (Minimum requis : 75%).
+                    </div>
+                </div>
+            </div>
+            <!-- Card 3: Recommandation d'optimisation -->
+            <div
+                class="bg-primary-container text-on-primary p-space-lg rounded-xl border border-tertiary-fixed-dim/30 shadow-sm flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center justify-between mb-2">
+                        <span
+                            class="font-label-xs text-label-xs uppercase font-bold text-tertiary-fixed-dim tracking-wider">Recommandation
+                            Mentorat</span>
+                        <span class="material-symbols-outlined text-tertiary-fixed-dim"
+                            data-icon="psychology">psychology</span>
+                    </div>
+                    <h3 class="font-headline-sm text-headline-sm font-bold text-on-primary mb-1">
+                        Équilibrage de profil
+                    </h3>
+                    <p class="font-body-md text-body-md text-surface-container-high mb-4">
+                        Approfondir le module d'audit technique pour équilibrer votre profil d'Analyste Foncier.
+                    </p>
+                </div>
+                <a
+                href="./15-suivre-cours.html"
+                    class="inline-flex items-center justify-center gap-2 w-full py-2 px-space-md rounded-lg bg-tertiary-fixed-dim text-tertiary font-label-md text-label-md font-bold hover:brightness-105 transition-all">
+                    <span class="material-symbols-outlined text-base" data-icon="play_circle">play_circle</span>
+                    <span>Consulter les modules d'audit (3h)</span>
+                </a>
+            </div>
+        </section>
+    </main>
+    <script>
+        // Lightweight atmospheric interaction for interactive elements
+        document.addEventListener('DOMContentLoaded', () => {
+            const interactiveCards = document.querySelectorAll('main .rounded-xl');
+            interactiveCards.forEach(card => {
+                card.addEventListener('mouseenter', () => {
+                    card.classList.add('transition-shadow', 'duration-200');
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

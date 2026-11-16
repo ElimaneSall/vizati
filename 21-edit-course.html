@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-background" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>VIZATI — Constructeur &amp; Éditeur de Cours Pédagogique</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Manrope & Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-container-low": "#f0f3ff",
+            "on-primary": "#ffffff",
+            "on-secondary-container": "#405d80",
+            "on-tertiary-container": "#b38a44",
+            "primary-container": "#142b46",
+            "secondary-container": "#b9d7ff",
+            "surface-bright": "#f9f9ff",
+            "on-error": "#ffffff",
+            "on-primary-fixed": "#031c37",
+            "on-primary-fixed-variant": "#324864",
+            "primary-fixed-dim": "#b2c8ea",
+            "inverse-primary": "#b2c8ea",
+            "on-secondary-fixed-variant": "#2a486a",
+            "surface-container-high": "#dfe8ff",
+            "on-tertiary-fixed-variant": "#5f4100",
+            "surface-dim": "#d0daf2",
+            "surface-container-highest": "#d9e3fb",
+            "primary-fixed": "#d3e3ff",
+            "on-surface-variant": "#44474d",
+            "surface": "#f9f9ff",
+            "tertiary-fixed": "#ffdeab",
+            "surface-container-lowest": "#ffffff",
+            "on-secondary": "#ffffff",
+            "on-error-container": "#93000a",
+            "surface-tint": "#4a607d",
+            "primary": "#00162f",
+            "inverse-surface": "#273143",
+            "on-background": "#111c2d",
+            "surface-container": "#e8eeff",
+            "error-container": "#ffdad6",
+            "tertiary": "#201300",
+            "tertiary-container": "#3a2600",
+            "secondary-fixed-dim": "#abc9f1",
+            "background": "#f9f9ff",
+            "on-tertiary-fixed": "#271900",
+            "error": "#ba1a1a",
+            "secondary": "#436083",
+            "surface-variant": "#d9e3fb",
+            "on-secondary-fixed": "#001d37",
+            "inverse-on-surface": "#ecf0ff",
+            "on-tertiary": "#ffffff",
+            "on-primary-container": "#7d93b3",
+            "outline-variant": "#c4c6ce",
+            "outline": "#74777e",
+            "tertiary-fixed-dim": "#edbf73",
+            "secondary-fixed": "#d2e4ff",
+            "on-surface": "#111c2d"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "margin-mobile": "1rem",
+            "gutter": "1.5rem",
+            "space-sm": "0.5rem",
+            "margin": "3rem",
+            "space-xl": "2.5rem",
+            "space-lg": "1.5rem",
+            "space-2xl": "4rem",
+            "gutter-mobile": "1rem",
+            "space-md": "1rem",
+            "space-xs": "0.25rem"
+          },
+          "fontFamily": {
+            "label-md": ["Inter"],
+            "body-sm": ["Inter"],
+            "label-xs": ["Inter"],
+            "body-xl": ["Inter"],
+            "headline-lg": ["Manrope"],
+            "headline-xl": ["Manrope"],
+            "display-hero-mobile": ["Manrope"],
+            "code-num": ["Inter"],
+            "headline-md": ["Manrope"],
+            "headline-sm": ["Manrope"],
+            "headline-xl-mobile": ["Manrope"],
+            "body-lg": ["Inter"],
+            "body-md": ["Inter"],
+            "display-hero": ["Manrope"],
+            "label-lg": ["Inter"]
+          },
+          "fontSize": {
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "label-xs": ["10px", { "lineHeight": "14px", "letterSpacing": "0.06em", "fontWeight": "700" }],
+            "body-xl": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "headline-xl": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "display-hero-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+            "code-num": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+            "headline-md": ["22px", { "lineHeight": "30px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "headline-sm": ["18px", { "lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "600" }],
+            "headline-xl-mobile": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "display-hero": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20;
+      font-size: 18px;
+      line-height: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      vertical-align: middle;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 5px;
+      height: 5px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #c4c6ce;
+      border-radius: 4px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+      background: #74777e;
+    }
+  </style>
+</head>
+<body class="h-full flex flex-col bg-background text-on-surface antialiased overflow-hidden">
+<!-- TOP APP BAR (Shared Component Anchor) -->
+<header class="bg-surface-container-lowest border-b border-outline-variant shadow-sm z-30 flex-none">
+<div class="w-full px-space-lg py-space-sm flex justify-between items-center max-w-[1440px] mx-auto gap-space-md">
+<!-- Brand & Institute Navigation -->
+<div class="flex items-center gap-space-lg">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-primary-container flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">account_balance</span>
+</div>
+<span class="text-headline-sm font-headline-sm font-bold tracking-tight text-primary uppercase">VIZATI INSTITUT</span>
+</div>
+<nav class="hidden lg:flex items-center gap-space-md">
+<a class="text-on-surface-variant font-label-md text-label-md hover:text-primary transition-colors duration-150" href="#">Gouvernance UEMOA</a>
+<a class="text-on-surface-variant font-label-md text-label-md hover:text-primary transition-colors duration-150" href="#">Observatoire Cadastral</a>
+<a class="text-on-surface-variant font-label-md text-label-md hover:text-primary transition-colors duration-150" href="#">Accréditations</a>
+<span class="text-outline-variant">|</span>
+<span class="text-primary font-bold border-b-2 border-primary pb-1 text-label-md font-label-md">Ingénierie &amp; Édition</span>
+</nav>
+</div>
+<!-- Course Context Details & Status Indicator -->
+<div class="hidden xl:flex items-center gap-space-md border-x border-outline-variant px-space-md">
+<div class="flex flex-col">
+<span class="text-label-xs font-label-xs text-outline uppercase tracking-wider">Formation active</span>
+<span class="text-body-sm font-body-sm font-semibold text-primary truncate max-w-xs">
+            Masterclass Exécutive : Montage d'opérations et financements structurés en zone UEMOA
+          </span>
+</div>
+<!-- Status Selector Badge -->
+<div class="flex items-center gap-space-xs bg-surface-container-high px-space-sm py-1 rounded-full border border-secondary-fixed">
+<span class="w-2 h-2 rounded-full bg-on-tertiary-container animate-pulse"></span>
+<select class="bg-transparent border-0 p-0 text-label-md font-label-md text-primary focus:ring-0 cursor-pointer">
+<option value="draft">Brouillon</option>
+<option selected="" value="review">En validation académique</option>
+<option value="published">Publié &amp; Enrôlé</option>
+</select>
+</div>
+<!-- Save indicator -->
+<div class="flex items-center gap-1 text-outline text-label-xs font-label-xs whitespace-nowrap">
+<span class="material-symbols-outlined text-outline">history_toggle_off</span>
+<span>Sauvegardé il y a 2m</span>
+</div>
+</div>
+<!-- Action Cluster -->
+<div class="flex items-center gap-space-sm">
+<button class="px-space-md py-1.5 rounded-lg border border-outline-variant text-on-surface text-label-md font-label-md hover:bg-surface-container transition-colors duration-150 active:scale-[0.99] flex items-center gap-1">
+<span class="material-symbols-outlined">visibility</span>
+<span class="hidden sm:inline">Prévisualiser</span>
+</button>
+<button class="px-space-md py-1.5 rounded-lg border border-outline-variant text-on-surface-variant text-label-md font-label-md hover:bg-surface-container transition-colors duration-150 active:scale-[0.99] flex items-center gap-1">
+<span class="material-symbols-outlined">save</span>
+<span class="hidden sm:inline">Brouillon</span>
+</button>
+<button class="px-space-md py-1.5 rounded-lg bg-primary text-on-primary text-label-md font-label-md hover:bg-primary-container transition-colors duration-150 active:scale-[0.99] flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span>Validation du Doyen</span>
+</button>
+<div class="h-6 w-[1px] bg-outline-variant mx-1"></div>
+<button class="w-8 h-8 rounded-lg hover:bg-surface-container flex items-center justify-center text-on-surface-variant" title="Notifications">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="w-8 h-8 rounded-lg hover:bg-surface-container flex items-center justify-center text-on-surface-variant" title="Aide">
+<span class="material-symbols-outlined">help_center</span>
+</button>
+<div class="w-8 h-8 rounded-full bg-secondary-fixed flex items-center justify-center text-primary font-bold text-label-sm border border-outline-variant ml-1" title="Doyen Administratif VIZATI">
+<img class="w-full h-full rounded-full object-cover" data-alt="Official portrait of a distinguished African senior executive academic dean wearing institutional attire in a bright executive office setting at Institut VIZATI with gold and navy blue tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8AGlHkZg1hRwHwAH-d8bniUqdp12K0JH1WwKtyGrh3s6X6oX20W-dE8zVoAPQ3umxfZ4sdC_tq7VCMoZXdM5fEfgK3oYmIE_G6ZmdP-Zy3AWDusiBMwFK4VKp_7_DfxYyZVyqidqpZfQzxGV-I5470eMpCLRa1Yo9ljf8pb5l19wiGNUzwkNx-zvMF0xtlByUS-EubYnifLVDvsD1FImQdAN4lxgbUpKNNKKaZ_4"/>
+</div>
+</div>
+</div>
+</header>
+<!-- WORKSPACE BODY (3-Column Architectonic Layout) -->
+<div class="flex-1 flex overflow-hidden">
+<!-- LEFT SIDEBAR: Syllabus & Course Tree Navigation -->
+<aside class="w-80 flex-none bg-surface-container-lowest border-r border-outline-variant flex flex-col justify-between overflow-hidden shadow-sm">
+<!-- Metadata Top Bar -->
+<div class="p-space-md border-b border-outline-variant bg-surface-bright">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="text-label-xs font-label-xs text-outline uppercase tracking-wider">Structure du Cursus</span>
+<span class="text-label-xs font-label-xs bg-surface-container px-2 py-0.5 rounded text-primary font-code-num">45h Certifiées</span>
+</div>
+<div class="grid grid-cols-3 gap-space-xs text-center mb-space-sm">
+<div class="bg-surface-container-low p-1.5 rounded border border-outline-variant/40">
+<div class="text-label-lg font-label-lg font-bold text-primary">4</div>
+<div class="text-label-xs font-label-xs text-on-surface-variant">Modules</div>
+</div>
+<div class="bg-surface-container-low p-1.5 rounded border border-outline-variant/40">
+<div class="text-label-lg font-label-lg font-bold text-primary">14</div>
+<div class="text-label-xs font-label-xs text-on-surface-variant">Leçons</div>
+</div>
+<div class="bg-surface-container-low p-1.5 rounded border border-outline-variant/40">
+<div class="text-label-lg font-label-lg font-bold text-primary">4</div>
+<div class="text-label-xs font-label-xs text-on-surface-variant">Évals</div>
+</div>
+</div>
+<!-- Syllabus Progress -->
+<div class="space-y-1">
+<div class="flex justify-between text-label-xs font-label-xs">
+<span class="text-on-surface-variant">Complétion pédagogique</span>
+<span class="font-bold text-primary font-code-num">85%</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="bg-on-tertiary-container h-full rounded-full" style="width: 85%"></div>
+</div>
+</div>
+</div>
+<!-- Modules Drag & Drop Tree List -->
+<div class="flex-1 overflow-y-auto custom-scrollbar p-space-sm space-y-space-sm">
+<!-- Module 1 (Validated) -->
+<div class="border border-outline-variant/60 rounded-lg overflow-hidden bg-surface-bright">
+<div class="p-space-sm flex items-center justify-between bg-surface-container-lowest border-b border-outline-variant/40 hover:bg-surface-container-low cursor-pointer transition-colors">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-outline">drag_indicator</span>
+<span class="material-symbols-outlined text-green-700" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-label-md font-label-md text-on-surface truncate">M1 : Cadre prudentiel &amp; CREPMF</span>
+</div>
+<span class="text-label-xs font-label-xs text-outline font-code-num">3 leçons</span>
+</div>
+</div>
+<!-- Module 2 (Active/Expanded) -->
+<div class="border-2 border-primary-container rounded-lg overflow-hidden bg-surface-bright shadow-sm">
+<div class="p-space-sm flex items-center justify-between bg-primary-container text-on-primary cursor-pointer">
+<div class="flex items-center gap-space-xs truncate">
+<span class="material-symbols-outlined text-on-primary-container">drag_indicator</span>
+<span class="text-label-md font-label-md font-bold truncate">M2 : Véhicules OPCI</span>
+</div>
+<span class="text-label-xs font-label-xs bg-surface-container-lowest/20 px-1.5 py-0.5 rounded text-surface font-code-num">4 leçons</span>
+</div>
+<!-- Module 2 Lessons List -->
+<div class="p-space-xs space-y-1 bg-surface-container-lowest">
+<!-- Lesson 2.1 -->
+<div class="flex items-center justify-between px-space-sm py-1.5 rounded hover:bg-surface-container-low transition-colors text-on-surface cursor-pointer">
+<div class="flex items-center gap-space-xs truncate">
+<span class="material-symbols-outlined text-green-700 text-sm">check_small</span>
+<span class="text-body-sm font-body-sm truncate">2.1 Société de gestion &amp; dépositaire</span>
+</div>
+<span class="text-label-xs font-label-xs text-outline">25m</span>
+</div>
+<!-- Lesson 2.2 (Selected & Active) -->
+<div class="flex items-center justify-between px-space-sm py-2 rounded-lg bg-surface-container border-l-4 border-primary text-primary font-semibold shadow-xs">
+<div class="flex items-center gap-space-xs truncate">
+<span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">play_circle</span>
+<span class="text-body-sm font-body-sm font-semibold truncate">2.2 Flux trésorerie &amp; baux</span>
+</div>
+<span class="text-label-xs font-label-xs bg-primary text-on-primary px-1.5 py-0.2 rounded font-code-num">35m</span>
+</div>
+<!-- Lesson 2.3 -->
+<div class="flex items-center justify-between px-space-sm py-1.5 rounded hover:bg-surface-container-low transition-colors text-on-surface-variant cursor-pointer">
+<div class="flex items-center gap-space-xs truncate">
+<span class="material-symbols-outlined text-outline text-sm">edit_note</span>
+<span class="text-body-sm font-body-sm truncate">2.3 Déontologie et gouvernance</span>
+</div>
+<span class="text-label-xs font-label-xs bg-surface-container-high px-1 rounded text-outline">Brouillon</span>
+</div>
+<!-- Evaluation M2 -->
+<div class="flex items-center justify-between px-space-sm py-1.5 rounded bg-surface-container-low/50 border border-outline-variant/30 text-on-surface hover:bg-surface-container-low cursor-pointer">
+<div class="flex items-center gap-space-xs truncate">
+<span class="material-symbols-outlined text-on-tertiary-container text-sm">quiz</span>
+<span class="text-body-sm font-body-sm font-medium text-tertiary truncate">Évaluation : Cas pratique valorisation</span>
+</div>
+<span class="text-label-xs font-label-xs text-outline">45m</span>
+</div>
+</div>
+</div>
+<!-- Module 3 -->
+<div class="border border-outline-variant/60 rounded-lg overflow-hidden bg-surface-bright">
+<div class="p-space-sm flex items-center justify-between bg-surface-container-lowest border-b border-outline-variant/40 hover:bg-surface-container-low cursor-pointer transition-colors">
+<div class="flex items-center gap-space-xs truncate">
+<span class="material-symbols-outlined text-outline">drag_indicator</span>
+<span class="material-symbols-outlined text-outline">lock</span>
+<span class="text-label-md font-label-md text-on-surface truncate">M3 : Garanties &amp; titrisation</span>
+</div>
+<span class="text-label-xs font-label-xs text-outline font-code-num">4 leçons</span>
+</div>
+</div>
+<!-- Module 4 -->
+<div class="border border-outline-variant/60 rounded-lg overflow-hidden bg-surface-bright">
+<div class="p-space-sm flex items-center justify-between bg-surface-container-lowest border-b border-outline-variant/40 hover:bg-surface-container-low cursor-pointer transition-colors">
+<div class="flex items-center gap-space-xs truncate">
+<span class="material-symbols-outlined text-outline">drag_indicator</span>
+<span class="material-symbols-outlined text-outline">lock</span>
+<span class="text-label-md font-label-md text-on-surface truncate">M4 : Fiscalité transfrontalière</span>
+</div>
+<span class="text-label-xs font-label-xs text-outline font-code-num">3 leçons</span>
+</div>
+</div>
+</div>
+<!-- Add Module Footer Action -->
+<div class="p-space-md border-t border-outline-variant bg-surface-container-lowest">
+<button class="w-full py-2 px-space-md rounded-lg border-2 border-dashed border-outline-variant text-primary font-label-md text-label-md hover:bg-surface-container-low hover:border-primary flex items-center justify-center gap-space-xs transition-colors duration-150">
+<span class="material-symbols-outlined text-base">add_circle</span>
+<span>Ajouter un nouveau module</span>
+</button>
+</div>
+</aside>
+<!-- CENTER COLUMN: Main Content & Pedagogical Editor Canvas -->
+<main class="flex-1 overflow-y-auto custom-scrollbar bg-surface-container-low p-space-lg">
+<div class="max-w-4xl mx-auto space-y-space-lg">
+<!-- Breadcrumb & Header Editor Context -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2 text-label-xs font-label-xs text-outline">
+<span>Cursus Exécutif</span>
+<span class="material-symbols-outlined text-xs">chevron_right</span>
+<span>Module 2 : Structuration des véhicules d'investissement OPCI</span>
+<span class="material-symbols-outlined text-xs">chevron_right</span>
+<span class="text-primary font-semibold">Leçon 2.2</span>
+</div>
+<div class="flex items-center justify-between">
+<h1 class="text-headline-lg font-headline-lg text-primary tracking-tight">Éditeur de Contenu Pédagogique</h1>
+<span class="text-label-xs font-label-xs bg-surface-container-lowest border border-outline-variant px-2.5 py-1 rounded-full text-on-surface-variant flex items-center gap-1 shadow-xs">
+<span class="w-2 h-2 rounded-full bg-green-600"></span> Échange en temps réel actif
+            </span>
+</div>
+</div>
+<!-- Core Lesson Metadata Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg border border-outline-variant shadow-sm space-y-space-md">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-space-md">
+<!-- Lesson Title Input -->
+<div class="md:col-span-3 space-y-1">
+<label class="block text-label-md font-label-md text-on-surface">Intitulé officiel de la leçon</label>
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg px-space-md py-2.5 text-headline-sm font-headline-sm text-primary focus:border-primary focus:ring-1 focus:ring-primary shadow-xs" type="text" value="Modélisation des flux de trésorerie et baux commerciaux"/>
+</div>
+<!-- Estimated Duration & Jurisdiction -->
+<div class="space-y-1">
+<label class="block text-label-md font-label-md text-on-surface">Durée &amp; Cadre</label>
+<div class="flex items-center gap-2">
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg px-space-sm py-2.5 text-body-md font-body-md font-code-num text-on-surface focus:border-primary focus:ring-1 focus:ring-primary" type="text" value="35 minutes"/>
+<span class="bg-surface-container px-2 py-2 rounded-lg text-label-xs font-label-xs font-bold text-primary border border-secondary-fixed whitespace-nowrap">
+                  OHADA
+                </span>
+</div>
+</div>
+</div>
+<!-- Synthetic Description & Learning Objectives -->
+<div class="space-y-space-sm pt-space-xs">
+<label class="block text-label-md font-label-md text-on-surface">Objectifs d'apprentissage certifiés (Référentiel VIZATI)</label>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-sm bg-surface-container-low p-space-md rounded-lg border border-outline-variant/60">
+<label class="flex items-start gap-space-xs cursor-pointer">
+<input checked="" class="mt-1 rounded text-primary focus:ring-primary h-4 w-4 border-outline" type="checkbox"/>
+<span class="text-body-sm font-body-sm text-on-surface">Maîtriser le calcul du TRI brut / net sur baux 3-6-9 zone UEMOA</span>
+</label>
+<label class="flex items-start gap-space-xs cursor-pointer">
+<input checked="" class="mt-1 rounded text-primary focus:ring-primary h-4 w-4 border-outline" type="checkbox"/>
+<span class="text-body-sm font-body-sm text-on-surface">Intégrer les plafonds d'indexation ANSD et les clauses de révision</span>
+</label>
+<label class="flex items-start gap-space-xs cursor-pointer">
+<input checked="" class="mt-1 rounded text-primary focus:ring-primary h-4 w-4 border-outline" type="checkbox"/>
+<span class="text-body-sm font-body-sm text-on-surface">Quantifier le risque de vacance locative en immobilier tertiaire</span>
+</label>
+<label class="flex items-start gap-space-xs cursor-pointer">
+<input class="mt-1 rounded text-primary focus:ring-primary h-4 w-4 border-outline" type="checkbox"/>
+<span class="text-body-sm font-body-sm text-on-surface-variant">+ Ajouter un objectif mesurable...</span>
+</label>
+</div>
+</div>
+</div>
+<!-- Video & Multimedia Masterclass Production Container -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant shadow-sm overflow-hidden">
+<div class="p-space-md bg-surface-bright border-b border-outline-variant flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary">smart_display</span>
+<span class="text-label-lg font-label-lg text-primary font-bold">Conférence Magistrale &amp; Support Vidéo</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="px-space-sm py-1 bg-surface-container-lowest border border-outline-variant text-label-xs font-label-xs rounded hover:bg-surface-container transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">cloud_upload</span>
+<span>Remplacer la vidéo (480 Mo)</span>
+</button>
+</div>
+</div>
+<div class="p-space-md grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<!-- Video Player Preview -->
+<div class="md:col-span-2 relative aspect-video bg-primary-container rounded-lg overflow-hidden border border-outline-variant group">
+<img class="w-full h-full object-cover" data-alt="High-resolution institutional executive masterclass recording frame featuring a professional professor lecturing with financial real estate charts and OHADA legal frameworks on a glass interactive screen at VIZATI Institut" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxKTvUigLJUKp7_TwEdtUxUsdJUQ8xe1oLjPAuUJ2xA4Qe8cM2DFhbTV0n_NKuwf7i9fGPp3qf0K8pR2Nwrh2pkx-FZrEqgjrBKUUBGGG4MsjAyDp5V6jYpr6zc9_KI2j9jm7a6hDtMQ40AlpvfIBJZ2u5-lXKnWURRUmyg83wE1FWXLh81I1D5EL1NvuiP2iq8F9jdcL5ywAfNMQkoGorkDLywNTJ9m80I9VXB3E"/>
+<!-- Player Overlay -->
+<div class="absolute inset-0 bg-primary/40 flex flex-col justify-between p-space-sm">
+<div class="flex justify-between items-center">
+<span class="bg-primary/80 backdrop-blur text-on-primary text-label-xs font-label-xs px-2 py-0.5 rounded font-code-num">Masterclass_Lecon2_2_UEMOA_1080p.mp4</span>
+<span class="bg-on-tertiary-container text-tertiary-container font-label-xs font-label-xs px-2 py-0.5 rounded font-bold">HD 1080p</span>
+</div>
+<div class="flex items-center justify-center">
+<button class="w-12 h-12 rounded-full bg-on-tertiary-container text-tertiary-container flex items-center justify-center shadow-lg transform group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+</div>
+<div class="space-y-1">
+<div class="w-full h-1 bg-white/30 rounded-full overflow-hidden">
+<div class="bg-on-tertiary-container h-full w-1/3"></div>
+</div>
+<div class="flex justify-between text-white text-label-xs font-label-xs font-code-num">
+<span>11:42</span>
+<span>35:00</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Chaptering & Timecodes -->
+<div class="flex flex-col justify-between bg-surface-container-low p-space-sm rounded-lg border border-outline-variant/60">
+<span class="text-label-xs font-label-xs text-outline uppercase tracking-wider mb-2">Chapitrage Indexé</span>
+<div class="space-y-1 overflow-y-auto max-h-48 text-body-sm font-body-sm">
+<div class="p-1.5 rounded bg-surface-container-lowest border border-outline-variant/40 flex justify-between items-center text-primary font-medium">
+<span class="truncate">00:00 — Introduction générale</span>
+<span class="text-label-xs font-label-xs text-outline font-code-num">04:12</span>
+</div>
+<div class="p-1.5 rounded hover:bg-surface-container-lowest flex justify-between items-center text-on-surface-variant">
+<span class="truncate">04:13 — Typologies des baux OHADA</span>
+<span class="text-label-xs font-label-xs text-outline font-code-num">12:30</span>
+</div>
+<div class="p-1.5 rounded hover:bg-surface-container-lowest flex justify-between items-center text-on-surface-variant">
+<span class="truncate">16:43 — Modélisation DCF sur Excel</span>
+<span class="text-label-xs font-label-xs text-outline font-code-num">11:15</span>
+</div>
+<div class="p-1.5 rounded hover:bg-surface-container-lowest flex justify-between items-center text-on-surface-variant">
+<span class="truncate">27:58 — Synthèse et cas pratique</span>
+<span class="text-label-xs font-label-xs text-outline font-code-num">07:00</span>
+</div>
+</div>
+<button class="w-full mt-2 py-1 text-label-xs font-label-xs text-primary border border-outline-variant rounded bg-surface-container-lowest hover:bg-surface-container text-center">
+                + Nouveau timecode
+              </button>
+</div>
+</div>
+</div>
+<!-- Rich Text / WYSIWYG Academic Course Content Editor -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant shadow-sm overflow-hidden">
+<div class="p-space-sm bg-surface-bright border-b border-outline-variant flex flex-wrap items-center justify-between gap-space-xs">
+<!-- Toolbar -->
+<div class="flex items-center gap-1">
+<button class="p-1.5 rounded hover:bg-surface-container text-on-surface-variant" title="Gras"><span class="material-symbols-outlined">format_bold</span></button>
+<button class="p-1.5 rounded hover:bg-surface-container text-on-surface-variant" title="Italique"><span class="material-symbols-outlined">format_italic</span></button>
+<div class="h-4 w-[1px] bg-outline-variant mx-1"></div>
+<button class="p-1.5 rounded hover:bg-surface-container text-on-surface-variant" title="Titre 2"><span class="material-symbols-outlined">title</span></button>
+<button class="p-1.5 rounded hover:bg-surface-container text-on-surface-variant" title="Citation Juridique"><span class="material-symbols-outlined">format_quote</span></button>
+<button class="p-1.5 rounded hover:bg-surface-container text-on-surface-variant" title="Liste à puces"><span class="material-symbols-outlined">format_list_bulleted</span></button>
+<button class="p-1.5 rounded hover:bg-surface-container text-on-surface-variant" title="Formule Financière"><span class="material-symbols-outlined">functions</span></button>
+<div class="h-4 w-[1px] bg-outline-variant mx-1"></div>
+<button class="p-1.5 rounded hover:bg-surface-container text-on-surface-variant" title="Insérer Tableau"><span class="material-symbols-outlined">table</span></button>
+<button class="p-1.5 rounded hover:bg-surface-container text-on-surface-variant" title="Lien Référence"><span class="material-symbols-outlined">link</span></button>
+</div>
+<div class="text-label-xs font-label-xs text-outline font-code-num">
+              1 420 mots | Lecture ~ 18 min
+            </div>
+</div>
+<!-- Document Body Editor Viewport -->
+<div class="p-space-lg space-y-space-md text-body-lg font-body-lg text-on-surface leading-relaxed">
+<h2 class="text-headline-md font-headline-md text-primary font-bold">1. Les baux commerciaux sous l'empire de l'Acte Uniforme OHADA</h2>
+<p class="text-body-md font-body-md text-on-surface-variant">
+              L'analyse des flux financiers d'un véhicule d'investissement immobilier (OPCI ou Société Foncière) requiert une appréhension rigoureuse des stipulations impératives édictées par l'Acte Uniforme portant sur le Droit Commercial Général (AUDCG). Notamment, la fixation du loyer initial et les clauses de révision périodique doivent s'ajuster à la structure macroéconomique de l'Union.
+            </p>
+<!-- Legal Citation Block -->
+<div class="border-l-4 border-on-tertiary-container bg-surface-container-low p-space-md rounded-r-lg my-space-md">
+<span class="text-label-xs font-label-xs font-bold uppercase text-on-tertiary-container tracking-wider block mb-1">
+                Référence Légale — Art. 116 AUDCG
+              </span>
+<p class="italic text-body-md font-body-md text-on-surface">
+                « Les parties fixent librement le montant du loyer. Toutefois, à défaut d'accord écrit entre les parties sur le nouveau montant du loyer lors du renouvellement, la juridiction compétente statue en tenant compte des éléments d'équité et de la valeur locative du marché. »
+              </p>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-primary font-semibold">2. Méthodologie d'actualisation des flux (Discounted Cash Flow - DCF)</h3>
+<p class="text-body-md font-body-md text-on-surface-variant">
+              Pour modéliser le taux de rendement interne (TRI) prévisionnel d'un portefeuille d'actifs situés à Dakar-Plateau ou Abidjan-Plateau, le gestionnaire financier intègre la formule d'actualisation :
+            </p>
+<!-- Financial Formula Highlight Box -->
+<div class="bg-primary-container text-on-primary p-space-md rounded-lg font-code-num text-center border border-outline-variant shadow-xs">
+<span class="text-headline-sm tracking-wide">VAN = ∑ [ CF<sub>t</sub> / (1 + WACC)<sup>t</sup> ] - I<sub>0</sub></span>
+<p class="text-label-xs font-label-xs text-on-primary-container mt-2">
+                Où WACC intègre la prime de risque souveraine UEMOA (spread obligations du Trésor)
+              </p>
+</div>
+</div>
+</div>
+<!-- Pedagogical Attached Resources & Documents -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg border border-outline-variant shadow-sm space-y-space-md">
+<div class="flex items-center justify-between">
+<div>
+<h3 class="text-headline-sm font-headline-sm text-primary font-bold">Ressources &amp; Documents Associés</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Supports pédagogiques téléchargeables par les auditeurs exécutifs</p>
+</div>
+<button class="px-space-md py-1.5 rounded-lg border border-outline-variant text-primary text-label-md font-label-md hover:bg-surface-container transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-base">add</span>
+<span>Joindre un document</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-sm">
+<!-- Excel Asset Card -->
+<div class="p-space-sm rounded-lg border border-outline-variant flex items-center justify-between bg-surface-bright hover:border-primary transition-colors">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded bg-green-100 text-green-800 flex items-center justify-center font-bold text-xs font-code-num">
+                  XLSX
+                </div>
+<div>
+<div class="text-label-md font-label-md text-on-surface font-semibold truncate max-w-[200px]">OPCI_Modelisation_DCF.xlsx</div>
+<div class="text-label-xs font-label-xs text-outline">3.2 Mo • Modèle financier dynamique</div>
+</div>
+</div>
+<button class="text-on-surface-variant hover:text-error p-1">
+<span class="material-symbols-outlined text-lg">delete</span>
+</button>
+</div>
+<!-- PDF Asset Card -->
+<div class="p-space-sm rounded-lg border border-outline-variant flex items-center justify-between bg-surface-bright hover:border-primary transition-colors">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded bg-red-100 text-red-800 flex items-center justify-center font-bold text-xs font-code-num">
+                  PDF
+                </div>
+<div>
+<div class="text-label-md font-label-md text-on-surface font-semibold truncate max-w-[200px]">Cadre_BCEAO_2024.pdf</div>
+<div class="text-label-xs font-label-xs text-outline">1.8 Mo • Note technique officielle</div>
+</div>
+</div>
+<button class="text-on-surface-variant hover:text-error p-1">
+<span class="material-symbols-outlined text-lg">delete</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Integrated Formative Quiz / Assessment Editor -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg border border-outline-variant shadow-sm space-y-space-md">
+<div class="flex items-center justify-between border-b border-outline-variant pb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-on-tertiary-container">psychology_alt</span>
+<h3 class="text-headline-sm font-headline-sm text-primary font-bold">Évaluation Formative de Fin de Leçon</h3>
+</div>
+<div class="flex items-center gap-space-md text-label-xs font-label-xs">
+<div class="flex items-center gap-1 text-on-surface">
+<span>Barème :</span>
+<span class="font-bold font-code-num bg-surface-container px-2 py-0.5 rounded">2 points</span>
+</div>
+<div class="flex items-center gap-1 text-on-surface">
+<span>Seuil d'accréditation :</span>
+<span class="font-bold font-code-num bg-surface-container px-2 py-0.5 rounded">80%</span>
+</div>
+</div>
+</div>
+<!-- Question Builder Block -->
+<div class="bg-surface-bright rounded-lg p-space-md border border-outline-variant space-y-space-sm">
+<div class="flex items-center justify-between">
+<span class="text-label-xs font-label-xs bg-primary text-on-primary px-2 py-0.5 rounded uppercase tracking-wider">Question 1 / 1</span>
+<div class="flex items-center gap-2">
+<label class="text-label-xs font-label-xs text-outline">Type d'épreuve :</label>
+<select class="text-label-sm font-label-sm bg-surface-container-lowest border border-outline-variant rounded px-2 py-1 focus:ring-primary focus:border-primary">
+<option selected="">QCM (Choix multiple)</option>
+<option>Réponse unique</option>
+<option>Vrai / Faux</option>
+</select>
+</div>
+</div>
+<div>
+<label class="block text-label-md font-label-md text-on-surface mb-1">Énoncé de la question</label>
+<textarea class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg p-space-sm text-body-md font-body-md focus:border-primary focus:ring-1 focus:ring-primary" rows="2">Dans le cadre d'un bail commercial OHADA, quel mécanisme légal protège l'investisseur contre l'érosion monétaire régionale tout en respectant l'ordre public ?</textarea>
+</div>
+<!-- Answer Options List -->
+<div class="space-y-space-xs pt-space-xs">
+<label class="block text-label-xs font-label-xs text-outline uppercase tracking-wider">Options de réponses &amp; Clé de correction</label>
+<!-- Option A (Correct) -->
+<div class="flex items-center gap-space-sm bg-surface-container-lowest p-space-sm rounded-lg border-2 border-green-600/60 shadow-xs">
+<input checked="" class="text-green-600 focus:ring-green-600 h-4 w-4" name="quiz_opt" type="radio"/>
+<input class="flex-1 bg-transparent border-0 p-0 text-body-sm font-body-sm text-on-surface focus:ring-0" type="text" value="Clause d'indexation adossée à l'indice officiel des prix à la consommation (ANSD) ou mercuriale agréée"/>
+<span class="text-label-xs font-label-xs bg-green-100 text-green-800 px-2 py-0.5 rounded font-bold">Bonne Réponse</span>
+</div>
+<!-- Option B -->
+<div class="flex items-center gap-space-sm bg-surface-container-lowest p-space-sm rounded-lg border border-outline-variant">
+<input class="text-primary focus:ring-primary h-4 w-4" name="quiz_opt" type="radio"/>
+<input class="flex-1 bg-transparent border-0 p-0 text-body-sm font-body-sm text-on-surface-variant focus:ring-0" type="text" value="Indexation unilatérale discrétionnaire sans référence indiciaire prédéterminée"/>
+<button class="text-outline hover:text-error"><span class="material-symbols-outlined text-sm">close</span></button>
+</div>
+<!-- Option C -->
+<div class="flex items-center gap-space-sm bg-surface-container-lowest p-space-sm rounded-lg border border-outline-variant">
+<input class="text-primary focus:ring-primary h-4 w-4" name="quiz_opt" type="radio"/>
+<input class="flex-1 bg-transparent border-0 p-0 text-body-sm font-body-sm text-on-surface-variant focus:ring-0" type="text" value="Libération intégrale anticipée de la totalité des loyers sur une durée ferme de 9 ans"/>
+<button class="text-outline hover:text-error"><span class="material-symbols-outlined text-sm">close</span></button>
+</div>
+</div>
+<!-- Detailed Pedagogical Explanation -->
+<div class="pt-space-xs">
+<label class="block text-label-md font-label-md text-on-surface mb-1">Explication pédagogique restituée à l'apprenant</label>
+<textarea class="w-full bg-surface-container-low border border-outline-variant/60 rounded-lg p-space-sm text-body-sm font-body-sm text-on-surface focus:border-primary" rows="2">L'article 117 de l'AUDCG proscrit les clauses potestatives. L'indexation doit impérativement découler d'un indice objectif en lien direct avec l'objet du contrat ou l'activité commerciale des parties prenantes.</textarea>
+</div>
+</div>
+<button class="w-full py-2 rounded-lg border border-dashed border-outline-variant text-label-md font-label-md text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-sm">add</span>
+<span>Ajouter une question d'évaluation</span>
+</button>
+</div>
+</div>
+</main>
+<!-- RIGHT SIDEBAR: Accreditation Metadata, Compliance & Academic Governance -->
+<aside class="w-80 flex-none bg-surface-container-lowest border-l border-outline-variant flex flex-col justify-between overflow-y-auto custom-scrollbar p-space-md space-y-space-md shadow-sm">
+<div class="space-y-space-md">
+<!-- Academic Compliance Gauge -->
+<div class="bg-surface-bright p-space-md rounded-xl border border-outline-variant text-center space-y-space-xs">
+<span class="text-label-xs font-label-xs text-outline uppercase tracking-wider block">Indice de Conformité UEMOA</span>
+<div class="relative w-28 h-28 mx-auto flex items-center justify-center">
+<!-- Circular Gauge Visualization -->
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 36 36">
+<path class="text-surface-container" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3.5"></path>
+<path class="text-on-tertiary-container" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="92, 100" stroke-linecap="round" stroke-width="3.5"></path>
+</svg>
+<div class="absolute flex flex-col items-center">
+<span class="text-headline-md font-headline-md font-bold text-primary font-code-num">92%</span>
+<span class="text-label-xs font-label-xs text-outline font-semibold">HOMOLOGUÉ</span>
+</div>
+</div>
+<p class="text-label-xs font-label-xs text-on-surface-variant">
+            Ce cours répond aux critères d'accréditation du Pôle Ouest-Africain &amp; CEDEAO.
+          </p>
+</div>
+<!-- Validation Directives Checklist -->
+<div class="space-y-space-xs">
+<span class="text-label-xs font-label-xs text-outline uppercase tracking-wider block">Directives de Validation</span>
+<div class="space-y-2">
+<div class="flex items-start gap-2 bg-surface-container-low p-2 rounded border border-outline-variant/40">
+<span class="material-symbols-outlined text-green-700 text-base" style="font-variation-settings: 'FILL' 1;">task_alt</span>
+<div class="text-label-sm font-label-sm text-on-surface">
+<span class="font-semibold block">Vérification des sources juridiques</span>
+<span class="text-outline text-label-xs">AUDCG &amp; Textes BCEAO 2024 intégrés</span>
+</div>
+</div>
+<div class="flex items-start gap-2 bg-surface-container-low p-2 rounded border border-outline-variant/40">
+<span class="material-symbols-outlined text-green-700 text-base" style="font-variation-settings: 'FILL' 1;">task_alt</span>
+<div class="text-label-sm font-label-sm text-on-surface">
+<span class="font-semibold block">Volume horaire conforme</span>
+<span class="text-outline text-label-xs">Ratio vidéo / TD supérieur à 1.5</span>
+</div>
+</div>
+<div class="flex items-start gap-2 bg-surface-container-low p-2 rounded border border-outline-variant/40">
+<span class="material-symbols-outlined text-on-tertiary-container text-base">pending</span>
+<div class="text-label-sm font-label-sm text-on-surface">
+<span class="font-semibold block">Quotas de cas pratiques atteints</span>
+<span class="text-outline text-label-xs">1 cas modélisé manquant sur M3</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Scientific Committee Notes & Revisions -->
+<div class="space-y-space-xs">
+<div class="flex items-center justify-between">
+<span class="text-label-xs font-label-xs text-outline uppercase tracking-wider">Avis du Comité Scientifique</span>
+<span class="text-label-xs font-label-xs text-on-tertiary-container font-semibold">2 notes</span>
+</div>
+<div class="space-y-space-xs">
+<!-- Committee Note 1 -->
+<div class="bg-surface-bright p-space-sm rounded-lg border-l-2 border-on-tertiary-container border-y border-r border-outline-variant text-body-sm font-body-sm space-y-1">
+<div class="flex items-center justify-between text-label-xs font-label-xs">
+<span class="font-bold text-primary">Dr. Amadou Sylla</span>
+<span class="text-outline">Hier, 16:40</span>
+</div>
+<p class="text-on-surface-variant text-body-sm">
+                « Penser à actualiser la référence à la circulaire 2024 sur les fonds propres des gestionnaires d'actifs agréés. »
+              </p>
+<div class="flex gap-2 pt-1 text-label-xs font-label-xs">
+<button class="text-primary hover:underline">Répondre</button>
+<button class="text-outline hover:text-green-700">Résoudre</button>
+</div>
+</div>
+<!-- Committee Note 2 -->
+<div class="bg-surface-bright p-space-sm rounded-lg border-l-2 border-outline-variant border-y border-r border-outline-variant text-body-sm font-body-sm space-y-1">
+<div class="flex items-center justify-between text-label-xs font-label-xs">
+<span class="font-bold text-primary">Pr. Fatou Diop</span>
+<span class="text-outline">12 Fév.</span>
+</div>
+<p class="text-on-surface-variant text-body-sm">
+                « La maquette Excel DCF a été validée pour l'épreuve de synthèse. »
+              </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Super Admin Console Anchor Footer (Shared Component Guidance) -->
+<div class="pt-space-md border-t border-outline-variant">
+<a class="w-full py-2 px-space-sm rounded-lg bg-surface-container text-primary font-label-md text-label-md hover:bg-surface-container-high transition-colors flex items-center justify-center gap-space-xs" href="#">
+<span class="material-symbols-outlined text-base">admin_panel_settings</span>
+<span>Console Super-Admin</span>
+</a>
+</div>
+</aside>
+</div>
+</body></html>

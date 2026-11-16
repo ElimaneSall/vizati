@@ -1,0 +1,1160 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-background" lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>VIZATI — Tableau de Bord Administrateur Général</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Manrope:wght@600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Tailwind Script -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-low": "#f0f3ff",
+                        "on-primary": "#ffffff",
+                        "on-secondary-container": "#405d80",
+                        "on-tertiary-container": "#b38a44",
+                        "primary-container": "#142b46",
+                        "secondary-container": "#b9d7ff",
+                        "surface-bright": "#f9f9ff",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed": "#031c37",
+                        "on-primary-fixed-variant": "#324864",
+                        "primary-fixed-dim": "#b2c8ea",
+                        "inverse-primary": "#b2c8ea",
+                        "on-secondary-fixed-variant": "#2a486a",
+                        "surface-container-high": "#dfe8ff",
+                        "on-tertiary-fixed-variant": "#5f4100",
+                        "surface-dim": "#d0daf2",
+                        "surface-container-highest": "#d9e3fb",
+                        "primary-fixed": "#d3e3ff",
+                        "on-surface-variant": "#44474d",
+                        "surface": "#f9f9ff",
+                        "tertiary-fixed": "#ffdeab",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "surface-tint": "#4a607d",
+                        "primary": "#00162f",
+                        "inverse-surface": "#273143",
+                        "on-background": "#111c2d",
+                        "surface-container": "#e8eeff",
+                        "error-container": "#ffdad6",
+                        "tertiary": "#201300",
+                        "tertiary-container": "#3a2600",
+                        "secondary-fixed-dim": "#abc9f1",
+                        "background": "#f9f9ff",
+                        "on-tertiary-fixed": "#271900",
+                        "error": "#ba1a1a",
+                        "secondary": "#436083",
+                        "surface-variant": "#d9e3fb",
+                        "on-secondary-fixed": "#001d37",
+                        "inverse-on-surface": "#ecf0ff",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-container": "#7d93b3",
+                        "outline-variant": "#c4c6ce",
+                        "outline": "#74777e",
+                        "tertiary-fixed-dim": "#edbf73",
+                        "secondary-fixed": "#d2e4ff",
+                        "on-surface": "#111c2d"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "1rem",
+                        "gutter": "1.5rem",
+                        "space-sm": "0.5rem",
+                        "margin": "3rem",
+                        "space-xl": "2.5rem",
+                        "space-lg": "1.5rem",
+                        "space-2xl": "4rem",
+                        "gutter-mobile": "1rem",
+                        "space-md": "1rem",
+                        "space-xs": "0.25rem"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "label-xs": ["Inter"],
+                        "body-xl": ["Inter"],
+                        "headline-lg": ["Manrope"],
+                        "headline-xl": ["Manrope"],
+                        "display-hero-mobile": ["Manrope"],
+                        "code-num": ["Inter"],
+                        "headline-md": ["Manrope"],
+                        "headline-sm": ["Manrope"],
+                        "headline-xl-mobile": ["Manrope"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "display-hero": ["Manrope"],
+                        "label-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+                        "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }],
+                        "label-xs": ["10px", { "lineHeight": "14px", "letterSpacing": "0.06em", "fontWeight": "700" }],
+                        "body-xl": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "headline-xl": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "display-hero-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "code-num": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+                        "headline-md": ["22px", { "lineHeight": "30px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "headline-sm": ["18px", { "lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "600" }],
+                        "headline-xl-mobile": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "display-hero": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="h-full bg-background text-on-background antialiased flex overflow-hidden">
+    <!-- SideNavBar Administrateur exhaustive (Source of Truth implementation) -->
+    <aside
+        class="docked left h-screen w-72 flex flex-col justify-between border-r border-outline-variant shadow-sm bg-surface-container-lowest z-30 shrink-0">
+        <div class="flex flex-col h-full overflow-hidden">
+            <!-- SideNav Header with Official Crest -->
+            <div
+                class="p-space-md border-b border-outline-variant flex items-center gap-space-sm bg-surface-container-lowest">
+                <div
+                    class="w-10 h-10 rounded-lg bg-primary-container text-on-primary flex items-center justify-center shadow-sm shrink-0 border border-tertiary-fixed-dim/40">
+                    <span class="material-symbols-outlined text-[24px] text-tertiary-fixed"
+                        data-icon="account_balance">account_balance</span>
+                </div>
+                <div class="flex flex-col overflow-hidden">
+                    <span
+                        class="font-headline-sm text-headline-sm font-extrabold text-primary tracking-tight truncate">VIZATI
+                        INSTITUT</span>
+                    <span class="font-label-md text-label-md font-semibold text-primary truncate">Administration
+                        Générale</span>
+                    <span class="font-label-xs text-label-xs text-outline tracking-wider truncate">Pôle Ouest-Africain
+                        &amp; CEDEAO</span>
+                </div>
+            </div>
+            <!-- Navigation Tabs Scrollable Container -->
+            <nav class="flex-1 overflow-y-auto px-space-sm py-space-md space-y-1">
+                <!-- Active Tab: Vue d'ensemble (Tableau de bord général) -->
+                <a class="flex items-center gap-space-sm px-space-md py-space-sm bg-primary text-on-primary rounded-lg font-semibold shadow-sm active:scale-[0.98] transition-transform duration-100"
+                    href="#">
+                    <span class="material-symbols-outlined text-[20px]" data-icon="dashboard">dashboard</span>
+                    <span class="font-label-lg text-label-lg flex-1">Vue d'ensemble</span>
+                    <span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed"></span>
+                </a>
+                <!-- Utilisateurs -->
+                <a class="flex items-center gap-space-sm px-space-md py-space-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface rounded-lg font-normal transition-colors active:scale-[0.98]"
+                    href="./26-administration-users-roles.html">
+                    <span class="material-symbols-outlined text-[20px]" data-icon="person">person</span>
+                    <span class="font-body-md text-body-md flex-1">Utilisateurs</span>
+                </a>
+                <!-- Apprenants -->
+                <a class="flex items-center gap-space-sm px-space-md py-space-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface rounded-lg font-normal transition-colors active:scale-[0.98]"
+                    href="./26-administration-users-roles.html">
+                    <span class="material-symbols-outlined text-[20px]" data-icon="groups">groups</span>
+                    <span class="font-body-md text-body-md flex-1">Apprenants</span>
+                </a>
+                <!-- Formateurs & Faculté -->
+                <a class="flex items-center gap-space-sm px-space-md py-space-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface rounded-lg font-normal transition-colors active:scale-[0.98]"
+                    href="./26-administration-users-roles.html">
+                    <span class="material-symbols-outlined text-[20px]" data-icon="co_present">co_present</span>
+                    <span class="font-body-md text-body-md flex-1">Formateurs &amp; Faculté</span>
+                </a>
+                <!-- Formations & Cursus -->
+                <a class="flex items-center gap-space-sm px-space-md py-space-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface rounded-lg font-normal transition-colors active:scale-[0.98]"
+                    href="./20-dashboard-formateur.html">
+                    <span class="material-symbols-outlined text-[20px]" data-icon="school">school</span>
+                    <span class="font-body-md text-body-md flex-1">Formations &amp; Cursus</span>
+                </a>
+                <!-- Inscriptions & Candidatures (with notification pill) -->
+                <a class="flex items-center gap-space-sm px-space-md py-space-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface rounded-lg font-normal transition-colors active:scale-[0.98]"
+                    href="#">
+                    <span class="material-symbols-outlined text-[20px]" data-icon="assignment_ind">assignment_ind</span>
+                    <span class="font-body-md text-body-md flex-1">Inscriptions &amp; Candidatures</span>
+                    <span
+                        class="bg-primary-container text-tertiary-fixed text-[10px] font-bold px-1.5 py-0.5 rounded-full border border-tertiary-fixed-dim/40 shadow-sm">8</span>
+                </a>
+                <!-- Évaluations & Examens -->
+                <a class="flex items-center gap-space-sm px-space-md py-space-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface rounded-lg font-normal transition-colors active:scale-[0.98]"
+                    href="#">
+                    <span class="material-symbols-outlined text-[20px]" data-icon="quiz">quiz</span>
+                    <span class="font-body-md text-body-md flex-1">Évaluations &amp; Examens</span>
+                </a>
+                <!-- Certificats & Registre -->
+                <a class="flex items-center gap-space-sm px-space-md py-space-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface rounded-lg font-normal transition-colors active:scale-[0.98]"
+                    href="#">
+                    <span class="material-symbols-outlined text-[20px]" data-icon="verified">verified</span>
+                    <span class="font-body-md text-body-md flex-1">Certificats &amp; Registre</span>
+                </a>
+                <!-- Publications & Éditions -->
+                <a class="flex items-center gap-space-sm px-space-md py-space-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface rounded-lg font-normal transition-colors active:scale-[0.98]"
+                    href="#">
+                    <span class="material-symbols-outlined text-[20px]" data-icon="menu_book">menu_book</span>
+                    <span class="font-body-md text-body-md flex-1">Publications &amp; Éditions</span>
+                </a>
+                <!-- Bibliothèque & Cadastre -->
+                <a class="flex items-center gap-space-sm px-space-md py-space-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface rounded-lg font-normal transition-colors active:scale-[0.98]"
+                    href="./25-CMS-bibliotheque.html">
+                    <span class="material-symbols-outlined text-[20px]" data-icon="folder_special">folder_special</span>
+                    <span class="font-body-md text-body-md flex-1">Bibliothèque &amp; Cadastre</span>
+                </a>
+                <!-- Événements & Masterclasses -->
+                <a class="flex items-center gap-space-sm px-space-md py-space-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface rounded-lg font-normal transition-colors active:scale-[0.98]"
+                    href="#">
+                    <span class="material-symbols-outlined text-[20px]" data-icon="event_seat">event_seat</span>
+                    <span class="font-body-md text-body-md flex-1">Événements &amp; Masterclasses</span>
+                </a>
+                <!-- Veille Immobilière & Flux IA -->
+                <a class="flex items-center gap-space-sm px-space-md py-space-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface rounded-lg font-normal transition-colors active:scale-[0.98]"
+                    href="./27-administration-veille-IA.html">
+                    <span class="material-symbols-outlined text-[20px]" data-icon="auto_awesome">auto_awesome</span>
+                    <span class="font-body-md text-body-md flex-1">Veille Immobilière &amp; Flux IA</span>
+                </a>
+                <!-- Statistiques & Business Intelligence -->
+                <a class="flex items-center gap-space-sm px-space-md py-space-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface rounded-lg font-normal transition-colors active:scale-[0.98]"
+                    href="#">
+                    <span class="material-symbols-outlined text-[20px]" data-icon="analytics">analytics</span>
+                    <span class="font-body-md text-body-md flex-1">Statistiques &amp; BI</span>
+                </a>
+                <div class="pt-2 border-t border-outline-variant/60">
+                    <!-- Paramètres Institutionnels -->
+                    <a class="flex items-center gap-space-sm px-space-md py-space-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface rounded-lg font-normal transition-colors active:scale-[0.98]"
+                        href="./29-configuration-app.html">
+                        <span class="material-symbols-outlined text-[20px]" data-icon="settings">settings</span>
+                        <span class="font-body-md text-body-md flex-1">Paramètres Institutionnels</span>
+                    </a>
+                </div>
+            </nav>
+            <!-- Super Admin Footer CTA Block -->
+            <div class="p-space-md border-t border-outline-variant bg-surface-container-low/40">
+                <div
+                    class="p-3 bg-primary-container rounded-lg text-on-primary flex flex-col gap-2 border border-tertiary-fixed-dim/20">
+                    <div class="flex items-center justify-between">
+                        <span class="font-label-xs text-label-xs uppercase tracking-wider text-tertiary-fixed">Console
+                            Super-Admin</span>
+                        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-[16px] text-tertiary-fixed"
+                            data-icon="shield">shield</span>
+                        <span class="font-body-sm text-body-sm text-surface-variant font-medium">Contrôle Accrédité
+                            UEMOA</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside>
+    <!-- Main Canvas Viewport -->
+    <div class="flex-1 flex flex-col h-screen overflow-hidden">
+        <!-- TopNavBar (Derived directly from Shared Components JSON with Contextual Super-Admin additions) -->
+        <header
+            class="docked full-width top w-full bg-surface-container-lowest border-b border-outline-variant shadow-sm z-20">
+            <div class="w-full px-space-lg py-space-sm flex justify-between items-center max-w-[1440px] mx-auto">
+                <!-- Node & Hub Indicator (Dakar / Abidjan) + Search Input -->
+                <div class="flex items-center gap-space-md">
+                    <div
+                        class="flex items-center gap-2 bg-surface-container-low px-2.5 py-1 rounded border border-outline-variant text-on-surface">
+                        <span class="material-symbols-outlined text-[16px] text-secondary" data-icon="hub">hub</span>
+                        <span class="font-label-md text-label-md font-semibold text-primary">Nœuds Régionaux :</span>
+                        <span
+                            class="inline-flex items-center gap-1 font-label-md text-label-md text-on-surface-variant font-medium">
+                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Dakar
+                        </span>
+                        <span class="text-outline-variant">|</span>
+                        <span
+                            class="inline-flex items-center gap-1 font-label-md text-label-md text-on-surface-variant font-medium">
+                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Abidjan
+                        </span>
+                    </div>
+                    <!-- Academic / Fiscal Year Selector -->
+                    <div
+                        class="hidden sm:flex items-center gap-1.5 bg-surface-container-lowest border border-outline-variant px-2.5 py-1 rounded">
+                        <span class="material-symbols-outlined text-[16px] text-outline"
+                            data-icon="calendar_today">calendar_today</span>
+                        <span class="font-label-md text-label-md font-semibold text-primary">Session :</span>
+                        <span class="font-code-num text-code-num text-on-surface-variant">2024 / 2025</span>
+                    </div>
+                </div>
+                <!-- Trailing Actions & Director Profile -->
+                <div class="flex items-center gap-space-md">
+                    <!-- Institutional Navigation Links from JSON -->
+                    <div class="hidden lg:flex items-center gap-space-md">
+                        <a class="font-label-md text-label-md text-primary font-bold border-b-2 border-primary pb-1 transition-colors"
+                            href="#">Gouvernance UEMOA</a>
+                        <a class="font-label-md text-label-md text-on-surface-variant font-medium hover:text-primary transition-colors"
+                            href="#">Observatoire Cadastral</a>
+                        <a class="font-label-md text-label-md text-on-surface-variant font-medium hover:text-primary transition-colors"
+                            href="#">Accréditations</a>
+                    </div>
+                    <div class="h-6 w-px bg-outline-variant hidden lg:block"></div>
+                    <!-- Quick Trailing Buttons from JSON -->
+                    <button
+                        class="hidden md:flex items-center gap-1.5 bg-surface-container text-primary font-label-md text-label-md px-3 py-1.5 rounded hover:bg-surface-container-high transition-colors active:scale-[0.99]">
+                        <span class="material-symbols-outlined text-[16px]" data-icon="description">description</span>
+                        Rapports Juridiques
+                    </button>
+                    <button
+                        class="flex items-center gap-1.5 bg-primary text-on-primary font-label-md text-label-md px-3 py-1.5 rounded shadow-sm hover:bg-primary-container transition-colors active:scale-[0.99]">
+                        <span class="material-symbols-outlined text-[16px]" data-icon="add_circle">add_circle</span>
+                        Nouvelle Session
+                    </button>
+                    <!-- System Action Icons from JSON -->
+                    <div class="flex items-center gap-1 text-on-surface-variant">
+                        <button
+                            class="relative p-1.5 hover:bg-surface-container rounded transition-colors active:scale-[0.99]"
+                            title="Notifications">
+                            <span class="material-symbols-outlined text-[20px]"
+                                data-icon="notifications">notifications</span>
+                            <span
+                                class="absolute top-1 right-1 w-2 h-2 rounded-full bg-error ring-2 ring-surface-container-lowest"></span>
+                        </button>
+                        <button class="p-1.5 hover:bg-surface-container rounded transition-colors active:scale-[0.99]"
+                            title="Aide &amp; Documentation">
+                            <span class="material-symbols-outlined text-[20px]"
+                                data-icon="help_center">help_center</span>
+                        </button>
+                        <button class="p-1.5 hover:bg-surface-container rounded transition-colors active:scale-[0.99]"
+                            title="Filtres &amp; Préférences">
+                            <span class="material-symbols-outlined text-[20px]" data-icon="tune">tune</span>
+                        </button>
+                    </div>
+                    <!-- Profile Badge: Directeur Académique Général -->
+                    <div class="flex items-center gap-2 pl-2 border-l border-outline-variant">
+                        <div
+                            class="w-8 h-8 rounded-full bg-primary-container text-tertiary-fixed flex items-center justify-center font-bold text-xs ring-1 ring-tertiary-fixed-dim/40 shadow-sm">
+                            DA
+                        </div>
+                        <div class="hidden xl:flex flex-col text-left">
+                            <span class="font-label-md text-label-md text-primary leading-tight font-bold">Pr. K.
+                                Adandé</span>
+                            <span class="font-label-xs text-label-xs text-outline leading-tight">Doyen Administratif
+                                &amp; DG</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Scrollable Content Canvas -->
+        <main class="flex-1 overflow-y-auto bg-background p-space-lg space-y-space-lg max-w-[1440px] mx-auto w-full">
+            <!-- 1. En-tête exécutif -->
+            <section
+                class="bg-surface-container-lowest p-space-lg rounded-xl border border-outline-variant shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+                <div class="space-y-1">
+                    <div class="flex items-center gap-2">
+                        <span
+                            class="bg-primary text-on-primary font-label-xs text-label-xs uppercase px-2 py-0.5 rounded tracking-wider">Console
+                            de Direction</span>
+                        <span class="font-label-md text-label-md text-secondary font-semibold">Instance Panafricaine n°
+                            04-2024</span>
+                    </div>
+                    <h1 class="font-headline-lg text-headline-lg text-primary tracking-tight font-bold">Console de
+                        Pilotage Institutionnel &amp; Académique</h1>
+                    <p class="font-body-md text-body-md text-on-surface-variant max-w-3xl">Supervision transversale des
+                        admissions, de l'excellence pédagogique, des certifications et de la diffusion d'intelligence
+                        immobilière en zone UEMOA/CEMAC.</p>
+                </div>
+                <!-- Live Timestamp & Sync Indicator -->
+                <div
+                    class="shrink-0 bg-surface-container-low p-space-md rounded-lg border border-outline-variant flex flex-col items-start md:items-end justify-center">
+                    <div class="flex items-center gap-1.5 text-secondary">
+                        <span class="material-symbols-outlined text-[16px]" data-icon="sync">sync</span>
+                        <span
+                            class="font-label-xs text-label-xs font-bold uppercase tracking-wider text-primary">Synchronisation
+                            Active</span>
+                    </div>
+                    <span class="font-code-num text-code-num font-semibold text-primary mt-1">Dakar Plateau · 14:32:08
+                        GMT</span>
+                    <span class="font-body-sm text-body-sm text-outline">Latence inter-serveurs : 14ms (Abidjan
+                        DC)</span>
+                </div>
+            </section>
+            <!-- 2. Rangée de 6 KPI Cards analytiques de premier plan -->
+            <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-space-md">
+                <!-- Card 1: Total Utilisateurs -->
+                <div
+                    class="bg-surface-container-lowest p-space-md rounded-xl border border-outline-variant shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="font-label-md text-label-md text-on-surface-variant font-medium">Utilisateurs
+                                Enregistrés</span>
+                            <span class="p-1.5 bg-surface-container rounded text-primary">
+                                <span class="material-symbols-outlined text-[18px]" data-icon="badge">badge</span>
+                            </span>
+                        </div>
+                        <div class="font-headline-lg text-headline-lg font-bold text-primary tracking-tight">2 480</div>
+                        <p class="font-body-sm text-body-sm text-outline mt-1 line-clamp-1">Cadres, analystes, notaires,
+                            banques</p>
+                    </div>
+                    <div
+                        class="mt-3 pt-2 border-t border-outline-variant/50 flex items-center gap-1 font-label-md text-label-md text-emerald-700">
+                        <span class="material-symbols-outlined text-[16px]" data-icon="trending_up">trending_up</span>
+                        <span class="font-bold">+18%</span>
+                        <span class="text-on-surface-variant font-normal">ce trimestre</span>
+                    </div>
+                </div>
+                <!-- Card 2: Auditeurs & Apprenants Actifs -->
+                <div
+                    class="bg-surface-container-lowest p-space-md rounded-xl border border-outline-variant shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="font-label-md text-label-md text-on-surface-variant font-medium">Auditeurs
+                                Actifs</span>
+                            <span class="p-1.5 bg-secondary-container/50 rounded text-primary">
+                                <span class="material-symbols-outlined text-[18px]" data-icon="groups">groups</span>
+                            </span>
+                        </div>
+                        <div class="font-headline-lg text-headline-lg font-bold text-primary tracking-tight">640</div>
+                        <p class="font-body-sm text-body-sm text-outline mt-1">En cursus actif en ce moment</p>
+                    </div>
+                    <div class="mt-3 pt-2 border-t border-outline-variant/50 flex items-center justify-between">
+                        <div class="w-full bg-surface-container rounded-full h-1.5 overflow-hidden">
+                            <div class="bg-primary h-1.5 rounded-full" style="width: 82%"></div>
+                        </div>
+                        <span class="font-label-xs text-label-xs font-semibold text-primary ml-2">82%</span>
+                    </div>
+                </div>
+                <!-- Card 3: Formateurs & Faculté Accréditée -->
+                <div
+                    class="bg-surface-container-lowest p-space-md rounded-xl border border-outline-variant shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="font-label-md text-label-md text-on-surface-variant font-medium">Faculté &amp;
+                                Enseignants</span>
+                            <span class="p-1.5 bg-surface-container rounded text-primary">
+                                <span class="material-symbols-outlined text-[18px]"
+                                    data-icon="co_present">co_present</span>
+                            </span>
+                        </div>
+                        <div class="font-headline-lg text-headline-lg font-bold text-primary tracking-tight">34</div>
+                        <p class="font-body-sm text-body-sm text-outline mt-1">Maîtres de conf., magistrats, experts</p>
+                    </div>
+                    <div
+                        class="mt-3 pt-2 border-t border-outline-variant/50 flex items-center gap-1 font-label-md text-label-md text-secondary font-medium">
+                        <span class="material-symbols-outlined text-[16px]" data-icon="verified">verified</span>
+                        <span>Accréditation CAMES / UEMOA</span>
+                    </div>
+                </div>
+                <!-- Card 4: Formations & Parcours Actifs -->
+                <div
+                    class="bg-surface-container-lowest p-space-md rounded-xl border border-outline-variant shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="font-label-md text-label-md text-on-surface-variant font-medium">Parcours
+                                Certifiants</span>
+                            <span class="p-1.5 bg-surface-container rounded text-primary">
+                                <span class="material-symbols-outlined text-[18px]" data-icon="school">school</span>
+                            </span>
+                        </div>
+                        <div class="font-headline-lg text-headline-lg font-bold text-primary tracking-tight">18</div>
+                        <p class="font-body-sm text-body-sm text-outline mt-1">Executive Masters &amp; Masterclasses</p>
+                    </div>
+                    <div
+                        class="mt-3 pt-2 border-t border-outline-variant/50 flex items-center justify-between text-on-surface-variant font-label-md text-label-md">
+                        <span>Dakar : 10</span>
+                        <span class="text-outline-variant">·</span>
+                        <span>Abidjan : 8</span>
+                    </div>
+                </div>
+                <!-- Card 5: Inscriptions en attente (Ambre / Or Accent) -->
+                <div
+                    class="bg-surface-container-lowest p-space-md rounded-xl border-2 border-tertiary-fixed-dim shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow relative overflow-hidden">
+                    <div
+                        class="absolute top-0 right-0 w-12 h-12 bg-tertiary-fixed/30 rounded-bl-full pointer-events-none">
+                    </div>
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="font-label-md text-label-md text-on-surface-variant font-medium">Dossiers en
+                                Attente</span>
+                            <span class="p-1 bg-tertiary-fixed-dim/40 rounded text-tertiary">
+                                <span class="material-symbols-outlined text-[18px]"
+                                    data-icon="pending_actions">pending_actions</span>
+                            </span>
+                        </div>
+                        <div class="font-headline-lg text-headline-lg font-bold text-primary tracking-tight">28</div>
+                        <p class="font-body-sm text-body-sm text-outline mt-1">Soumissions d'admission jurys</p>
+                    </div>
+                    <div class="mt-3 pt-2 border-t border-tertiary-fixed-dim/60 flex items-center justify-between">
+                        <span
+                            class="bg-tertiary-fixed text-on-tertiary-fixed font-label-xs text-label-xs font-bold px-2 py-0.5 rounded shadow-sm">
+                            Examen de commission
+                        </span>
+                    </div>
+                </div>
+                <!-- Card 6: Certifications délivrées -->
+                <div
+                    class="bg-surface-container-lowest p-space-md rounded-xl border border-outline-variant shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="font-label-md text-label-md text-on-surface-variant font-medium">Diplômes
+                                Délivrés</span>
+                            <span class="p-1.5 bg-surface-container rounded text-primary">
+                                <span class="material-symbols-outlined text-[18px]"
+                                    data-icon="military_tech">military_tech</span>
+                            </span>
+                        </div>
+                        <div class="font-headline-lg text-headline-lg font-bold text-primary tracking-tight">412</div>
+                        <p class="font-body-sm text-body-sm text-outline mt-1">Empreintes cryptographiques vérifiées</p>
+                    </div>
+                    <div
+                        class="mt-3 pt-2 border-t border-outline-variant/50 flex items-center gap-1 font-label-md text-label-md text-primary font-semibold">
+                        <span class="material-symbols-outlined text-[16px] text-emerald-600"
+                            data-icon="lock">lock</span>
+                        <span>Registre inviolable</span>
+                    </div>
+                </div>
+            </section>
+            <!-- 3. Rangée des visualisations graphiques stratégiques (Bento Grid) -->
+            <section class="grid grid-cols-1 lg:grid-cols-12 gap-space-md">
+                <!-- Graphique A: Évolution des inscriptions et admissions (6 mois) - Col 7 -->
+                <div
+                    class="lg:col-span-7 bg-surface-container-lowest p-space-lg rounded-xl border border-outline-variant shadow-sm flex flex-col justify-between">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-6">
+                        <div>
+                            <div class="flex items-center gap-2">
+                                <h3 class="font-headline-sm text-headline-sm font-bold text-primary">Évolution des
+                                    Inscriptions &amp; Admissions</h3>
+                                <span
+                                    class="font-label-xs text-label-xs bg-surface-container text-secondary font-bold px-2 py-0.5 rounded">Mai
+                                    – Nov 2024</span>
+                            </div>
+                            <p class="font-body-sm text-body-sm text-on-surface-variant">Accélération marquée des
+                                inscriptions institutionnelles (partenariats banques &amp; foncières UEMOA).</p>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="flex items-center gap-1.5">
+                                <span class="w-3 h-3 rounded-sm bg-primary"></span>
+                                <span class="font-label-xs text-label-xs text-on-surface-variant">Institutionnels</span>
+                            </div>
+                            <div class="flex items-center gap-1.5">
+                                <span class="w-3 h-3 rounded-sm bg-tertiary-fixed-dim"></span>
+                                <span class="font-label-xs text-label-xs text-on-surface-variant">Individuels</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- CSS Bar Graphic Simulation with High Precision Data -->
+                    <div class="space-y-4">
+                        <div
+                            class="h-52 w-full flex items-end justify-between gap-3 pt-6 border-b border-outline-variant pb-2 px-2">
+                            <!-- Month 1: Mai -->
+                            <div class="flex-1 flex flex-col items-center gap-1 h-full justify-end group">
+                                <div class="w-full flex items-end justify-center gap-1 h-full">
+                                    <div class="w-1/2 bg-primary rounded-t transition-all group-hover:opacity-90"
+                                        style="height: 42%;" title="Institutionnels: 52"></div>
+                                    <div class="w-1/2 bg-tertiary-fixed-dim rounded-t transition-all group-hover:opacity-90"
+                                        style="height: 28%;" title="Individuels: 35"></div>
+                                </div>
+                                <span
+                                    class="font-label-xs text-label-xs text-outline group-hover:text-primary transition-colors">Mai</span>
+                            </div>
+                            <!-- Month 2: Juin -->
+                            <div class="flex-1 flex flex-col items-center gap-1 h-full justify-end group">
+                                <div class="w-full flex items-end justify-center gap-1 h-full">
+                                    <div class="w-1/2 bg-primary rounded-t transition-all group-hover:opacity-90"
+                                        style="height: 50%;" title="Institutionnels: 65"></div>
+                                    <div class="w-1/2 bg-tertiary-fixed-dim rounded-t transition-all group-hover:opacity-90"
+                                        style="height: 32%;" title="Individuels: 40"></div>
+                                </div>
+                                <span
+                                    class="font-label-xs text-label-xs text-outline group-hover:text-primary transition-colors">Juin</span>
+                            </div>
+                            <!-- Month 3: Juil -->
+                            <div class="flex-1 flex flex-col items-center gap-1 h-full justify-end group">
+                                <div class="w-full flex items-end justify-center gap-1 h-full">
+                                    <div class="w-1/2 bg-primary rounded-t transition-all group-hover:opacity-90"
+                                        style="height: 58%;" title="Institutionnels: 74"></div>
+                                    <div class="w-1/2 bg-tertiary-fixed-dim rounded-t transition-all group-hover:opacity-90"
+                                        style="height: 38%;" title="Individuels: 48"></div>
+                                </div>
+                                <span
+                                    class="font-label-xs text-label-xs text-outline group-hover:text-primary transition-colors">Juil</span>
+                            </div>
+                            <!-- Month 4: Août -->
+                            <div class="flex-1 flex flex-col items-center gap-1 h-full justify-end group">
+                                <div class="w-full flex items-end justify-center gap-1 h-full">
+                                    <div class="w-1/2 bg-primary rounded-t transition-all group-hover:opacity-90"
+                                        style="height: 48%;" title="Institutionnels: 60"></div>
+                                    <div class="w-1/2 bg-tertiary-fixed-dim rounded-t transition-all group-hover:opacity-90"
+                                        style="height: 30%;" title="Individuels: 38"></div>
+                                </div>
+                                <span
+                                    class="font-label-xs text-label-xs text-outline group-hover:text-primary transition-colors">Août</span>
+                            </div>
+                            <!-- Month 5: Sept -->
+                            <div class="flex-1 flex flex-col items-center gap-1 h-full justify-end group">
+                                <div class="w-full flex items-end justify-center gap-1 h-full">
+                                    <div class="w-1/2 bg-primary rounded-t transition-all group-hover:opacity-90"
+                                        style="height: 78%;" title="Institutionnels: 110"></div>
+                                    <div class="w-1/2 bg-tertiary-fixed-dim rounded-t transition-all group-hover:opacity-90"
+                                        style="height: 45%;" title="Individuels: 56"></div>
+                                </div>
+                                <span
+                                    class="font-label-xs text-label-xs text-outline group-hover:text-primary transition-colors">Sept</span>
+                            </div>
+                            <!-- Month 6: Oct -->
+                            <div class="flex-1 flex flex-col items-center gap-1 h-full justify-end group">
+                                <div class="w-full flex items-end justify-center gap-1 h-full">
+                                    <div class="w-1/2 bg-primary rounded-t transition-all group-hover:opacity-90"
+                                        style="height: 88%;" title="Institutionnels: 135"></div>
+                                    <div class="w-1/2 bg-tertiary-fixed-dim rounded-t transition-all group-hover:opacity-90"
+                                        style="height: 52%;" title="Individuels: 65"></div>
+                                </div>
+                                <span
+                                    class="font-label-xs text-label-xs text-outline group-hover:text-primary transition-colors">Oct</span>
+                            </div>
+                            <!-- Month 7: Nov (Active) -->
+                            <div class="flex-1 flex flex-col items-center gap-1 h-full justify-end group">
+                                <div class="w-full flex items-end justify-center gap-1 h-full relative">
+                                    <span
+                                        class="absolute -top-6 left-1/2 -translate-x-1/2 font-label-xs text-label-xs font-bold text-primary bg-surface-container px-1 py-0.5 rounded shadow-xs">+42%</span>
+                                    <div class="w-1/2 bg-primary rounded-t transition-all group-hover:opacity-90"
+                                        style="height: 98%;" title="Institutionnels: 168"></div>
+                                    <div class="w-1/2 bg-tertiary-fixed-dim rounded-t transition-all group-hover:opacity-90"
+                                        style="height: 60%;" title="Individuels: 78"></div>
+                                </div>
+                                <span class="font-label-xs text-label-xs font-bold text-primary">Nov *</span>
+                            </div>
+                        </div>
+                        <!-- Footer Meta for Graph A -->
+                        <div
+                            class="flex flex-wrap items-center justify-between text-on-surface-variant font-body-sm text-body-sm pt-2">
+                            <span class="flex items-center gap-1">
+                                <span class="material-symbols-outlined text-[16px] text-tertiary"
+                                    data-icon="account_balance">account_balance</span>
+                                <span>Partenariats corporate majeurs : BOAD, BNI, Caisse des Dépôts, Société Générale
+                                    CI</span>
+                            </span>
+                            <a class="font-label-md text-label-md text-primary font-bold hover:underline flex items-center gap-1"
+                                href="#">
+                                Exporter rapport CSV
+                                <span class="material-symbols-outlined text-[14px]" data-icon="download">download</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Graphique B: Répartition des auditeurs par filière d'expertise - Col 5 -->
+                <div
+                    class="lg:col-span-5 bg-surface-container-lowest p-space-lg rounded-xl border border-outline-variant shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-1">
+                            <h3 class="font-headline-sm text-headline-sm font-bold text-primary">Filières d'Expertise
+                            </h3>
+                            <span
+                                class="font-label-xs text-label-xs bg-surface-container text-primary font-bold px-2 py-0.5 rounded">640
+                                Auditeurs</span>
+                        </div>
+                        <p class="font-body-sm text-body-sm text-on-surface-variant mb-6">Poids académique par domaine
+                            de spécialisation.</p>
+                        <!-- Segmented Progress Bar Visual -->
+                        <div
+                            class="w-full h-4 rounded-full overflow-hidden flex bg-surface-container mb-6 shadow-inner">
+                            <div class="bg-primary h-full" style="width: 35%;" title="Droit foncier: 35%"></div>
+                            <div class="bg-secondary h-full" style="width: 30%;" title="Promotion &amp; Montage: 30%">
+                            </div>
+                            <div class="bg-tertiary-fixed-dim h-full" style="width: 20%;" title="Gestion locative: 20%">
+                            </div>
+                            <div class="bg-outline-variant h-full" style="width: 15%;" title="PropTech: 15%"></div>
+                        </div>
+                        <!-- Detailed Breakdown List -->
+                        <div class="space-y-3">
+                            <!-- Item 1 -->
+                            <div
+                                class="flex items-center justify-between p-2 rounded hover:bg-surface-container-low transition-colors">
+                                <div class="flex items-center gap-2.5">
+                                    <div class="w-3 h-3 rounded-full bg-primary shrink-0"></div>
+                                    <div>
+                                        <span class="font-label-md text-label-md text-primary font-semibold block">Droit
+                                            Foncier &amp; Contentieux OHADA</span>
+                                        <span class="font-body-sm text-body-sm text-outline">Cadres juridiques &amp;
+                                            magistrats fonciers</span>
+                                    </div>
+                                </div>
+                                <div class="text-right">
+                                    <span class="font-code-num text-code-num font-bold text-primary">35%</span>
+                                    <span class="font-body-sm text-body-sm text-outline block">224 inscrits</span>
+                                </div>
+                            </div>
+                            <!-- Item 2 -->
+                            <div
+                                class="flex items-center justify-between p-2 rounded hover:bg-surface-container-low transition-colors">
+                                <div class="flex items-center gap-2.5">
+                                    <div class="w-3 h-3 rounded-full bg-secondary shrink-0"></div>
+                                    <div>
+                                        <span
+                                            class="font-label-md text-label-md text-primary font-semibold block">Promotion
+                                            &amp; Montage Financier UEMOA</span>
+                                        <span class="font-body-sm text-body-sm text-outline">Modélisation bancaire &amp;
+                                            VEFA</span>
+                                    </div>
+                                </div>
+                                <div class="text-right">
+                                    <span class="font-code-num text-code-num font-bold text-primary">30%</span>
+                                    <span class="font-body-sm text-body-sm text-outline block">192 inscrits</span>
+                                </div>
+                            </div>
+                            <!-- Item 3 -->
+                            <div
+                                class="flex items-center justify-between p-2 rounded hover:bg-surface-container-low transition-colors">
+                                <div class="flex items-center gap-2.5">
+                                    <div class="w-3 h-3 rounded-full bg-tertiary-fixed-dim shrink-0"></div>
+                                    <div>
+                                        <span
+                                            class="font-label-md text-label-md text-primary font-semibold block">Gestion
+                                            Locative &amp; Actifs Tertiaires</span>
+                                        <span class="font-body-sm text-body-sm text-outline">Yield management et
+                                            commercialisation</span>
+                                    </div>
+                                </div>
+                                <div class="text-right">
+                                    <span class="font-code-num text-code-num font-bold text-primary">20%</span>
+                                    <span class="font-body-sm text-body-sm text-outline block">128 inscrits</span>
+                                </div>
+                            </div>
+                            <!-- Item 4 -->
+                            <div
+                                class="flex items-center justify-between p-2 rounded hover:bg-surface-container-low transition-colors">
+                                <div class="flex items-center gap-2.5">
+                                    <div class="w-3 h-3 rounded-full bg-outline-variant shrink-0"></div>
+                                    <div>
+                                        <span
+                                            class="font-label-md text-label-md text-primary font-semibold block">PropTech
+                                            &amp; Cadastre Numérique</span>
+                                        <span class="font-body-sm text-body-sm text-outline">Systèmes SIG &amp;
+                                            enregistrement satellite</span>
+                                    </div>
+                                </div>
+                                <div class="text-right">
+                                    <span class="font-code-num text-code-num font-bold text-primary">15%</span>
+                                    <span class="font-body-sm text-body-sm text-outline block">96 inscrits</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Graphique C: Taux de complétion et de réussite aux certifications - Col 6 -->
+                <div
+                    class="lg:col-span-6 bg-surface-container-lowest p-space-lg rounded-xl border border-outline-variant shadow-sm">
+                    <div class="flex items-center justify-between mb-4">
+                        <div>
+                            <h3 class="font-headline-sm text-headline-sm font-bold text-primary">Performance Pédagogique
+                                &amp; Rétention</h3>
+                            <p class="font-body-sm text-body-sm text-on-surface-variant">Rendement académique validé par
+                                le Conseil Scientifique.</p>
+                        </div>
+                        <span class="p-2 bg-surface-container rounded-lg text-primary">
+                            <span class="material-symbols-outlined text-[20px]" data-icon="fact_check">fact_check</span>
+                        </span>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md pt-2">
+                        <!-- Jauge 1 -->
+                        <div
+                            class="p-space-md rounded-lg bg-surface-container-low border border-outline-variant/60 flex flex-col justify-between">
+                            <div>
+                                <span class="font-label-md text-label-md text-on-surface-variant font-medium">Taux de
+                                    Rétention Moyen</span>
+                                <div class="flex items-baseline gap-2 mt-2">
+                                    <span
+                                        class="font-display-hero-mobile text-display-hero-mobile font-bold text-primary">88.4%</span>
+                                    <span class="font-label-md text-label-md font-bold text-emerald-700">+3.1%</span>
+                                </div>
+                                <p class="font-body-sm text-body-sm text-outline mt-1">Auditeurs complétant 100% des
+                                    jalons de formation continue.</p>
+                            </div>
+                            <div class="w-full bg-surface-container-highest rounded-full h-2 mt-4">
+                                <div class="bg-primary h-2 rounded-full" style="width: 88.4%"></div>
+                            </div>
+                        </div>
+                        <!-- Jauge 2 -->
+                        <div
+                            class="p-space-md rounded-lg bg-surface-container-low border border-outline-variant/60 flex flex-col justify-between">
+                            <div>
+                                <span class="font-label-md text-label-md text-on-surface-variant font-medium">Réussite
+                                    aux Jurys d'Examen</span>
+                                <div class="flex items-baseline gap-2 mt-2">
+                                    <span
+                                        class="font-display-hero-mobile text-display-hero-mobile font-bold text-primary">91.2%</span>
+                                    <span class="font-label-md text-label-md font-bold text-emerald-700">+1.8%</span>
+                                </div>
+                                <p class="font-body-sm text-body-sm text-outline mt-1">Soutenances orales devant
+                                    magistrats &amp; directeurs fonciers.</p>
+                            </div>
+                            <div class="w-full bg-surface-container-highest rounded-full h-2 mt-4">
+                                <div class="bg-tertiary-fixed-dim h-2 rounded-full" style="width: 91.2%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Bottom Notice -->
+                    <div
+                        class="mt-4 pt-3 border-t border-outline-variant flex items-center justify-between text-on-surface-variant">
+                        <span class="font-body-sm text-body-sm flex items-center gap-1.5">
+                            <span class="material-symbols-outlined text-[16px] text-tertiary"
+                                data-icon="school">school</span>
+                            Prochaine soutenance solennelle : 18 Décembre 2024 (Hôtel Ivoire, Abidjan)
+                        </span>
+                        <span class="font-label-md text-label-md font-bold text-primary">Session Clôturée</span>
+                    </div>
+                </div>
+                <!-- Graphique D: Activité opérationnelle de la plateforme - Col 6 -->
+                <div
+                    class="lg:col-span-6 bg-surface-container-lowest p-space-lg rounded-xl border border-outline-variant shadow-sm">
+                    <div class="flex items-center justify-between mb-4">
+                        <div>
+                            <h3 class="font-headline-sm text-headline-sm font-bold text-primary">Activité Opérationnelle
+                                &amp; Consommation Data</h3>
+                            <p class="font-body-sm text-body-sm text-on-surface-variant">Flux télémétriques des 30
+                                derniers jours à l'échelle régionale.</p>
+                        </div>
+                        <span class="p-2 bg-surface-container rounded-lg text-primary">
+                            <span class="material-symbols-outlined text-[20px]"
+                                data-icon="query_stats">query_stats</span>
+                        </span>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-space-sm pt-2">
+                        <!-- Stat 1 -->
+                        <div
+                            class="p-space-md rounded-lg bg-surface-container-low border border-outline-variant/60 flex flex-col justify-between">
+                            <div class="flex items-center justify-between">
+                                <span class="material-symbols-outlined text-primary text-[20px]"
+                                    data-icon="smart_display">smart_display</span>
+                                <span
+                                    class="font-label-xs text-label-xs bg-emerald-100 text-emerald-800 font-bold px-1 rounded">+24%</span>
+                            </div>
+                            <div class="mt-3">
+                                <div class="font-headline-md text-headline-md font-bold text-primary">12 480 h</div>
+                                <span class="font-body-sm text-body-sm text-outline mt-0.5 block">Heures de cours
+                                    visionnées</span>
+                            </div>
+                        </div>
+                        <!-- Stat 2 -->
+                        <div
+                            class="p-space-md rounded-lg bg-surface-container-low border border-outline-variant/60 flex flex-col justify-between">
+                            <div class="flex items-center justify-between">
+                                <span class="material-symbols-outlined text-secondary text-[20px]"
+                                    data-icon="search_check">search_check</span>
+                                <span
+                                    class="font-label-xs text-label-xs bg-emerald-100 text-emerald-800 font-bold px-1 rounded">+38%</span>
+                            </div>
+                            <div class="mt-3">
+                                <div class="font-headline-md text-headline-md font-bold text-primary">48 910</div>
+                                <span class="font-body-sm text-body-sm text-outline mt-0.5 block">Requêtes cadastre
+                                    &amp; droit</span>
+                            </div>
+                        </div>
+                        <!-- Stat 3 -->
+                        <div
+                            class="p-space-md rounded-lg bg-surface-container-low border border-outline-variant/60 flex flex-col justify-between">
+                            <div class="flex items-center justify-between">
+                                <span class="material-symbols-outlined text-tertiary text-[20px]"
+                                    data-icon="sim_card_download">sim_card_download</span>
+                                <span
+                                    class="font-label-xs text-label-xs bg-surface-container text-primary font-bold px-1 rounded">Record</span>
+                            </div>
+                            <div class="mt-3">
+                                <div class="font-headline-md text-headline-md font-bold text-primary">3 840</div>
+                                <span class="font-body-sm text-body-sm text-outline mt-0.5 block">Notes de
+                                    conjoncture</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Network Health Bar -->
+                    <div
+                        class="mt-4 pt-3 border-t border-outline-variant flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-on-surface-variant">
+                        <div class="flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                            <span class="font-label-md text-label-md text-primary font-semibold">Bande passante CDN
+                                Panafricain : 99.98% de disponibilité</span>
+                        </div>
+                        <span class="font-code-num text-code-num text-outline">Cluster Dakar-Abidjan OK</span>
+                    </div>
+                </div>
+            </section>
+            <!-- 4. Deux blocs inférieurs complémentaires -->
+            <section class="grid grid-cols-1 lg:grid-cols-12 gap-space-md pb-space-lg">
+                <!-- Colonne Gauche: Flux d'Activité Récente de l'Écosystème (Journal d'audit) - Col 7 -->
+                <div
+                    class="lg:col-span-7 bg-surface-container-lowest p-space-lg rounded-xl border border-outline-variant shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between pb-3 border-b border-outline-variant">
+                            <div class="flex items-center gap-2">
+                                <span class="material-symbols-outlined text-[20px] text-primary"
+                                    data-icon="history">history</span>
+                                <h3 class="font-headline-sm text-headline-sm font-bold text-primary">Journal d'Audit
+                                    &amp; Flux d'Activité</h3>
+                            </div>
+                            <span
+                                class="font-label-xs text-label-xs text-secondary bg-surface-container-low px-2 py-1 rounded font-bold uppercase tracking-wider">Temps
+                                Réel</span>
+                        </div>
+                        <!-- Timeline Entries -->
+                        <div class="divide-y divide-outline-variant/50">
+                            <!-- Event 1: Nouvel utilisateur -->
+                            <div class="py-3 flex items-start gap-3">
+                                <div
+                                    class="w-8 h-8 rounded bg-surface-container flex items-center justify-center text-primary shrink-0 mt-0.5">
+                                    <span class="material-symbols-outlined text-[18px]"
+                                        data-icon="person_add">person_add</span>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="flex items-center justify-between">
+                                        <span class="font-label-md text-label-md font-bold text-primary">Nouvel
+                                            utilisateur institutionnel</span>
+                                        <span class="font-body-sm text-body-sm text-outline">Il y a 6 min</span>
+                                    </div>
+                                    <p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                                        Le <strong class="font-semibold text-primary">Cabinet Notarial Me Sarr &amp;
+                                            Associés</strong> (Dakar) a activé une licence multi-sièges Observatoire
+                                        &amp; Recherche.
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- Event 2: Inscription finalisée -->
+                            <div class="py-3 flex items-start gap-3">
+                                <div
+                                    class="w-8 h-8 rounded bg-secondary-container/40 flex items-center justify-center text-secondary shrink-0 mt-0.5">
+                                    <span class="material-symbols-outlined text-[18px]"
+                                        data-icon="how_to_reg">how_to_reg</span>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="flex items-center justify-between">
+                                        <span class="font-label-md text-label-md font-bold text-primary">Inscription de
+                                            cohorte validée</span>
+                                        <span class="font-body-sm text-body-sm text-outline">Il y a 28 min</span>
+                                    </div>
+                                    <p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                                        Parcours <strong class="font-semibold text-primary">Ingénierie Financière &amp;
+                                            Titrisation Foncière</strong> commandé par la <strong
+                                            class="text-primary font-semibold">Banque Nationale d'Investissement
+                                            (BNI)</strong> (Abidjan) — 12 auditeurs inscrits.
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- Event 3: Nouvelle formation publiée -->
+                            <div class="py-3 flex items-start gap-3">
+                                <div
+                                    class="w-8 h-8 rounded bg-tertiary-fixed-dim/30 flex items-center justify-center text-tertiary shrink-0 mt-0.5">
+                                    <span class="material-symbols-outlined text-[18px]"
+                                        data-icon="post_add">post_add</span>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="flex items-center justify-between">
+                                        <span class="font-label-md text-label-md font-bold text-primary">Nouveau cursus
+                                            publié au catalogue</span>
+                                        <span class="font-body-sm text-body-sm text-outline">Il y a 1h 45</span>
+                                    </div>
+                                    <p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                                        Mise en ligne de la masterclass exécutive : <strong
+                                            class="font-semibold text-primary">« Tokenisation et Cadastre Satellite en
+                                            Afrique de l'Ouest »</strong> (30 heures certifiées).
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- Event 4: Certificat délivré -->
+                            <div class="py-3 flex items-start gap-3">
+                                <div
+                                    class="w-8 h-8 rounded bg-emerald-100 flex items-center justify-center text-emerald-800 shrink-0 mt-0.5">
+                                    <span class="material-symbols-outlined text-[18px]"
+                                        data-icon="verified_user">verified_user</span>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="flex items-center justify-between">
+                                        <span class="font-label-md text-label-md font-bold text-primary">Certificat
+                                            cryptographique émis</span>
+                                        <span class="font-body-sm text-body-sm text-outline">Il y a 3h 12</span>
+                                    </div>
+                                    <p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                                        Certificat de <strong class="font-semibold text-primary">Spécialiste Baux
+                                            Commerciaux &amp; Contentieux</strong> délivré avec succès à <strong
+                                            class="text-primary font-semibold">Aminata Diallo</strong> (<span
+                                            class="font-code-num text-code-num text-outline">#VZ-CERT-2024-098</span>).
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- Event 5: Publication éditoriale ajoutée -->
+                            <div class="py-3 flex items-start gap-3">
+                                <div
+                                    class="w-8 h-8 rounded bg-surface-container flex items-center justify-center text-primary shrink-0 mt-0.5">
+                                    <span class="material-symbols-outlined text-[18px]"
+                                        data-icon="newspaper">newspaper</span>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="flex items-center justify-between">
+                                        <span class="font-label-md text-label-md font-bold text-primary">Publication
+                                            éditoriale diffusée</span>
+                                        <span class="font-body-sm text-body-sm text-outline">Il y a 5h 04</span>
+                                    </div>
+                                    <p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                                        Dépôt officiel à la bibliothèque : <strong
+                                            class="font-semibold text-primary">Note de recherche sur les indices de
+                                            loyers de bureaux Plateau Q3 2024</strong> (Observatoire Régional).
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pt-3 border-t border-outline-variant flex items-center justify-between">
+                        <span class="font-body-sm text-body-sm text-outline">Registre inaltérable avec journalisation IP
+                            SHA-256</span>
+                        <button
+                            class="font-label-md text-label-md text-primary font-bold hover:underline flex items-center gap-1">
+                            Consulter l'historique complet
+                            <span class="material-symbols-outlined text-[16px]"
+                                data-icon="arrow_forward">arrow_forward</span>
+                        </button>
+                    </div>
+                </div>
+                <!-- Colonne Droite: Actions Rapides d'Administration & Statut Souverain - Col 5 -->
+                <div class="lg:col-span-5 flex flex-col gap-space-md justify-between">
+                    <!-- Actions Rapides -->
+                    <div
+                        class="bg-surface-container-lowest p-space-lg rounded-xl border border-outline-variant shadow-sm flex flex-col">
+                        <div class="flex items-center gap-2 pb-3 border-b border-outline-variant mb-4">
+                            <span class="material-symbols-outlined text-[20px] text-primary"
+                                data-icon="bolt">bolt</span>
+                            <h3 class="font-headline-sm text-headline-sm font-bold text-primary">Actions Rapides
+                                d'Administration</h3>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm">
+                            <!-- Action 1 -->
+                            <button
+                                class="p-3 rounded-lg border border-outline-variant hover:border-primary hover:bg-surface-container-low transition-all text-left flex flex-col justify-between group active:scale-[0.98]">
+                                <div
+                                    class="p-2 bg-surface-container rounded w-fit text-primary mb-2 group-hover:bg-primary group-hover:text-on-primary transition-colors">
+                                    <span class="material-symbols-outlined text-[20px]"
+                                        data-icon="add_box">add_box</span>
+                                </div>
+                                <div>
+                                    <span class="font-label-md text-label-md font-bold text-primary block">Créer une
+                                        formation</span>
+                                    <span class="font-body-sm text-body-sm text-outline">Nouveau cursus ou
+                                        masterclass</span>
+                                </div>
+                            </button>
+                            <!-- Action 2 -->
+                            <button
+                                class="p-3 rounded-lg border border-outline-variant hover:border-primary hover:bg-surface-container-low transition-all text-left flex flex-col justify-between group active:scale-[0.98]">
+                                <div
+                                    class="p-2 bg-surface-container rounded w-fit text-primary mb-2 group-hover:bg-primary group-hover:text-on-primary transition-colors">
+                                    <span class="material-symbols-outlined text-[20px]"
+                                        data-icon="person_add">person_add</span>
+                                </div>
+                                <div>
+                                    <span class="font-label-md text-label-md font-bold text-primary block">Inviter un
+                                        utilisateur</span>
+                                    <span class="font-body-sm text-body-sm text-outline">Accès cadre, auditeur ou
+                                        juriste</span>
+                                </div>
+                            </button>
+                            <!-- Action 3 -->
+                            <button
+                                class="p-3 rounded-lg border border-outline-variant hover:border-primary hover:bg-surface-container-low transition-all text-left flex flex-col justify-between group active:scale-[0.98]">
+                                <div
+                                    class="p-2 bg-surface-container rounded w-fit text-primary mb-2 group-hover:bg-primary group-hover:text-on-primary transition-colors">
+                                    <span class="material-symbols-outlined text-[20px]"
+                                        data-icon="assignment_ind">assignment_ind</span>
+                                </div>
+                                <div>
+                                    <span class="font-label-md text-label-md font-bold text-primary block">Attribuer un
+                                        cours</span>
+                                    <span class="font-body-sm text-body-sm text-outline">Assignation enseignant &amp;
+                                        faculté</span>
+                                </div>
+                            </button>
+                            <!-- Action 4: Highlighted with Gold accent (28 dossiers) -->
+                            <button
+                                class="p-3 rounded-lg border-2 border-tertiary-fixed-dim bg-tertiary-fixed/10 hover:bg-tertiary-fixed/20 transition-all text-left flex flex-col justify-between group active:scale-[0.98]">
+                                <div class="p-2 bg-primary-container rounded w-fit text-tertiary-fixed mb-2">
+                                    <span class="material-symbols-outlined text-[20px]"
+                                        data-icon="rate_review">rate_review</span>
+                                </div>
+                                <div>
+                                    <span class="font-label-md text-label-md font-bold text-primary block">Examiner
+                                        dossiers (28)</span>
+                                    <span class="font-body-sm text-body-sm text-on-surface-variant">Commission
+                                        d'admission en cours</span>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Encart Statut de conformité des infrastructures -->
+                    <div
+                        class="bg-primary-container text-on-primary p-space-lg rounded-xl border border-tertiary-fixed-dim/30 shadow-md">
+                        <div
+                            class="flex items-center justify-between pb-3 border-b border-on-primary-container/30 mb-3">
+                            <div class="flex items-center gap-2">
+                                <span class="material-symbols-outlined text-[20px] text-tertiary-fixed"
+                                    data-icon="security">security</span>
+                                <span
+                                    class="font-label-md text-label-md font-bold uppercase tracking-wider text-tertiary-fixed">Conformité
+                                    &amp; Souveraineté</span>
+                            </div>
+                            <span
+                                class="inline-flex items-center gap-1 font-label-xs text-label-xs bg-emerald-950 text-emerald-300 border border-emerald-700/60 px-2 py-0.5 rounded">
+                                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Conforme
+                            </span>
+                        </div>
+                        <div class="space-y-2.5 font-body-sm text-body-sm text-surface-variant">
+                            <div class="flex items-center justify-between">
+                                <span class="flex items-center gap-1.5">
+                                    <span class="material-symbols-outlined text-[16px] text-tertiary-fixed"
+                                        data-icon="lock">lock</span>
+                                    Chiffrement TLS 256-bit actif
+                                </span>
+                                <span class="font-code-num text-code-num text-on-primary font-semibold">Certifié SSL
+                                    UEMOA</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="flex items-center gap-1.5">
+                                    <span class="material-symbols-outlined text-[16px] text-tertiary-fixed"
+                                        data-icon="gavel">gavel</span>
+                                    Conformité Réglementaire OHADA
+                                </span>
+                                <span class="font-code-num text-code-num text-on-primary font-semibold">Audit Q3
+                                    Validé</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="flex items-center gap-1.5">
+                                    <span class="material-symbols-outlined text-[16px] text-tertiary-fixed"
+                                        data-icon="cloud_sync">cloud_sync</span>
+                                    Sauvegarde Souveraine Locale
+                                </span>
+                                <span class="font-code-num text-code-num text-on-primary font-semibold">Automatisée
+                                    (02:00 UTC)</span>
+                            </div>
+                        </div>
+                        <div
+                            class="mt-4 pt-3 border-t border-on-primary-container/20 flex items-center justify-between">
+                            <span class="font-label-xs text-label-xs text-on-primary-container">Instance Cloud :
+                                MainBasin Dakar DC-01</span>
+                            <span
+                                class="font-label-xs text-label-xs font-semibold text-tertiary-fixed hover:underline cursor-pointer">Gérer
+                                les clés d'accès</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+
+</html>

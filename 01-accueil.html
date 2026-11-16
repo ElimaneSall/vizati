@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>VIZATI | Institut Africain de Formation, d'Intelligence Immobilière et d'Innovation</title>
+<!-- Google Fonts: Manrope & Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Manrope:wght@500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN with Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Verbatim Tailwind Config -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-error-container": "#93000a",
+            "outline-variant": "#c4c6ce",
+            "tertiary-container": "#3a2600",
+            "inverse-on-surface": "#ecf0ff",
+            "on-secondary": "#ffffff",
+            "tertiary": "#201300",
+            "tertiary-fixed-dim": "#edbf73",
+            "on-background": "#111c2d",
+            "primary-fixed-dim": "#b2c8ea",
+            "surface-variant": "#d9e3fb",
+            "on-error": "#ffffff",
+            "surface": "#f9f9ff",
+            "error-container": "#ffdad6",
+            "on-secondary-fixed": "#001d37",
+            "on-surface": "#111c2d",
+            "inverse-surface": "#273143",
+            "surface-container-lowest": "#ffffff",
+            "secondary": "#436083",
+            "on-secondary-fixed-variant": "#2a486a",
+            "secondary-fixed-dim": "#abc9f1",
+            "on-primary-container": "#7d93b3",
+            "on-tertiary-fixed-variant": "#5f4100",
+            "primary": "#00162f",
+            "surface-container-high": "#dfe8ff",
+            "primary-container": "#142b46",
+            "background": "#f9f9ff",
+            "surface-tint": "#4a607d",
+            "surface-dim": "#d0daf2",
+            "inverse-primary": "#b2c8ea",
+            "secondary-container": "#b9d7ff",
+            "outline": "#74777e",
+            "on-secondary-container": "#405d80",
+            "on-primary-fixed": "#031c37",
+            "on-tertiary": "#ffffff",
+            "tertiary-fixed": "#ffdeab",
+            "error": "#ba1a1a",
+            "secondary-fixed": "#d2e4ff",
+            "surface-bright": "#f9f9ff",
+            "primary-fixed": "#d3e3ff",
+            "surface-container-low": "#f0f3ff",
+            "on-surface-variant": "#44474d",
+            "on-primary-fixed-variant": "#324864",
+            "on-tertiary-fixed": "#271900",
+            "surface-container": "#e8eeff",
+            "on-tertiary-container": "#b38a44",
+            "on-primary": "#ffffff",
+            "surface-container-highest": "#d9e3fb"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "gutter-mobile": "1rem",
+            "margin": "3rem",
+            "space-2xl": "4rem",
+            "gutter": "1.5rem",
+            "space-xs": "0.25rem",
+            "margin-mobile": "1rem",
+            "space-xl": "2.5rem",
+            "space-lg": "1.5rem",
+            "space-md": "1rem",
+            "space-sm": "0.5rem"
+          },
+          "fontFamily": {
+            "label-lg": [
+              "Inter"
+            ],
+            "body-lg": [
+              "Inter"
+            ],
+            "headline-md": [
+              "Manrope"
+            ],
+            "body-sm": [
+              "Inter"
+            ],
+            "headline-sm": [
+              "Manrope"
+            ],
+            "code-num": [
+              "Inter"
+            ],
+            "body-xl": [
+              "Inter"
+            ],
+            "display-hero": [
+              "Manrope"
+            ],
+            "headline-xl": [
+              "Manrope"
+            ],
+            "label-md": [
+              "Inter"
+            ],
+            "body-md": [
+              "Inter"
+            ],
+            "headline-xl-mobile": [
+              "Manrope"
+            ],
+            "headline-lg": [
+              "Manrope"
+            ],
+            "display-hero-mobile": [
+              "Manrope"
+            ],
+            "label-xs": [
+              "Inter"
+            ]
+          },
+          "fontSize": {
+            "label-lg": [
+              "14px",
+              {
+                "lineHeight": "20px",
+                "letterSpacing": "0.01em",
+                "fontWeight": "600"
+              }
+            ],
+            "body-lg": [
+              "16px",
+              {
+                "lineHeight": "24px",
+                "fontWeight": "400"
+              }
+            ],
+            "headline-md": [
+              "22px",
+              {
+                "lineHeight": "30px",
+                "letterSpacing": "-0.01em",
+                "fontWeight": "600"
+              }
+            ],
+            "body-sm": [
+              "12px",
+              {
+                "lineHeight": "18px",
+                "fontWeight": "400"
+              }
+            ],
+            "headline-sm": [
+              "18px",
+              {
+                "lineHeight": "26px",
+                "letterSpacing": "0em",
+                "fontWeight": "600"
+              }
+            ],
+            "code-num": [
+              "14px",
+              {
+                "lineHeight": "20px",
+                "fontWeight": "500"
+              }
+            ],
+            "body-xl": [
+              "18px",
+              {
+                "lineHeight": "28px",
+                "fontWeight": "400"
+              }
+            ],
+            "display-hero": [
+              "48px",
+              {
+                "lineHeight": "56px",
+                "letterSpacing": "-0.02em",
+                "fontWeight": "800"
+              }
+            ],
+            "headline-xl": [
+              "36px",
+              {
+                "lineHeight": "44px",
+                "letterSpacing": "-0.02em",
+                "fontWeight": "700"
+              }
+            ],
+            "label-md": [
+              "12px",
+              {
+                "lineHeight": "16px",
+                "letterSpacing": "0.02em",
+                "fontWeight": "600"
+              }
+            ],
+            "body-md": [
+              "14px",
+              {
+                "lineHeight": "20px",
+                "fontWeight": "400"
+              }
+            ],
+            "headline-xl-mobile": [
+              "26px",
+              {
+                "lineHeight": "34px",
+                "letterSpacing": "-0.015em",
+                "fontWeight": "700"
+              }
+            ],
+            "headline-lg": [
+              "28px",
+              {
+                "lineHeight": "36px",
+                "letterSpacing": "-0.01em",
+                "fontWeight": "700"
+              }
+            ],
+            "display-hero-mobile": [
+              "32px",
+              {
+                "lineHeight": "40px",
+                "letterSpacing": "-0.02em",
+                "fontWeight": "800"
+              }
+            ],
+            "label-xs": [
+              "10px",
+              {
+                "lineHeight": "14px",
+                "letterSpacing": "0.06em",
+                "fontWeight": "700"
+              }
+            ]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .ivory-canvas {
+      background-color: #F5F3ED;
+    }
+    .gold-accent-line {
+      background: linear-gradient(90deg, #C49A52 0%, rgba(196, 154, 82, 0.2) 100%);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface antialiased font-body-md selection:bg-tertiary-container selection:text-tertiary-fixed">
+<!-- TOP UTILITY ACCREDITATION & JURISDICTION BAR -->
+<aside class="bg-primary border-b border-primary-container text-inverse-primary/80 py-1.5 px-6">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-xs font-label-xs tracking-wider gap-2">
+<div class="flex items-center gap-3">
+<span class="inline-flex items-center gap-1.5 text-on-tertiary-container">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+          ACCRÉDITATION INSTITUTIONNELLE UEMOA • ZONE OHADA
+        </span>
+<span class="hidden md:inline text-outline-variant/40">•</span>
+<span class="hidden md:inline text-inverse-primary/70">RECONNAISSANCE FORMATION CONTINUE CADRE RÉGLEMENTAIRE</span>
+</div>
+<div class="flex items-center gap-4 text-inverse-primary/90">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">pin_drop</span> Dakar • Abidjan</span>
+<span class="text-outline-variant/40">|</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">lock</span> TLS 256-bit SÉCURISÉ</span>
+</div>
+</div>
+</aside>
+<!-- 1. STICKY TOP APP BAR (From Shared Components JSON) -->
+<header class="sticky top-0 z-50 bg-surface border-b border-outline-variant shadow-sm backdrop-blur-md bg-opacity-95">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
+<!-- Brand Crest & Lockup -->
+<div class="flex items-center gap-3">
+<a class="flex items-center gap-2 group" href="#">
+<div class="w-9 h-9 bg-primary-container text-on-tertiary-container rounded-lg flex items-center justify-center shadow-inner group-hover:scale-95 transition-transform">
+<span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">apartment</span>
+</div>
+<div class="flex flex-col">
+<span class="text-headline-md font-headline-md font-bold tracking-tight text-primary uppercase">VIZATI</span>
+<span class="text-[9px] font-semibold tracking-widest text-on-tertiary-container uppercase -mt-1">Executive Academy</span>
+</div>
+</a>
+</div>
+<!-- Navigation Links -->
+<nav class="hidden md:flex items-center gap-8 font-label-md">
+<a class="text-primary font-bold border-b-2 border-on-tertiary-container pb-1 transition-all" href="#accueil">Accueil</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors duration-150" href="./02-institut.html">L'Institut</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors duration-150" href="./03-formations.html">Formations</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors duration-150" href="./05-publication.html">Publications</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors duration-150" href="./07-bibliotheque.html">Ressources</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors duration-150" href="./09-evenements.html">Événements</a>
+</nav>
+<!-- Right Utility Actions -->
+<div class="flex items-center gap-3">
+<a class="hidden sm:inline-flex items-center gap-1.5 px-4 py-2 text-label-md font-semibold text-primary border border-outline-variant rounded hover:bg-surface-container transition-colors duration-150 active:scale-[0.99]" href="./12-authentification.html">
+<span class="material-symbols-outlined text-sm">lock</span>
+<span>Se connecter</span>
+</a>
+<a class="inline-flex items-center gap-2 px-5 py-2.5 bg-primary-container text-on-primary rounded text-label-md font-semibold hover:bg-primary transition-colors duration-150 shadow-sm border-r-2 border-on-tertiary-container active:scale-[0.99]" href="./03-formations.html">
+<span>Découvrir nos formations</span>
+<span class="material-symbols-outlined text-base">arrow_forward</span>
+</a>
+</div>
+</div>
+</header>
+<main>
+<!-- 2. HERO SECTION -->
+<section class="relative overflow-hidden pt-8 pb-16 md:pt-16 md:pb-24 border-b border-outline-variant ivory-canvas" id="accueil">
+<div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<!-- Left Editorial Hero Cluster (7 cols) -->
+<div class="lg:col-span-7 space-y-6">
+<!-- Surtitre Prestige Signature -->
+<div class="inline-flex items-center gap-2.5 px-3 py-1.5 bg-surface-container-lowest border border-outline-variant/80 rounded-full shadow-xs">
+<span class="w-2 h-2 rounded-full bg-on-tertiary-container"></span>
+<span class="text-label-xs font-label-xs tracking-wider text-primary uppercase font-bold">
+              FORMATION • INTELLIGENCE SECTORIELLE • INNOVATION
+            </span>
+</div>
+<!-- Main Title -->
+<h1 class="font-display-hero text-display-hero-mobile md:text-display-hero text-primary tracking-tight">
+            Développer les compétences. <br class="hidden md:inline"/>
+<span class="text-secondary">Transformer les pratiques.</span>
+</h1>
+<!-- Editorial Subtitle -->
+<p class="font-body-xl text-body-xl text-on-surface-variant max-w-2xl leading-relaxed">
+            L'institut de référence pour les métiers de l'immobilier en Afrique francophone. Nous formons les cadres, investisseurs et gestionnaires aux plus hauts standards d'ingénierie financière, foncière et technique.
+          </p>
+<!-- Dual Call to Actions -->
+<div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
+<a class="inline-flex justify-center items-center gap-2 px-7 py-3.5 bg-primary-container text-on-primary rounded text-label-lg font-semibold hover:bg-primary transition-all duration-150 shadow-md" href="#formations">
+<span>Découvrir nos formations</span>
+<span class="material-symbols-outlined text-lg">arrow_forward</span>
+</a>
+<a class="inline-flex justify-center items-center gap-2 px-7 py-3.5 bg-surface-container-lowest text-primary border border-outline-variant rounded text-label-lg font-semibold hover:bg-surface-container-low transition-colors duration-150 shadow-xs" href="#ressources">
+<span class="material-symbols-outlined text-lg text-on-tertiary-container">menu_book</span>
+<span>Explorer nos ressources</span>
+</a>
+</div>
+<!-- Regional Footprint Stamp -->
+<div class="pt-6 border-t border-outline-variant/60 flex items-center gap-3 text-label-sm text-on-surface-variant font-medium">
+<span class="material-symbols-outlined text-on-tertiary-container text-base">public</span>
+<span>Présence &amp; Campus Exécutifs : <strong class="text-primary font-semibold">Dakar • Abidjan • Espace UEMOA</strong></span>
+</div>
+</div>
+<!-- Right Visual Anchor (5 cols) -->
+<div class="lg:col-span-5 relative">
+<div class="relative bg-surface-container-lowest p-2 rounded-xl shadow-lg border border-outline-variant">
+<div class="overflow-hidden rounded-lg aspect-[4/3] md:aspect-[5/4] relative">
+<img class="w-full h-full object-cover transform hover:scale-102 transition-transform duration-700" data-alt="An expansive panoramic view of a modern African architectural development in Dakar featuring contemporary high-rise towers with intricate solar shading brise-soleil at golden hour. Executive leaders in tailored professional attire walk through an open paved landscaped urban plaza with reflecting pools and palm trees under a deep blue twilight sky, photographed with high editorial clarity and structured geometry." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIr7R6dVh28z-OeD61hQMRJs2UVNWGqO__T2bhN2gf00HNR4uXlrk6bpEeyZzoO6AsIP8lOPqmyimBSqFrRkAenHZs6mFziQjuFANZxXs9y77pxd2kJPo95zoxZ2Vmh2ONELuqmqsiZTzC8IRKQa6lhaHOl2c8CJzC97kWtu3vdydfdlBohYJW5jPt4Cg-CtOMaLXt99KwrvP2dO5ghtCR4Ztzn97x-QWGmo3Jdn8"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent"></div>
+<!-- Floating Context Tag inside image -->
+<div class="absolute bottom-4 left-4 right-4 bg-surface-container-lowest/95 backdrop-blur-md p-3.5 rounded border border-outline-variant/50 shadow-md">
+<div class="flex items-center justify-between text-xs">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-on-tertiary-container text-sm">domain</span>
+<span class="font-bold text-primary">Plateau &amp; Cocody Skyline Analysis</span>
+</div>
+<span class="text-on-tertiary-container font-semibold">Index VIZATI 2024</span>
+</div>
+</div>
+</div>
+<!-- Floating Mini Badge -->
+<div class="absolute -top-3 -right-3 bg-primary-container text-on-primary px-3 py-1.5 rounded shadow-md border border-on-tertiary-container text-xs font-bold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-xs text-on-tertiary-container" style="font-variation-settings: 'FILL' 1;">star</span>
+              Excellence Certifiée
+            </div>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. SECTION PRÉSENTATION INSTITUTIONNELLE -->
+<section class="py-20 bg-surface border-b border-outline-variant" id="institut">
+<div class="max-w-7xl mx-auto px-6">
+<!-- Header -->
+<div class="max-w-3xl mb-16">
+<div class="flex items-center gap-2 mb-3">
+<span class="w-8 h-[2px] bg-on-tertiary-container"></span>
+<span class="text-label-xs font-label-xs tracking-widest text-on-tertiary-container uppercase">Vision Stratégique</span>
+</div>
+<h2 class="font-headline-xl text-headline-xl text-primary font-bold mb-4">
+            L'immobilier évolue. Les compétences aussi.
+          </h2>
+<p class="text-body-lg text-on-surface-variant leading-relaxed">
+            VIZATI répond à l'impératif de structuration et de professionnalisation des écosystèmes immobiliers ouest-africains. Face à la complexité croissante des montages financiers, aux réformes foncières nationales et à l'émergence des villes intelligentes, nous armons les décideurs avec une triple maîtrise juridique, technique et de gouvernance.
+          </p>
+</div>
+<!-- 3 Piliers (Cards) -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Pilier 1 -->
+<div class="bg-surface-container-lowest p-8 rounded-lg border border-outline-variant/70 shadow-xs hover:shadow-md transition-shadow relative flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 rounded-lg bg-surface-container-low text-primary flex items-center justify-center mb-6 border border-outline-variant/50">
+<span class="material-symbols-outlined text-2xl text-on-tertiary-container">school</span>
+</div>
+<span class="text-label-xs text-on-tertiary-container font-bold tracking-wider uppercase block mb-1">Pilier 01</span>
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold mb-3">
+                Formation &amp; Développement des Compétences
+              </h3>
+<p class="text-body-md text-on-surface-variant leading-relaxed">
+                Cursus certifiants d'excellence conçus pour les cadres dirigeants et gestionnaires. Pédagogie active fondée sur l'étude de cas pratiques réels, la conformité réglementaire UEMOA et les règles de l'OHADA.
+              </p>
+</div>
+<div class="mt-8 pt-4 border-t border-outline-variant/30 flex items-center gap-2 text-xs font-semibold text-primary">
+<span class="material-symbols-outlined text-sm text-on-tertiary-container">check_circle</span>
+<span>Parcours modulaires diplômants</span>
+</div>
+</div>
+<!-- Pilier 2 -->
+<div class="bg-surface-container-lowest p-8 rounded-lg border border-outline-variant/70 shadow-xs hover:shadow-md transition-shadow relative flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 rounded-lg bg-surface-container-low text-primary flex items-center justify-center mb-6 border border-outline-variant/50">
+<span class="material-symbols-outlined text-2xl text-on-tertiary-container">insights</span>
+</div>
+<span class="text-label-xs text-on-tertiary-container font-bold tracking-wider uppercase block mb-1">Pilier 02</span>
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold mb-3">
+                Intelligence Sectorielle &amp; Décision Foncière
+              </h3>
+<p class="text-body-md text-on-surface-variant leading-relaxed">
+                Observatoire analytique des marchés régionaux : indices de rendement locatif, baromètres de vacance tertiaire, cartographies cadastrales et veille juridique permanente sur le droit de propriété.
+              </p>
+</div>
+<div class="mt-8 pt-4 border-t border-outline-variant/30 flex items-center gap-2 text-xs font-semibold text-primary">
+<span class="material-symbols-outlined text-sm text-on-tertiary-container">check_circle</span>
+<span>Rapports trimestriels exclusifs</span>
+</div>
+</div>
+<!-- Pilier 3 -->
+<div class="bg-surface-container-lowest p-8 rounded-lg border border-outline-variant/70 shadow-xs hover:shadow-md transition-shadow relative flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 rounded-lg bg-surface-container-low text-primary flex items-center justify-center mb-6 border border-outline-variant/50">
+<span class="material-symbols-outlined text-2xl text-on-tertiary-container">hub</span>
+</div>
+<span class="text-label-xs text-on-tertiary-container font-bold tracking-wider uppercase block mb-1">Pilier 03</span>
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold mb-3">
+                Innovation &amp; Transformation des Pratiques
+              </h3>
+<p class="text-body-md text-on-surface-variant leading-relaxed">
+                Accélération de la transition numérique des agences et syndics : déploiement d'outils PropTech, dématérialisation des actes de bail, audits ESG et standards de résilience urbaine africaine.
+              </p>
+</div>
+<div class="mt-8 pt-4 border-t border-outline-variant/30 flex items-center gap-2 text-xs font-semibold text-primary">
+<span class="material-symbols-outlined text-sm text-on-tertiary-container">check_circle</span>
+<span>Déploiement PropTech opérationnel</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. SECTION FORMATIONS CERTIFIANTES -->
+<section class="py-20 ivory-canvas border-b border-outline-variant" id="formations">
+<div class="max-w-7xl mx-auto px-6">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-14">
+<div>
+<div class="flex items-center gap-2 mb-2">
+<span class="w-8 h-[2px] bg-on-tertiary-container"></span>
+<span class="text-label-xs font-label-xs tracking-widest text-on-tertiary-container uppercase">Programmes Exécutifs</span>
+</div>
+<h2 class="font-headline-xl text-headline-xl text-primary font-bold">
+              Développez votre expertise immobilière
+            </h2>
+<p class="text-body-lg text-on-surface-variant mt-2 max-w-xl">
+              Parcours certifiants élaborés par des praticiens renommés pour asseoir votre légitimité et booster vos opportunités de carrière.
+            </p>
+</div>
+<div class="mt-4 md:mt-0">
+<span class="text-label-sm font-semibold text-primary bg-surface-container-lowest px-4 py-2 rounded border border-outline-variant inline-flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-on-tertiary-container animate-pulse"></span>
+              Inscriptions Ouvertes • Rentrée 2024-2025
+            </span>
+</div>
+</div>
+<!-- 3 CARDS FORMATIONS -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Carte Formation 1 -->
+<article class="bg-surface-container-lowest rounded-lg border border-outline-variant overflow-hidden shadow-xs hover:shadow-lg transition-all flex flex-col justify-between group">
+<div>
+<div class="relative h-56 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="An accomplished African woman senior property manager in a refined navy tailored blazer reviewing lease documents in an executive glass-walled corner office overlooking the Dakar coast with natural sunlight, laptop, and cadastral maps." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBU3FlwOqB_FB_6mBfALMw1T8LuT3juzSfOi80oyzu67gkNmDraUxYKgHLkP2vkA34AQLjgq7Kf_Qg7skg3e5baZMR_ZJ0dv68v4HleBGivOLMxt0devUzG6HZlkMem2ORBiQnrTBPT4pHRyWwvHSbSd2KCX-_dx7CoObU7MNSrSgpH4JZavL5l92AorAhOaW0eyiJEMEmsSIj_wDUBkjUvaXyxDGqYCp5QKMZnk4s"/>
+<div class="absolute top-3 left-3 bg-primary-container text-on-primary text-xs font-bold px-2.5 py-1 rounded">
+                  CERTIFICATION PROFESSIONNELLE
+                </div>
+<div class="absolute bottom-3 right-3 bg-surface-container-lowest/90 backdrop-blur-sm text-primary text-xs font-semibold px-2 py-1 rounded border border-outline-variant/40 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span> 130 heures
+                </div>
+</div>
+<div class="p-6">
+<div class="text-label-xs text-on-tertiary-container font-bold uppercase tracking-wider mb-2">
+                  GESTION LOCATIVE &amp; JURIDIQUE
+                </div>
+<h3 class="font-headline-md text-headline-md text-primary font-bold mb-3 leading-snug">
+                  Gestionnaire de portefeuille locatif
+                </h3>
+<p class="text-body-sm text-on-surface-variant leading-relaxed mb-6">
+                  Maîtrisez la gestion globale des baux d'habitation et commerciaux sous le prisme du cadre réglementaire UEMOA et de l'Acte Uniforme OHADA. Techniques de recouvrement amiable et contentieux, optimisation des rendements nets et valorisation d'actifs.
+                </p>
+<!-- Specs Grid -->
+<div class="grid grid-cols-2 gap-3 py-3 border-y border-outline-variant/40 text-xs mb-6 bg-surface-container-low/40 px-3 rounded">
+<div>
+<span class="text-on-surface-variant block">Format</span>
+<strong class="text-primary font-semibold">Hybride (Présentiel &amp; E-learning)</strong>
+</div>
+<div>
+<span class="text-on-surface-variant block">Certification</span>
+<strong class="text-primary font-semibold">Certificat VIZATI Exécutif</strong>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Card -->
+<div class="p-6 pt-0">
+<div class="flex items-baseline justify-between mb-4">
+<span class="text-xs text-on-surface-variant font-medium">Investissement :</span>
+<span class="text-headline-sm font-headline-sm font-bold text-primary">
+                  750 000 <span class="text-xs font-semibold text-on-tertiary-container">FCFA</span>
+</span>
+</div>
+<a class="w-full inline-flex justify-center items-center gap-2 py-3 bg-primary-container text-on-primary rounded text-label-md font-semibold hover:bg-primary transition-colors" href="#programme-1">
+<span>Voir le programme</span>
+<span class="material-symbols-outlined text-base">arrow_forward</span>
+</a>
+</div>
+</article>
+<!-- Carte Formation 2 -->
+<article class="bg-surface-container-lowest rounded-lg border border-outline-variant overflow-hidden shadow-xs hover:shadow-lg transition-all flex flex-col justify-between group">
+<div>
+<div class="relative h-56 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="An African real estate director presenting an architectural building scale model in an Abidjan high-end boardroom to corporate executive clients with warm wood paneling and large panoramic windows looking out over the Ebrié lagoon." src="https://lh3.googleusercontent.com/aida-public/AB6AXuApQ10V-YBSxn6ERCGdWRk_KGvOax07zXMhifGQPbemtrYJO9PW6ypOIEd6M_Esj3mv9EvnEoC95gZhcRcagybS0VQdN4EPsagwqMGUgbsdcuR8aqIq_BRqKGL7E7K5OHP0XqEr4icr68l8JSldYzD5RCaHAhS4_p_fCTlHnBh7pEIoMTyTQMfHojUaOLaCyo2ZLroGE2Nfbj1IG788LEKZc3k-Scgv17sxc7M2AaE"/>
+<div class="absolute top-3 left-3 bg-primary-container text-on-primary text-xs font-bold px-2.5 py-1 rounded">
+                  CERTIFICATION TRANSACTION
+                </div>
+<div class="absolute bottom-3 right-3 bg-surface-container-lowest/90 backdrop-blur-sm text-primary text-xs font-semibold px-2 py-1 rounded border border-outline-variant/40 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span> 130 heures
+                </div>
+</div>
+<div class="p-6">
+<div class="text-label-xs text-on-tertiary-container font-bold uppercase tracking-wider mb-2">
+                  TRANSACTION &amp; ARBITRAGE D'ACTIFS
+                </div>
+<h3 class="font-headline-md text-headline-md text-primary font-bold mb-3 leading-snug">
+                  Conseiller en transaction immobilière
+                </h3>
+<p class="text-body-sm text-on-surface-variant leading-relaxed mb-6">
+                  Acquérez les méthodologies de pointe pour l'évaluation vénale d'immeubles tertiaires et résidentiels. Négociation stratégique de haut niveau, structuration des mandats exclusifs, intermédiation financière et sécurisation des avant-contrats notariés.
+                </p>
+<!-- Specs Grid -->
+<div class="grid grid-cols-2 gap-3 py-3 border-y border-outline-variant/40 text-xs mb-6 bg-surface-container-low/40 px-3 rounded">
+<div>
+<span class="text-on-surface-variant block">Format</span>
+<strong class="text-primary font-semibold">Hybride (Dakar / Abidjan)</strong>
+</div>
+<div>
+<span class="text-on-surface-variant block">Certification</span>
+<strong class="text-primary font-semibold">Certificat VIZATI Exécutif</strong>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Card -->
+<div class="p-6 pt-0">
+<div class="flex items-baseline justify-between mb-4">
+<span class="text-xs text-on-surface-variant font-medium">Investissement :</span>
+<span class="text-headline-sm font-headline-sm font-bold text-primary">
+                  850 000 <span class="text-xs font-semibold text-on-tertiary-container">FCFA</span>
+</span>
+</div>
+<a class="w-full inline-flex justify-center items-center gap-2 py-3 bg-primary-container text-on-primary rounded text-label-md font-semibold hover:bg-primary transition-colors" href="#programme-2">
+<span>Voir le programme</span>
+<span class="material-symbols-outlined text-base">arrow_forward</span>
+</a>
+</div>
+</article>
+<!-- Carte Formation 3 -->
+<article class="bg-surface-container-lowest rounded-lg border border-outline-variant overflow-hidden shadow-xs hover:shadow-lg transition-all flex flex-col justify-between group">
+<div>
+<div class="relative h-56 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A professional African female building auditor and property inspector wearing a formal blazer, safety glasses, and inspecting electrical installations on a walkway in a contemporary residential complex in West Africa." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_ti428ocPmioBf5ODsQDq3jTM4BGdWWEp74dVkxS2bKXoejwBKHHBL1tnE4oZ7AyL8y3mNg0Hg3rPRMnvXS0y-HsLC0iLjxeZ1_O6hLDh_fRyJ9ecs91QEFv3mVJdo6DqGiSLxxUWAXVAo9GI3uSZFCgdUy8v5iPd0pU2qvX83ufpsNHdXS00PQrJlETACgbu3HfR2bFD_YjC69NrAgJnomOxb9lp-5JsIbJVR4g"/>
+<div class="absolute top-3 left-3 bg-primary-container text-on-primary text-xs font-bold px-2.5 py-1 rounded">
+                  CERTIFICATION COPROPRIÉTÉ
+                </div>
+<div class="absolute bottom-3 right-3 bg-surface-container-lowest/90 backdrop-blur-sm text-primary text-xs font-semibold px-2 py-1 rounded border border-outline-variant/40 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span> 130 heures
+                </div>
+</div>
+<div class="p-6">
+<div class="text-label-xs text-on-tertiary-container font-bold uppercase tracking-wider mb-2">
+                  GESTION TECHNIQUE &amp; SYNDIC
+                </div>
+<h3 class="font-headline-md text-headline-md text-primary font-bold mb-3 leading-snug">
+                  Gestionnaire de copropriété et syndic
+                </h3>
+<p class="text-body-sm text-on-surface-variant leading-relaxed mb-6">
+                  Spécialisez-vous dans la gouvernance juridique et la maintenance préventive des ensembles immobiliers de standing. Préparation et tenue d'Assemblées Générales, répartition des charges, audit des prestataires et gestion des sinistres.
+                </p>
+<!-- Specs Grid -->
+<div class="grid grid-cols-2 gap-3 py-3 border-y border-outline-variant/40 text-xs mb-6 bg-surface-container-low/40 px-3 rounded">
+<div>
+<span class="text-on-surface-variant block">Format</span>
+<strong class="text-primary font-semibold">Hybride (Présentiel &amp; E-learning)</strong>
+</div>
+<div>
+<span class="text-on-surface-variant block">Certification</span>
+<strong class="text-primary font-semibold">Certificat VIZATI Exécutif</strong>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Card -->
+<div class="p-6 pt-0">
+<div class="flex items-baseline justify-between mb-4">
+<span class="text-xs text-on-surface-variant font-medium">Investissement :</span>
+<span class="text-headline-sm font-headline-sm font-bold text-primary">
+                  750 000 <span class="text-xs font-semibold text-on-tertiary-container">FCFA</span>
+</span>
+</div>
+<a class="w-full inline-flex justify-center items-center gap-2 py-3 bg-primary-container text-on-primary rounded text-label-md font-semibold hover:bg-primary transition-colors" href="#programme-3">
+<span>Voir le programme</span>
+<span class="material-symbols-outlined text-base">arrow_forward</span>
+</a>
+</div>
+</article>
+</div>
+</div>
+</section>
+<!-- 5. SECTION CHIFFRES CLÉS (BANDE INSTITUTIONNELLE) -->
+<section class="bg-primary text-on-primary py-16 border-y border-primary-container relative overflow-hidden">
+<!-- Subtle Decorative Accent Grid -->
+<div class="absolute inset-0 opacity-5 bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
+<div class="max-w-7xl mx-auto px-6 relative z-10">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 text-center md:text-left divide-y md:divide-y-0 md:divide-x divide-primary-container/70">
+<!-- Indicateur 1 -->
+<div class="pt-6 md:pt-0 md:px-6 first:px-0">
+<div class="flex items-baseline justify-center md:justify-start gap-1">
+<span class="font-display-hero text-4xl md:text-5xl font-extrabold text-on-primary">3</span>
+</div>
+<div class="w-10 h-1 bg-on-tertiary-container my-3 mx-auto md:mx-0"></div>
+<p class="font-headline-sm text-sm md:text-base font-semibold text-inverse-primary">
+              Parcours métiers certifiants
+            </p>
+<p class="text-xs text-on-primary-container mt-1">
+              Conçus pour répondre aux besoins opérationnels immédiats
+            </p>
+</div>
+<!-- Indicateur 2 -->
+<div class="pt-6 md:pt-0 md:px-6">
+<div class="flex items-baseline justify-center md:justify-start gap-1">
+<span class="font-display-hero text-4xl md:text-5xl font-extrabold text-on-primary">70h</span>
+</div>
+<div class="w-10 h-1 bg-on-tertiary-container my-3 mx-auto md:mx-0"></div>
+<p class="font-headline-sm text-sm md:text-base font-semibold text-inverse-primary">
+              Tronc commun fondamental
+            </p>
+<p class="text-xs text-on-primary-container mt-1">
+              Droit foncier, comptabilité appliquée et déontologie
+            </p>
+</div>
+<!-- Indicateur 3 -->
+<div class="pt-6 md:pt-0 md:px-6">
+<div class="flex items-baseline justify-center md:justify-start gap-1">
+<span class="font-display-hero text-4xl md:text-5xl font-extrabold text-on-primary">130h</span>
+</div>
+<div class="w-10 h-1 bg-on-tertiary-container my-3 mx-auto md:mx-0"></div>
+<p class="font-headline-sm text-sm md:text-base font-semibold text-inverse-primary">
+              Par parcours complet
+            </p>
+<p class="text-xs text-on-primary-container mt-1">
+              Alliant théorie juridique approfondie et mises en situation réelles
+            </p>
+</div>
+<!-- Indicateur 4 -->
+<div class="pt-6 md:pt-0 md:px-6">
+<div class="flex items-baseline justify-center md:justify-start gap-1">
+<span class="font-display-hero text-4xl md:text-5xl font-extrabold text-on-primary">3</span>
+</div>
+<div class="w-10 h-1 bg-on-tertiary-container my-3 mx-auto md:mx-0"></div>
+<p class="font-headline-sm text-sm md:text-base font-semibold text-inverse-primary">
+              Domaines d'intervention stratégiques
+            </p>
+<p class="text-xs text-on-primary-container mt-1">
+              Formation, intelligence de marché et transformation digitale
+            </p>
+</div>
+</div>
+</div>
+</section>
+<!-- 6. SECTION PUBLICATIONS (ÉDITORIALE) -->
+<section class="py-20 bg-surface border-b border-outline-variant" id="publications">
+<div class="max-w-7xl mx-auto px-6">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-14">
+<div>
+<div class="flex items-center gap-2 mb-2">
+<span class="w-8 h-[2px] bg-on-tertiary-container"></span>
+<span class="text-label-xs font-label-xs tracking-widest text-on-tertiary-container uppercase">Analyses &amp; Débats</span>
+</div>
+<h2 class="font-headline-xl text-headline-xl text-primary font-bold">
+              Publications &amp; Analyses Récentes
+            </h2>
+<p class="text-body-lg text-on-surface-variant mt-2 max-w-xl">
+              Les décryptages de nos chercheurs et experts sur la dynamique des marchés immobiliers et fonciers régionaux.
+            </p>
+</div>
+<a class="mt-4 md:mt-0 inline-flex items-center gap-1.5 text-label-md font-semibold text-primary hover:text-secondary" href="#toutes-publications">
+<span>Toutes les publications</span>
+<span class="material-symbols-outlined text-base">trending_flat</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Article 1 -->
+<article class="bg-surface-container-lowest p-6 rounded-lg border border-outline-variant hover:border-primary-container transition-all flex flex-col justify-between group">
+<div>
+<div class="flex items-center justify-between text-xs text-on-surface-variant mb-4">
+<span class="font-bold text-on-tertiary-container bg-surface-container-low px-2 py-0.5 rounded">
+                  ANALYSE MARCHÉ
+                </span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">timer</span> 8 min de lecture
+                </span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold mb-3 group-hover:text-secondary transition-colors">
+                Évolution des rendements locatifs tertiaires à Dakar et Abidjan (2024-2025)
+              </h3>
+<p class="text-body-sm text-on-surface-variant leading-relaxed">
+                Étude comparative des taux de capitalisation des immeubles de bureaux dans les quartiers d'affaires de Cocody et du Plateau face aux tensions de l'offre d'immeubles de standing aux Almadies.
+              </p>
+</div>
+<div class="mt-6 pt-4 border-t border-outline-variant/40 flex items-center justify-between text-xs">
+<span class="text-on-surface-variant font-medium">12 Octobre 2024</span>
+<span class="text-primary font-semibold flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                Lire l'article <span class="material-symbols-outlined text-xs">arrow_forward</span>
+</span>
+</div>
+</article>
+<!-- Article 2 -->
+<article class="bg-surface-container-lowest p-6 rounded-lg border border-outline-variant hover:border-primary-container transition-all flex flex-col justify-between group">
+<div>
+<div class="flex items-center justify-between text-xs text-on-surface-variant mb-4">
+<span class="font-bold text-on-tertiary-container bg-surface-container-low px-2 py-0.5 rounded">
+                  CADRE JURIDIQUE
+                </span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">timer</span> 12 min de lecture
+                </span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold mb-3 group-hover:text-secondary transition-colors">
+                Sécurisation foncière et décret sur les baux d'habitation : décryptage juridique
+              </h3>
+<p class="text-body-sm text-on-surface-variant leading-relaxed">
+                Impacts procéduraux de la réglementation des cautions, de la révision indicielle des loyers et des nouveaux impératifs d'enregistrement auprès des centres fiscaux en Côte d'Ivoire et au Sénégal.
+              </p>
+</div>
+<div class="mt-6 pt-4 border-t border-outline-variant/40 flex items-center justify-between text-xs">
+<span class="text-on-surface-variant font-medium">28 Septembre 2024</span>
+<span class="text-primary font-semibold flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                Lire l'article <span class="material-symbols-outlined text-xs">arrow_forward</span>
+</span>
+</div>
+</article>
+<!-- Article 3 -->
+<article class="bg-surface-container-lowest p-6 rounded-lg border border-outline-variant hover:border-primary-container transition-all flex flex-col justify-between group">
+<div>
+<div class="flex items-center justify-between text-xs text-on-surface-variant mb-4">
+<span class="font-bold text-on-tertiary-container bg-surface-container-low px-2 py-0.5 rounded">
+                  INNOVATION &amp; PRATIQUES
+                </span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">timer</span> 6 min de lecture
+                </span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold mb-3 group-hover:text-secondary transition-colors">
+                Digitalisation des syndics et gestion technique des parcs immobiliers d'entreprise
+              </h3>
+<p class="text-body-sm text-on-surface-variant leading-relaxed">
+                Comment les plateformes SaaS de gestion de copropriété réduisent de 40% les délais de résolution des incidents techniques et restaurent la confiance entre copropriétaires et syndics professionnels.
+              </p>
+</div>
+<div class="mt-6 pt-4 border-t border-outline-variant/40 flex items-center justify-between text-xs">
+<span class="text-on-surface-variant font-medium">15 Septembre 2024</span>
+<span class="text-primary font-semibold flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                Lire l'article <span class="material-symbols-outlined text-xs">arrow_forward</span>
+</span>
+</div>
+</article>
+</div>
+</div>
+</section>
+<!-- 7. SECTION BIBLIOTHÈQUE DOCUMENTAIRE -->
+<section class="py-20 ivory-canvas border-b border-outline-variant" id="ressources">
+<div class="max-w-7xl mx-auto px-6">
+<div class="max-w-3xl mb-14">
+<div class="flex items-center gap-2 mb-2">
+<span class="w-8 h-[2px] bg-on-tertiary-container"></span>
+<span class="text-label-xs font-label-xs tracking-widest text-on-tertiary-container uppercase">Boîte à Outils &amp; Documentation</span>
+</div>
+<h2 class="font-headline-xl text-headline-xl text-primary font-bold">
+            Bibliothèque &amp; Ressources Professionnelles
+          </h2>
+<p class="text-body-lg text-on-surface-variant mt-2">
+            Accédez à une sélection de modèles types, référentiels d'audit et guides sectoriels rigoureusement validés par notre collège d'experts fonciers.
+          </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Document 1 -->
+<div class="bg-surface-container-lowest p-6 rounded-lg border border-outline-variant shadow-xs flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="text-label-xs bg-tertiary-fixed text-on-tertiary-fixed px-2.5 py-1 rounded font-bold uppercase">
+                  Modèle Annoté
+                </span>
+<span class="material-symbols-outlined text-on-surface-variant">description</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold mb-2">
+                Modèle de Bail Commercial OHADA Annoté
+              </h3>
+<p class="text-body-sm text-on-surface-variant mb-6">
+                Contrat-type complet intégrant les clauses de destination, de révision triennale, de garantie locative et les modalités de renouvellement conformes à l'AUDCG.
+              </p>
+</div>
+<div class="pt-4 border-t border-outline-variant/40 flex items-center justify-between">
+<span class="text-xs text-on-surface-variant">Format PDF • 24 Pages</span>
+<button class="inline-flex items-center gap-1.5 text-xs font-bold text-primary hover:text-secondary">
+<span class="material-symbols-outlined text-sm">download</span>
+<span>Télécharger</span>
+</button>
+</div>
+</div>
+<!-- Document 2 -->
+<div class="bg-surface-container-lowest p-6 rounded-lg border border-outline-variant shadow-xs flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="text-label-xs bg-surface-container-high text-on-secondary-container px-2.5 py-1 rounded font-bold uppercase">
+                  Guide Référence
+                </span>
+<span class="material-symbols-outlined text-on-surface-variant">menu_book</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold mb-2">
+                Guide Méthodologique de l'Audit de Copropriété
+              </h3>
+<p class="text-body-sm text-on-surface-variant mb-6">
+                Protocole pas à pas pour l'inventaire des équipements communs, la vérification des comptes de gestion, l'élaboration du carnet d'entretien et le plan pluriannuel de travaux.
+              </p>
+</div>
+<div class="pt-4 border-t border-outline-variant/40 flex items-center justify-between">
+<span class="text-xs text-on-surface-variant">Format PDF • 48 Pages</span>
+<button class="inline-flex items-center gap-1.5 text-xs font-bold text-primary hover:text-secondary">
+<span class="material-symbols-outlined text-sm">download</span>
+<span>Télécharger</span>
+</button>
+</div>
+</div>
+<!-- Document 3 -->
+<div class="bg-surface-container-lowest p-6 rounded-lg border border-outline-variant shadow-xs flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="text-label-xs bg-tertiary-fixed text-on-tertiary-fixed px-2.5 py-1 rounded font-bold uppercase">
+                  Étude Sectorielle
+                </span>
+<span class="material-symbols-outlined text-on-surface-variant">bar_chart</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold mb-2">
+                Baromètre de l'Investissement Résidentiel Premium
+              </h3>
+<p class="text-body-sm text-on-surface-variant mb-6">
+                Chiffres consolidés du premier semestre sur les prix au mètre carré, les délais moyens d'absorption et les rendements bruts à Dakar (Ngor, Almadies, Fann) et Abidjan.
+              </p>
+</div>
+<div class="pt-4 border-t border-outline-variant/40 flex items-center justify-between">
+<span class="text-xs text-on-surface-variant">Format PDF • 36 Pages</span>
+<button class="inline-flex items-center gap-1.5 text-xs font-bold text-primary hover:text-secondary">
+<span class="material-symbols-outlined text-sm">download</span>
+<span>Télécharger</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 8. SECTION ÉVÉNEMENTS & AGENDAS -->
+<section class="py-20 bg-surface border-b border-outline-variant" id="evenements">
+<div class="max-w-7xl mx-auto px-6">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-14">
+<div>
+<div class="flex items-center gap-2 mb-2">
+<span class="w-8 h-[2px] bg-on-tertiary-container"></span>
+<span class="text-label-xs font-label-xs tracking-widest text-on-tertiary-container uppercase">Rencontres &amp; Masterclasses</span>
+</div>
+<h2 class="font-headline-xl text-headline-xl text-primary font-bold">
+              Agenda &amp; Événements Institutionnels
+            </h2>
+<p class="text-body-lg text-on-surface-variant mt-2 max-w-xl">
+              Participez à nos cycles de conférences, webinaires spécialisés et tables rondes exécutives.
+            </p>
+</div>
+<span class="text-xs font-semibold text-on-surface-variant mt-4 md:mt-0 flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-on-tertiary-container">event</span>
+            Prochain trimestre 2024
+          </span>
+</div>
+<div class="space-y-4">
+<!-- Event 1 -->
+<div class="bg-surface-container-lowest p-6 rounded-lg border border-outline-variant hover:border-primary-container transition-all flex flex-col md:flex-row md:items-center justify-between gap-6">
+<div class="flex items-start md:items-center gap-6">
+<div class="bg-surface-container-low px-4 py-3 rounded text-center min-w-[80px] border border-outline-variant/40">
+<span class="block text-headline-sm font-bold text-primary">24</span>
+<span class="block text-label-xs text-on-tertiary-container uppercase font-bold">OCT 2024</span>
+</div>
+<div>
+<div class="flex items-center gap-2 text-xs font-semibold text-on-surface-variant mb-1">
+<span class="bg-surface-container px-2 py-0.5 rounded text-primary">WEBINAIRE EXÉCUTIF</span>
+<span>• En ligne (Zoom Direct)</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold">
+                  Fiscalité immobilière et plus-values foncières en zone UEMOA
+                </h3>
+<p class="text-body-sm text-on-surface-variant mt-1">
+                  Analyse des mécanismes de retenue à la source, de TVA sur loyers professionnels et d'exonérations applicables aux investissements neufs.
+                </p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-xs font-bold text-primary bg-surface-container-low px-3 py-1.5 rounded">Accès Libre sur Inscription</span>
+<a class="px-5 py-2.5 bg-primary-container text-on-primary rounded text-label-sm font-semibold hover:bg-primary transition-colors whitespace-nowrap" href="#inscrire-event-1">
+                Réserver ma place
+              </a>
+</div>
+</div>
+<!-- Event 2 -->
+<div class="bg-surface-container-lowest p-6 rounded-lg border border-outline-variant hover:border-primary-container transition-all flex flex-col md:flex-row md:items-center justify-between gap-6">
+<div class="flex items-start md:items-center gap-6">
+<div class="bg-surface-container-low px-4 py-3 rounded text-center min-w-[80px] border border-outline-variant/40">
+<span class="block text-headline-sm font-bold text-primary">16</span>
+<span class="block text-label-xs text-on-tertiary-container uppercase font-bold">NOV 2024</span>
+</div>
+<div>
+<div class="flex items-center gap-2 text-xs font-semibold text-on-surface-variant mb-1">
+<span class="bg-surface-container px-2 py-0.5 rounded text-primary">ATELIER PRATIQUE</span>
+<span>• Dakar Plateau (Campus VIZATI)</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold">
+                  Pratique des assemblées générales de copropriété complexe
+                </h3>
+<p class="text-body-sm text-on-surface-variant mt-1">
+                  Simulation intensive : résolution de conflits entre copropriétaires, vote des majorités qualifiées et gestion des contestations judiciaires.
+                </p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-xs font-bold text-on-tertiary-container bg-surface-container-low px-3 py-1.5 rounded">Places Limitées (25)</span>
+<a class="px-5 py-2.5 bg-primary-container text-on-primary rounded text-label-sm font-semibold hover:bg-primary transition-colors whitespace-nowrap" href="#inscrire-event-2">
+                Réserver ma place
+              </a>
+</div>
+</div>
+<!-- Event 3 -->
+<div class="bg-surface-container-lowest p-6 rounded-lg border border-outline-variant hover:border-primary-container transition-all flex flex-col md:flex-row md:items-center justify-between gap-6">
+<div class="flex items-start md:items-center gap-6">
+<div class="bg-surface-container-low px-4 py-3 rounded text-center min-w-[80px] border border-outline-variant/40">
+<span class="block text-headline-sm font-bold text-primary">05</span>
+<span class="block text-label-xs text-on-tertiary-container uppercase font-bold">DÉC 2024</span>
+</div>
+<div>
+<div class="flex items-center gap-2 text-xs font-semibold text-on-surface-variant mb-1">
+<span class="bg-primary-container text-on-primary px-2 py-0.5 rounded">CONFÉRENCE ANNUELLE</span>
+<span>• Abidjan (Hôtel Ivoire / Sofitel)</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold">
+                  Sommet de l'Innovation Foncière et Immobilière Africaine
+                </h3>
+<p class="text-body-sm text-on-surface-variant mt-1">
+                  Deux journées d'échanges réunissant ministères du logement, conservateurs fonciers, banques de développement et leaders de la PropTech.
+                </p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-xs font-bold text-primary bg-surface-container-low px-3 py-1.5 rounded">Délégations &amp; Décideurs</span>
+<a class="px-5 py-2.5 bg-primary-container text-on-primary rounded text-label-sm font-semibold hover:bg-primary transition-colors whitespace-nowrap" href="#inscrire-event-3">
+                S'inscrire au Sommet
+              </a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 9. SECTION APPEL À L'ACTION (CTA FINAL) -->
+<section class="py-20 ivory-canvas relative overflow-hidden">
+<div class="max-w-5xl mx-auto px-6 text-center">
+<div class="inline-flex items-center justify-center w-14 h-14 rounded-full bg-primary-container text-on-tertiary-container mb-6 shadow-md border border-on-tertiary-container">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+</div>
+<h2 class="font-headline-xl text-3xl md:text-4xl text-primary font-extrabold tracking-tight mb-4">
+          Faites évoluer votre expertise immobilière.
+        </h2>
+<p class="text-body-xl text-on-surface-variant max-w-2xl mx-auto leading-relaxed mb-8">
+          Rejoignez l'élite des professionnels de l'immobilier en Afrique de l'Ouest. Bénéficiez d'une certification reconnue et d'un réseau influent d'alumni et d'experts fonciers.
+        </p>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+<a class="w-full sm:w-auto inline-flex justify-center items-center gap-2 px-8 py-3.5 bg-primary-container text-on-primary rounded text-label-lg font-bold hover:bg-primary transition-all shadow-md" href="#formations">
+<span>Explorer les formations</span>
+<span class="material-symbols-outlined text-base">arrow_forward</span>
+</a>
+<a class="w-full sm:w-auto inline-flex justify-center items-center gap-2 px-8 py-3.5 bg-surface-container-lowest text-primary border border-outline-variant rounded text-label-lg font-bold hover:bg-surface-container-low transition-colors shadow-xs" href="#contact">
+<span class="material-symbols-outlined text-base text-on-tertiary-container">mail</span>
+<span>Nous contacter</span>
+</a>
+</div>
+<div class="mt-10 flex flex-wrap justify-center items-center gap-8 text-xs text-on-surface-variant">
+<span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-sm text-on-tertiary-container">check</span> Éligible au financement d'entreprise</span>
+<span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-sm text-on-tertiary-container">check</span> Certification accréditée</span>
+<span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-sm text-on-tertiary-container">check</span> Accompagnement individualisé</span>
+</div>
+</div>
+</section>
+</main>
+<!-- 10. INSTITUTIONAL FOOTER (From Shared Components JSON) -->
+<footer class="bg-surface-container-low text-primary border-t border-outline-variant pt-16 pb-8">
+<div class="max-w-7xl mx-auto px-6">
+<!-- Top Grid: Columns -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-outline-variant/60">
+<!-- Col 1 & 2: Brand & Mission -->
+<div class="lg:col-span-2 space-y-4">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 bg-primary-container text-on-tertiary-container rounded flex items-center justify-center">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">apartment</span>
+</div>
+<span class="text-headline-sm font-headline-sm font-bold text-primary uppercase">VIZATI</span>
+</div>
+<p class="text-body-sm text-on-surface-variant leading-relaxed max-w-sm">
+            Institut panafricain d'excellence dédié à la formation professionnelle certifiante, à la recherche appliquée en intelligence immobilière et à la modernisation des pratiques foncières en zone OHADA.
+          </p>
+<div class="text-xs text-on-surface-variant space-y-1">
+<div><strong class="text-primary font-semibold">Campus Dakar :</strong> Rue Joseph Gomis x Rue Carnot, Dakar Plateau, Sénégal</div>
+<div><strong class="text-primary font-semibold">Campus Abidjan :</strong> Boulevard de France, Cocody Danga, Côte d'Ivoire</div>
+</div>
+<div class="pt-2 flex items-center gap-3">
+<a class="w-8 h-8 rounded bg-surface-container-lowest border border-outline-variant flex items-center justify-center text-primary hover:text-on-tertiary-container hover:border-on-tertiary-container transition-colors" href="https://linkedin.com" target="_blank" title="LinkedIn VIZATI">
+<span class="text-xs font-bold font-display-hero">in</span>
+</a>
+<a class="w-8 h-8 rounded bg-surface-container-lowest border border-outline-variant flex items-center justify-center text-primary hover:text-on-tertiary-container hover:border-on-tertiary-container transition-colors" href="https://twitter.com" target="_blank" title="Twitter VIZATI">
+<span class="text-xs font-bold font-display-hero">X</span>
+</a>
+</div>
+</div>
+<!-- Col 3: Navigation Institutionnelle -->
+<div class="space-y-3">
+<span class="text-label-xs font-bold uppercase tracking-wider text-primary">L'Institut</span>
+<ul class="space-y-2 text-body-sm text-on-surface-variant">
+<li><a class="hover:text-primary transition-colors" href="#institut">Notre Vision &amp; Gouvernance</a></li>
+<li><a class="hover:text-primary transition-colors" href="#corps-enseignant">Collège d'Experts &amp; Chercheurs</a></li>
+<li><a class="hover:text-primary transition-colors" href="#accreditations">Accréditations Régionales</a></li>
+<li><a class="hover:text-primary transition-colors" href="#alumni">Réseau des Alumni</a></li>
+<li><a class="hover:text-primary transition-colors" href="#carrieres">Recrutement &amp; Intervenants</a></li>
+</ul>
+</div>
+<!-- Col 4: Formations & Veille -->
+<div class="space-y-3">
+<span class="text-label-xs font-bold uppercase tracking-wider text-primary">Cursus &amp; Veille</span>
+<ul class="space-y-2 text-body-sm text-on-surface-variant">
+<li><a class="hover:text-primary transition-colors" href="#programme-1">Gestionnaire Portefeuille Locatif</a></li>
+<li><a class="hover:text-primary transition-colors" href="#programme-2">Conseiller Transaction Immobilière</a></li>
+<li><a class="hover:text-primary transition-colors" href="#programme-3">Gestionnaire Syndic &amp; Copropriété</a></li>
+<li><a class="hover:text-primary transition-colors" href="#publications">Analyses de Rendement</a></li>
+<li><a class="hover:text-primary transition-colors" href="#ressources">Bibliothèque Documentaire</a></li>
+</ul>
+</div>
+<!-- Col 5: Veille Stratégique Newsletter -->
+<div class="space-y-3">
+<span class="text-label-xs font-bold uppercase tracking-wider text-primary">Lettre d'Intelligence</span>
+<p class="text-body-sm text-on-surface-variant">
+            Recevez chaque mois les indices fonciers et l'actualité juridique de la zone UEMOA.
+          </p>
+<form class="space-y-2" onsubmit="event.preventDefault();">
+<input class="w-full px-3 py-2 text-xs bg-surface-container-lowest border border-outline-variant rounded focus:border-primary focus:ring-1 focus:ring-primary outline-none" placeholder="votre.email@cabinet.com" type="email"/>
+<button class="w-full py-2 bg-primary-container text-on-primary text-xs font-bold rounded hover:bg-primary transition-colors" type="submit">
+              S'abonner à la veille
+            </button>
+</form>
+<span class="text-[10px] text-on-surface-variant block">Données protégées conformément aux cadres RGPD &amp; CDP régionaux.</span>
+</div>
+</div>
+<!-- Shared Components Footer Bar Exact Content and Links -->
+<div class="w-full pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs">
+<p class="text-body-sm text-on-surface-variant text-center md:text-left">
+          © 2024 VIZATI Intelligence &amp; Executive Academy. Conforme RGPD &amp; Cadre Réglementaire UEMOA. Chiffrement TLS 256-bit.
+        </p>
+<div class="flex flex-wrap justify-center items-center gap-4 font-label-xs">
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-150" href="#cadre-uemoa">Cadre Réglementaire UEMOA</a>
+<span class="text-outline-variant">•</span>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-150" href="#confidentialite">Confidentialité &amp; Données</a>
+<span class="text-outline-variant">•</span>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-150" href="#assistance">Assistance Sécurité</a>
+<span class="text-outline-variant">•</span>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-150" href="#support">Support Administrateur</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

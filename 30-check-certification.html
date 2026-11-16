@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Vérification Officielle d'Authenticité — INSTITUT VIZATI</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Manrope & Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 with Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "tertiary-fixed": "#ffdeab",
+            "secondary-fixed-dim": "#abc9f1",
+            "surface": "#f9f9ff",
+            "secondary-container": "#b9d7ff",
+            "on-tertiary-container": "#b38a44",
+            "outline-variant": "#c4c6ce",
+            "secondary": "#436083",
+            "error": "#ba1a1a",
+            "on-tertiary": "#ffffff",
+            "on-primary-fixed": "#031c37",
+            "tertiary": "#201300",
+            "on-primary": "#ffffff",
+            "surface-container-high": "#dfe8ff",
+            "on-secondary-container": "#405d80",
+            "secondary-fixed": "#d2e4ff",
+            "primary-container": "#142b46",
+            "tertiary-fixed-dim": "#edbf73",
+            "on-tertiary-fixed-variant": "#5f4100",
+            "on-secondary-fixed-variant": "#2a486a",
+            "error-container": "#ffdad6",
+            "surface-bright": "#f9f9ff",
+            "surface-container-lowest": "#ffffff",
+            "on-tertiary-fixed": "#271900",
+            "surface-container-low": "#f0f3ff",
+            "surface-dim": "#d0daf2",
+            "on-surface": "#111c2d",
+            "tertiary-container": "#3a2600",
+            "inverse-primary": "#b2c8ea",
+            "on-primary-fixed-variant": "#324864",
+            "on-secondary": "#ffffff",
+            "on-surface-variant": "#44474d",
+            "primary": "#00162f",
+            "outline": "#74777e",
+            "inverse-surface": "#273143",
+            "surface-variant": "#d9e3fb",
+            "on-error": "#ffffff",
+            "background": "#f9f9ff",
+            "primary-fixed-dim": "#b2c8ea",
+            "surface-container": "#e8eeff",
+            "on-error-container": "#93000a",
+            "on-secondary-fixed": "#001d37",
+            "primary-fixed": "#d3e3ff",
+            "surface-container-highest": "#d9e3fb",
+            "surface-tint": "#4a607d",
+            "on-primary-container": "#7d93b3",
+            "on-background": "#111c2d",
+            "inverse-on-surface": "#ecf0ff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "space-2xl": "4rem",
+            "gutter-mobile": "1rem",
+            "margin-mobile": "1rem",
+            "space-md": "1rem",
+            "space-xl": "2.5rem",
+            "gutter": "1.5rem",
+            "space-sm": "0.5rem",
+            "space-xs": "0.25rem",
+            "margin": "3rem",
+            "space-lg": "1.5rem"
+          },
+          "fontFamily": {
+            "body-lg": ["Inter"],
+            "headline-xl": ["Manrope"],
+            "label-xs": ["Inter"],
+            "headline-lg": ["Manrope"],
+            "label-lg": ["Inter"],
+            "headline-sm": ["Manrope"],
+            "headline-xl-mobile": ["Manrope"],
+            "body-md": ["Inter"],
+            "body-xl": ["Inter"],
+            "body-sm": ["Inter"],
+            "display-hero-mobile": ["Manrope"],
+            "headline-md": ["Manrope"],
+            "label-md": ["Inter"],
+            "display-hero": ["Manrope"],
+            "code-num": ["Inter"]
+          },
+          "fontSize": {
+            "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "headline-xl": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "label-xs": ["10px", { "lineHeight": "14px", "letterSpacing": "0.06em", "fontWeight": "700" }],
+            "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+            "headline-sm": ["18px", { "lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "600" }],
+            "headline-xl-mobile": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+            "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "body-xl": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "display-hero-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+            "headline-md": ["22px", { "lineHeight": "30px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "display-hero": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+            "code-num": ["14px", { "lineHeight": "20px", "fontWeight": "500" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .watermark-pattern {
+      background-image: radial-gradient(circle at 1px 1px, rgba(20, 43, 70, 0.04) 1px, transparent 0);
+      background-size: 24px 24px;
+    }
+    .gold-crest-border {
+      box-shadow: 0 0 0 1px #C49A52, 0 4px 16px rgba(196, 154, 82, 0.12);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface antialiased min-h-screen flex flex-col font-body-md selection:bg-tertiary-fixed selection:text-tertiary-container">
+<!-- TOP APP BAR (Shared Components Executed: TopNavBar) -->
+<header class="w-full bg-surface-container-lowest dark:bg-primary-container border-b border-outline-variant dark:border-outline shadow-sm dark:shadow-none sticky top-0 z-50">
+<div class="flex justify-between items-center w-full px-space-lg md:px-margin max-w-7xl mx-auto h-20">
+<!-- Brand & Institutional Mark -->
+<div class="flex items-center gap-space-md">
+<div class="w-11 h-11 rounded-lg bg-primary-container flex items-center justify-center text-on-primary ring-1 ring-on-tertiary-container/30 shadow-sm">
+<span class="material-symbols-outlined text-tertiary-fixed text-2xl" data-icon="account_balance">account_balance</span>
+</div>
+<div class="flex flex-col">
+<span class="text-headline-sm font-headline-sm font-bold tracking-tight text-primary dark:text-inverse-primary uppercase">
+            INSTITUT VIZATI
+          </span>
+<span class="text-label-xs font-label-xs text-on-surface-variant flex items-center gap-1 font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container"></span>
+            HAUTE ÉCOLE D'INTELLIGENCE FONCIÈRE • UEMOA
+          </span>
+</div>
+</div>
+<!-- Navigation Links (Active mapping: Vérification UEMOA) -->
+<nav class="hidden md:flex items-center gap-space-lg">
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors text-label-lg font-label-lg" href="#programmes">
+          Programmes &amp; Certificats
+        </a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors text-label-lg font-label-lg" href="#intelligence">
+          Intelligence Foncière
+        </a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors text-label-lg font-label-lg" href="#recherche">
+          Recherche &amp; Cadastre
+        </a>
+<!-- ACTIVE LINK MAPPED FROM JSON -->
+<a class="text-primary dark:text-inverse-primary font-bold border-b-2 border-on-tertiary-container dark:border-tertiary-fixed pb-1 text-label-lg font-label-lg flex items-center gap-1" href="#verification">
+<span class="material-symbols-outlined text-sm text-on-tertiary-container" data-icon="verified">verified</span>
+          Vérification UEMOA
+        </a>
+</nav>
+<!-- Trailing Action Cluster -->
+<div class="flex items-center gap-space-sm">
+<div class="hidden xl:flex items-center gap-1.5 px-3 py-1 bg-surface-container-low rounded-full border border-outline-variant/60 text-label-xs font-label-xs text-primary font-semibold">
+<span class="material-symbols-outlined text-xs text-emerald-600" data-icon="lock">lock</span>
+          REGISTRE OUVERT OHADA
+        </div>
+<button class="hidden sm:inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-surface-container-low hover:bg-surface-container text-primary font-label-lg text-label-lg border border-outline-variant/80 transition-all" type="button">
+<span class="material-symbols-outlined text-base" data-icon="school">school</span>
+          Portail Étudiant
+        </button>
+<button class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-primary text-on-primary hover:bg-primary-container font-label-lg text-label-lg shadow-sm transition-all" type="button">
+<span class="material-symbols-outlined text-base text-tertiary-fixed" data-icon="verified_user">verified_user</span>
+<span>Espace Pro &amp; Auditeur</span>
+</button>
+</div>
+</div>
+</header>
+<!-- MAIN CANVAS -->
+<main class="flex-grow watermark-pattern">
+<!-- HERO SECTION: PRESTIGIEUX & SOLENNEL -->
+<section class="py-space-xl md:py-space-2xl border-b border-outline-variant/40 bg-gradient-to-b from-surface-container-lowest to-surface">
+<div class="max-w-5xl mx-auto px-space-md md:px-margin text-center flex flex-col items-center">
+<!-- Authority Pill -->
+<div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-surface-container-low border border-on-tertiary-container/30 shadow-sm mb-space-md">
+<span class="material-symbols-outlined text-on-tertiary-container text-base" data-icon="gavel">gavel</span>
+<span class="text-label-xs font-label-xs uppercase tracking-wider text-primary font-bold">
+            REGISTRE PUBLIC DE CONFIANCE • PROTOCOLE DE CERTIFICATION VIZATI
+          </span>
+<span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+</div>
+<!-- H1 Title -->
+<h1 class="text-headline-xl-mobile md:text-display-hero font-display-hero text-primary tracking-tight max-w-4xl mx-auto">
+          Vérifier un certificat ou une attestation VIZATI
+        </h1>
+<!-- Subtitle -->
+<p class="mt-space-md text-body-md md:text-body-xl font-body-xl text-on-surface-variant max-w-3xl mx-auto leading-relaxed">
+          Vérifiez en temps réel l'authenticité des titres académiques, certificats de réussite et attestations exécutives délivrés par l'Institut VIZATI. Service d'interrogation certifié et conforme aux référentiels de gouvernance UEMOA.
+        </p>
+<!-- SEARCH FORM CARD -->
+<div class="w-full max-w-3xl mt-space-xl p-space-md md:p-space-lg bg-surface-container-lowest rounded-xl shadow-lg border border-outline-variant/70 relative">
+<form class="flex flex-col sm:flex-row gap-space-sm items-stretch" id="verifyForm">
+<div class="relative flex-grow">
+<div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-on-surface-variant">
+<span class="material-symbols-outlined text-xl text-primary" data-icon="fingerprint">fingerprint</span>
+</div>
+<input class="block w-full pl-11 pr-4 py-3.5 text-body-lg font-code-num bg-surface-container-lowest text-on-surface placeholder:text-outline border border-outline-variant rounded-lg focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary-container/10 transition-all uppercase tracking-wide" id="certInput" placeholder="Ex : #VZ-CERT-2024-098 ou #VZ-ATT-2024-042" type="text" value="#VZ-CERT-2024-098"/>
+</div>
+<button class="px-space-lg py-3.5 bg-primary text-on-primary hover:bg-primary-container font-label-lg text-label-lg rounded-lg shadow-sm flex items-center justify-center gap-2 transition-all hover:shadow-md cursor-pointer whitespace-nowrap" type="submit">
+<span class="material-symbols-outlined text-xl text-tertiary-fixed" data-icon="search_check">search_check</span>
+<span>Vérifier l'authenticité</span>
+</button>
+</form>
+<!-- Alternative trigger & helper info -->
+<div class="mt-space-md pt-space-sm border-t border-outline-variant/30 flex flex-wrap items-center justify-between gap-space-sm text-body-sm font-body-sm text-on-surface-variant">
+<button class="inline-flex items-center gap-1.5 font-label-md text-label-md text-primary hover:text-on-tertiary-container font-semibold transition-colors" type="button">
+<span class="material-symbols-outlined text-lg" data-icon="qr_code_scanner">qr_code_scanner</span>
+<span>Ou scanner le QR Code du document physique</span>
+</button>
+<div class="flex items-center gap-1 font-label-xs text-label-xs text-outline">
+<span class="material-symbols-outlined text-xs" data-icon="info">info</span>
+<span>Registre sécurisé cryptographiquement • Horodatage certifié</span>
+</div>
+</div>
+</div>
+<!-- Interactive State Switcher for Audit/Demo Demonstration -->
+<div class="mt-space-lg flex items-center gap-space-xs p-1 bg-surface-container rounded-lg border border-outline-variant/60">
+<span class="text-label-xs font-label-xs uppercase px-2 text-on-surface-variant font-bold">Simuler un état :</span>
+<button class="px-3 py-1 rounded text-label-md font-label-md font-semibold bg-surface-container-lowest text-primary shadow-sm border border-outline-variant/50 transition-all" id="btnStateValid" onclick="switchState('valid')">
+            1. Certificat Valide
+          </button>
+<button class="px-3 py-1 rounded text-label-md font-label-md font-semibold text-on-surface-variant hover:text-primary transition-all" id="btnStateMissing" onclick="switchState('missing')">
+            2. Référence Introuvable
+          </button>
+<button class="px-3 py-1 rounded text-label-md font-label-md font-semibold text-on-surface-variant hover:text-primary transition-all" id="btnStateRevoked" onclick="switchState('revoked')">
+            3. Titre Révoqué / Caduc
+          </button>
+</div>
+</div>
+</section>
+<!-- CONTENT CANVAS: THE 3 AUDIT STATES CONTAINER -->
+<section class="max-w-6xl mx-auto px-space-md md:px-margin py-space-xl">
+<!-- ==================== STATE 1: CERTIFICAT VALIDE (DEFAULT) ==================== -->
+<div class="block transition-opacity duration-300" id="state-valid">
+<!-- Main Verification Dossier Card -->
+<div class="bg-surface-container-lowest border border-outline-variant/80 rounded-xl shadow-lg overflow-hidden">
+<!-- State 1 Header: Green & Gold Badge of Authority -->
+<div class="bg-gradient-to-r from-[#0E3A2F] via-[#142B46] to-[#0E3A2F] text-on-primary px-space-lg py-space-md flex flex-wrap items-center justify-between gap-space-md border-b border-on-tertiary-container/30">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-emerald-500/20 ring-2 ring-emerald-400 flex items-center justify-center text-emerald-300">
+<span class="material-symbols-outlined text-2xl font-bold" data-icon="verified">verified</span>
+</div>
+<div>
+<span class="text-label-xs font-label-xs tracking-wider uppercase text-tertiary-fixed font-bold block">
+                  REGISTRE CENTRAL DES CERTIFICATIONS UEMOA • ACADÉMIE VIZATI
+                </span>
+<h2 class="text-headline-sm font-headline-sm text-on-primary font-bold">
+                  TITRE OFFICIEL AUTHENTIFIÉ &amp; ENREGISTRÉ AU REGISTRE CENTRAL
+                </h2>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="px-3 py-1 rounded-full bg-emerald-950/70 border border-emerald-400/40 text-emerald-300 font-label-md text-label-md font-bold flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                STATUT : ACTIF &amp; CONFORME
+              </span>
+</div>
+</div>
+<!-- Body: Structured High-Density Executive Layout -->
+<div class="p-space-lg md:p-space-xl">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl">
+<!-- Left Column: Primary Accreditation Data (8 Cols) -->
+<div class="lg:col-span-8 flex flex-col justify-between">
+<div>
+<!-- Meta Header Badges -->
+<div class="flex flex-wrap items-center gap-2 mb-space-md">
+<span class="px-2.5 py-1 rounded bg-surface-container text-primary font-label-xs text-label-xs font-bold uppercase tracking-wider border border-outline-variant/50">
+                      Spécimen Officiel Numérique
+                    </span>
+<span class="px-2.5 py-1 rounded bg-secondary-fixed text-on-secondary-fixed font-label-xs text-label-xs font-bold uppercase tracking-wider">
+                      Cycle Exécutif Certifiant
+                    </span>
+<span class="px-2.5 py-1 rounded bg-surface-container-low text-on-surface-variant font-code-num text-xs border border-outline-variant/60">
+                      ID: #VZ-CERT-2024-098
+                    </span>
+</div>
+<!-- Program Title -->
+<h3 class="text-headline-lg font-headline-lg text-primary tracking-tight">
+                    Pratique des Baux Commerciaux OHADA &amp; Contentieux Immobilier
+                  </h3>
+<p class="mt-1 text-body-md font-body-md text-on-surface-variant">
+                    Parcours d'excellence spécialisé en droit des baux professionnels, sûretés immobilières régionales et gestion des différends locatifs en zone OHADA.
+                  </p>
+<!-- 2x2 Data Grid -->
+<div class="mt-space-lg grid grid-cols-1 sm:grid-cols-2 gap-space-md p-space-md bg-surface-container-low rounded-lg border border-outline-variant/50">
+<div>
+<span class="text-label-xs font-label-xs uppercase text-on-surface-variant font-bold block">
+                        Récipiendaire bénéficiaire
+                      </span>
+<span class="text-headline-sm font-headline-sm text-primary font-bold flex items-center gap-1.5 mt-0.5">
+<span class="material-symbols-outlined text-lg text-on-tertiary-container" data-icon="person_check">person_check</span>
+                        Madame Aminata DIALLO
+                      </span>
+<span class="text-body-sm font-body-sm text-outline block mt-0.5">
+                        Données civiles protégées (Conformité Loi UEMOA &amp; RGPD)
+                      </span>
+</div>
+<div>
+<span class="text-label-xs font-label-xs uppercase text-on-surface-variant font-bold block">
+                        Type de document légal
+                      </span>
+<span class="text-headline-sm font-headline-sm text-primary font-bold flex items-center gap-1.5 mt-0.5">
+<span class="material-symbols-outlined text-lg text-secondary" data-icon="workspace_premium">workspace_premium</span>
+                        Certificat de Réussite Exécutif
+                      </span>
+<span class="text-body-sm font-body-sm text-outline block mt-0.5">
+                        Validation avec Mention Très Honorable
+                      </span>
+</div>
+<div class="pt-space-sm border-t border-outline-variant/40">
+<span class="text-label-xs font-label-xs uppercase text-on-surface-variant font-bold block">
+                        Volume académique validé
+                      </span>
+<span class="text-body-lg font-code-num font-bold text-primary flex items-center gap-1.5 mt-0.5">
+<span class="material-symbols-outlined text-base text-secondary" data-icon="schedule">schedule</span>
+                        35 Heures Académiques &amp; Cas Pratiques
+                      </span>
+</div>
+<div class="pt-space-sm border-t border-outline-variant/40">
+<span class="text-label-xs font-label-xs uppercase text-on-surface-variant font-bold block">
+                        Date de délivrance officielle
+                      </span>
+<span class="text-body-lg font-code-num font-bold text-primary flex items-center gap-1.5 mt-0.5">
+<span class="material-symbols-outlined text-base text-secondary" data-icon="event_available">event_available</span>
+                        12 Décembre 2024 (Abidjan)
+                      </span>
+</div>
+</div>
+<!-- Cryptographic Footprint (SHA-256) -->
+<div class="mt-space-md p-space-sm bg-surface-container-lowest rounded border border-outline-variant/70 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
+<div class="flex items-center gap-2 overflow-hidden">
+<span class="material-symbols-outlined text-on-tertiary-container text-lg" data-icon="enhanced_encryption">enhanced_encryption</span>
+<div class="truncate">
+<span class="text-label-xs font-label-xs text-outline uppercase font-bold block">Empreinte Cryptographique SHA-256</span>
+<code class="text-xs font-code-num text-primary font-medium select-all">
+                          e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+                        </code>
+</div>
+</div>
+<span class="px-2 py-0.5 bg-emerald-100 text-emerald-800 text-label-xs font-label-xs font-bold rounded shrink-0">
+                      Empreinte Validée
+                    </span>
+</div>
+</div>
+<!-- Action Footer -->
+<div class="mt-space-lg pt-space-md border-t border-outline-variant/40 flex flex-wrap items-center gap-space-sm">
+<button class="px-4 py-2.5 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg shadow-sm flex items-center gap-2 transition-all" type="button">
+<span class="material-symbols-outlined text-base text-tertiary-fixed" data-icon="download">download</span>
+<span>Télécharger l'attestation de conformité PDF</span>
+</button>
+<button class="px-4 py-2.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-primary font-label-lg text-label-lg border border-outline-variant/60 flex items-center gap-2 transition-all" type="button">
+<span class="material-symbols-outlined text-base" data-icon="menu_book">menu_book</span>
+<span>Consulter le référentiel pédagogique</span>
+</button>
+</div>
+</div>
+<!-- Right Column: Institutional Seal & Signature Block (4 Cols) -->
+<div class="lg:col-span-4 bg-surface-container-low rounded-xl p-space-md border border-outline-variant/60 flex flex-col justify-between">
+<div>
+<div class="text-center pb-space-md border-b border-outline-variant/50">
+<div class="w-16 h-16 mx-auto rounded-full bg-primary-container text-tertiary-fixed flex items-center justify-center gold-crest-border mb-3 shadow-md">
+<span class="material-symbols-outlined text-3xl" data-icon="military_tech">military_tech</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-primary font-bold">SCEAU ACADÉMIQUE</h4>
+<p class="text-label-xs font-label-xs text-on-surface-variant font-semibold mt-0.5">
+                      Conseil Pédagogique et Scientifique
+                    </p>
+<p class="text-body-sm font-body-sm text-outline mt-0.5">
+                      VIZATI Dakar &amp; Abidjan
+                    </p>
+</div>
+<!-- Secure Verification Checks -->
+<div class="mt-space-md space-y-2.5">
+<div class="flex items-start gap-2 text-body-sm font-body-sm text-on-surface">
+<span class="material-symbols-outlined text-emerald-600 text-lg shrink-0" data-icon="check_circle">check_circle</span>
+<span>Enregistrement Greffe : Acte N° 2024-REG-1094</span>
+</div>
+<div class="flex items-start gap-2 text-body-sm font-body-sm text-on-surface">
+<span class="material-symbols-outlined text-emerald-600 text-lg shrink-0" data-icon="check_circle">check_circle</span>
+<span>Conformité Cadre de Référence CAMES / UEMOA</span>
+</div>
+<div class="flex items-start gap-2 text-body-sm font-body-sm text-on-surface">
+<span class="material-symbols-outlined text-emerald-600 text-lg shrink-0" data-icon="check_circle">check_circle</span>
+<span>Signature Numérique eIDAS Réciproque</span>
+</div>
+</div>
+</div>
+<!-- Signatory Box -->
+<div class="mt-space-lg pt-space-md border-t border-outline-variant/50 bg-surface-container-lowest p-3 rounded-lg border">
+<div class="flex items-center justify-between">
+<div>
+<span class="text-label-xs font-label-xs text-outline uppercase font-bold block">Signataire Agréé</span>
+<span class="text-label-md font-label-md text-primary font-bold block">Pr. K. M’BENGUE</span>
+<span class="text-xs text-on-surface-variant">Président du Comité Scientifique</span>
+</div>
+<span class="material-symbols-outlined text-2xl text-on-tertiary-container" data-icon="draw">draw</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Notice footer -->
+<div class="bg-surface-container px-space-lg py-2.5 border-t border-outline-variant/50 flex flex-wrap items-center justify-between text-body-sm font-body-sm text-on-surface-variant">
+<span>Interrogation horodatée le 24 Mai 2025 à 14:32:09 GMT</span>
+<span class="font-code-num text-xs">Serveur Sécurisé UEMOA-DAKAR-NODE-03</span>
+</div>
+</div>
+</div>
+<!-- ==================== STATE 2: RÉFÉRENCE INTROUVABLE ==================== -->
+<div class="hidden transition-opacity duration-300" id="state-missing">
+<div class="bg-surface-container-lowest border-2 border-amber-400 rounded-xl shadow-lg p-space-lg md:p-space-xl">
+<div class="flex flex-col md:flex-row items-start gap-space-lg">
+<div class="w-14 h-14 rounded-full bg-amber-50 border border-amber-300 text-amber-600 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-3xl" data-icon="warning">warning</span>
+</div>
+<div class="flex-grow">
+<div class="flex flex-wrap items-center gap-2 mb-1">
+<span class="px-2.5 py-0.5 rounded bg-amber-100 text-amber-900 text-label-xs font-label-xs font-bold uppercase tracking-wider">
+                  Alerte Registre
+                </span>
+<span class="text-label-xs font-label-xs text-outline font-semibold">Erreur Code 404-REG</span>
+</div>
+<h3 class="text-headline-lg font-headline-lg text-primary tracking-tight">
+                Aucun titre correspondant à la référence saisie
+              </h3>
+<p class="mt-2 text-body-lg font-body-lg text-on-surface-variant max-w-2xl">
+                La référence interrogée ne figure pas dans le registre central des titres de l'Institut VIZATI. Veuillez vérifier la casse des caractères, le préfixe (<span class="font-code-num font-semibold">#VZ-CERT-</span> ou <span class="font-code-num font-semibold">#VZ-ATT-</span>) ou contacter le greffe académique.
+              </p>
+<!-- Diagnostic Steps -->
+<div class="mt-space-md grid grid-cols-1 sm:grid-cols-3 gap-space-sm">
+<div class="p-3 bg-surface-container-low rounded-lg border border-outline-variant/50">
+<span class="font-bold text-label-md text-primary block">1. Vérifier la graphie</span>
+<span class="text-body-sm text-on-surface-variant">Assurez-vous d'avoir saisi les tirets et le millésime exact (ex: 2024).</span>
+</div>
+<div class="p-3 bg-surface-container-low rounded-lg border border-outline-variant/50">
+<span class="font-bold text-label-md text-primary block">2. Scanner le QR Code</span>
+<span class="text-body-sm text-on-surface-variant">Utilisez le capteur optique pour éliminer toute erreur de frappe manuelle.</span>
+</div>
+<div class="p-3 bg-surface-container-low rounded-lg border border-outline-variant/50">
+<span class="font-bold text-label-md text-primary block">3. Recours au greffe</span>
+<span class="text-body-sm text-on-surface-variant">Transmettez une copie scannée au service de chancellerie de l'institut.</span>
+</div>
+</div>
+<!-- Support Button -->
+<div class="mt-space-lg flex flex-wrap items-center gap-space-sm">
+<button class="px-4 py-2.5 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg shadow-sm flex items-center gap-2 transition-all" type="button">
+<span class="material-symbols-outlined text-base text-tertiary-fixed" data-icon="contact_support">contact_support</span>
+<span>Contacter le Greffe Académique VIZATI</span>
+</button>
+<button class="px-4 py-2.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-primary font-label-lg text-label-lg border border-outline-variant/60 transition-all" onclick="switchState('valid')" type="button">
+                  Nouvelle recherche
+                </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- ==================== STATE 3: DOCUMENT RÉVOQUÉ / SUSPENDU ==================== -->
+<div class="hidden transition-opacity duration-300" id="state-revoked">
+<div class="bg-surface-container-lowest border-2 border-error rounded-xl shadow-lg p-space-lg md:p-space-xl">
+<div class="flex flex-col md:flex-row items-start gap-space-lg">
+<div class="w-14 h-14 rounded-full bg-error-container text-error flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-3xl font-bold" data-icon="block">block</span>
+</div>
+<div class="flex-grow">
+<div class="flex flex-wrap items-center gap-2 mb-1">
+<span class="px-2.5 py-0.5 rounded bg-error text-on-error text-label-xs font-label-xs font-bold uppercase tracking-wider">
+                  INVALIDATION ACADÉMIQUE
+                </span>
+<span class="text-label-xs font-label-xs text-error font-semibold">Décision Disciplinaire N° DC-2024-03</span>
+</div>
+<h3 class="text-headline-lg font-headline-lg text-error tracking-tight">
+                Document Révoqué, Caduc ou Suspendu
+              </h3>
+<p class="mt-2 text-body-lg font-body-lg text-on-surface-variant max-w-2xl">
+                Ce titre a fait l'objet d'une révocation administrative ou d'une annulation de validité légale par le Conseil de Discipline ou la Direction des Études de l'Institut VIZATI. Ce document est légalement réputé nul et non avenu dans l'espace UEMOA et OHADA.
+              </p>
+<!-- Invalidation Reason Block -->
+<div class="mt-space-md p-space-md bg-error-container/40 rounded-lg border border-error/30 text-body-md text-on-surface">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm">
+<div>
+<span class="text-label-xs font-label-xs text-error font-bold uppercase block">Motif d'invalidation</span>
+<span class="font-semibold text-primary">Défaut de conformité administrative &amp; non-validation du contrôle déontologique</span>
+</div>
+<div>
+<span class="text-label-xs font-label-xs text-error font-bold uppercase block">Date d'effet de révocation</span>
+<span class="font-semibold text-primary">18 Janvier 2025</span>
+</div>
+</div>
+</div>
+<!-- Formal Alert Box -->
+<div class="mt-space-md flex items-center gap-2 text-body-sm font-body-sm text-outline">
+<span class="material-symbols-outlined text-error text-lg" data-icon="gavel">gavel</span>
+<span>Toute tentative d'usage ou d'usurpation de ce certificat expose son porteur à des poursuites judiciaires conformément aux règlements UEMOA.</span>
+</div>
+<div class="mt-space-lg">
+<button class="px-4 py-2.5 rounded-lg bg-error hover:bg-error/90 text-on-error font-label-lg text-label-lg shadow-sm flex items-center gap-2 transition-all" type="button">
+<span class="material-symbols-outlined text-base" data-icon="report">report</span>
+<span>Signaler un usage frauduleux auprès du Conseil Juridique</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION DE RÉASSURANCE INSTITUTIONNELLE: BENTO GRID PATTERN -->
+<section class="border-t border-outline-variant/40 bg-surface-container-low/60 py-space-xl md:py-space-2xl">
+<div class="max-w-6xl mx-auto px-space-md md:px-margin">
+<div class="text-center max-w-2xl mx-auto mb-space-xl">
+<span class="text-label-xs font-label-xs uppercase tracking-wider text-on-tertiary-container font-bold">
+            GOUVERNANCE &amp; CADRE JURIDIQUE
+          </span>
+<h2 class="text-headline-xl font-headline-xl text-primary tracking-tight mt-1">
+            Pourquoi et comment vérifier un titre VIZATI ?
+          </h2>
+<p class="mt-2 text-body-md font-body-md text-on-surface-variant">
+            Un dispositif cryptographique de pointe garantissant aux employeurs, bailleurs de fonds et juridictions l'authenticité absolue des compétences immobilières certifiées.
+          </p>
+</div>
+<!-- Bento Grid: 3 Pillars -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<!-- Pillar 1 -->
+<div class="p-space-lg bg-surface-container-lowest rounded-xl border border-outline-variant/60 shadow-sm flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-primary mb-space-md">
+<span class="material-symbols-outlined text-2xl text-on-tertiary-container" data-icon="security">security</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-primary font-bold">
+                Inviolabilité Cryptographique
+              </h3>
+<p class="mt-2 text-body-md font-body-md text-on-surface-variant leading-relaxed">
+                Chaque parchemin ou attestation génère un hash irréversible SHA-256 consigné dans le registre immuable de l'Institut VIZATI. Aucune falsification matérielle ou altération numérique n'est possible.
+              </p>
+</div>
+<div class="mt-space-md pt-space-sm border-t border-outline-variant/30 flex items-center gap-1.5 text-label-xs font-label-xs text-primary font-bold">
+<span class="material-symbols-outlined text-base text-emerald-600" data-icon="check_circle">check_circle</span>
+<span>Conforme Protocoles eIDAS &amp; UEMOA</span>
+</div>
+</div>
+<!-- Pillar 2 -->
+<div class="p-space-lg bg-surface-container-lowest rounded-xl border border-outline-variant/60 shadow-sm flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-primary mb-space-md">
+<span class="material-symbols-outlined text-2xl text-on-tertiary-container" data-icon="privacy_tip">privacy_tip</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-primary font-bold">
+                Protection Stricte RGPD &amp; UEMOA
+              </h3>
+<p class="mt-2 text-body-md font-body-md text-on-surface-variant leading-relaxed">
+                Le registre public applique le principe de minimisation des données : seules la validité du titre, la mention et la spécialité sont vérifiables. Aucune donnée d'identification civile sensible n'est exposée.
+              </p>
+</div>
+<div class="mt-space-md pt-space-sm border-t border-outline-variant/30 flex items-center gap-1.5 text-label-xs font-label-xs text-primary font-bold">
+<span class="material-symbols-outlined text-base text-emerald-600" data-icon="check_circle">check_circle</span>
+<span>Zéro Divulgation de Coordonnées</span>
+</div>
+</div>
+<!-- Pillar 3 -->
+<div class="p-space-lg bg-surface-container-lowest rounded-xl border border-outline-variant/60 shadow-sm flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-primary mb-space-md">
+<span class="material-symbols-outlined text-2xl text-on-tertiary-container" data-icon="hub">hub</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-primary font-bold">
+                Reconnaissance Institutionnelle
+              </h3>
+<p class="mt-2 text-body-md font-body-md text-on-surface-variant leading-relaxed">
+                Nos titres sont reconnus par les barreaux, chambres de notaires, ordres d'experts géomètres et fédérations professionnelles de l'immobilier à travers les 8 États membres de l'Union.
+              </p>
+</div>
+<div class="mt-space-md pt-space-sm border-t border-outline-variant/30 flex items-center gap-1.5 text-label-xs font-label-xs text-primary font-bold">
+<span class="material-symbols-outlined text-base text-emerald-600" data-icon="check_circle">check_circle</span>
+<span>Accréditation Écosystème OHADA</span>
+</div>
+</div>
+</div>
+<!-- Institutional Partners Logos / Badges -->
+<div class="mt-space-xl pt-space-lg border-t border-outline-variant/50 flex flex-wrap items-center justify-center md:justify-between gap-space-lg text-outline">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-2xl text-primary" data-icon="assured_workload">assured_workload</span>
+<span class="font-headline-sm text-label-md font-bold text-primary">COMMISSION UEMOA</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-2xl text-primary" data-icon="account_balance">account_balance</span>
+<span class="font-headline-sm text-label-md font-bold text-primary">SECRÉTARIAT PERMANENT OHADA</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-2xl text-primary" data-icon="school">school</span>
+<span class="font-headline-sm text-label-md font-bold text-primary">RÉFÉRENTIEL CAMES</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-2xl text-primary" data-icon="verified">verified</span>
+<span class="font-headline-sm text-label-md font-bold text-primary">ORDRES DES GÉOMÈTRES UEMOA</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- FOOTER (Shared Components Executed: Footer) -->
+<footer class="w-full bg-primary dark:bg-primary-container text-on-primary dark:text-inverse-primary border-t border-primary-container dark:border-outline-variant">
+<div class="w-full py-space-xl px-space-lg md:px-margin max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-space-lg">
+<!-- Logo & Legal Notice -->
+<div class="flex flex-col items-center md:items-start text-center md:text-left gap-2">
+<span class="text-headline-md font-headline-md font-bold text-on-primary dark:text-inverse-primary tracking-wider uppercase">
+          INSTITUT VIZATI
+        </span>
+<p class="text-body-sm font-body-sm text-outline-variant dark:text-surface-variant max-w-lg">
+          © 2025 Institut VIZATI — Haute École d'Intelligence Foncière et Immobilière de l'Espace UEMOA. Tous droits réservés.
+        </p>
+</div>
+<!-- Links defined in Shared Components JSON -->
+<nav class="flex flex-wrap justify-center md:justify-end items-center gap-space-md text-label-md font-label-md">
+<a class="text-outline-variant dark:text-surface-variant hover:text-on-primary dark:hover:text-inverse-on-surface hover:text-tertiary-fixed-dim dark:hover:text-tertiary-fixed transition-colors duration-150" href="#registre">
+          Registre Cadastral Central
+        </a>
+<a class="text-outline-variant dark:text-surface-variant hover:text-on-primary dark:hover:text-inverse-on-surface hover:text-tertiary-fixed-dim dark:hover:text-tertiary-fixed transition-colors duration-150" href="#accreditation">
+          Accréditation CAMES &amp; UEMOA
+        </a>
+<a class="text-outline-variant dark:text-surface-variant hover:text-on-primary dark:hover:text-inverse-on-surface hover:text-tertiary-fixed-dim dark:hover:text-tertiary-fixed transition-colors duration-150" href="#statut">
+          Statut Système &amp; Sécurité
+        </a>
+<a class="text-outline-variant dark:text-surface-variant hover:text-on-primary dark:hover:text-inverse-on-surface hover:text-tertiary-fixed-dim dark:hover:text-tertiary-fixed transition-colors duration-150" href="#mentions">
+          Mentions Légales &amp; Déontologie
+        </a>
+<a class="text-outline-variant dark:text-surface-variant hover:text-on-primary dark:hover:text-inverse-on-surface hover:text-tertiary-fixed-dim dark:hover:text-tertiary-fixed transition-colors duration-150" href="#contact">
+          Contact Présidence
+        </a>
+</nav>
+</div>
+</footer>
+<!-- Inline Vanilla Script for Interactive Verification State Switching & Search Simulation -->
+<script>
+    function switchState(state) {
+      const stateValid = document.getElementById('state-valid');
+      const stateMissing = document.getElementById('state-missing');
+      const stateRevoked = document.getElementById('state-revoked');
+      
+      const btnValid = document.getElementById('btnStateValid');
+      const btnMissing = document.getElementById('btnStateMissing');
+      const btnRevoked = document.getElementById('btnStateRevoked');
+      
+      // Reset buttons
+      [btnValid, btnMissing, btnRevoked].forEach(btn => {
+        btn.className = "px-3 py-1 rounded text-label-md font-label-md font-semibold text-on-surface-variant hover:text-primary transition-all";
+      });
+
+      // Hide all states
+      stateValid.classList.add('hidden');
+      stateMissing.classList.add('hidden');
+      stateRevoked.classList.add('hidden');
+
+      if (state === 'valid') {
+        stateValid.classList.remove('hidden');
+        btnValid.className = "px-3 py-1 rounded text-label-md font-label-md font-semibold bg-surface-container-lowest text-primary shadow-sm border border-outline-variant/50 transition-all";
+        document.getElementById('certInput').value = "#VZ-CERT-2024-098";
+      } else if (state === 'missing') {
+        stateMissing.classList.remove('hidden');
+        btnMissing.className = "px-3 py-1 rounded text-label-md font-label-md font-semibold bg-surface-container-lowest text-primary shadow-sm border border-outline-variant/50 transition-all";
+        document.getElementById('certInput').value = "#VZ-ERR-999-000";
+      } else if (state === 'revoked') {
+        stateRevoked.classList.remove('hidden');
+        btnRevoked.className = "px-3 py-1 rounded text-label-md font-label-md font-semibold bg-surface-container-lowest text-primary shadow-sm border border-outline-variant/50 transition-all";
+        document.getElementById('certInput').value = "#VZ-REV-2024-012";
+      }
+    }
+
+    // Handle Form Submit
+    document.getElementById('verifyForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const val = document.getElementById('certInput').value.trim().toUpperCase();
+      if (val.includes('098') || val.includes('CERT')) {
+        switchState('valid');
+      } else if (val.includes('REV') || val.includes('CADUC')) {
+        switchState('revoked');
+      } else {
+        switchState('missing');
+      }
+    });
+  </script>
+</body></html>

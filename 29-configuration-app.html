@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-background" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>VIZATI — Paramètres Généraux &amp; Configuration Système</title>
+<!-- Material Symbols Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Manrope & Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config verbatim from instructions -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-primary-fixed-variant": "#324864",
+            "primary-fixed": "#d3e3ff",
+            "on-tertiary-fixed-variant": "#5f4100",
+            "surface-dim": "#d0daf2",
+            "on-tertiary": "#ffffff",
+            "on-secondary-fixed-variant": "#2a486a",
+            "surface-container-highest": "#d9e3fb",
+            "on-secondary-container": "#405d80",
+            "surface": "#f9f9ff",
+            "on-secondary": "#ffffff",
+            "on-tertiary-fixed": "#271900",
+            "on-primary-fixed": "#031c37",
+            "outline-variant": "#c4c6ce",
+            "outline": "#74777e",
+            "secondary-fixed-dim": "#abc9f1",
+            "on-error-container": "#93000a",
+            "tertiary": "#201300",
+            "surface-tint": "#4a607d",
+            "secondary-fixed": "#d2e4ff",
+            "surface-container-lowest": "#ffffff",
+            "primary-container": "#142b46",
+            "secondary-container": "#b9d7ff",
+            "primary-fixed-dim": "#b2c8ea",
+            "on-error": "#ffffff",
+            "on-surface": "#111c2d",
+            "secondary": "#436083",
+            "surface-container-high": "#dfe8ff",
+            "primary": "#00162f",
+            "inverse-on-surface": "#ecf0ff",
+            "tertiary-fixed-dim": "#edbf73",
+            "background": "#f9f9ff",
+            "inverse-primary": "#b2c8ea",
+            "surface-variant": "#d9e3fb",
+            "on-secondary-fixed": "#001d37",
+            "surface-container-low": "#f0f3ff",
+            "inverse-surface": "#273143",
+            "on-surface-variant": "#44474d",
+            "surface-bright": "#f9f9ff",
+            "error": "#ba1a1a",
+            "tertiary-container": "#3a2600",
+            "on-tertiary-container": "#b38a44",
+            "on-primary": "#ffffff",
+            "surface-container": "#e8eeff",
+            "tertiary-fixed": "#ffdeab",
+            "error-container": "#ffdad6",
+            "on-background": "#111c2d",
+            "on-primary-container": "#7d93b3"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "space-sm": "0.5rem",
+            "space-lg": "1.5rem",
+            "margin": "3rem",
+            "space-md": "1rem",
+            "space-xl": "2.5rem",
+            "space-2xl": "4rem",
+            "gutter-mobile": "1rem",
+            "margin-mobile": "1rem",
+            "gutter": "1.5rem",
+            "space-xs": "0.25rem"
+          },
+          "fontFamily": {
+            "headline-xl": ["Manrope"],
+            "body-xl": ["Inter"],
+            "label-lg": ["Inter"],
+            "code-num": ["Inter"],
+            "body-md": ["Inter"],
+            "headline-sm": ["Manrope"],
+            "body-lg": ["Inter"],
+            "headline-lg": ["Manrope"],
+            "headline-md": ["Manrope"],
+            "display-hero-mobile": ["Manrope"],
+            "body-sm": ["Inter"],
+            "display-hero": ["Manrope"],
+            "headline-xl-mobile": ["Manrope"],
+            "label-md": ["Inter"],
+            "label-xs": ["Inter"]
+          },
+          "fontSize": {
+            "headline-xl": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "body-xl": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+            "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+            "code-num": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+            "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+            "headline-sm": ["18px", {"lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "600"}],
+            "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+            "headline-lg": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+            "headline-md": ["22px", {"lineHeight": "30px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+            "display-hero-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+            "body-sm": ["12px", {"lineHeight": "18px", "fontWeight": "400"}],
+            "display-hero": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+            "headline-xl-mobile": ["26px", {"lineHeight": "34px", "letterSpacing": "-0.015em", "fontWeight": "700"}],
+            "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+            "label-xs": ["10px", {"lineHeight": "14px", "letterSpacing": "0.06em", "fontWeight": "700"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    input[type=range]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      height: 18px;
+      width: 18px;
+      border-radius: 9999px;
+      background: #142b46;
+      border: 2px solid #ffffff;
+      box-shadow: 0 0 0 1px #c49a52;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body class="h-full bg-background text-on-surface antialiased overflow-x-hidden">
+<!-- ========================================================================= -->
+<!-- 1. SHARED COMPONENT: SideNavBar (Super-Admin VIZATI)                      -->
+<!-- ========================================================================= -->
+<aside class="fixed inset-y-0 left-0 w-72 flex flex-col z-40 bg-primary shadow-md border-r border-outline-variant/20 h-screen justify-between shrink-0">
+<!-- Header / Brand Section -->
+<div>
+<div class="p-6 border-b border-outline-variant/10">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-primary-container flex items-center justify-center border border-on-tertiary-container/40 text-on-tertiary-container shadow-inner">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">account_balance</span>
+</div>
+<div class="flex flex-col">
+<span class="text-headline-md font-headline-md tracking-tight uppercase text-on-primary">VIZATI ACADEMY</span>
+<span class="text-label-md font-label-md text-on-primary-container">Super-Admin &amp; CMS Suite</span>
+</div>
+</div>
+</div>
+<!-- Main Navigation Links -->
+<nav aria-label="Menu principal" class="px-4 py-6 space-y-1.5">
+<!-- Tableau de Bord -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-primary-container hover:text-on-primary hover:bg-primary-container/40 font-label-lg transition-colors cursor-pointer active:scale-98" href="#">
+<span class="material-symbols-outlined text-lg">dashboard</span>
+<span>Tableau de Bord</span>
+</a>
+<!-- Observatoire Marché -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-primary-container hover:text-on-primary hover:bg-primary-container/40 font-label-lg transition-colors cursor-pointer active:scale-98" href="#">
+<span class="material-symbols-outlined text-lg">analytics</span>
+<span>Observatoire Marché</span>
+</a>
+<!-- Programmes Exécutifs -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-primary-container hover:text-on-primary hover:bg-primary-container/40 font-label-lg transition-colors cursor-pointer active:scale-98" href="#">
+<span class="material-symbols-outlined text-lg">school</span>
+<span>Programmes Exécutifs</span>
+</a>
+<!-- Registres Cadastraux -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-primary-container hover:text-on-primary hover:bg-primary-container/40 font-label-lg transition-colors cursor-pointer active:scale-98" href="#">
+<span class="material-symbols-outlined text-lg">domain</span>
+<span>Registres Cadastraux</span>
+</a>
+<!-- CMS & Publications -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-primary-container hover:text-on-primary hover:bg-primary-container/40 font-label-lg transition-colors cursor-pointer active:scale-98" href="#">
+<span class="material-symbols-outlined text-lg">edit_note</span>
+<span>CMS &amp; Publications</span>
+</a>
+<!-- Gouvernance & Droits -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-primary-container hover:text-on-primary hover:bg-primary-container/40 font-label-lg transition-colors cursor-pointer active:scale-98" href="#">
+<span class="material-symbols-outlined text-lg">admin_panel_settings</span>
+<span>Gouvernance &amp; Droits</span>
+</a>
+</nav>
+</div>
+<!-- Bottom Actions & Footer Navigation -->
+<div class="p-4 border-t border-outline-variant/10 space-y-3">
+<!-- Institutional Sync CTA -->
+<button class="w-full py-2.5 px-3 rounded-lg bg-primary-container hover:bg-primary-container/80 text-on-primary flex items-center justify-center gap-2 border border-on-tertiary-container/30 transition-colors shadow-sm">
+<span class="material-symbols-outlined text-sm text-on-tertiary-container">sync</span>
+<span class="font-label-lg text-xs uppercase tracking-wider text-on-primary">Déployer Rapport Sync</span>
+</button>
+<!-- Footer Tabs (Paramètres Système is active per prompt destination logic) -->
+<div class="space-y-1 pt-1">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg bg-primary-container text-on-primary font-label-lg transition-colors border-l-4 border-on-tertiary-container cursor-pointer" href="#">
+<span class="material-symbols-outlined text-lg text-on-tertiary-container">settings</span>
+<span>Paramètres Système</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-primary-container hover:text-on-primary hover:bg-primary-container/40 font-label-lg transition-colors cursor-pointer active:scale-98" href="#">
+<span class="material-symbols-outlined text-lg">help_outline</span>
+<span>Support Régional</span>
+</a>
+</div>
+<!-- Infrastructure Tag -->
+<div class="px-2 pt-2 flex items-center justify-between text-label-xs font-label-xs text-on-primary-container/60">
+<span>NOEUD SÉNÉGAL-CI 01</span>
+<span class="flex items-center gap-1 text-on-tertiary-container font-code-num text-xs">
+<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container inline-block"></span>
+          SHA-256 OK
+        </span>
+</div>
+</div>
+</aside>
+<!-- ========================================================================= -->
+<!-- 2. SHARED COMPONENT: TopNavBar (VIZATI Executive Console)                 -->
+<!-- ========================================================================= -->
+<header class="sticky top-0 right-0 pl-72 pr-8 w-full z-30 flex items-center justify-between h-16 bg-surface-container-lowest border-b border-outline-variant/30 shadow-sm">
+<!-- Left Section: Search & Product Breadth -->
+<div class="flex items-center gap-6 pl-6">
+<div class="flex items-center gap-2">
+<span class="text-headline-sm font-headline-sm font-bold text-primary uppercase tracking-wide">VIZATI Executive Console</span>
+<span class="px-2 py-0.5 rounded text-label-xs font-label-xs bg-surface-container text-secondary font-semibold">SUPER-ADMIN</span>
+</div>
+<!-- Quick Search Bar -->
+<div class="relative w-72">
+<span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-outline">
+<span class="material-symbols-outlined text-sm">search</span>
+</span>
+<input class="w-full pl-9 pr-3 py-1.5 bg-surface text-body-md font-body-md rounded-lg border border-outline-variant/60 focus:outline-none focus:border-primary-container text-on-surface placeholder:text-outline text-xs" placeholder="Rechercher config, module, clé API..." type="text"/>
+</div>
+</div>
+<!-- Center Navigation Links -->
+<div class="hidden lg:flex items-center gap-6">
+<a class="text-primary font-label-md border-b-2 border-on-tertiary-container pb-1 transition-colors" href="#">Institut Dakar</a>
+<a class="text-on-surface-variant font-label-md hover:text-primary transition-colors" href="#">Hub Abidjan</a>
+<a class="text-on-surface-variant font-label-md hover:text-primary transition-colors" href="#">Région UEMOA</a>
+</div>
+<!-- Trailing Actions & Profile -->
+<div class="flex items-center gap-3">
+<!-- Status Badge -->
+<div class="hidden xl:flex items-center gap-2 px-2.5 py-1 rounded bg-surface-container border border-outline-variant/40 text-label-md font-label-md text-on-secondary-container">
+<span class="material-symbols-outlined text-xs text-on-tertiary-container">sync_lock</span>
+<span>Cluster Sync (SSL)</span>
+</div>
+<!-- Action Buttons -->
+<button class="p-2 rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors duration-150 cursor-pointer" title="Notifications">
+<span class="material-symbols-outlined text-xl">notifications</span>
+</button>
+<button class="p-2 rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors duration-150 cursor-pointer" title="Réglages rapides">
+<span class="material-symbols-outlined text-xl">tune</span>
+</button>
+<button class="px-3.5 py-1.5 rounded-lg bg-primary-container hover:bg-primary-container/90 text-on-primary font-label-md text-xs font-semibold tracking-wide transition-colors duration-150 shadow-sm flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm">publish</span>
+<span>Publier Révision</span>
+</button>
+<!-- Admin Profile Lockup -->
+<div class="flex items-center gap-2.5 pl-3 border-l border-outline-variant/30">
+<div class="w-8 h-8 rounded-full overflow-hidden border border-on-tertiary-container/60 bg-primary-container flex items-center justify-center text-on-tertiary-container">
+<img class="w-full h-full object-cover" data-alt="Portrait professionnel institutionnel de haut niveau du Secrétaire Général Administrateur de l'Académie VIZATI, vêtu d'un costume formel sombre avec un éclairage de studio feutré, incarnant le leadership académique et la rigueur institutionnelle." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHhlA4XMfl7hvBhaYFEfDhNrc1mNZUDLyIM4Fg5Qoo4MdU3xC9AxDtt3YS5jPx_koACvgV2TewzYZAPfDhbFT3kWEWgfiOOataMNtEoZodJWoKD8Luo679_8xKk9nEvsqawTWRLaS51iC_GtluSRbx4gPhPZnstX42h7KidV8wVVWS2JTQ-GHCKVE88NK8LVLBPxDvnioXrfF_xcC-IzfkHcebFQ8eVsr4_XHENN0"/>
+</div>
+<div class="flex flex-col text-left">
+<span class="text-label-md font-label-md text-on-surface leading-tight font-semibold">Dr. A. Diallo</span>
+<span class="text-label-xs font-label-xs text-on-surface-variant">Secrétaire Général</span>
+</div>
+</div>
+</div>
+</header>
+<!-- ========================================================================= -->
+<!-- MAIN WORKSPACE CANVAS (pl-72 Desktop layout for persistent 1440px Admin)  -->
+<!-- ========================================================================= -->
+<main class="pl-72 w-full pb-20">
+<div class="max-w-[1440px] mx-auto px-8 pt-8">
+<!-- ===================================================================== -->
+<!-- 3. EN-TÊTE DE PAGE (Breadcrumbs, Title & Global Actions)              -->
+<!-- ===================================================================== -->
+<section class="mb-8">
+<!-- Breadcrumb -->
+<nav aria-label="Fil d'ariane" class="flex items-center gap-2 text-label-md font-label-md text-outline mb-2.5">
+<span>Administration Générale</span>
+<span class="material-symbols-outlined text-xs">chevron_right</span>
+<span class="text-primary font-medium">Paramètres Système &amp; Gouvernance</span>
+</nav>
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<h1 class="text-headline-xl font-headline-xl text-primary tracking-tight">Configuration Générale de la Plateforme VIZATI</h1>
+<p class="text-body-lg font-body-lg text-on-surface-variant max-w-4xl mt-1">
+              Gestion centralisée des identités de marque, règles d'accréditation pédagogique, modèles régionaux UEMOA et politiques de sécurité.
+            </p>
+</div>
+<!-- Global Action Buttons -->
+<div class="flex items-center gap-3 shrink-0">
+<button class="px-5 py-2.5 rounded-lg border border-outline-variant hover:bg-surface-container text-on-surface font-label-lg transition-colors cursor-pointer" type="button">
+              Annuler
+            </button>
+<button class="px-6 py-2.5 rounded-lg bg-primary-container hover:bg-primary-container/90 text-on-primary font-label-lg flex items-center gap-2 shadow-sm transition-all duration-150 cursor-pointer active:scale-98" type="button">
+<span class="material-symbols-outlined text-base text-on-tertiary-container">verified</span>
+<span>Enregistrer toutes les modifications</span>
+</button>
+</div>
+</div>
+</section>
+<!-- ===================================================================== -->
+<!-- 4. BARRE D'ONGLETS SECONDAIRE (Navigation Horizontale avec Badges)    -->
+<!-- ===================================================================== -->
+<div class="border-b border-outline-variant/30 mb-8 overflow-x-auto scrollbar-none">
+<ul class="flex items-center gap-6 text-label-md font-label-md whitespace-nowrap">
+<!-- Identité & Marque (Actif) -->
+<li class="relative pb-3">
+<a class="flex items-center gap-2 text-primary font-semibold" href="#section-identite">
+<span class="material-symbols-outlined text-base text-on-tertiary-container">branding_watermark</span>
+<span>Identité &amp; Marque</span>
+<span class="px-1.5 py-0.5 rounded-full text-[10px] bg-primary text-on-primary">Principal</span>
+</a>
+<div class="absolute bottom-0 left-0 right-0 h-0.5 bg-on-tertiary-container"></div>
+</li>
+<!-- Paramètres Généraux & Région -->
+<li class="pb-3 text-on-surface-variant hover:text-primary transition-colors">
+<a class="flex items-center gap-2" href="#section-region">
+<span class="material-symbols-outlined text-base">public</span>
+<span>Paramètres Généraux &amp; Région</span>
+<span class="px-1.5 py-0.5 rounded-full text-[10px] bg-surface-container text-on-surface-variant">UEMOA</span>
+</a>
+</li>
+<!-- Rôles & Permissions -->
+<li class="pb-3 text-on-surface-variant hover:text-primary transition-colors">
+<a class="flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-base">badge</span>
+<span>Rôles &amp; Permissions</span>
+</a>
+</li>
+<!-- Notifications & E-mails -->
+<li class="pb-3 text-on-surface-variant hover:text-primary transition-colors">
+<a class="flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-base">outgoing_mail</span>
+<span>Notifications &amp; E-mails</span>
+</a>
+</li>
+<!-- Ingénierie Pédagogique & Certificats -->
+<li class="pb-3 text-on-surface-variant hover:text-primary transition-colors">
+<a class="flex items-center gap-2" href="#section-pedagogie">
+<span class="material-symbols-outlined text-base">military_tech</span>
+<span>Ingénierie Pédagogique &amp; Certificats</span>
+<span class="px-1.5 py-0.5 rounded-full text-[10px] bg-tertiary-fixed text-on-tertiary-fixed font-bold">Standard</span>
+</a>
+</li>
+<!-- Politique Éditoriale & CMS -->
+<li class="pb-3 text-on-surface-variant hover:text-primary transition-colors">
+<a class="flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-base">newspaper</span>
+<span>Politique Éditoriale &amp; CMS</span>
+</a>
+</li>
+<!-- Moteur de Veille & IA -->
+<li class="pb-3 text-on-surface-variant hover:text-primary transition-colors">
+<a class="flex items-center gap-2" href="#section-ia">
+<span class="material-symbols-outlined text-base">psychology</span>
+<span>Moteur de Veille &amp; IA</span>
+<span class="px-1.5 py-0.5 rounded-full text-[10px] bg-surface-container-highest text-secondary font-bold">v2.4</span>
+</a>
+</li>
+<!-- Sécurité & Journal d'Audit -->
+<li class="pb-3 text-on-surface-variant hover:text-primary transition-colors">
+<a class="flex items-center gap-2" href="#section-securite">
+<span class="material-symbols-outlined text-base">shield_lock</span>
+<span>Sécurité &amp; Journal d'Audit</span>
+<span class="w-2 h-2 rounded-full bg-on-tertiary-container"></span>
+</a>
+</li>
+</ul>
+</div>
+<!-- ===================================================================== -->
+<!-- 5. CONTENU DES SECTIONS STRUCTURÉES (Bento & Modern Card Grid)        -->
+<!-- ===================================================================== -->
+<div class="space-y-10">
+<!-- ----------------------------------------------------------------- -->
+<!-- SECTION 1 : IDENTITÉ DE LA PLATEFORME & ÉLÉMENTS DE MARQUE         -->
+<!-- ----------------------------------------------------------------- -->
+<section class="bg-surface-container-lowest rounded-xl border border-outline-variant/40 shadow-sm p-8" id="section-identite">
+<div class="flex items-start justify-between border-b border-outline-variant/20 pb-5 mb-6">
+<div>
+<div class="flex items-center gap-2.5">
+<span class="w-8 h-8 rounded-lg bg-primary-container text-on-tertiary-container flex items-center justify-center font-bold text-sm">01</span>
+<h2 class="text-headline-md font-headline-md text-primary">Identité de la Plateforme &amp; Éléments de Marque</h2>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant mt-1">
+                Définition du socle institutionnel, des représentations héraldiques et des chartes de communication panafricaine.
+              </p>
+</div>
+<span class="px-3 py-1 rounded bg-surface-container text-label-xs font-label-xs text-primary font-semibold tracking-wider uppercase">
+              Charte Officielle VIZATI 2025
+            </span>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Col 1: Logo & Visual Stamp (4 cols) -->
+<div class="lg:col-span-4 space-y-4">
+<label class="block text-label-md font-label-md text-on-surface font-semibold">Emblème Héraldique &amp; Wordmark Officiel</label>
+<div class="p-6 rounded-xl border border-dashed border-outline-variant/80 bg-surface flex flex-col items-center justify-center text-center">
+<!-- Crest Emblem Graphic -->
+<div class="w-24 h-24 rounded-2xl bg-primary flex items-center justify-center text-on-tertiary-container shadow-md relative mb-3 border-2 border-on-tertiary-container/40">
+<span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">account_balance</span>
+<span class="absolute -bottom-2 px-2 py-0.5 rounded text-[9px] font-bold bg-on-tertiary-container text-tertiary uppercase tracking-widest shadow">Dakar-Abidjan</span>
+</div>
+<span class="text-headline-sm font-headline-sm font-bold text-primary tracking-tight">VIZATI ACADEMY</span>
+<span class="text-body-sm font-body-sm text-outline mt-0.5">Format SVG vectoriel haute définition (ratio 1:1)</span>
+<div class="mt-4 flex items-center gap-2">
+<button class="px-3 py-1.5 rounded-lg border border-outline-variant hover:bg-surface-container text-label-md font-label-md text-primary flex items-center gap-1.5 transition-colors" type="button">
+<span class="material-symbols-outlined text-sm">upload_file</span>
+<span>Changer le logo SVG</span>
+</button>
+<button class="p-1.5 rounded-lg border border-outline-variant hover:bg-surface-container text-outline transition-colors" title="Télécharger" type="button">
+<span class="material-symbols-outlined text-sm">download</span>
+</button>
+</div>
+</div>
+<!-- Brand Color Palettes Preview -->
+<div>
+<label class="block text-label-md font-label-md text-on-surface font-semibold mb-2">Nuancier Système Institué</label>
+<div class="grid grid-cols-3 gap-2">
+<div class="p-2.5 rounded-lg border border-outline-variant/40 bg-surface">
+<div class="w-full h-7 rounded bg-primary-container mb-1.5 border border-black/10"></div>
+<span class="block text-[11px] font-semibold text-primary">Bleu Marine</span>
+<span class="text-code-num text-[11px] text-outline font-mono">#142B46</span>
+</div>
+<div class="p-2.5 rounded-lg border border-outline-variant/40 bg-surface">
+<div class="w-full h-7 rounded bg-[#c49a52] mb-1.5 border border-black/10"></div>
+<span class="block text-[11px] font-semibold text-primary">Or Académique</span>
+<span class="text-code-num text-[11px] text-outline font-mono">#C49A52</span>
+</div>
+<div class="p-2.5 rounded-lg border border-outline-variant/40 bg-surface">
+<div class="w-full h-7 rounded bg-background mb-1.5 border border-outline-variant/60"></div>
+<span class="block text-[11px] font-semibold text-primary">Surface Claire</span>
+<span class="text-code-num text-[11px] text-outline font-mono">#F9F9FF</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Col 2: Institutional Name, Slogan & Campuses (8 cols) -->
+<div class="lg:col-span-8 space-y-5">
+<div>
+<label class="block text-label-md font-label-md text-on-surface font-semibold mb-1">Nom Légal de l'Institution</label>
+<input class="w-full px-4 py-2.5 bg-surface-container-lowest text-body-md font-body-md rounded-lg border border-outline-variant focus:outline-none focus:border-primary-container focus:ring-2 focus:ring-primary-container/10 text-on-surface font-medium" type="text" value="VIZATI — Institut &amp; Académie Exécutive de l'Immobilier"/>
+</div>
+<div>
+<label class="block text-label-md font-label-md text-on-surface font-semibold mb-1">Slogan Officiel &amp; Devise Académique</label>
+<input class="w-full px-4 py-2.5 bg-surface-container-lowest text-body-md font-body-md rounded-lg border border-outline-variant focus:outline-none focus:border-primary-container focus:ring-2 focus:ring-primary-container/10 text-on-surface" type="text" value="L'intelligence immobilière et l'excellence académique panafricaine."/>
+</div>
+<!-- Campus Dakar & Abidjan Coordonnées -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-1">
+<div class="p-4 rounded-xl border border-outline-variant/40 bg-surface">
+<div class="flex items-center justify-between mb-2">
+<span class="text-label-md font-label-md font-bold text-primary flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm text-on-tertiary-container">location_on</span>
+                      Campus Dakar Plateau
+                    </span>
+<span class="text-[10px] font-semibold text-secondary uppercase bg-surface-container-highest px-2 py-0.5 rounded">Siège Administratif</span>
+</div>
+<div class="space-y-2 text-body-sm font-body-sm">
+<div>
+<span class="text-outline text-xs block">Adresse Physique :</span>
+<span class="text-on-surface font-medium">Avenue Roume, Immeuble Kébé, 6e étage, Dakar</span>
+</div>
+<div>
+<span class="text-outline text-xs block">Canal Direct &amp; E-mail :</span>
+<span class="text-on-surface font-mono text-xs">dakar.chancellerie@vizati-academy.sn</span>
+</div>
+</div>
+</div>
+<div class="p-4 rounded-xl border border-outline-variant/40 bg-surface">
+<div class="flex items-center justify-between mb-2">
+<span class="text-label-md font-label-md font-bold text-primary flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm text-on-tertiary-container">location_on</span>
+                      Hub Abidjan Cocody
+                    </span>
+<span class="text-[10px] font-semibold text-secondary uppercase bg-surface-container-highest px-2 py-0.5 rounded">Observatoire UEMOA</span>
+</div>
+<div class="space-y-2 text-body-sm font-body-sm">
+<div>
+<span class="text-outline text-xs block">Adresse Physique :</span>
+<span class="text-on-surface font-medium">Boulevard Latrille, Résidence Privilège, Cocody, Abidjan</span>
+</div>
+<div>
+<span class="text-outline text-xs block">Canal Direct &amp; E-mail :</span>
+<span class="text-on-surface font-mono text-xs">abidjan.recherche@vizati-academy.ci</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ----------------------------------------------------------------- -->
+<!-- SECTION 2 : PARAMÈTRES RÉGIONAUX, DEVISES & FUSEAU                -->
+<!-- ----------------------------------------------------------------- -->
+<section class="bg-surface-container-lowest rounded-xl border border-outline-variant/40 shadow-sm p-8" id="section-region">
+<div class="flex items-start justify-between border-b border-outline-variant/20 pb-5 mb-6">
+<div>
+<div class="flex items-center gap-2.5">
+<span class="w-8 h-8 rounded-lg bg-primary-container text-on-tertiary-container flex items-center justify-center font-bold text-sm">02</span>
+<h2 class="text-headline-md font-headline-md text-primary">Paramètres Régionaux, Devises &amp; Fuseau</h2>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant mt-1">
+                Harmonisation financière selon les traités de l'UEMOA, de la CEMAC et protocoles horaires de l'OHADA.
+              </p>
+</div>
+<span class="px-3 py-1 rounded bg-surface-container-high text-label-xs font-label-xs text-primary font-semibold tracking-wider">
+              ZONE FRANC CFA COORDONNÉE
+            </span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Devise par Défaut -->
+<div class="p-5 rounded-xl border border-outline-variant/50 bg-surface flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-3">
+<label class="text-label-md font-label-md text-primary font-semibold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-base text-on-tertiary-container">payments</span>
+                    Devise Principale
+                  </label>
+<span class="text-[11px] font-mono text-outline font-semibold">ISO 4217</span>
+</div>
+<select class="w-full px-3.5 py-2.5 bg-surface-container-lowest text-body-md font-body-md rounded-lg border border-outline-variant text-on-surface font-medium focus:ring-1 focus:ring-primary-container">
+<option selected="">Franc CFA (XOF / XAF) — BCEAO / BEAC</option>
+<option>Euro (€ - EUR) — Régularisations d'arbitrage</option>
+<option>Dollar Américain ($ - USD) — Investisseurs Extérieurs</option>
+</select>
+<p class="text-body-sm font-body-sm text-outline mt-2.5">
+                  Séparateurs décimaux standards appliqués : espaces fines pour les milliers et virgule décimale (ex. 2 450 000 FCFA).
+                </p>
+</div>
+<div class="pt-4 border-t border-outline-variant/20 mt-4 flex items-center justify-between text-label-xs font-label-xs text-on-surface-variant">
+<span>Indice BCEAO actualisé</span>
+<span class="text-on-tertiary-container font-mono font-bold">Taux Fixe 655.957</span>
+</div>
+</div>
+<!-- Fuseau Horaire de Référence -->
+<div class="p-5 rounded-xl border border-outline-variant/50 bg-surface flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-3">
+<label class="text-label-md font-label-md text-primary font-semibold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-base text-on-tertiary-container">schedule</span>
+                    Fuseau Horaire de Référence
+                  </label>
+<span class="w-2 h-2 rounded-full bg-on-tertiary-container animate-pulse"></span>
+</div>
+<select class="w-full px-3.5 py-2.5 bg-surface-container-lowest text-body-md font-body-md rounded-lg border border-outline-variant text-on-surface font-medium focus:ring-1 focus:ring-primary-container">
+<option selected="">GMT (Dakar / Abidjan / Lomé / Bamako)</option>
+<option>GMT+1 (Douala / Libreville / Brazzaville)</option>
+<option>GMT+2 (Kigali / Bujumbura)</option>
+</select>
+<div class="flex items-center gap-2 mt-3 text-body-sm font-body-sm text-on-surface">
+<input checked="" class="rounded border-outline text-primary-container focus:ring-primary-container" id="sync-time" type="checkbox"/>
+<label class="cursor-pointer text-xs" for="sync-time">Synchronisation automatique NTP avec l'Observatoire Maritime</label>
+</div>
+</div>
+<div class="pt-4 border-t border-outline-variant/20 mt-4 flex items-center justify-between text-label-xs font-label-xs text-on-surface-variant">
+<span>Horodatage serveur :</span>
+<span class="text-primary font-code-num font-semibold">14:38:12 UTC</span>
+</div>
+</div>
+<!-- Format de Date & Langue -->
+<div class="p-5 rounded-xl border border-outline-variant/50 bg-surface flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-3">
+<label class="text-label-md font-label-md text-primary font-semibold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-base text-on-tertiary-container">calendar_month</span>
+                    Format Régional &amp; Langue
+                  </label>
+<span class="text-[11px] font-mono text-outline font-semibold">fr-UEMOA</span>
+</div>
+<div class="space-y-3">
+<div>
+<span class="text-xs text-outline block mb-1">Format de date :</span>
+<input class="w-full px-3 py-2 bg-surface-container-lowest text-body-md font-body-md rounded-lg border border-outline-variant text-on-surface" readonly="" type="text" value="JJ/MM/AAAA (ex. 24/10/2025)"/>
+</div>
+<div>
+<span class="text-xs text-outline block mb-1">Langue par défaut :</span>
+<select class="w-full px-3 py-2 bg-surface-container-lowest text-body-md font-body-md rounded-lg border border-outline-variant text-on-surface">
+<option selected="">Français Juridique (UEMOA / OHADA)</option>
+<option>Anglais Exécutif (Commonwealth Hub)</option>
+</select>
+</div>
+</div>
+</div>
+<div class="pt-4 border-t border-outline-variant/20 mt-4 flex items-center justify-between text-label-xs font-label-xs text-on-surface-variant">
+<span>Normes terminologiques :</span>
+<span class="text-primary font-semibold">Répertoire OHADA 2024</span>
+</div>
+</div>
+</div>
+</section>
+<!-- ----------------------------------------------------------------- -->
+<!-- SECTION 3 : RÈGLES PÉDAGOGIQUES & PROTOCOLES DE CERTIFICATION      -->
+<!-- ----------------------------------------------------------------- -->
+<section class="bg-surface-container-lowest rounded-xl border border-outline-variant/40 shadow-sm p-8" id="section-pedagogie">
+<div class="flex items-start justify-between border-b border-outline-variant/20 pb-5 mb-6">
+<div>
+<div class="flex items-center gap-2.5">
+<span class="w-8 h-8 rounded-lg bg-primary-container text-on-tertiary-container flex items-center justify-center font-bold text-sm">03</span>
+<h2 class="text-headline-md font-headline-md text-primary">Règles Pédagogiques &amp; Protocoles de Certification</h2>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant mt-1">
+                Contrôle académique de l'octroi des Executive Certificates et sécurisation inviolable des diplômes délivrés.
+              </p>
+</div>
+<span class="px-3 py-1 rounded bg-primary-container text-label-xs font-label-xs text-on-primary font-semibold tracking-wider">
+              ACCRÉDITATION SUPÉRIEURE
+            </span>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Left: Validation Controls & Checkboxes (6 cols) -->
+<div class="lg:col-span-6 space-y-6">
+<!-- Score Threshold Slider -->
+<div class="p-5 rounded-xl border border-outline-variant/40 bg-surface">
+<div class="flex items-center justify-between mb-2">
+<label class="text-label-md font-label-md text-primary font-bold">Seuil minimal de validation des examens</label>
+<span class="px-2.5 py-1 rounded bg-primary-container text-on-primary font-code-num text-xs font-bold">
+                    80% (16 / 20)
+                  </span>
+</div>
+<p class="text-body-sm font-body-sm text-outline mb-4">
+                  Note minimale requise sur l'évaluation terminale pour déclencher l'émission du parchemin officiel certifié.
+                </p>
+<input class="w-full h-2 bg-surface-container rounded-lg appearance-none cursor-pointer" max="90" min="60" type="range" value="80"/>
+<div class="flex justify-between text-[11px] text-outline font-mono mt-2">
+<span>60% (Passable)</span>
+<span class="font-bold text-primary">80% (Règle VIZATI - Mention Bien)</span>
+<span>90% (Excellence)</span>
+</div>
+</div>
+<!-- Mandatory Progress Lockout -->
+<div class="p-5 rounded-xl border border-outline-variant/40 bg-surface flex items-start gap-3.5">
+<input checked="" class="mt-1 rounded border-outline text-primary-container focus:ring-primary-container" id="prog-lock" type="checkbox"/>
+<div>
+<label class="text-label-md font-label-md text-primary font-bold block cursor-pointer" for="prog-lock">
+                    Complétion intégrale obligatoire avant déblocage de l'examen final
+                  </label>
+<p class="text-body-sm font-body-sm text-outline mt-1">
+                    Les apprenants doivent attester du visionnage à 100% des masterclasses, du téléchargement des dossiers fonciers et de la réussite aux 4 cas pratiques préparatoires.
+                  </p>
+</div>
+</div>
+</div>
+<!-- Right: Dynamic Certificate Specimen & Cryptographic Stamp (6 cols) -->
+<div class="lg:col-span-6">
+<div class="p-6 rounded-xl border border-outline-variant/60 bg-gradient-to-br from-surface to-surface-container-low relative overflow-hidden">
+<div class="flex items-center justify-between pb-4 border-b border-outline-variant/30">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-on-tertiary-container">verified</span>
+<span class="text-label-md font-label-md text-primary font-bold uppercase tracking-wider">Modèle de Certificat Numérique Actif</span>
+</div>
+<span class="text-label-xs font-label-xs text-outline font-mono">SPECIMEN-UEMOA-2025</span>
+</div>
+<!-- Specimen Body -->
+<div class="my-5 p-5 bg-surface-container-lowest rounded-lg border border-outline-variant/40 shadow-inner text-center relative">
+<div class="text-[10px] uppercase tracking-widest text-on-tertiary-container font-bold mb-1">Certificat Exécutif Supérieur</div>
+<div class="text-headline-sm font-headline-sm text-primary font-extrabold mb-1">DROIT FONCIER &amp; MONTAGE IMMOBILIER UEMOA</div>
+<div class="text-body-sm font-body-sm text-outline mb-4">Délivré sous le sceau de l'Institut VIZATI avec mention d'excellence</div>
+<div class="grid grid-cols-2 gap-4 text-left border-t border-outline-variant/20 pt-3">
+<div>
+<span class="text-[10px] text-outline block">Signature Bicéphale 1</span>
+<span class="text-xs font-semibold text-primary block">Pr. K. N'Dri</span>
+<span class="text-[10px] text-outline">Directeur Scientifique VIZATI</span>
+</div>
+<div>
+<span class="text-[10px] text-outline block">Signature Bicéphale 2</span>
+<span class="text-xs font-semibold text-primary block">Me B. Diagne</span>
+<span class="text-[10px] text-outline">Référent Juridique OHADA</span>
+</div>
+</div>
+</div>
+<!-- Hash Seal Footer -->
+<div class="flex items-center justify-between text-body-sm font-body-sm text-outline pt-1">
+<div class="flex items-center gap-1.5 font-code-num text-xs">
+<span class="material-symbols-outlined text-sm text-on-tertiary-container">fingerprint</span>
+<span>Ancrage SHA-256 Ledger Dakar/Abidjan</span>
+</div>
+<button class="text-label-md font-label-md text-primary underline hover:text-secondary font-semibold" type="button">
+                    Paramétrer signatures
+                  </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ----------------------------------------------------------------- -->
+<!-- SECTION 4 : MOTEUR IA & PARAMÈTRES DE VEILLE                     -->
+<!-- ----------------------------------------------------------------- -->
+<section class="bg-surface-container-lowest rounded-xl border border-outline-variant/40 shadow-sm p-8" id="section-ia">
+<div class="flex items-start justify-between border-b border-outline-variant/20 pb-5 mb-6">
+<div>
+<div class="flex items-center gap-2.5">
+<span class="w-8 h-8 rounded-lg bg-primary-container text-on-tertiary-container flex items-center justify-center font-bold text-sm">04</span>
+<h2 class="text-headline-md font-headline-md text-primary">Moteur IA &amp; Paramètres de Veille Marché</h2>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant mt-1">
+                Ingestion automatisée des journaux officiels, cadastres numérisés et indices de valorisation locative.
+              </p>
+</div>
+<div class="flex items-center gap-2 px-3 py-1 rounded bg-surface-container text-label-xs font-label-xs font-semibold text-primary">
+<span class="w-2 h-2 rounded-full bg-on-tertiary-container"></span>
+              CLUSTER IA ACTIF (14 FLUX)
+            </div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Selected AI Semantic Model -->
+<div class="p-5 rounded-xl border border-outline-variant/50 bg-surface space-y-3">
+<div class="flex items-center justify-between">
+<label class="text-label-md font-label-md text-primary font-bold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-base text-on-tertiary-container">model_training</span>
+                  Modèle Sémantique Actif
+                </label>
+<span class="text-[10px] font-bold text-on-primary bg-primary-container px-2 py-0.5 rounded">Recommandé</span>
+</div>
+<select class="w-full px-3.5 py-2.5 bg-surface-container-lowest text-body-md font-body-md rounded-lg border border-outline-variant text-on-surface font-medium focus:ring-1 focus:ring-primary-container">
+<option selected="">VIZATI Legal Semantic Engine v2.4 (Spécifique OHADA/UEMOA)</option>
+<option>Urbanist Spatial Vector Pro v1.9</option>
+<option>Cadastral NLP Extractor Fallback v3.0</option>
+</select>
+<p class="text-body-sm font-body-sm text-outline">
+                Fine-tuné sur 45 000 arrêts fonciers, décrets d'expropriation et baux commerciaux en Afrique de l'Ouest.
+              </p>
+</div>
+<!-- Crawl Frequency -->
+<div class="p-5 rounded-xl border border-outline-variant/50 bg-surface space-y-3">
+<div class="flex items-center justify-between">
+<label class="text-label-md font-label-md text-primary font-bold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-base text-on-tertiary-container">history_toggle_off</span>
+                  Fréquence d'Ingestion Crawl
+                </label>
+<span class="text-code-num text-xs text-outline font-semibold">Sources Officielles</span>
+</div>
+<select class="w-full px-3.5 py-2.5 bg-surface-container-lowest text-body-md font-body-md rounded-lg border border-outline-variant text-on-surface font-medium focus:ring-1 focus:ring-primary-container">
+<option selected="">Toutes les 4 heures (Recommandation Marché UEMOA)</option>
+<option>Toutes les heures (Haute Volatilité)</option>
+<option>Quotidien (02:00 GMT)</option>
+</select>
+<p class="text-body-sm font-body-sm text-outline">
+                Scanne en continu les publications du Journal Officiel de Côte d'Ivoire, du Sénégal et les arrêtés ministériels.
+              </p>
+</div>
+<!-- Human-in-the-loop Toggle -->
+<div class="p-5 rounded-xl border border-outline-variant/50 bg-surface flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-2">
+<label class="text-label-md font-label-md text-primary font-bold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-base text-on-tertiary-container">verified_user</span>
+                    Validation Humaine Stricte
+                  </label>
+<!-- Locked Green Toggle -->
+<div class="w-11 h-6 bg-primary-container rounded-full p-1 flex items-center justify-end cursor-not-allowed shadow-inner" title="Verrouillé par la Gouvernance">
+<div class="w-4 h-4 rounded-full bg-on-primary"></div>
+</div>
+</div>
+<p class="text-body-sm font-body-sm text-outline">
+                  Exigence déontologique : Aucune note de synthèse macro-immobilière ne peut être publiée sans contre-signature d'un analyste senior VIZATI.
+                </p>
+</div>
+<div class="pt-3 border-t border-outline-variant/20 mt-3 flex items-center gap-1 text-[11px] text-on-tertiary-container font-semibold">
+<span class="material-symbols-outlined text-sm">lock</span>
+<span>Politique d'assurance qualité verrouillée</span>
+</div>
+</div>
+</div>
+</section>
+<!-- ----------------------------------------------------------------- -->
+<!-- SECTION 5 : SÉCURITÉ, SESSIONS & AUDIT LOGS                       -->
+<!-- ----------------------------------------------------------------- -->
+<section class="bg-surface-container-lowest rounded-xl border border-outline-variant/40 shadow-sm p-8" id="section-securite">
+<div class="flex items-start justify-between border-b border-outline-variant/20 pb-5 mb-6">
+<div>
+<div class="flex items-center gap-2.5">
+<span class="w-8 h-8 rounded-lg bg-primary-container text-on-tertiary-container flex items-center justify-center font-bold text-sm">05</span>
+<h2 class="text-headline-md font-headline-md text-primary">Sécurité, Sessions &amp; Journal d'Audit</h2>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant mt-1">
+                Conformité aux exigences de protection des données financières et traçabilité inviolable des accès d'administration.
+              </p>
+</div>
+<span class="px-3 py-1 rounded bg-surface-container text-label-xs font-label-xs text-primary font-semibold tracking-wider">
+              NIVEAU BANCAIRE RENFORCÉ
+            </span>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Left Policies (6 cols) -->
+<div class="lg:col-span-5 space-y-5">
+<!-- Password Policy -->
+<div class="p-5 rounded-xl border border-outline-variant/40 bg-surface space-y-3">
+<label class="text-label-md font-label-md text-primary font-bold block">Politique d'Accès &amp; Mots de Passe</label>
+<div class="space-y-2.5">
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<span class="text-on-surface">Longueur minimale requise</span>
+<span class="font-code-num font-semibold text-primary">12 caractères</span>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<span class="text-on-surface">MFA (Double Facteur TOTP)</span>
+<span class="px-2 py-0.5 rounded text-[10px] bg-primary text-on-primary font-bold">Obligatoire Formateurs &amp; Admins</span>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<span class="text-on-surface">Rotation des clés d'API partenaires</span>
+<span class="font-code-num text-xs text-outline">90 jours</span>
+</div>
+</div>
+</div>
+<!-- Session Inactivity Duration -->
+<div class="p-5 rounded-xl border border-outline-variant/40 bg-surface flex items-center justify-between">
+<div>
+<label class="text-label-md font-label-md text-primary font-bold block">Expiration des Sessions Inactives</label>
+<p class="text-body-sm font-body-sm text-outline mt-0.5">Déconnexion automatique de la console</p>
+</div>
+<div class="w-36">
+<select class="w-full px-3 py-2 bg-surface-container-lowest text-body-md font-body-md rounded-lg border border-outline-variant text-on-surface font-medium">
+<option>15 minutes</option>
+<option selected="">30 minutes</option>
+<option>60 minutes</option>
+</select>
+</div>
+</div>
+</div>
+<!-- Right: Recent Activity Audit Logs (7 cols) -->
+<div class="lg:col-span-7">
+<div class="p-5 rounded-xl border border-outline-variant/40 bg-surface">
+<div class="flex items-center justify-between mb-4">
+<span class="text-label-md font-label-md text-primary font-bold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-base text-on-tertiary-container">policy</span>
+                    Journal d'Audit Récents (3 Dernières Actions)
+                  </span>
+<a class="text-label-xs font-label-xs text-primary underline font-semibold" href="#">Exporter journal complet (.CSV)</a>
+</div>
+<div class="space-y-3">
+<!-- Log 1 -->
+<div class="p-3.5 rounded-lg bg-surface-container-lowest border border-outline-variant/30 flex items-start justify-between gap-4">
+<div class="flex items-start gap-3">
+<div class="w-7 h-7 rounded-full bg-primary-container text-on-primary flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-xs">key</span>
+</div>
+<div>
+<div class="text-body-sm font-body-sm font-semibold text-primary">Régénération Clé API Cadastre UEMOA</div>
+<div class="text-[11px] text-outline font-mono mt-0.5">Secrétariat Général — IP 154.124.78.12 (Dakar Plateau)</div>
+</div>
+</div>
+<span class="text-code-num text-xs text-on-surface-variant font-mono whitespace-nowrap">24/10 14:12 GMT</span>
+</div>
+<!-- Log 2 -->
+<div class="p-3.5 rounded-lg bg-surface-container-lowest border border-outline-variant/30 flex items-start justify-between gap-4">
+<div class="flex items-start gap-3">
+<div class="w-7 h-7 rounded-full bg-surface-container text-primary flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-xs">tune</span>
+</div>
+<div>
+<div class="text-body-sm font-body-sm font-semibold text-primary">Ajustement Seuil Masterclass (75% → 80%)</div>
+<div class="text-[11px] text-outline font-mono mt-0.5">Dir. Académique — IP 41.202.219.45 (Abidjan Cocody)</div>
+</div>
+</div>
+<span class="text-code-num text-xs text-on-surface-variant font-mono whitespace-nowrap">24/10 11:45 GMT</span>
+</div>
+<!-- Log 3 -->
+<div class="p-3.5 rounded-lg bg-surface-container-lowest border border-outline-variant/30 flex items-start justify-between gap-4">
+<div class="flex items-start gap-3">
+<div class="w-7 h-7 rounded-full bg-surface-container text-primary flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-xs">cloud_sync</span>
+</div>
+<div>
+<div class="text-body-sm font-body-sm font-semibold text-primary">Synchronisation Cluster Sémantique v2.4</div>
+<div class="text-[11px] text-outline font-mono mt-0.5">Système Automatisé (Worker Node 01)</div>
+</div>
+</div>
+<span class="text-code-num text-xs text-on-surface-variant font-mono whitespace-nowrap">24/10 08:00 GMT</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Institutional Footer Note inside Canvas -->
+<footer class="mt-12 pt-6 border-t border-outline-variant/20 flex flex-col md:flex-row items-center justify-between text-body-sm font-body-sm text-outline">
+<div class="flex items-center gap-2">
+<span class="font-bold text-primary">VIZATI ACADEMY</span>
+<span>— Infrastructure Pédagogique &amp; d'Intelligence Foncière Régionale</span>
+</div>
+<div class="flex items-center gap-4 text-xs font-mono mt-2 md:mt-0">
+<span>Build: 2025.10.4-prod</span>
+<span>Certificat SSL: Digicert EV (SHA-256)</span>
+</div>
+</footer>
+</div>
+</main>
+</body></html>

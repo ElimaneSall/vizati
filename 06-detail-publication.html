@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>VIZATI — Les nouveaux enjeux de la gestion locative au Sénégal</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Manrope & Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Manrope:wght@500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 with Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration verbatim -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-secondary-fixed-variant": "#2a486a",
+            "on-secondary-fixed": "#001d37",
+            "surface-container-high": "#dfe8ff",
+            "on-secondary-container": "#405d80",
+            "surface-tint": "#4a607d",
+            "surface": "#f9f9ff",
+            "surface-container-highest": "#d9e3fb",
+            "tertiary-fixed-dim": "#edbf73",
+            "on-tertiary": "#ffffff",
+            "on-background": "#111c2d",
+            "secondary-container": "#b9d7ff",
+            "outline": "#74777e",
+            "inverse-on-surface": "#ecf0ff",
+            "background": "#f9f9ff",
+            "surface-container-lowest": "#ffffff",
+            "on-primary-fixed-variant": "#324864",
+            "on-surface-variant": "#44474d",
+            "tertiary-fixed": "#ffdeab",
+            "secondary-fixed-dim": "#abc9f1",
+            "on-error": "#ffffff",
+            "inverse-primary": "#b2c8ea",
+            "primary-fixed-dim": "#b2c8ea",
+            "error-container": "#ffdad6",
+            "on-secondary": "#ffffff",
+            "surface-bright": "#f9f9ff",
+            "error": "#ba1a1a",
+            "on-primary-container": "#7d93b3",
+            "outline-variant": "#c4c6ce",
+            "secondary": "#436083",
+            "secondary-fixed": "#d2e4ff",
+            "surface-dim": "#d0daf2",
+            "primary": "#00162f",
+            "surface-variant": "#d9e3fb",
+            "on-tertiary-fixed-variant": "#5f4100",
+            "inverse-surface": "#273143",
+            "on-primary-fixed": "#031c37",
+            "primary-container": "#142b46",
+            "tertiary": "#201300",
+            "primary-fixed": "#d3e3ff",
+            "on-primary": "#ffffff",
+            "on-error-container": "#93000a",
+            "surface-container": "#e8eeff",
+            "tertiary-container": "#3a2600",
+            "on-surface": "#111c2d",
+            "surface-container-low": "#f0f3ff",
+            "on-tertiary-fixed": "#271900",
+            "on-tertiary-container": "#b38a44"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "gutter": "1.5rem",
+            "margin": "3rem",
+            "space-2xl": "4rem",
+            "space-sm": "0.5rem",
+            "gutter-mobile": "1rem",
+            "space-xl": "2.5rem",
+            "space-lg": "1.5rem",
+            "margin-mobile": "1rem",
+            "space-xs": "0.25rem",
+            "space-md": "1rem"
+          },
+          "fontFamily": {
+            "display-hero": ["Manrope"],
+            "body-md": ["Inter"],
+            "headline-sm": ["Manrope"],
+            "body-lg": ["Inter"],
+            "headline-xl-mobile": ["Manrope"],
+            "headline-lg": ["Manrope"],
+            "label-md": ["Inter"],
+            "body-xl": ["Inter"],
+            "display-hero-mobile": ["Manrope"],
+            "body-sm": ["Inter"],
+            "label-lg": ["Inter"],
+            "code-num": ["Inter"],
+            "label-xs": ["Inter"],
+            "headline-xl": ["Manrope"],
+            "headline-md": ["Manrope"]
+          },
+          "fontSize": {
+            "display-hero": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+            "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "headline-sm": ["18px", { "lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "600" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "headline-xl-mobile": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+            "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "body-xl": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "display-hero-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+            "code-num": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+            "label-xs": ["10px", { "lineHeight": "14px", "letterSpacing": "0.06em", "fontWeight": "700" }],
+            "headline-xl": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "headline-md": ["22px", { "lineHeight": "30px", "letterSpacing": "-0.01em", "fontWeight": "600" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .custom-shadow-card {
+      box-shadow: 0 2px 8px -2px rgba(20, 43, 70, 0.05), 0 1px 3px -1px rgba(20, 43, 70, 0.02);
+    }
+    .custom-shadow-hover:hover {
+      box-shadow: 0 12px 24px -6px rgba(20, 43, 70, 0.08), 0 4px 8px -2px rgba(20, 43, 70, 0.03);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface antialiased selection:bg-secondary-container selection:text-on-secondary-fixed">
+<!-- Top Utilities Bar: Dual-Mode Switcher & Accreditation -->
+<div class="bg-primary text-inverse-on-surface text-label-xs font-label-xs px-6 py-2 border-b border-outline-variant/20 hidden md:block">
+<div class="max-w-7xl mx-auto flex justify-between items-center">
+<div class="flex items-center gap-6">
+<span class="inline-flex items-center gap-1.5 text-on-tertiary-container tracking-wider">
+<span class="material-symbols-outlined text-[14px]">shield</span>
+          INSTITUTION ACADÉMIQUE SUPÉRIEURE &amp; OBSERVATOIRE FONCIER UEMOA
+        </span>
+<span class="text-outline-variant">|</span>
+<span class="text-inverse-primary/80">Campus Dakar : Plateau • Campus Abidjan : Cocody</span>
+</div>
+<div class="flex items-center gap-4">
+<!-- Dual Mode Switcher -->
+<div class="inline-flex rounded-lg p-0.5 bg-primary-container text-label-xs">
+<span class="px-2.5 py-1 rounded bg-on-tertiary-container text-primary font-bold">Institut &amp; Programmes</span>
+<a class="px-2.5 py-1 text-inverse-primary hover:text-on-primary transition-colors" href="#">Espace Pro &amp; Data</a>
+</div>
+<a class="text-inverse-primary hover:text-on-primary flex items-center gap-1" href="#support">
+<span class="material-symbols-outlined text-[13px]">verified_user</span>
+          Support Sécurisé
+        </a>
+</div>
+</div>
+</div>
+<!-- Shared TopAppBar (Source of truth executed) -->
+<header class="sticky top-0 z-50 bg-surface shadow-sm border-b border-outline-variant">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
+<!-- Brand & Left Section -->
+<div class="flex items-center gap-8">
+<a class="flex items-center gap-3 group" href="#">
+<div class="w-10 h-10 rounded-lg bg-primary-container flex items-center justify-center text-on-tertiary-container shadow-inner">
+<span class="material-symbols-outlined text-2xl">verified_user</span>
+</div>
+<div class="flex flex-col">
+<span class="text-headline-md font-headline-md font-bold tracking-tight text-primary uppercase">VIZATI</span>
+<span class="text-[9px] uppercase tracking-widest text-on-surface-variant font-label-xs">Executive Academy &amp; Research</span>
+</div>
+</a>
+<!-- Desktop Navigation Items -->
+<nav class="hidden lg:flex items-center gap-6 text-label-md font-label-md">
+<a class="text-on-surface-variant hover:text-on-surface hover:bg-surface-container px-3 py-1.5 rounded transition-colors duration-150" href="./01-accueil.html">Accueil</a>
+<a class="text-on-surface-variant hover:text-on-surface hover:bg-surface-container px-3 py-1.5 rounded transition-colors duration-150" href="./02-l-institut.html">L'Institut</a>
+<a class="text-on-surface-variant hover:text-on-surface hover:bg-surface-container px-3 py-1.5 rounded transition-colors duration-150" href="./03-formations.html">Formations</a>
+<!-- Active Nav Item according to Shared Spec -->
+<a class="text-primary font-bold border-b-2 border-on-tertiary-container pb-1 px-1 transition-colors" href="./05-publication.html">Publications</a>
+<a class="text-on-surface-variant hover:text-on-surface hover:bg-surface-container px-3 py-1.5 rounded transition-colors duration-150" href="./07-bibliotheque.html">Ressources</a>
+<a class="text-on-surface-variant hover:text-on-surface hover:bg-surface-container px-3 py-1.5 rounded transition-colors duration-150" href="./09-evenements.html">Événements</a>
+</nav>
+</div>
+<!-- Trailing Action & CTA -->
+<div class="flex items-center gap-4">
+<a class="hidden sm:inline-flex items-center text-label-md font-label-md text-primary font-semibold hover:text-secondary transition-colors" href="#">
+          Se connecter
+        </a>
+<a class="bg-primary-container hover:bg-primary text-on-primary text-label-md font-label-md px-4 py-2 rounded font-semibold transition-all duration-150 shadow-sm flex items-center gap-2 border border-on-tertiary-container/40" href="#newsletter">
+<span class="material-symbols-outlined text-base text-on-tertiary-container">menu_book</span>
+<span>Revue Trimestrielle</span>
+</a>
+</div>
+</div>
+<!-- Reading Progress Bar -->
+<div class="w-full bg-surface-container-high h-[3px]">
+<div class="h-full bg-on-tertiary-container transition-all duration-150 w-0" id="readProgress"></div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="min-h-screen">
+<!-- Hero Article Header & Cartouche -->
+<section class="bg-surface-container-low border-b border-outline-variant/60 py-10 lg:py-14">
+<div class="max-w-7xl mx-auto px-6">
+<!-- Breadcrumb & Tag -->
+<div class="flex flex-wrap items-center justify-between gap-4 mb-6">
+<nav class="flex items-center gap-2 text-label-xs font-label-xs text-on-surface-variant uppercase tracking-wider">
+<a class="hover:text-primary transition-colors" href="#">Accueil</a>
+<span class="material-symbols-outlined text-[12px]">chevron_right</span>
+<a class="hover:text-primary transition-colors" href="#">Publications</a>
+<span class="material-symbols-outlined text-[12px]">chevron_right</span>
+<a class="hover:text-primary transition-colors" href="#">Gestion Locative &amp; Droit</a>
+<span class="material-symbols-outlined text-[12px]">chevron_right</span>
+<span class="text-primary font-semibold">Analyse</span>
+</nav>
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-highest text-primary font-label-xs text-[11px] border border-outline-variant/50 font-bold uppercase tracking-wider">
+<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container"></span>
+              GESTION LOCATIVE &amp; CADRE JURIDIQUE OHADA
+            </span>
+<span class="hidden sm:inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-primary/5 text-primary text-label-xs font-semibold">
+<span class="material-symbols-outlined text-[13px] text-on-tertiary-container">verified</span>
+              Homologué Observatoire Régional VIZATI
+            </span>
+</div>
+</div>
+<!-- Article Main Title -->
+<h1 class="text-headline-xl-mobile md:text-headline-xl font-headline-xl text-primary max-w-5xl leading-tight mb-6 tracking-tight">
+          Les nouveaux enjeux de la gestion locative au Sénégal : Décret sur les loyers, digitalisation des baux et conformité OHADA
+        </h1>
+<!-- Chapeau Éditorial -->
+<p class="text-body-lg md:text-body-xl font-body-xl text-on-surface-variant max-w-4xl leading-relaxed mb-8 border-l-4 border-on-tertiary-container pl-4">
+          Face au durcissement des barèmes légaux à Dakar, à la multiplication des procédures pour impayés et à l'accélération de l'inclusion financière par le Mobile Money, les gestionnaires de patrimoine redéfinissent leur gouvernance contractuelle pour concilier rentabilité locative et sécurité juridique absolue.
+        </p>
+<!-- Meta Author & Social Actions Bar -->
+<div class="pt-6 border-t border-outline-variant/60 flex flex-col md:flex-row md:items-center justify-between gap-6">
+<!-- Author Info -->
+<div class="flex items-center gap-4">
+<div class="relative w-13 h-13">
+<img class="w-12 h-12 rounded-full object-cover border-2 border-on-tertiary-container/60 shadow-sm" data-alt="Portrait photographique professionnel en gros plan de Maître Abdoulaye Fall, juriste et avocat chevronné en costume sombre d'affaires et cravate sobre, souriant avec assurance dans un bureau d'affaires moderne à Dakar avec bibliothèques juridiques et lumière naturelle douce en arrière-plan." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpkObk0vLgcBIjZJ2vxCUCOAueiJWbioThkZw3A_d5OAv0g-Xy4uA4X2BDMlhS5UxH0Xgxjlcm5v-bYjg17AmsPg-UwkF-PXsVONwjOc5IgMxNgpp6AvDOE1xM_7RbflW60RaxbynE5lQvVaG1COtQCjabrC7glK5LbFZUg8zTAkbrpAD2loDHY_zEGfb0w-7ebSpsRY5jHhb8ArxK1LgKlsvr2LYWPOHf9uSLBq0"/>
+<div class="absolute -bottom-1 -right-1 bg-primary text-inverse-on-surface rounded-full p-0.5" title="Auteur Certifié">
+<span class="material-symbols-outlined text-[12px] block text-on-tertiary-container">verified</span>
+</div>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">Me Abdoulaye Fall</span>
+<span class="text-label-xs font-label-xs px-2 py-0.5 rounded bg-surface-container-high text-primary font-medium">Expert VIZATI</span>
+</div>
+<div class="flex flex-wrap items-center gap-3 text-body-sm font-body-sm text-on-surface-variant">
+<span>Avocat à la Cour &amp; Enseignant à l'Executive Academy</span>
+<span>•</span>
+<time class="text-primary font-medium" datetime="2024-10-24">24 Octobre 2024</time>
+<span>•</span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">schedule</span>
+                  8 min de lecture
+                </span>
+</div>
+</div>
+</div>
+<!-- Utility Action Controls -->
+<div class="flex items-center gap-2">
+<button class="p-2 rounded bg-surface border border-outline-variant text-primary hover:bg-surface-container hover:text-on-tertiary-container transition-all flex items-center justify-center" title="Enregistrer dans ma bibliothèque">
+<span class="material-symbols-outlined text-[20px]">bookmark</span>
+</button>
+<button class="p-2 rounded bg-surface border border-outline-variant text-primary hover:bg-surface-container hover:text-on-tertiary-container transition-all flex items-center justify-center" title="Imprimer ou exporter en PDF">
+<span class="material-symbols-outlined text-[20px]">picture_as_pdf</span>
+</button>
+<button class="p-2 rounded bg-surface border border-outline-variant text-primary hover:bg-surface-container hover:text-on-tertiary-container transition-all flex items-center justify-center" onclick="navigator.clipboard.writeText(window.location.href); alert('Lien copié dans le presse-papiers !');" title="Copier le lien">
+<span class="material-symbols-outlined text-[20px]">share</span>
+</button>
+<a class="px-3 py-2 rounded bg-primary text-on-primary text-label-md font-label-md flex items-center gap-1.5 hover:bg-primary-container transition-colors" href="https://linkedin.com" target="_blank">
+<span class="material-symbols-outlined text-[16px]">open_in_new</span>
+<span>Partager</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Editorial Canvas & Asymmetric Layout -->
+<div class="max-w-7xl mx-auto px-6 py-10 lg:py-14">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+<!-- STICKY SIDEBAR (Col 1-4) -->
+<aside class="lg:col-span-4 order-2 lg:order-1">
+<div class="sticky top-28 space-y-6">
+<!-- Table of contents Card -->
+<div class="bg-surface-container-lowest rounded-lg border border-outline-variant p-6 custom-shadow-card">
+<div class="flex items-center gap-2 pb-4 mb-4 border-b border-outline-variant/60 text-primary">
+<span class="material-symbols-outlined text-on-tertiary-container">format_list_bulleted</span>
+<h3 class="font-headline-sm text-headline-sm font-bold tracking-tight">Dans cet article</h3>
+</div>
+<ul class="space-y-3 text-label-md font-label-md">
+<li>
+<a class="flex items-start gap-2.5 text-on-surface-variant hover:text-primary group transition-colors" href="#section-1">
+<span class="w-5 h-5 rounded-full bg-surface-container text-on-surface-variant flex items-center justify-center text-[10px] font-bold group-hover:bg-primary group-hover:text-on-primary transition-colors flex-shrink-0 mt-0.5">1</span>
+<span class="group-hover:translate-x-0.5 transition-transform">Le choc réglementaire du décret sur les loyers à Dakar</span>
+</a>
+</li>
+<li>
+<a class="flex items-start gap-2.5 text-on-surface-variant hover:text-primary group transition-colors" href="#section-2">
+<span class="w-5 h-5 rounded-full bg-surface-container text-on-surface-variant flex items-center justify-center text-[10px] font-bold group-hover:bg-primary group-hover:text-on-primary transition-colors flex-shrink-0 mt-0.5">2</span>
+<span class="group-hover:translate-x-0.5 transition-transform">L'impératif de conformité avec l'Acte Uniforme OHADA</span>
+</a>
+</li>
+<li>
+<a class="flex items-start gap-2.5 text-on-surface-variant hover:text-primary group transition-colors" href="#section-3">
+<span class="w-5 h-5 rounded-full bg-surface-container text-on-surface-variant flex items-center justify-center text-[10px] font-bold group-hover:bg-primary group-hover:text-on-primary transition-colors flex-shrink-0 mt-0.5">3</span>
+<span class="group-hover:translate-x-0.5 transition-transform">Digitalisation du recouvrement et Mobile Money</span>
+</a>
+</li>
+<li>
+<a class="flex items-start gap-2.5 text-on-surface-variant hover:text-primary group transition-colors" href="#section-4">
+<span class="w-5 h-5 rounded-full bg-surface-container text-on-surface-variant flex items-center justify-center text-[10px] font-bold group-hover:bg-primary group-hover:text-on-primary transition-colors flex-shrink-0 mt-0.5">4</span>
+<span class="group-hover:translate-x-0.5 transition-transform">Les 5 leviers stratégiques pour les mandataires en 2025</span>
+</a>
+</li>
+<li>
+<a class="flex items-start gap-2.5 text-on-surface-variant hover:text-primary group transition-colors" href="#section-5">
+<span class="w-5 h-5 rounded-full bg-surface-container text-on-surface-variant flex items-center justify-center text-[10px] font-bold group-hover:bg-primary group-hover:text-on-primary transition-colors flex-shrink-0 mt-0.5">5</span>
+<span class="group-hover:translate-x-0.5 transition-transform">Sources, Références &amp; Jurisprudence</span>
+</a>
+</li>
+</ul>
+<!-- Progress Indicator -->
+<div class="mt-6 pt-4 border-t border-outline-variant/60 flex items-center justify-between text-body-sm font-body-sm text-on-surface-variant">
+<span class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-emerald-600 animate-pulse"></span>
+                  Lecture en cours
+                </span>
+<span class="font-code-num text-code-num font-bold text-primary">8 min</span>
+</div>
+</div>
+<!-- Training Academy Conversion Card -->
+<div class="bg-gradient-to-br from-primary-container to-primary text-on-primary rounded-lg p-6 border border-on-tertiary-container/30 shadow-md">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded bg-tertiary-container text-tertiary-fixed text-[11px] font-bold tracking-wider uppercase mb-3">
+<span class="material-symbols-outlined text-[13px] text-tertiary-fixed-dim">school</span>
+                CERTIFICATION EXÉCUTIVE
+              </span>
+<h4 class="font-headline-sm text-headline-sm font-bold leading-snug mb-2 text-white">
+                Parcours Gestionnaire de Portefeuille Locatif &amp; Actifs Tertiaires
+              </h4>
+<p class="text-body-sm font-body-sm text-inverse-primary/90 mb-4 leading-relaxed">
+                Maîtrisez le contentieux locatif sénégalais, le recouvrement digital et l'optimisation fiscale sous l'égide de juristes praticiens.
+              </p>
+<div class="grid grid-cols-2 gap-2 text-label-xs font-label-xs py-3 border-y border-inverse-primary/20 mb-4 text-inverse-primary">
+<div>
+<span class="block text-on-tertiary-container">DURÉE</span>
+<span class="font-bold text-white">130 Heures • Hybride</span>
+</div>
+<div>
+<span class="block text-on-tertiary-container">SESSION</span>
+<span class="font-bold text-white">Novembre 2024</span>
+</div>
+</div>
+<a class="w-full bg-on-tertiary-container hover:bg-tertiary-fixed-dim text-primary py-2.5 px-4 rounded text-label-md font-label-md font-bold text-center block transition-all shadow-sm" href="#">
+                Consulter le syllabus &amp; Admission
+              </a>
+</div>
+<!-- Social Share Bar Sidebar -->
+<div class="bg-surface-container-low rounded-lg border border-outline-variant p-4">
+<span class="text-label-xs font-label-xs font-bold text-on-surface-variant uppercase tracking-wider block mb-3">Partager cette analyse d'impact</span>
+<div class="grid grid-cols-4 gap-2">
+<a class="p-2.5 rounded bg-surface hover:bg-surface-container-highest border border-outline-variant text-center transition-colors flex items-center justify-center text-primary" href="#" title="LinkedIn">
+<span class="material-symbols-outlined text-[18px]">share</span>
+</a>
+<a class="p-2.5 rounded bg-surface hover:bg-surface-container-highest border border-outline-variant text-center transition-colors flex items-center justify-center text-primary" href="#" title="WhatsApp">
+<span class="material-symbols-outlined text-[18px]">chat</span>
+</a>
+<a class="p-2.5 rounded bg-surface hover:bg-surface-container-highest border border-outline-variant text-center transition-colors flex items-center justify-center text-primary" href="#" title="Email">
+<span class="material-symbols-outlined text-[18px]">mail</span>
+</a>
+<a class="p-2.5 rounded bg-surface hover:bg-surface-container-highest border border-outline-variant text-center transition-colors flex items-center justify-center text-primary" href="#" title="Signaler un erratum">
+<span class="material-symbols-outlined text-[18px]">flag</span>
+</a>
+</div>
+</div>
+</div>
+</aside>
+<!-- MAIN READING COLUMN (Col 5-12) -->
+<article class="lg:col-span-8 order-1 lg:order-2 space-y-10">
+<!-- Main Key Visual Frame -->
+<figure class="rounded-lg overflow-hidden border border-outline-variant bg-surface-container-lowest custom-shadow-card">
+<img alt="Dakar Real Estate Office High-rises" class="w-full h-80 sm:h-96 md:h-[440px] object-cover" src="https://lh3.googleusercontent.com/aida/ALJJyrCes-uGcDaRJddSALChpSAA-bPYZOMvZM898a0SL8F2QTSCBThKHraU01HPFxlm5VKmpq_ra0jBI3AdWaf2ld5UP2fy9rsfT9u9ZBSrK6AOXMegsZ1ZsetuOCoP82eaRfDllBwRVXRNemHV4yv3k3t_DCyjhpvvyUlWwOZtGjRUJGsKEL0hbDXdeVg9FpIZLf8bdlgrwI-t_1Lp0FLdReTWoKtHTyywOMMALBE4Fww"/>
+<figcaption class="p-4 bg-surface text-on-surface-variant text-body-sm font-body-sm border-t border-outline-variant flex items-start gap-3">
+<span class="material-symbols-outlined text-on-tertiary-container mt-0.5 flex-shrink-0">info</span>
+<span>
+<strong>Aperçu du front urbain dakarois :</strong> Immeubles de bureaux et résidences de standing sur la corniche ouest et au Plateau à Dakar — Les gestionnaires immobiliers et syndics font face à une profonde mutation des barèmes légaux et des baux commerciaux. <em>Crédit : Observatoire Foncier VIZATI / ANSD 2024.</em>
+</span>
+</figcaption>
+</figure>
+<!-- SECTION 1 -->
+<section class="space-y-4" id="section-1">
+<div class="flex items-center gap-3">
+<span class="px-2.5 py-1 rounded bg-primary-container text-on-primary text-label-xs font-bold">SECTION 01</span>
+<h2 class="font-headline-lg text-headline-lg text-primary font-bold tracking-tight">
+                1. Le choc réglementaire du décret de régulation des loyers à Dakar
+              </h2>
+</div>
+<p class="text-body-lg font-body-lg text-on-surface leading-relaxed">
+              La métropole dakaroise concentre à elle seule plus de <strong>68% du volume locatif national</strong> du Sénégal. L'entrée en vigueur du décret n°2023-382, visant la baisse autoritaire et la régulation des loyers d'habitation, a profondément bouleversé l'équilibre financier des bailleurs institutionnels comme des propriétaires particuliers. Alors que l'intention publique vise à amortir le coût de la vie pour les ménages, les mandataires et sociétés de gestion ont été confrontés à une complexité opérationnelle immédiate : recalcul des loyers dits de la surface corrigée, renégociation contractuelle et stagnation des marges brutes de gestion.
+            </p>
+<p class="text-body-lg font-body-lg text-on-surface leading-relaxed">
+              Dans les quartiers névralgiques tels que les Almadies, Ngor, le Point E ou encore la Cité Keur Gorgui, les investisseurs institutionnels ont dû auditer l'ensemble de leurs conventions d'occupation pour éviter les requêtes devant la Commission Régionale de Contrôle des Loyers.
+            </p>
+<!-- Key Indicators Bento Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-4 my-6">
+<div class="p-4 rounded-lg bg-surface-container-lowest border border-outline-variant custom-shadow-card">
+<span class="text-label-xs font-label-xs text-on-surface-variant font-bold uppercase tracking-wider block">Baisse imposée</span>
+<span class="font-headline-xl text-headline-xl font-bold text-primary block my-1">-15%</span>
+<span class="text-body-sm font-body-sm text-on-surface-variant">Sur les baux inférieurs à 300 000 FCFA</span>
+</div>
+<div class="p-4 rounded-lg bg-surface-container-lowest border border-outline-variant custom-shadow-card">
+<span class="text-label-xs font-label-xs text-on-surface-variant font-bold uppercase tracking-wider block">Tension Locative</span>
+<span class="font-headline-xl text-headline-xl font-bold text-primary block my-1">94.2%</span>
+<span class="text-body-sm font-body-sm text-on-surface-variant">Taux d'occupation moyen à Dakar Plateau</span>
+</div>
+<div class="p-4 rounded-lg bg-surface-container-lowest border border-outline-variant custom-shadow-card">
+<span class="text-label-xs font-label-xs text-on-surface-variant font-bold uppercase tracking-wider block">Délais Contentieux</span>
+<span class="font-headline-xl text-headline-xl font-bold text-error block my-1">11 Mois</span>
+<span class="text-body-sm font-body-sm text-on-surface-variant">Délai moyen d'expulsion sans conciliation</span>
+</div>
+</div>
+<!-- Callout Note Réglementaire -->
+<div class="p-6 rounded-lg bg-surface-container-low border-l-4 border-primary border-t border-r border-b border-outline-variant space-y-2">
+<div class="flex items-center gap-2 text-primary font-headline-sm text-headline-sm font-bold">
+<span class="material-symbols-outlined text-on-tertiary-container">gavel</span>
+<span>Point Réglementaire : Les obligations déclaratives des propriétaires bailleurs</span>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant leading-relaxed">
+                Selon le dispositif législatif sénégalais en vigueur (Loi n° 81-21 et décret d'application révisé), tout propriétaire bailleur ou agence mandataire est légalement tenu de délivrer une quittance détaillée mentionnant la surface corrigée exacte. Tout dépassement des plafonds légaux est susceptible d'entraîner le remboursement rétroactif des trop-perçus assorti d'amendes administratives pouvant atteindre le triple des sommes indûment perçues.
+              </p>
+</div>
+</section>
+<!-- SECTION 2 -->
+<section class="space-y-4 pt-6 border-t border-outline-variant/60" id="section-2">
+<div class="flex items-center gap-3">
+<span class="px-2.5 py-1 rounded bg-primary-container text-on-primary text-label-xs font-bold">SECTION 02</span>
+<h2 class="font-headline-lg text-headline-lg text-primary font-bold tracking-tight">
+                2. L'impératif de conformité contractuelle avec le droit OHADA
+              </h2>
+</div>
+<p class="text-body-lg font-body-lg text-on-surface leading-relaxed">
+              Pour les baux professionnels et commerciaux (bureaux de direction, showrooms, plateformes logistiques de Diamniadio), le cadre ne relève plus du droit commun sénégalais mais strictement de l'<strong>Acte Uniforme portant sur le Droit Commercial Général (AUDCG) de l'OHADA</strong>. De nombreuses structures continuent d'utiliser des modèles de baux obsolètes, s'exposant à la nullité de clauses cruciales telles que la clause résolutoire automatique ou les modalités d'évaluation des indemnités d'éviction.
+            </p>
+<p class="text-body-lg font-body-lg text-on-surface leading-relaxed">
+              Dans la pratique arbitrale et judiciaire de la Cour Commune de Justice et d'Arbitrage (CCJA), une clause résolutoire pour défaut de paiement n'est invocable qu'après mise en demeure infructueuse d'une durée stricte d'un mois. Toute formulation ambiguë privant le preneur de ce préavis légal paralyse immédiatement l'action en expulsion du bailleur.
+            </p>
+<!-- Pull Quote Editorial Component -->
+<figure class="my-8 p-8 rounded-lg bg-surface-container border border-outline-variant relative overflow-hidden">
+<span class="text-7xl font-serif text-on-tertiary-container/30 absolute -top-4 -left-1 select-none pointer-events-none">“</span>
+<blockquote class="relative z-10 text-headline-sm md:text-headline-md font-headline-md italic text-primary leading-snug">
+                « La sécurisation d'un parc locatif ne repose plus sur la simple relation de confiance ou l'ancienneté du bailleur, mais sur une rigueur contractuelle irréprochable et l'anticipation du risque contentieux dès la minute de signature du bail. »
+              </blockquote>
+<figcaption class="mt-4 pt-3 border-t border-outline-variant/50 flex items-center justify-between text-body-sm font-body-sm text-on-surface-variant">
+<span class="font-bold text-primary">— Me Abdoulaye Fall, Avocat &amp; Expert de la Chaire Droit Immobilier VIZATI</span>
+<span class="text-label-xs font-label-xs text-on-tertiary-container uppercase font-bold tracking-wider">Jurisprudence CCJA</span>
+</figcaption>
+</figure>
+<p class="text-body-lg font-body-lg text-on-surface leading-relaxed">
+              Par ailleurs, la question des dépôts de garantie et des cautions bancaires autonomes exige une ségrégation rigoureuse des comptes séquestres. Les administrateurs de biens doivent justifier d'une garantie financière suffisante auprès d'institutions bancaires agréées UEMOA sous peine de responsabilité civile professionnelle aggravée.
+            </p>
+</section>
+<!-- Middle Secondary Visual (Second Image in Context) -->
+<div class="my-8 rounded-lg overflow-hidden border border-outline-variant bg-surface-container-lowest">
+<img alt="Directrice de gestion de patrimoine immobilier sénégalaise en réunion exécutive" class="w-full h-80 sm:h-96 object-cover" src="https://lh3.googleusercontent.com/aida/ALJJyrAn-lt2DkgUwVl2sqTArtXujNFOAbNGJT8eM5Y3UHmEJ1GdpihDcsyYLS9gbkkA8z_FwoPmRiJUI47HUMMzBGqmvEX9I2eZz3vM9GK7L3jm3pNeMRbhjFmlnLIkEMdko2QXiG-O68qHamruPse4eLbu-9uSl9P23Wl9dXYLJNp_FYa94e2UHDy7rcq0Hdcav8WTd5KYcD8PuyffBr3l9oSuAIf5zTkZaQ5WjCq32Gu5"/>
+<div class="p-4 bg-surface text-on-surface-variant text-body-sm font-body-sm border-t border-outline-variant flex items-center justify-between">
+<span><strong>Gouvernance patrimoniale :</strong> Audit systématique des baux commerciaux et déploiement de protocoles de conciliation amiable dans les cabinets de gestion à Dakar.</span>
+<span class="text-label-xs font-label-xs font-bold text-primary uppercase ml-4 flex-shrink-0">Dakar, 2024</span>
+</div>
+</div>
+<!-- SECTION 3 -->
+<section class="space-y-4 pt-6 border-t border-outline-variant/60" id="section-3">
+<div class="flex items-center gap-3">
+<span class="px-2.5 py-1 rounded bg-primary-container text-on-primary text-label-xs font-bold">SECTION 03</span>
+<h2 class="font-headline-lg text-headline-lg text-primary font-bold tracking-tight">
+                3. Digitalisation des flux et inclusion du Mobile Money
+              </h2>
+</div>
+<p class="text-body-lg font-body-lg text-on-surface leading-relaxed">
+              L'un des leviers les plus puissants de transformation réside dans la transition du paiement en espèces vers la traçabilité numérique intégrée. Historiquement, le recouvrement locatif informel générait un taux de friction élevé : pertes de reçus manuscrits, contestations sur la date de règlement et risques sécuritaires liés aux transports de liquidités.
+            </p>
+<p class="text-body-lg font-body-lg text-on-surface leading-relaxed">
+              L'interconnexion des logiciels de gestion locative avec les API de <em>Wave</em> et <em>Orange Money Sénégal</em> transforme ce paradigme. La génération automatique de quittances horodatées et certifiées par hash cryptographique offre une force probante indiscutable devant les juridictions de première instance de Dakar et Pikine.
+            </p>
+<!-- Qualitative Benefits Table/Card -->
+<div class="p-5 rounded-lg bg-surface-container-lowest border border-outline-variant space-y-4">
+<h4 class="font-headline-sm text-headline-sm font-bold text-primary">Impact mesuré sur un échantillon de 1 200 lots gérés (Dakar 2023-2024)</h4>
+<div class="space-y-3">
+<div>
+<div class="flex justify-between text-body-sm font-body-sm mb-1">
+<span class="text-on-surface font-semibold">Taux de recouvrement avant le 5 du mois</span>
+<span class="font-bold text-primary">88% (contre 51% via chèques/espèces)</span>
+</div>
+<div class="w-full bg-surface-container h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 88%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-body-sm font-body-sm mb-1">
+<span class="text-on-surface font-semibold">Réduction des litiges d'impayés devant le tribunal</span>
+<span class="font-bold text-emerald-800">-65%</span>
+</div>
+<div class="w-full bg-surface-container h-2 rounded-full overflow-hidden">
+<div class="bg-on-tertiary-container h-full rounded-full" style="width: 65%"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 4 -->
+<section class="space-y-4 pt-6 border-t border-outline-variant/60" id="section-4">
+<div class="flex items-center gap-3">
+<span class="px-2.5 py-1 rounded bg-primary-container text-on-primary text-label-xs font-bold">SECTION 04</span>
+<h2 class="font-headline-lg text-headline-lg text-primary font-bold tracking-tight">
+                4. Les 5 leviers stratégiques pour les mandataires en 2025
+              </h2>
+</div>
+<p class="text-body-lg font-body-lg text-on-surface leading-relaxed">
+              Pour maintenir la rentabilité de leurs mandats tout en garantissant la conformité réglementaire, les gestionnaires de parc doivent adopter une posture proactive structurée autour de cinq piliers opérationnels :
+            </p>
+<div class="space-y-3 pt-2">
+<div class="flex items-start gap-3 p-3.5 rounded bg-surface-container-low border border-outline-variant/70">
+<span class="material-symbols-outlined text-on-tertiary-container text-2xl flex-shrink-0">verified</span>
+<div>
+<h5 class="text-label-lg font-label-lg font-bold text-primary">1. Standardisation des baux types selon la grille OHADA 2024</h5>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Intégration d'une clause compromissoire désignant le Centre d'Arbitrage, de Médiation et de Conciliation de Dakar (CAMC) pour accélérer le règlement des contentieux sans engorger les tribunaux d'instance.</p>
+</div>
+</div>
+<div class="flex items-start gap-3 p-3.5 rounded bg-surface-container-low border border-outline-variant/70">
+<span class="material-symbols-outlined text-on-tertiary-container text-2xl flex-shrink-0">account_balance_wallet</span>
+<div>
+<h5 class="text-label-lg font-label-lg font-bold text-primary">2. Automatisation des quittances dématérialisées</h5>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Liaison directe entre relevés bancaires d'entreprise et notifications instantanées de quittances signées électroniquement pour purger tout doute sur l'antériorité des paiements.</p>
+</div>
+</div>
+<div class="flex items-start gap-3 p-3.5 rounded bg-surface-container-low border border-outline-variant/70">
+<span class="material-symbols-outlined text-on-tertiary-container text-2xl flex-shrink-0">balance</span>
+<div>
+<h5 class="text-label-lg font-label-lg font-bold text-primary">3. Application rigoureuse de la méthode de la surface corrigée</h5>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Recours à des géomètres assermentés pour établir les fiches techniques de surface, protégeant le bailleur contre tout redressement de la Commission des loyers.</p>
+</div>
+</div>
+<div class="flex items-start gap-3 p-3.5 rounded bg-surface-container-low border border-outline-variant/70">
+<span class="material-symbols-outlined text-on-tertiary-container text-2xl flex-shrink-0">lock</span>
+<div>
+<h5 class="text-label-lg font-label-lg font-bold text-primary">4. Ségrégation bancaire des dépôts de garantie</h5>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Création d'un sous-compte dédié et cantonné pour l'encaissement des 2 mois de caution légale, garantissant la restitution immédiate en fin de bail après état des lieux contradictoire.</p>
+</div>
+</div>
+<div class="flex items-start gap-3 p-3.5 rounded bg-surface-container-low border border-outline-variant/70">
+<span class="material-symbols-outlined text-on-tertiary-container text-2xl flex-shrink-0">school</span>
+<div>
+<h5 class="text-label-lg font-label-lg font-bold text-primary">5. Formation continue des collaborateurs d'agence</h5>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Veille trimestrielle obligatoire sur les évolutions du droit foncier UEMOA et les directives fiscales de la Direction Générale des Impôts et Domaines (DGID).</p>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 5: Sources & Legal References -->
+<section class="space-y-4 pt-6 border-t border-outline-variant/60" id="section-5">
+<div class="flex items-center gap-3">
+<span class="px-2.5 py-1 rounded bg-primary-container text-on-primary text-label-xs font-bold">SECTION 05</span>
+<h2 class="font-headline-lg text-headline-lg text-primary font-bold tracking-tight">
+                5. Sources, Références documentaires &amp; Jurisprudence
+              </h2>
+</div>
+<div class="p-6 rounded-lg bg-surface-container-lowest border border-outline-variant space-y-3 text-body-sm font-body-sm text-on-surface-variant">
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-base text-primary mt-0.5">menu_book</span>
+<span><strong>Arrêt CCJA n° 184/2023 du 16 novembre 2023 :</strong> Portée de la clause résolutoire et opposabilité du préavis d'un mois en matière de bail commercial OHADA.</span>
+</div>
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-base text-primary mt-0.5">menu_book</span>
+<span><strong>République du Sénégal :</strong> Décret n° 2023-382 fixant les prix des loyers des locaux à usage d'habitation et créant la commission de régulation.</span>
+</div>
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-base text-primary mt-0.5">menu_book</span>
+<span><strong>Code des Obligations Civiles et Commerciales (COCC) du Sénégal :</strong> Titre VIII régissant le contrat de louage des choses et les baux d'habitation.</span>
+</div>
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-base text-primary mt-0.5">menu_book</span>
+<span><strong>Agence Nationale de la Statistique et de la Démographie (ANSD) :</strong> Indice trimestriel du coût de la construction et baromètres des loyers urbains (Édition T2 2024).</span>
+</div>
+</div>
+</section>
+<!-- Author Biography Bio Card -->
+<div class="p-6 rounded-lg bg-surface-container border border-outline-variant flex flex-col sm:flex-row items-center sm:items-start gap-5">
+<img class="w-20 h-20 rounded-full object-cover border-2 border-on-tertiary-container flex-shrink-0" data-alt="Portrait en buste de l'expert juridique et avocat sénégalais Maître Abdoulaye Fall en costume d'affaires soigné dans un environnement institutionnel contemporain aux tons bleu marine et or." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpNZ89OsqM9RFeklE1n7nwKr4vV0pe-upOJ8uVgQ6maCDgZRE2pF8h_dUSzHz2goy2fIlyxrgFcVuuyRZjATBowRq3azeDxXqpmgEQ3-78zXL5HLE5IyykX-yA8CVa_u3ZPIivmdKxyV7ETwW26r-YZ6I-Cln53Nnp-KyoOTSV47NuciV0a-8mnH6OtLvtTMzeyt1i7U1ClRoc71dT08ZRg0OzcX382rNB7C4lp18"/>
+<div class="space-y-2 text-center sm:text-left">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+<div>
+<h4 class="font-headline-sm text-headline-sm font-bold text-primary">Me Abdoulaye Fall</h4>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Avocat au Barreau du Sénégal &amp; Maître de Conférences associé à VIZATI</p>
+</div>
+<button class="px-3.5 py-1.5 rounded bg-primary text-on-primary text-label-md font-label-md font-semibold hover:bg-primary-container transition-colors">
+                  Suivre l'auteur
+                </button>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant leading-relaxed">
+                Spécialiste du contentieux foncier et de la structuration d'actifs immobiliers dans l'espace OHADA, il conseille des family offices régionaux et des foncières institutionnelles. Il dirige le séminaire « Contentieux et Baux Commerciaux » au sein de l'Executive Academy VIZATI.
+              </p>
+<div class="pt-2 flex items-center justify-center sm:justify-start gap-4 text-label-xs font-label-xs text-primary font-bold">
+<a class="hover:underline flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-[14px]">article</span> 18 Analyses publiées
+                </a>
+<span>•</span>
+<a class="hover:underline flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-[14px]">mail</span> Contacter via l'Institut
+                </a>
+</div>
+</div>
+</div>
+</article>
+</div>
+</div>
+<!-- RECOMMENDED & RELATED ARTICLES SECTION -->
+<section class="bg-surface-container-low py-14 border-t border-outline-variant">
+<div class="max-w-7xl mx-auto px-6">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+<div>
+<span class="text-label-xs font-label-xs text-on-tertiary-container uppercase tracking-wider font-bold block mb-1">
+              OBSERVATOIRE &amp; PERSPECTIVES
+            </span>
+<h3 class="font-headline-xl text-headline-xl text-primary font-bold tracking-tight">
+              Articles similaires &amp; Recommandations
+            </h3>
+</div>
+<a class="text-label-md font-label-md font-bold text-primary hover:text-secondary flex items-center gap-1 transition-colors" href="#">
+            Voir tout le catalogue de recherche
+            <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+<!-- 3 Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Card 1 -->
+<article class="bg-surface-container-lowest rounded-lg border border-outline-variant overflow-hidden custom-shadow-card custom-shadow-hover transition-all duration-200 flex flex-col">
+<img class="w-full h-48 object-cover" data-alt="Une vue architecturale moderne et lumineuse de bureaux d'affaires haut de gamme à Dakar avec façades en verre et détails en bois précieux sous un ciel ensoleillé tropical, style photographie institutionnelle." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsworYH-Krs9bf3iAdhTmp89_b9DGo4hE9ueeyjfAu9Vw2KAYhDDyzfOtFQUTG6Mbj7B_5LKGKDCFc0BSSStbjLiFXGayynR3-c89l0n6cuT5kZW9SY57ppbynDMA7aMWKA-unOm5acRFb3oIiaDNAm8J34u76u9XedutvcIoJmhvvtoNodNAslMq6VVLWePau-hH_M4UmDOIJzZeo9KsfjH6mYbRtMIikILGbdIg"/>
+<div class="p-6 flex-1 flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-2 mb-2">
+<span class="text-[10px] font-bold tracking-wider uppercase text-on-tertiary-container bg-surface-container px-2 py-0.5 rounded">OHADA • JURIDIQUE</span>
+<span class="text-body-sm font-body-sm text-on-surface-variant">16 Oct 2024</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm font-bold text-primary hover:text-secondary transition-colors mb-2">
+                  Baux commerciaux OHADA : les clauses pièges lors du renouvellement triennal
+                </h4>
+<p class="text-body-sm font-body-sm text-on-surface-variant line-clamp-3 mb-4">
+                  Décryptage des erreurs récurrentes d'interprétation de l'article 123 de l'AUDCG et les conséquences financières de l'indemnité d'éviction.
+                </p>
+</div>
+<div class="pt-4 border-t border-outline-variant/50 flex items-center justify-between text-label-xs font-label-xs text-on-surface-variant">
+<span>Par Dr. Mamadou Kane</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">schedule</span> 6 min</span>
+</div>
+</div>
+</article>
+<!-- Card 2 -->
+<article class="bg-surface-container-lowest rounded-lg border border-outline-variant overflow-hidden custom-shadow-card custom-shadow-hover transition-all duration-200 flex flex-col">
+<img class="w-full h-48 object-cover" data-alt="Vue aérienne d'une immense plateforme logistique et de hangars industriels modernes flambant neufs à Diamniadio avec camions de fret et échangeurs autoroutiers bien dessinés sous une lumière nette de fin de journée." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDStepN0b-R6mRppGceiAfwaDrrjJqpndh3KIFz38pqWUfdWiJ9L2dOu98npW1lVEhpopaa0XEBgEze9eZ3cUlD9ZkGWSap9cMyd5z6wWPS7TE80wffWtyVE6F7JX-Pdv1P4QuvJ9Qe_dFIha_8XitV6V-EulJ5Y51R0fjIGIcmIFmr9-UGjYt_2gXJyiSGVZnNIwSLWAdgHm5kbA5wbXZvPQgQBJeSl0hnrxLyoI"/>
+<div class="p-6 flex-1 flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-2 mb-2">
+<span class="text-[10px] font-bold tracking-wider uppercase text-on-tertiary-container bg-surface-container px-2 py-0.5 rounded">INVESTISSEMENT</span>
+<span class="text-body-sm font-body-sm text-on-surface-variant">11 Oct 2024</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm font-bold text-primary hover:text-secondary transition-colors mb-2">
+                  Investir dans l'immobilier logistique à Diamniadio : rendements et risques de vacance
+                </h4>
+<p class="text-body-sm font-body-sm text-on-surface-variant line-clamp-3 mb-4">
+                  Analyse des rendements locatifs bruts (Cap Rates) situés entre 9.5% et 11.2% au pôle urbain et perspectives d'extension avec le TER.
+                </p>
+</div>
+<div class="pt-4 border-t border-outline-variant/50 flex items-center justify-between text-label-xs font-label-xs text-on-surface-variant">
+<span>Observatoire VIZATI</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">schedule</span> 10 min</span>
+</div>
+</div>
+</article>
+<!-- Card 3 -->
+<article class="bg-surface-container-lowest rounded-lg border border-outline-variant overflow-hidden custom-shadow-card custom-shadow-hover transition-all duration-200 flex flex-col">
+<img class="w-full h-48 object-cover" data-alt="Une composition photographique montrant un plan cadastral et des documents financiers sur une table de réunion en acajou dans un cabinet de conseil fiscal à Abidjan avec vue sur la lagune Ébrié." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYIkZQmULrwUvo7dUAmZiyv1JWq4D-VpXuG7flpWm7F0o2412gCnpasu47gtv6S6pvWais2BxSax4S-vAqFoM93Bkuf2FBkun57YcK-mPQYRPDAerBw34NWOF-3DIPbdE_cJF-aNKHc-pJP_XJm9n8CGW0iXeGM02D5jmM2nrsF5pjux_09z6DZkCuIWvphMsqN9G-Tftbd71lCLkErmCZqdBTP2tKjNWBHdARGQQ"/>
+<div class="p-6 flex-1 flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-2 mb-2">
+<span class="text-[10px] font-bold tracking-wider uppercase text-on-tertiary-container bg-surface-container px-2 py-0.5 rounded">FISCALITÉ FONCIÈRE</span>
+<span class="text-body-sm font-body-sm text-on-surface-variant">04 Oct 2024</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm font-bold text-primary hover:text-secondary transition-colors mb-2">
+                  Fiscalité foncière comparée : Sénégal vs Côte d'Ivoire, quel arbitrage pour les promoteurs ?
+                </h4>
+<p class="text-body-sm font-body-sm text-on-surface-variant line-clamp-3 mb-4">
+                  Étude comparative des droits d'enregistrement, de la contribution foncière des propriétés bâties et des plus-values de cession.
+                </p>
+</div>
+<div class="pt-4 border-t border-outline-variant/50 flex items-center justify-between text-label-xs font-label-xs text-on-surface-variant">
+<span>Par Aïssatou Sow, Fiscaliste</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">schedule</span> 7 min</span>
+</div>
+</div>
+</article>
+</div>
+</div>
+</section>
+<!-- NEWSLETTER INSTITUTIONNELLE VIZATI (CTA Encart) -->
+<section class="bg-primary text-on-primary py-12 border-b border-outline-variant" id="newsletter">
+<div class="max-w-7xl mx-auto px-6">
+<div class="bg-primary-container rounded-lg p-8 md:p-12 border border-on-tertiary-container/30 flex flex-col lg:flex-row items-center justify-between gap-8">
+<div class="max-w-xl space-y-3">
+<div class="inline-flex items-center gap-2 text-on-tertiary-container text-label-xs font-label-xs font-bold uppercase tracking-wider">
+<span class="material-symbols-outlined text-base">mail_outline</span>
+              VEILLE RÉGLEMENTAIRE &amp; MARCHÉS UEMOA
+            </div>
+<h3 class="font-headline-lg text-headline-lg text-white font-bold leading-tight">
+              Recevez les synthèses de l'Observatoire VIZATI chaque jeudi
+            </h3>
+<p class="text-body-md font-body-md text-inverse-primary/90">
+              Rejoignez plus de 4 800 directeurs immobiliers, notaires, juristes d'entreprise et asset managers abonnés à notre bulletin exclusif.
+            </p>
+</div>
+<div class="w-full lg:w-auto flex-1 max-w-md">
+<form class="flex flex-col sm:flex-row gap-2" onsubmit="event.preventDefault(); alert('Merci pour votre inscription à la veille exécutive VIZATI.');">
+<input class="w-full px-4 py-3 rounded text-on-surface bg-surface text-body-md font-body-md border border-outline focus:border-on-tertiary-container focus:ring-2 focus:ring-on-tertiary-container/20 placeholder:text-outline" placeholder="Votre adresse email professionnelle" required="" type="email"/>
+<button class="px-6 py-3 rounded bg-on-tertiary-container text-primary font-headline-sm text-label-lg font-bold hover:bg-tertiary-fixed-dim transition-colors whitespace-nowrap shadow-sm" type="submit">
+                S'abonner
+              </button>
+</form>
+<span class="block mt-2 text-label-xs font-label-xs text-inverse-primary/70">
+              Chiffrement TLS 256-bit • Désinscription en un clic • Données strictement confidentielles
+            </span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Shared Footer (Source of truth executed) -->
+<footer class="bg-surface-container-low border-t border-outline-variant">
+<div class="w-full px-6 py-8 border-t border-outline-variant max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+<!-- Brand & Copyright -->
+<div class="flex flex-col md:flex-row items-center gap-3 text-center md:text-left">
+<span class="text-headline-sm font-headline-sm font-bold text-primary uppercase">VIZATI</span>
+<span class="hidden md:inline text-outline-variant">|</span>
+<p class="text-body-sm font-body-sm text-on-surface-variant">
+          © 2024 VIZATI Intelligence &amp; Executive Academy. Conforme RGPD &amp; Cadre Réglementaire UEMOA. Chiffrement TLS 256-bit.
+        </p>
+</div>
+<!-- Compliance Links from JSON -->
+<div class="flex flex-wrap items-center justify-center gap-6 text-label-xs font-label-xs">
+<a class="text-on-surface-variant hover:text-on-surface hover:text-primary transition-colors duration-150" href="#">Cadre Réglementaire UEMOA</a>
+<a class="text-on-surface-variant hover:text-on-surface hover:text-primary transition-colors duration-150" href="#">Confidentialité &amp; Données</a>
+<a class="text-on-surface-variant hover:text-on-surface hover:text-primary transition-colors duration-150" href="#">Assistance Sécurité</a>
+<a class="text-on-surface-variant hover:text-on-surface hover:text-primary transition-colors duration-150" href="#">Support Administrateur</a>
+</div>
+</div>
+</footer>
+<!-- Reading Progress Script Micro-interaction -->
+<script>
+    window.addEventListener('scroll', () => {
+      const docElem = document.documentElement;
+      const totalHeight = docElem.scrollHeight - docElem.clientHeight;
+      if (totalHeight > 0) {
+        const scrolled = (docElem.scrollTop / totalHeight) * 100;
+        const bar = document.getElementById('readProgress');
+        if (bar) {
+          bar.style.width = Math.min(scrolled, 100) + '%';
+        }
+      }
+    });
+  </script>
+</body></html>

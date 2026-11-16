@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contact &amp; Admissions Institutionnelles | VIZATI Executive Academy &amp; Real Estate Intelligence</title>
+<!-- Google Fonts: Manrope & Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-container-lowest": "#ffffff",
+            "inverse-primary": "#b2c8ea",
+            "on-error-container": "#93000a",
+            "tertiary-fixed-dim": "#edbf73",
+            "tertiary-fixed": "#ffdeab",
+            "inverse-on-surface": "#ecf0ff",
+            "on-surface-variant": "#44474d",
+            "on-error": "#ffffff",
+            "on-secondary-container": "#405d80",
+            "inverse-surface": "#273143",
+            "secondary-fixed-dim": "#abc9f1",
+            "on-tertiary-fixed": "#271900",
+            "tertiary-container": "#3a2600",
+            "on-secondary-fixed": "#001d37",
+            "secondary-container": "#b9d7ff",
+            "on-primary-fixed-variant": "#324864",
+            "surface-container": "#e8eeff",
+            "on-primary-fixed": "#031c37",
+            "secondary": "#436083",
+            "surface-container-high": "#dfe8ff",
+            "secondary-fixed": "#d2e4ff",
+            "on-surface": "#111c2d",
+            "surface-container-low": "#f0f3ff",
+            "surface": "#f9f9ff",
+            "on-tertiary-container": "#b38a44",
+            "surface-bright": "#f9f9ff",
+            "primary": "#00162f",
+            "error": "#ba1a1a",
+            "background": "#f9f9ff",
+            "on-tertiary-fixed-variant": "#5f4100",
+            "on-primary": "#ffffff",
+            "on-secondary": "#ffffff",
+            "surface-container-highest": "#d9e3fb",
+            "primary-container": "#142b46",
+            "tertiary": "#201300",
+            "outline": "#74777e",
+            "on-background": "#111c2d",
+            "outline-variant": "#c4c6ce",
+            "surface-dim": "#d0daf2",
+            "error-container": "#ffdad6",
+            "on-secondary-fixed-variant": "#2a486a",
+            "primary-fixed": "#d3e3ff",
+            "on-primary-container": "#7d93b3",
+            "surface-variant": "#d9e3fb",
+            "surface-tint": "#4a607d",
+            "on-tertiary": "#ffffff",
+            "primary-fixed-dim": "#b2c8ea"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "gutter": "1.5rem",
+            "space-lg": "1.5rem",
+            "margin-mobile": "1rem",
+            "margin": "3rem",
+            "space-xs": "0.25rem",
+            "gutter-mobile": "1rem",
+            "space-2xl": "4rem",
+            "space-xl": "2.5rem",
+            "space-md": "1rem",
+            "space-sm": "0.5rem"
+          },
+          "fontFamily": {
+            "headline-md": ["Manrope"],
+            "label-md": ["Inter"],
+            "code-num": ["Inter"],
+            "label-lg": ["Inter"],
+            "display-hero-mobile": ["Manrope"],
+            "display-hero": ["Manrope"],
+            "headline-lg": ["Manrope"],
+            "body-sm": ["Inter"],
+            "body-xl": ["Inter"],
+            "headline-sm": ["Manrope"],
+            "body-lg": ["Inter"],
+            "headline-xl-mobile": ["Manrope"],
+            "label-xs": ["Inter"],
+            "body-md": ["Inter"],
+            "headline-xl": ["Manrope"]
+          },
+          "fontSize": {
+            "headline-md": ["22px", { "lineHeight": "30px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "code-num": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+            "display-hero-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+            "display-hero": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+            "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "body-xl": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "headline-sm": ["18px", { "lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "600" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "headline-xl-mobile": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+            "label-xs": ["10px", { "lineHeight": "14px", "letterSpacing": "0.06em", "fontWeight": "700" }],
+            "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "headline-xl": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .custom-scroll::-webkit-scrollbar {
+      width: 5px;
+    }
+    .custom-scroll::-webkit-scrollbar-thumb {
+      background: #c4c6ce;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface antialiased selection:bg-tertiary-fixed selection:text-on-tertiary-fixed font-body-md text-body-md">
+<!-- BANDEAU SUPÉRIEUR OFFICIEL UEMOA & CADRE RÉGLEMENTAIRE -->
+<aside aria-label="Informations institutionnelles régionales" class="bg-primary text-surface border-b border-primary-container px-4 py-2">
+<div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center text-label-xs font-label-xs gap-2 tracking-wider">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary-fixed-dim text-[16px]" data-icon="account_balance">account_balance</span>
+<span class="text-surface font-semibold">CADRE RÉGLEMENTAIRE UEMOA &amp; DROIT FONCIER HARMONISÉ OHADA</span>
+<span class="hidden md:inline text-outline-variant">•</span>
+<span class="hidden md:inline text-inverse-primary">RÉFÉRENCE DAKAR &amp; ABIDJAN</span>
+</div>
+<div class="flex items-center gap-4 text-inverse-primary">
+<span class="flex items-center gap-1">
+<span class="inline-block w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+<span>REGISTRE ACTIF 2024</span>
+</span>
+<span class="text-outline-variant">|</span>
+<span class="flex items-center gap-1 font-mono text-tertiary-fixed-dim">
+<span class="material-symbols-outlined text-[14px]" data-icon="lock">lock</span>
+<span>TLS 256-BIT</span>
+</span>
+</div>
+</div>
+</aside>
+<!-- TOP APP BAR CONFORME SHARED COMPONENT -->
+<header class="bg-surface dark:bg-primary border-b border-outline-variant dark:border-primary-container shadow-sm dark:shadow-none sticky top-0 z-50">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
+<!-- LOGO & BRAND BLOCK -->
+<div class="flex items-center gap-4">
+<a class="flex items-center gap-2 group" href="#">
+<div class="w-10 h-10 rounded-lg bg-primary-container text-tertiary-fixed-dim flex items-center justify-center border border-on-tertiary-container shadow-inner">
+<span class="material-symbols-outlined text-[24px]" data-icon="verified_user">verified_user</span>
+</div>
+<div class="flex flex-col">
+<span class="text-headline-md font-headline-md font-bold tracking-tight text-primary dark:text-inverse-primary uppercase">VIZATI</span>
+<span class="text-label-xs font-label-xs tracking-widest text-on-surface-variant dark:text-outline-variant">EXECUTIVE ACADEMY</span>
+</div>
+</a>
+</div>
+<!-- DESKTOP NAVIGATION CLUSTER -->
+<nav aria-label="Navigation principale" class="hidden lg:flex items-center gap-7 text-label-md font-label-md">
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-on-surface transition-colors duration-150 py-1" href="#">Accueil</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-on-surface transition-colors duration-150 py-1" href="#">L'Institut</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-on-surface transition-colors duration-150 py-1" href="#">Formations</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-on-surface transition-colors duration-150 py-1" href="#">Publications</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-on-surface transition-colors duration-150 py-1" href="#">Ressources</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-on-surface transition-colors duration-150 py-1" href="#">Événements</a>
+<!-- Contact actif selon règles partagées -->
+<a aria-current="page" class="text-primary dark:text-inverse-primary font-bold border-b-2 border-on-tertiary-container pb-1" href="#">Contact</a>
+</nav>
+<!-- TRAILING ACTIONS -->
+<div class="flex items-center gap-3">
+<a class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded text-label-md font-label-md text-primary hover:bg-surface-container transition-colors duration-150 border border-outline-variant" href="#">
+<span class="material-symbols-outlined text-[18px]" data-icon="support_agent">support_agent</span>
+<span>Support Sécurisé</span>
+</a>
+<a class="inline-flex items-center gap-2 px-4 py-2 rounded bg-primary-container text-surface-container-lowest font-label-md text-label-md hover:bg-primary transition-all duration-150 active:scale-[0.99] shadow-sm" href="#">
+<span class="material-symbols-outlined text-[18px]" data-icon="login">login</span>
+<span>Se connecter</span>
+</a>
+</div>
+</div>
+</header>
+<!-- CORPS PRINCIPAL -->
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-16">
+<!-- HERO SECTION INSTITUTIONNELLE -->
+<div class="max-w-4xl mx-auto text-center mb-12 lg:mb-16">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container border border-outline-variant text-primary-container text-label-md font-label-md mb-4 shadow-sm">
+<span class="material-symbols-outlined text-on-tertiary-container text-[18px]" data-icon="assured_workload">assured_workload</span>
+<span>Guichet Unique Exécutif &amp; Relations Partenaires</span>
+</div>
+<h1 class="text-headline-xl-mobile md:text-headline-xl font-headline-xl text-primary tracking-tight mb-4">
+        Parlons de vos projets et de vos besoins en compétences immobilières.
+      </h1>
+<p class="text-body-lg font-body-lg text-on-surface-variant max-w-3xl mx-auto">
+        Nos équipes académiques, juristes et analystes de marché vous accompagnent dans le développement de vos compétences, la formation sur-mesure de vos équipes et l'accès à nos programmes certifiants.
+      </p>
+</div>
+<!-- BANDEAU TOAST NOTIFICATION DE SUCCÈS (PRÊT / DÉMONSTRATION) -->
+<div class="mb-8 p-4 rounded-xl bg-surface-container-lowest border border-on-tertiary-container shadow-md flex items-start gap-4 transition-all duration-300" id="toastSuccess">
+<div class="w-10 h-10 rounded-full bg-surface-container text-primary-container flex items-center justify-center shrink-0 border border-outline-variant">
+<span class="material-symbols-outlined text-emerald-600 text-[22px]" data-icon="check_circle">check_circle</span>
+</div>
+<div class="flex-1">
+<div class="flex items-center gap-2">
+<h4 class="text-headline-sm font-headline-sm text-primary text-[15px]">Enregistrement et protocole d'orientation</h4>
+<span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-surface-container text-primary tracking-wider">TLS SÉCURISÉ</span>
+</div>
+<p class="text-body-md font-body-md text-on-surface mt-1">
+          Message transmis avec succès. Réf dossier : <strong class="font-mono text-primary">#VZ-CT-2024-884</strong>. Votre conseiller dédié vous recontactera sous 24h ouvrées.
+        </p>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface p-1" onclick="document.getElementById('toastSuccess').classList.add('hidden')" title="Fermer">
+<span class="material-symbols-outlined text-[18px]" data-icon="close">close</span>
+</button>
+</div>
+<!-- STRUCTURE EN DEUX GRANDES COLONNES HARMONIEUSES (DESKTOP) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+<!-- COLONNE GAUCHE (5 COLONNES) : ÉQUIPE, PÔLES ET COORDONNÉES OFFICIELLES -->
+<section aria-label="Présentation de l'équipe et coordonnées officielles" class="lg:col-span-5 space-y-8">
+<!-- BLOC EN-TÊTE ÉQUIPE -->
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant shadow-sm">
+<div class="flex items-center gap-3 mb-3">
+<div class="w-8 h-8 rounded bg-primary text-surface flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]" data-icon="groups">groups</span>
+</div>
+<h2 class="text-headline-md font-headline-md text-primary">
+              Une équipe de praticiens et de chercheurs à votre écoute
+            </h2>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant mb-6 leading-relaxed">
+            Fondée pour structurer les savoirs fonciers et financiers d'Afrique de l'Ouest, VIZATI mobilise des spécialistes confirmés répartis en pôles stratégiques :
+          </p>
+<!-- 3 PÔLES D'EXPERTISE -->
+<div class="space-y-4">
+<div class="p-3.5 rounded-lg bg-surface-container-low border border-surface-container flex items-start gap-3">
+<span class="material-symbols-outlined text-primary-container text-[22px] shrink-0 mt-0.5" data-icon="school">school</span>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary text-[15px]">Direction académique</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-0.5">
+                  Conception des programmes certifiants, validation des curricula par le conseil scientifique et coordination des jurys.
+                </p>
+</div>
+</div>
+<div class="p-3.5 rounded-lg bg-surface-container-low border border-surface-container flex items-start gap-3">
+<span class="material-symbols-outlined text-on-tertiary-container text-[22px] shrink-0 mt-0.5" data-icon="analytics">analytics</span>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary text-[15px]">Pôle Veille &amp; Observatoire Foncier</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-0.5">
+                  Recherches empiriques, analyse des transactions notariales, indices de rendement locatif tertiaire et publications OHADA.
+                </p>
+</div>
+</div>
+<div class="p-3.5 rounded-lg bg-surface-container-low border border-surface-container flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary text-[22px] shrink-0 mt-0.5" data-icon="domain_add">domain_add</span>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary text-[15px]">Relations Entreprises &amp; Sur-mesure</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-0.5">
+                  Audits de compétences internes, ingénierie de formation intra-entreprises pour banques, foncières et cabinets notariaux.
+                </p>
+</div>
+</div>
+</div>
+</div>
+<!-- CARTOUCHES DE CONTACT POUR LES CAMPUS OFFICIELS -->
+<div class="space-y-4">
+<div class="flex items-center justify-between">
+<h3 class="text-headline-sm font-headline-sm text-primary flex items-center gap-2">
+<span class="material-symbols-outlined text-on-tertiary-container text-[20px]" data-icon="location_city">location_city</span>
+<span>Campus Officiels VIZATI</span>
+</h3>
+<span class="text-label-xs font-label-xs text-outline px-2 py-0.5 bg-surface-container rounded uppercase">UEMOA</span>
+</div>
+<!-- CAMPUS DAKAR -->
+<article class="bg-surface-container-lowest p-5 rounded-xl border border-outline-variant hover:border-primary-container transition-colors duration-200 shadow-sm relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-24 h-24 bg-surface-container rounded-bl-full pointer-events-none opacity-40 group-hover:scale-105 transition-transform duration-300"></div>
+<div class="flex items-start justify-between mb-2">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-emerald-600"></span>
+<h4 class="font-headline-sm text-headline-sm text-primary">Campus Dakar</h4>
+</div>
+<span class="text-label-xs font-label-xs font-bold text-on-primary-container bg-surface-container px-2 py-0.5 rounded">SIÈGE ACADÉMIQUE</span>
+</div>
+<p class="text-label-xs font-label-xs text-on-tertiary-container font-semibold uppercase mb-3">Observatoire &amp; Direction Générale</p>
+<div class="space-y-2 text-body-sm font-body-sm text-on-surface-variant">
+<div class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-[18px] text-outline shrink-0 mt-0.5" data-icon="pin_drop">pin_drop</span>
+<span>Immeuble Étoile de Dakar, Avenue Carde, Dakar Plateau, Sénégal</span>
+</div>
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[18px] text-outline shrink-0" data-icon="call">call</span>
+<a class="hover:text-primary font-mono text-[13px] font-semibold text-on-surface" href="tel:+221338204400">+221 33 820 44 00</a>
+</div>
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[18px] text-outline shrink-0" data-icon="mail">mail</span>
+<span class="space-x-1">
+<a class="hover:underline text-primary" href="mailto:dakar@vizati-academy.org">dakar@vizati-academy.org</a>
+<span class="text-outline-variant">/</span>
+<a class="hover:underline text-primary" href="mailto:contact@vizati-academy.org">contact@vizati-academy.org</a>
+</span>
+</div>
+</div>
+</article>
+<!-- CAMPUS ABIDJAN -->
+<article class="bg-surface-container-lowest p-5 rounded-xl border border-outline-variant hover:border-primary-container transition-colors duration-200 shadow-sm relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-24 h-24 bg-surface-container rounded-bl-full pointer-events-none opacity-40 group-hover:scale-105 transition-transform duration-300"></div>
+<div class="flex items-start justify-between mb-2">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-emerald-600"></span>
+<h4 class="font-headline-sm text-headline-sm text-primary">Campus Abidjan</h4>
+</div>
+<span class="text-label-xs font-label-xs font-bold text-on-primary-container bg-surface-container px-2 py-0.5 rounded">HUB RÉGIONAL</span>
+</div>
+<p class="text-label-xs font-label-xs text-on-tertiary-container font-semibold uppercase mb-3">Relations Institutionnelles &amp; Programmes Pro</p>
+<div class="space-y-2 text-body-sm font-body-sm text-on-surface-variant">
+<div class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-[18px] text-outline shrink-0 mt-0.5" data-icon="pin_drop">pin_drop</span>
+<span>Tour Postel 2001, Boulevard de la République, Abidjan Plateau, Côte d'Ivoire</span>
+</div>
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[18px] text-outline shrink-0" data-icon="call">call</span>
+<a class="hover:text-primary font-mono text-[13px] font-semibold text-on-surface" href="tel:+2252720225510">+225 27 20 22 55 10</a>
+</div>
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[18px] text-outline shrink-0" data-icon="mail">mail</span>
+<a class="hover:underline text-primary" href="mailto:abidjan@vizati-academy.org">abidjan@vizati-academy.org</a>
+</div>
+</div>
+</article>
+</div>
+<!-- PERMANENCE & ENGAGEMENT DE RÉPONSE -->
+<div class="p-5 rounded-xl bg-surface-container-low border border-surface-container space-y-4">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-[22px] shrink-0 mt-0.5" data-icon="schedule">schedule</span>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-primary text-[15px]">Permanence d'accueil et téléphonique</h4>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-1">
+                Lundi au Vendredi, <strong class="text-on-surface font-semibold">08h30 – 18h00 GMT</strong>. Permanence continue pour les auditeurs inscrits aux cycles exécutifs.
+              </p>
+</div>
+</div>
+<div class="flex items-start gap-3 pt-3 border-t border-outline-variant/50">
+<span class="material-symbols-outlined text-on-tertiary-container text-[22px] shrink-0 mt-0.5" data-icon="verified">verified</span>
+<div>
+<p class="text-body-sm font-body-sm text-primary font-medium">
+                « Réponse garantie sous 24h ouvrées par un conseiller académique ou un juriste référent. »
+              </p>
+</div>
+</div>
+</div>
+<!-- RÉSEAUX PROFESSIONNELS OFFICIELS -->
+<div class="bg-surface-container-lowest p-5 rounded-xl border border-outline-variant shadow-sm">
+<h4 class="text-label-md font-label-md text-primary uppercase tracking-wider mb-3">Réseaux Professionnels Officiels</h4>
+<div class="grid grid-cols-2 gap-3 text-body-sm font-body-sm">
+<a class="flex items-center gap-2.5 p-2 rounded hover:bg-surface-container transition-colors group" href="#">
+<span class="w-7 h-7 rounded bg-primary text-surface flex items-center justify-center font-bold text-xs">in</span>
+<div>
+<span class="block font-semibold text-primary group-hover:underline">LinkedIn</span>
+<span class="text-[11px] text-outline">VIZATI Executive Academy</span>
+</div>
+</a>
+<a class="flex items-center gap-2.5 p-2 rounded hover:bg-surface-container transition-colors group" href="#">
+<span class="w-7 h-7 rounded bg-primary text-surface flex items-center justify-center font-bold text-xs">𝕏</span>
+<div>
+<span class="block font-semibold text-primary group-hover:underline">X / Twitter</span>
+<span class="text-[11px] text-outline">@Vizati_Africa</span>
+</div>
+</a>
+<a class="flex items-center gap-2.5 p-2 rounded hover:bg-surface-container transition-colors group" href="#">
+<span class="w-7 h-7 rounded bg-error text-surface flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]" data-icon="play_arrow">play_arrow</span>
+</span>
+<div>
+<span class="block font-semibold text-primary group-hover:underline">YouTube</span>
+<span class="text-[11px] text-outline">Masterclasses &amp; Replays</span>
+</div>
+</a>
+<a class="flex items-center gap-2.5 p-2 rounded hover:bg-surface-container transition-colors group" href="#">
+<span class="w-7 h-7 rounded bg-on-tertiary-container text-surface flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]" data-icon="rss_feed">rss_feed</span>
+</span>
+<div>
+<span class="block font-semibold text-primary group-hover:underline">Flux RSS</span>
+<span class="text-[11px] text-outline">Veille Juridique Certifiée</span>
+</div>
+</a>
+</div>
+</div>
+</section>
+<!-- COLONNE DROITE (7 COLONNES) : FORMULAIRE DE CONTACT & ADMISSION -->
+<section aria-label="Formulaire d'orientation et de contact" class="lg:col-span-7 bg-surface-container-lowest p-6 sm:p-8 rounded-xl border border-outline-variant shadow-sm">
+<div class="border-b border-outline-variant pb-6 mb-6">
+<div class="flex items-center justify-between">
+<h2 class="text-headline-md font-headline-md text-primary">
+              Formulaire de contact &amp; Demande d'admission
+            </h2>
+<span class="material-symbols-outlined text-primary text-[28px]" data-icon="assignment_ind">assignment_ind</span>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant mt-2">
+            Précisez votre statut et l'objet de votre échange pour être orienté directement vers le pôle compétent.
+          </p>
+</div>
+<!-- FORMULAIRE INSTITUTIONNEL -->
+<form class="space-y-5" onsubmit="event.preventDefault(); document.getElementById('toastSuccess').classList.remove('hidden'); window.scrollTo({top: 150, behavior: 'smooth'});">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<!-- 1. NOM ET PRÉNOM -->
+<div>
+<label class="block text-label-md font-label-md text-primary mb-1.5" for="fullName">
+                Nom et prénom <span class="text-error">*</span>
+</label>
+<div class="relative">
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg px-3.5 py-2.5 text-body-md font-body-md text-on-surface placeholder:text-outline-variant focus:outline-none focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 transition-all duration-150" id="fullName" name="fullName" placeholder="ex: Me Abdoulaye Fall, Aïssatou Diallo" required="" type="text"/>
+</div>
+<span class="text-label-xs font-label-xs text-outline mt-1 block">Titre civil ou statut d'exercice</span>
+</div>
+<!-- 2. ORGANISATION / ENTREPRISE -->
+<div>
+<label class="block text-label-md font-label-md text-primary mb-1.5" for="organization">
+                Organisation / Cabinet / Entreprise <span class="text-error">*</span>
+</label>
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg px-3.5 py-2.5 text-body-md font-body-md text-on-surface placeholder:text-outline-variant focus:outline-none focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 transition-all duration-150" id="organization" name="organization" placeholder="ex: Cabinet Notarial, Société de Promotion, Banque" required="" type="text"/>
+<span class="text-label-xs font-label-xs text-outline mt-1 block">Entité juridique ou statut indépendant</span>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<!-- 3. ADRESSE E-MAIL PROFESSIONNELLE -->
+<div>
+<label class="block text-label-md font-label-md text-primary mb-1.5" for="email">
+                Adresse e-mail professionnelle <span class="text-error">*</span>
+</label>
+<div class="relative">
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg px-3.5 py-2.5 text-body-md font-body-md text-on-surface placeholder:text-outline-variant focus:outline-none focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 transition-all duration-150" id="email" name="email" placeholder="ex: a.diallo@groupe-promoteur.sn" required="" type="email"/>
+</div>
+<span class="text-label-xs font-label-xs text-outline mt-1 block">Accusé d'enregistrement envoyé à cette adresse</span>
+</div>
+<!-- 4. TÉLÉPHONE AVEC INDICATIF PAYS -->
+<div>
+<label class="block text-label-md font-label-md text-primary mb-1.5" for="phone">
+                Téléphone &amp; Indicatif pays <span class="text-error">*</span>
+</label>
+<div class="flex gap-2">
+<select class="w-28 bg-surface-container-lowest border border-outline-variant rounded-lg px-2 py-2.5 text-body-md font-body-md text-on-surface focus:outline-none focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 transition-all duration-150" id="countryCode" name="countryCode">
+<option value="+221">+221 (SN)</option>
+<option selected="" value="+225">+225 (CI)</option>
+<option value="+229">+229 (BJ)</option>
+<option value="+228">+228 (TG)</option>
+<option value="+226">+226 (BF)</option>
+<option value="+223">+223 (ML)</option>
+<option value="+227">+227 (NE)</option>
+<option value="+245">+245 (GW)</option>
+<option value="+33">+33 (FR)</option>
+<option value="autre">Autre</option>
+</select>
+<input class="flex-1 bg-surface-container-lowest border border-outline-variant rounded-lg px-3.5 py-2.5 text-body-md font-body-md text-on-surface placeholder:text-outline-variant focus:outline-none focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 transition-all duration-150" id="phone" name="phone" placeholder="07 00 00 00 00" required="" type="tel"/>
+</div>
+<span class="text-label-xs font-label-xs text-outline mt-1 block">Rappel direct possible par l'analyste référent</span>
+</div>
+</div>
+<!-- 5. SUJET DE LA DEMANDE (SÉLECTEUR) -->
+<div>
+<label class="block text-label-md font-label-md text-primary mb-1.5" for="subject">
+              Sujet principal de la démarche <span class="text-error">*</span>
+</label>
+<select class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg px-3.5 py-2.5 text-body-md font-body-md text-on-surface focus:outline-none focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 transition-all duration-150" id="subject" name="subject" required="">
+<option disabled="" selected="" value="">Sélectionnez un sujet institutionnel...</option>
+<option value="inscription_certifiant">Inscription à un parcours certifiant (Executive Certificate)</option>
+<option value="formation_sur_mesure">Formation sur-mesure / intra-entreprise pour équipes</option>
+<option value="cercle_pro">Adhésion au Cercle Pro &amp; Bibliothèque de contrats types</option>
+<option value="partenariat_academique">Partenariat académique / Proposition d'intervention</option>
+<option value="autre_institutionnel">Autre demande institutionnelle ou presse</option>
+</select>
+</div>
+<!-- 6. FORMATION CONCERNÉE (SÉLECTEUR CONDITIONNEL) -->
+<div>
+<label class="block text-label-md font-label-md text-primary mb-1.5" for="program">
+              Programme certifiant concerné (le cas échéant)
+            </label>
+<select class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg px-3.5 py-2.5 text-body-md font-body-md text-on-surface focus:outline-none focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 transition-all duration-150" id="program" name="program">
+<option value="none">Aucune / Non spécifié à ce stade</option>
+<option value="gestionnaire_locatif">Gestionnaire de portefeuille locatif &amp; actifs tertiaires</option>
+<option value="baux_ohada">Baux commerciaux et contentieux OHADA</option>
+<option value="structuration_opci">Structuration financière et OPCI / CRRH</option>
+<option value="audit_igh">Audit technique de copropriété &amp; IGH</option>
+<option value="autre_programme">Autre spécialité sur catalogue</option>
+</select>
+<span class="text-label-xs font-label-xs text-outline mt-1 block">Permet l'envoi immédiat de la plaquette pédagogique détaillée</span>
+</div>
+<!-- 7. MESSAGE DÉTAILLÉ -->
+<div>
+<label class="block text-label-md font-label-md text-primary mb-1.5" for="message">
+              Détails de votre projet ou questionnement <span class="text-error">*</span>
+</label>
+<textarea class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg p-3.5 text-body-md font-body-md text-on-surface placeholder:text-outline-variant focus:outline-none focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 transition-all duration-150 resize-y" id="message" name="message" placeholder="Indiquez vos objectifs opérationnels, le profil des participants (niveaux, nombre de collaborateurs) ou vos interrogations relatives au calendrier pédagogique..." required="" rows="4"></textarea>
+</div>
+<!-- 8. CONSENTEMENT EXPLICITE AU TRAITEMENT DES DONNÉES -->
+<div class="p-3.5 rounded-lg bg-surface-container-low border border-surface-container flex items-start gap-3">
+<input class="mt-1 h-4 w-4 rounded border-outline-variant text-primary-container focus:ring-primary-container" id="consent" name="consent" required="" type="checkbox"/>
+<label class="text-body-sm font-body-sm text-on-surface-variant cursor-pointer" for="consent">
+              J'accepte que les informations saisies soient traitées par VIZATI dans le cadre de ma demande, conformément à la politique de confidentialité et au cadre réglementaire UEMOA. Données protégées par chiffrement et non cédées à des tiers.
+            </label>
+</div>
+<!-- 9. BOUTON D'ACTION PROÉMINENT -->
+<div class="pt-2">
+<button class="w-full sm:w-auto inline-flex justify-center items-center gap-3 px-8 py-3.5 rounded-lg bg-primary-container hover:bg-primary text-surface font-label-lg text-label-lg font-bold shadow-md hover:shadow-lg transition-all duration-200 active:scale-[0.99]" type="submit">
+<span>Envoyer ma demande</span>
+<span class="material-symbols-outlined text-[18px] text-tertiary-fixed-dim" data-icon="encrypted">encrypted</span>
+</button>
+<div class="flex items-center gap-2 mt-3 text-label-xs font-label-xs text-outline">
+<span class="material-symbols-outlined text-emerald-600 text-[14px]" data-icon="verified_user">verified_user</span>
+<span>Protocole de transmission chiffré SHA-256 / Serveurs souverains zone UEMOA</span>
+</div>
+</div>
+</form>
+</section>
+</div>
+<!-- SECTION FOIRE AUX QUESTIONS (FAQ) COURTE INSTITUTIONNELLE -->
+<section aria-label="Foire aux questions institutionnelle" class="mt-16 lg:mt-24 pt-12 border-t border-outline-variant">
+<div class="max-w-3xl mb-8">
+<div class="inline-flex items-center gap-2 px-2.5 py-1 rounded bg-surface-container text-primary text-label-xs font-label-xs mb-2">
+<span class="material-symbols-outlined text-[16px]" data-icon="help">help</span>
+<span>REPÈRES INSTITUTIONNELS</span>
+</div>
+<h2 class="text-headline-lg font-headline-lg text-primary tracking-tight">
+          Questions fréquentes relatives aux admissions et aux partenariats
+        </h2>
+<p class="text-body-md font-body-md text-on-surface-variant mt-1">
+          Éclairages sur les modalités de certification, le financement et les formats d'enseignement VIZATI.
+        </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- QUESTION 1 -->
+<article class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant hover:border-primary-container transition-colors shadow-sm">
+<div class="flex items-start gap-3">
+<span class="w-7 h-7 rounded-full bg-surface-container text-primary flex items-center justify-center font-bold text-label-sm shrink-0">1</span>
+<div>
+<h3 class="text-headline-sm font-headline-sm text-primary text-[16px] leading-snug">
+                Quels sont les prérequis pour intégrer les formations certifiantes VIZATI ?
+              </h3>
+<p class="text-body-md font-body-md text-on-surface-variant mt-2 leading-relaxed">
+                Nos cycles exécutifs s'adressent aux professionnels justifiant d'un niveau minimum Bac+3 ou d'au moins 3 années d'expérience dans les filières immobilière, bancaire, notariale ou d'aménagement urbain. L'admission finale s'effectue sur examen de dossier et entretien avec la commission pédagogique.
+              </p>
+</div>
+</div>
+</article>
+<!-- QUESTION 2 -->
+<article class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant hover:border-primary-container transition-colors shadow-sm">
+<div class="flex items-start gap-3">
+<span class="w-7 h-7 rounded-full bg-surface-container text-primary flex items-center justify-center font-bold text-label-sm shrink-0">2</span>
+<div>
+<h3 class="text-headline-sm font-headline-sm text-primary text-[16px] leading-snug">
+                Proposez-vous des formats de formation à distance ou hybrides ?
+              </h3>
+<p class="text-body-md font-body-md text-on-surface-variant mt-2 leading-relaxed">
+                Oui. Tous nos programmes certifiants combinent des modules asynchrones accessibles 24/7 sur notre plateforme SaaS, des classes de cas en direct chaque quinzaine (le vendredi soir ou samedi matin) et des masterclasses intensives en présentiel à Dakar et Abidjan.
+              </p>
+</div>
+</div>
+</article>
+<!-- QUESTION 3 -->
+<article class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant hover:border-primary-container transition-colors shadow-sm">
+<div class="flex items-start gap-3">
+<span class="w-7 h-7 rounded-full bg-surface-container text-primary flex items-center justify-center font-bold text-label-sm shrink-0">3</span>
+<div>
+<h3 class="text-headline-sm font-headline-sm text-primary text-[16px] leading-snug">
+                Comment obtenir une convention de formation pour une prise en charge employeur / 1% formation ?
+              </h3>
+<p class="text-body-md font-body-md text-on-surface-variant mt-2 leading-relaxed">
+                VIZATI est habilité auprès des fonds nationaux de formation continue (ex : FDFP en Côte d'Ivoire, 3FPT au Sénégal). Notre secrétariat académique émet les conventions types, plans de formation et devis officiels en FCFA sous 48h ouvrées sur simple demande via ce formulaire.
+              </p>
+</div>
+</div>
+</article>
+<!-- QUESTION 4 -->
+<article class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant hover:border-primary-container transition-colors shadow-sm">
+<div class="flex items-start gap-3">
+<span class="w-7 h-7 rounded-full bg-surface-container text-primary flex items-center justify-center font-bold text-label-sm shrink-0">4</span>
+<div>
+<h3 class="text-headline-sm font-headline-sm text-primary text-[16px] leading-snug">
+                Comment soumettre une publication ou un modèle de document à la bibliothèque VIZATI ?
+              </h3>
+<p class="text-body-md font-body-md text-on-surface-variant mt-2 leading-relaxed">
+                Les juristes, notaires et chercheurs peuvent soumettre des analyses de jurisprudence ou des trames de baux OHADA via l'option « Partenariat académique ». Tout document fait l'objet d'un double examen aveugle par notre comité scientifique avant son indexation avec attribution d'auteur.
+              </p>
+</div>
+</div>
+</article>
+</div>
+</section>
+</main>
+<!-- FOOTER COMPLET VIZATI CONFORME SHARED COMPONENT -->
+<footer class="bg-surface-container-low dark:bg-primary-container text-primary dark:text-inverse-primary border-t border-outline-variant dark:border-primary-container mt-16">
+<div class="w-full px-6 py-8 max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+<!-- LOGO & COPYRIGHT CONFORME JSON -->
+<div class="flex flex-col items-center md:items-start gap-1 text-center md:text-left">
+<span class="text-headline-sm font-headline-sm font-bold text-primary dark:text-inverse-primary uppercase tracking-tight">VIZATI</span>
+<p class="text-body-sm font-body-sm text-on-surface-variant dark:text-outline-variant max-w-xl">
+          © 2024 VIZATI Intelligence &amp; Executive Academy. Conforme RGPD &amp; Cadre Réglementaire UEMOA. Chiffrement TLS 256-bit.
+        </p>
+</div>
+<!-- LIENS OBLIGATOIRES CONFORMES JSON -->
+<div class="flex flex-wrap justify-center md:justify-end gap-x-6 gap-y-2 text-label-xs font-label-xs">
+<a class="text-on-surface-variant dark:text-on-primary-container hover:text-on-surface hover:text-primary dark:hover:text-inverse-primary transition-colors duration-150" href="#">
+          Cadre Réglementaire UEMOA
+        </a>
+<a class="text-on-surface-variant dark:text-on-primary-container hover:text-on-surface hover:text-primary dark:hover:text-inverse-primary transition-colors duration-150" href="#">
+          Confidentialité &amp; Données
+        </a>
+<a class="text-on-surface-variant dark:text-on-primary-container hover:text-on-surface hover:text-primary dark:hover:text-inverse-primary transition-colors duration-150" href="#">
+          Assistance Sécurité
+        </a>
+<a class="text-on-surface-variant dark:text-on-primary-container hover:text-on-surface hover:text-primary dark:hover:text-inverse-primary transition-colors duration-150" href="#">
+          Support Administrateur
+        </a>
+</div>
+</div>
+</footer>
+</body></html>

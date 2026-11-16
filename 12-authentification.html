@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Authentification &amp; Accès Sécurisé — Institut VIZATI</title>
+    <!-- Google Fonts: Manrope & Inter -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Manrope:wght@600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Material Symbols Outlined -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface": "#f9f9ff",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed-dim": "#abc9f1",
+                        "primary-container": "#142b46",
+                        "on-tertiary": "#ffffff",
+                        "inverse-primary": "#b2c8ea",
+                        "on-error-container": "#93000a",
+                        "outline": "#74777e",
+                        "tertiary-fixed": "#ffdeab",
+                        "on-secondary-fixed-variant": "#2a486a",
+                        "surface-container": "#e8eeff",
+                        "tertiary-container": "#3a2600",
+                        "on-primary-container": "#7d93b3",
+                        "on-surface": "#111c2d",
+                        "on-tertiary-fixed": "#271900",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed": "#d3e3ff",
+                        "on-tertiary-fixed-variant": "#5f4100",
+                        "error": "#ba1a1a",
+                        "secondary-container": "#b9d7ff",
+                        "on-error": "#ffffff",
+                        "primary": "#00162f",
+                        "on-surface-variant": "#44474d",
+                        "on-tertiary-container": "#b38a44",
+                        "surface-dim": "#d0daf2",
+                        "surface-container-low": "#f0f3ff",
+                        "surface-container-high": "#dfe8ff",
+                        "on-secondary-container": "#405d80",
+                        "secondary": "#436083",
+                        "primary-fixed-dim": "#b2c8ea",
+                        "on-background": "#111c2d",
+                        "surface-container-highest": "#d9e3fb",
+                        "surface-variant": "#d9e3fb",
+                        "inverse-surface": "#273143",
+                        "secondary-fixed": "#d2e4ff",
+                        "surface-bright": "#f9f9ff",
+                        "outline-variant": "#c4c6ce",
+                        "tertiary": "#201300",
+                        "background": "#f9f9ff",
+                        "surface-tint": "#4a607d",
+                        "on-primary-fixed": "#031c37",
+                        "inverse-on-surface": "#ecf0ff",
+                        "on-primary-fixed-variant": "#324864",
+                        "on-secondary-fixed": "#001d37",
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed-dim": "#edbf73",
+                        "surface-container-lowest": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "gutter-mobile": "1rem",
+                        "space-md": "1rem",
+                        "space-2xl": "4rem",
+                        "space-xs": "0.25rem",
+                        "space-lg": "1.5rem",
+                        "gutter": "1.5rem",
+                        "space-sm": "0.5rem",
+                        "margin": "3rem",
+                        "space-xl": "2.5rem",
+                        "margin-mobile": "1rem"
+                    },
+                    "fontFamily": {
+                        "headline-xl-mobile": ["Manrope"],
+                        "display-hero-mobile": ["Manrope"],
+                        "headline-lg": ["Manrope"],
+                        "label-md": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "headline-sm": ["Manrope"],
+                        "body-xl": ["Inter"],
+                        "headline-xl": ["Manrope"],
+                        "display-hero": ["Manrope"],
+                        "headline-md": ["Manrope"],
+                        "code-num": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-xs": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-xl-mobile": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+                        "display-hero-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+                        "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }],
+                        "headline-sm": ["18px", { "lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "600" }],
+                        "body-xl": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-xl": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "display-hero": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "headline-md": ["22px", { "lineHeight": "30px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "code-num": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-xs": ["10px", { "lineHeight": "14px", "letterSpacing": "0.06em", "fontWeight": "700" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+            line-height: 1;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #c4c6ce;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-surface text-on-surface antialiased font-body-md text-body-md h-full selection:bg-tertiary-fixed selection:text-on-tertiary-fixed">
+    <div class="min-h-screen w-full flex flex-col lg:flex-row">
+        <!-- ======================================================================= -->
+        <!-- COLONNE GAUCHE (Éditoriale, Institutionnelle & Visuelle - 45%)           -->
+        <!-- ======================================================================= -->
+        <aside
+            class="relative lg:w-[45%] w-full bg-primary text-on-primary flex flex-col justify-between overflow-hidden p-space-lg lg:p-space-xl min-h-[560px] lg:min-h-screen">
+            <!-- Architectural Background Image with Deep Gradient Overlay -->
+            <div class="absolute inset-0 z-0">
+                <img class="w-full h-full object-cover object-center mix-blend-overlay opacity-35 scale-105 transform duration-700 hover:scale-100 transition-transform"
+                    data-alt="Modern architectural glass high-rise towers in Dakar at sunset with gold structural lattices reflecting ambient evening light. Deep navy blue atmospheric sky contrasting with warm interior office glows, depicting prestigious African executive real estate and institutional governance."
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpjRVmSCveacxSFJJJGq-ckm_ujsSl0JCcxry_yU_klqo-EyDqCedg6V8nMoAKOTlpQQmSsJOMU7O3WtNI3twzoAAsXC5P7LtU0rcviXDP11ZlWwM2nGDcnne9VUTwlhTLs-MffzNpcwcALe7Clwp08rb_04wL0RJ8X5hMYyievqbVRLxOAvb2qWWCXRdpB8X-ZFjfWWWScJDpWgjcaKtJfLcwjPX0ZFs5YaGWwVQ" />
+                <div class="absolute inset-0 bg-gradient-to-t from-primary via-primary/90 to-primary/70"></div>
+                <div
+                    class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(237,191,115,0.12),transparent_65%)]">
+                </div>
+            </div>
+            <!-- Top Header & Brand Anchor -->
+            <div class="relative z-10 flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <div
+                        class="w-10 h-10 rounded-lg bg-surface-container-lowest/10 border border-tertiary-fixed-dim/40 flex items-center justify-center shadow-sm backdrop-blur-md">
+                        <span class="material-symbols-outlined text-tertiary-fixed-dim"
+                            style="font-variation-settings: 'FILL' 1;">account_balance</span>
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-2">
+                            <span
+                                class="font-headline-sm text-headline-sm tracking-wider font-extrabold text-on-primary">VIZATI</span>
+                            <span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed-dim"></span>
+                            <span
+                                class="font-label-xs text-label-xs tracking-widest text-tertiary-fixed-dim uppercase">Institut</span>
+                        </div>
+                        <p class="font-label-md text-label-md text-primary-fixed-dim tracking-wide">Institut &amp;
+                            Académie Exécutive</p>
+                    </div>
+                </div>
+                <!-- Security Pill -->
+                <div
+                    class="hidden sm:flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-lowest/10 border border-outline-variant/30 text-surface-bright font-label-md text-label-md backdrop-blur-sm">
+                    <span class="material-symbols-outlined text-tertiary-fixed-dim text-sm"
+                        style="font-variation-settings: 'FILL' 1;">verified_user</span>
+                    <span>Session Chiffrée SSL</span>
+                </div>
+            </div>
+            <!-- Middle Institutional Copy -->
+            <div class="relative z-10 my-auto py-8">
+                <div
+                    class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-tertiary-container/60 border border-tertiary-fixed-dim/40 text-tertiary-fixed-dim font-label-md text-label-md mb-space-md">
+                    <span class="material-symbols-outlined text-sm">workspace_premium</span>
+                    <span>Observatoire &amp; Hautes Études Immobilières</span>
+                </div>
+                <h1
+                    class="font-headline-xl text-headline-xl text-on-primary font-extrabold tracking-tight mb-space-md max-w-xl">
+                    Votre expertise immobilière commence ici.
+                </h1>
+                <p class="font-body-lg text-body-lg text-primary-fixed max-w-lg mb-space-lg leading-relaxed">
+                    Accédez aux cycles certifiants de haut niveau, aux analyses exclusives de l'Observatoire Foncier et
+                    rejoignez une communauté d'élite de décideurs, investisseurs et juristes d'Afrique de l'Ouest et
+                    Centrale.
+                </p>
+                <!-- Executive Quote / Alumni Testimonial -->
+                <div
+                    class="p-space-md rounded-xl bg-surface-container-lowest/10 border border-outline-variant/20 backdrop-blur-md max-w-lg shadow-sm">
+                    <div class="flex items-start gap-3">
+                        <span class="material-symbols-outlined text-tertiary-fixed-dim text-2xl">format_quote</span>
+                        <div>
+                            <p class="font-body-md text-body-md text-on-primary italic leading-snug">
+                                « VIZATI apporte cette rigueur cadastrale et cette intelligence financière sans
+                                précédent dans la zone UEMOA. Une référence absolue pour nos directeurs
+                                d'investissement. »
+                            </p>
+                            <div class="mt-2 flex items-center gap-2">
+                                <span class="font-label-md text-label-md font-bold text-tertiary-fixed-dim">Moussa
+                                    Konaté</span>
+                                <span class="text-primary-fixed-dim text-xs">•</span>
+                                <span class="font-label-md text-label-md text-primary-fixed-dim">Directeur Général
+                                    Adjoint, Fonds Souverain Régional</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Bottom Reassurance Badges -->
+            <div class="relative z-10 pt-6 border-t border-outline-variant/20">
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                    <div class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-tertiary-fixed-dim text-lg">gavel</span>
+                        <span class="font-label-md text-label-md text-primary-fixed-dim">Cadre Réglementaire
+                            UEMOA</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-tertiary-fixed-dim text-lg">lock</span>
+                        <span class="font-label-md text-label-md text-primary-fixed-dim">Chiffrement TLS 256-bit</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-tertiary-fixed-dim text-lg">approval</span>
+                        <span class="font-label-md text-label-md text-primary-fixed-dim">Homologation Dakar &amp;
+                            Abidjan</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        <!-- ======================================================================= -->
+        <!-- COLONNE DROITE (Formulaires & Interactions - 55%)                       -->
+        <!-- ======================================================================= -->
+        <main
+            class="relative lg:w-[55%] w-full bg-surface-container-lowest flex flex-col justify-between overflow-y-auto custom-scrollbar p-space-md sm:p-space-lg lg:p-space-xl">
+            <!-- Top Dual Segmented Switcher & Portal Switch -->
+            <header
+                class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-space-md border-b border-outline-variant/40">
+                <!-- Dual Mode Navigation Switcher -->
+                <nav aria-label="Sections institutionnelles"
+                    class="inline-flex p-1 rounded-xl bg-surface-container border border-outline-variant/50 self-start">
+                    <button
+                        class="px-3 py-1.5 rounded-lg bg-surface-container-lowest text-primary font-label-md text-label-md font-bold shadow-sm"
+                        type="button">
+                        Espace Pro &amp; Intelligence
+                    </button>
+                    <a class="px-3 py-1.5 rounded-lg text-on-surface-variant font-label-md text-label-md hover:text-primary transition-colors"
+                        href="#">
+                        Institut &amp; Programmes
+                    </a>
+                </nav>
+                <!-- Auth Mode Toggle (Tabs) -->
+                <div
+                    class="inline-flex p-1 rounded-xl bg-surface-container-low border border-outline-variant/30 self-start sm:self-auto">
+                    <button
+                        class="px-4 py-1.5 rounded-lg bg-primary text-on-primary font-label-md text-label-md font-bold shadow-sm transition-all duration-150"
+                        id="tab-login-btn" onclick="switchAuthTab('login')" type="button">
+                        Se connecter
+                    </button>
+                    <button
+                        class="px-4 py-1.5 rounded-lg text-on-surface-variant font-label-md text-label-md font-semibold hover:text-primary transition-all duration-150"
+                        id="tab-register-btn" onclick="switchAuthTab('register')" type="button">
+                        Créer un compte
+                    </button>
+                </div>
+            </header>
+            <div class="max-w-xl w-full mx-auto py-space-md flex-1 flex flex-col justify-center">
+                <!-- ================================================================= -->
+                <!-- BANDEAU D'ÉTAT : ERREUR SIMULÉE (Interactif)                     -->
+                <!-- ================================================================= -->
+                <div class="mb-space-md rounded-xl p-3.5 bg-error-container/40 border border-error/30 flex items-start justify-between gap-3 text-on-surface transition-all duration-300"
+                    id="simulated-error-banner">
+                    <div class="flex items-start gap-2.5">
+                        <span class="material-symbols-outlined text-error text-xl shrink-0 mt-0.5">error</span>
+                        <div>
+                            <p class="font-label-md text-label-md font-bold text-on-error-container">État de contrôle :
+                                Accès restreint</p>
+                            <p class="font-body-sm text-body-sm text-on-surface">Identifiants non reconnus ou compte non
+                                activé. Veuillez vérifier vos accès professionnels.</p>
+                        </div>
+                    </div>
+                    <button class="text-on-surface-variant hover:text-error transition-colors p-1"
+                        onclick="document.getElementById('simulated-error-banner').classList.add('hidden')"
+                        title="Fermer l'alerte" type="button">
+                        <span class="material-symbols-outlined text-lg">close</span>
+                    </button>
+                </div>
+                <!-- ================================================================= -->
+                <!-- BANDEAU DE SUCCÈS : RÉINITIALISATION DU MOT DE PASSE             -->
+                <!-- ================================================================= -->
+                <div class="hidden mb-space-md rounded-xl p-3.5 bg-secondary-container/30 border border-secondary/30 flex items-start justify-between gap-3 text-on-surface transition-all duration-300"
+                    id="reset-success-banner">
+                    <div class="flex items-start gap-2.5">
+                        <span class="material-symbols-outlined text-primary text-xl shrink-0 mt-0.5">check_circle</span>
+                        <div>
+                            <p class="font-label-md text-label-md font-bold text-primary">Lien de sécurité transmis</p>
+                            <p class="font-body-sm text-body-sm text-on-surface">Un lien de réinitialisation sécurisé a
+                                été transmis à votre adresse e-mail professionnelle.</p>
+                        </div>
+                    </div>
+                    <button class="text-on-surface-variant hover:text-primary transition-colors p-1"
+                        onclick="document.getElementById('reset-success-banner').classList.add('hidden')" type="button">
+                        <span class="material-symbols-outlined text-lg">close</span>
+                    </button>
+                </div>
+                <!-- ================================================================= -->
+                <!-- FORMULAIRE DE CONNEXION (PAR DÉFAUT)                              -->
+                <!-- ================================================================= -->
+                <div class="block transition-opacity duration-200" id="login-container">
+                    <div class="mb-space-md">
+                        <h2 class="font-headline-lg text-headline-lg font-bold text-primary">Heureux de vous retrouver
+                        </h2>
+                        <p class="font-body-md text-body-md text-on-surface-variant mt-1">
+                            Renseignez vos identifiants pour accéder à votre espace apprenant et vos ressources
+                            certifiées.
+                        </p>
+                    </div>
+                    <form class="space-y-4" onsubmit="handleLoginSubmit(event)">
+                        <!-- Email Field -->
+                        <div>
+                            <label class="block font-label-md text-label-md text-on-surface mb-1.5 font-bold"
+                                for="login-email">
+                                Adresse e-mail professionnelle
+                            </label>
+                            <div class="relative">
+                                <span
+                                    class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-outline text-lg pointer-events-none">mail</span>
+                                <input
+                                    class="w-full bg-surface-container-lowest text-on-surface pl-10 pr-4 py-2.5 rounded-lg border border-outline-variant focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 font-body-md text-body-md placeholder:text-outline-variant outline-none transition-all"
+                                    id="login-email" placeholder="aminata.diallo@groupe-foncier.sn" required=""
+                                    type="email" />
+                            </div>
+                        </div>
+                        <!-- Password Field -->
+                        <div>
+                            <div class="flex items-center justify-between mb-1.5">
+                                <label class="block font-label-md text-label-md text-on-surface font-bold"
+                                    for="login-password">
+                                    Mot de passe
+                                </label>
+                                <button
+                                    class="font-label-md text-label-md text-secondary hover:text-primary transition-colors underline underline-offset-2"
+                                    onclick="toggleForgotPassword()" type="button">
+                                    Mot de passe oublié ?
+                                </button>
+                            </div>
+                            <div class="relative">
+                                <span
+                                    class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-outline text-lg pointer-events-none">lock</span>
+                                <input
+                                    class="w-full bg-surface-container-lowest text-on-surface pl-10 pr-10 py-2.5 rounded-lg border border-outline-variant focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 font-body-md text-body-md outline-none transition-all"
+                                    id="login-password" placeholder="••••••••••••" required="" type="password" />
+                                <button
+                                    class="absolute right-3.5 top-1/2 -translate-y-1/2 text-outline hover:text-primary p-0.5"
+                                    onclick="togglePasswordVisibility('login-password', 'toggle-login-pwd-icon')"
+                                    type="button">
+                                    <span class="material-symbols-outlined text-lg"
+                                        id="toggle-login-pwd-icon">visibility</span>
+                                </button>
+                            </div>
+                        </div>
+                        <!-- Options: Remember Me -->
+                        <div class="flex items-center justify-between pt-1">
+                            <label class="flex items-center gap-2 cursor-pointer select-none">
+                                <input checked=""
+                                    class="w-4 h-4 rounded text-primary focus:ring-primary/20 border-outline-variant"
+                                    type="checkbox" />
+                                <span class="font-label-md text-label-md text-on-surface-variant">Se souvenir de moi sur
+                                    cet appareil sécurisé</span>
+                            </label>
+                        </div>
+                        <!-- Main Submit Button -->
+                        <a href="./14-dashboard-etudiant.html"
+                            class="w-full py-3 px-space-md rounded-xl bg-primary text-on-primary font-label-lg text-label-lg font-bold flex items-center justify-center gap-2 hover:bg-primary-container active:scale-[0.99] transition-all shadow-sm"
+                            id="login-submit-btn">
+                            <span class="material-symbols-outlined text-lg" id="login-lock-icon">lock</span>
+                            <span class="hidden animate-spin material-symbols-outlined text-lg"
+                                id="login-spinner">sync</span>
+                            <span id="login-btn-text">Se connecter à mon espace</span>
+                        </a>
+                        <!-- Separator -->
+                        <div class="relative my-4 flex items-center justify-center">
+                            <div class="absolute inset-0 flex items-center">
+                                <div class="w-full border-t border-outline-variant/60"></div>
+                            </div>
+                            <span
+                                class="relative px-3 bg-surface-container-lowest font-label-xs text-label-xs tracking-wider text-outline uppercase font-bold">OU</span>
+                        </div>
+                        <!-- SSO Enterprise Login -->
+                        <a
+                            class="w-full py-2.5 px-space-md rounded-xl bg-surface-container-low border border-outline-variant text-on-surface font-label-md text-label-md font-semibold flex items-center justify-center gap-2.5 hover:bg-surface-container transition-all"
+                            href="./23-dashboard-admin.html">
+                            <span class="material-symbols-outlined text-secondary text-lg">domain</span>
+                            <span>Connexion via Portail Entreprise / Partenaire UEMOA</span>
+                        </a>
+                    </form>
+                    <!-- Forgot Password Drawer / Inline Section -->
+                    <div class="hidden mt-4 p-4 rounded-xl bg-surface-container border border-outline-variant/60 transition-all"
+                        id="forgot-password-panel">
+                        <h3 class="font-label-lg text-label-lg font-bold text-primary mb-1">Récupération de vos accès
+                            institutionnels</h3>
+                        <p class="font-body-sm text-body-sm text-on-surface-variant mb-3">Saisissez l'e-mail affilié à
+                            votre compte pour générer un jeton de réinitialisation temporaire.</p>
+                        <div class="flex gap-2">
+                            <input
+                                class="flex-1 bg-surface-container-lowest text-on-surface px-3 py-2 rounded-lg border border-outline-variant font-body-sm text-body-sm focus:border-primary"
+                                id="reset-email-input" placeholder="votre-email@institution.org" type="email" />
+                            <button
+                                class="px-4 py-2 bg-primary text-on-primary rounded-lg font-label-md text-label-md font-bold hover:bg-primary-container shrink-0"
+                                onclick="sendPasswordReset()" type="button">
+                                Envoyer
+                            </button>
+                        </div>
+                    </div>
+                    <div class="mt-6 text-center">
+                        <p class="font-body-md text-body-md text-on-surface-variant">
+                            Pas encore inscrit ?
+                            <button class="text-primary font-bold hover:underline underline-offset-2 ml-1"
+                                onclick="switchAuthTab('register')" type="button">
+                                Créer un compte apprenant
+                            </button>
+                        </p>
+                    </div>
+                </div>
+                <!-- ================================================================= -->
+                <!-- SECTION COMPLÈTE D'INSCRIPTION / CRÉATION DE COMPTE               -->
+                <!-- ================================================================= -->
+                <div class="hidden transition-opacity duration-200" id="register-container">
+                    <div class="mb-space-md">
+                        <div
+                            class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded bg-tertiary-fixed/30 border border-tertiary-fixed-dim/40 text-on-tertiary-fixed-variant font-label-xs text-label-xs uppercase font-bold mb-1">
+                            Promotion Executive 2025
+                        </div>
+                        <h2 class="font-headline-lg text-headline-lg font-bold text-primary">Créer un compte apprenant
+                        </h2>
+                        <p class="font-body-md text-body-md text-on-surface-variant mt-0.5">
+                            Rejoignez le portail d'accréditation et accédez aux ressources de l'Institut VIZATI.
+                        </p>
+                    </div>
+                    <form class="space-y-3.5" onsubmit="handleRegisterSubmit(event)">
+                        <!-- Nom & Prénom Grid -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <div>
+                                <label class="block font-label-md text-label-md text-on-surface mb-1 font-bold"
+                                    for="reg-firstname">Prénom</label>
+                                <input
+                                    class="w-full bg-surface-container-lowest text-on-surface px-3 py-2.5 rounded-lg border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary font-body-md text-body-md outline-none"
+                                    id="reg-firstname" placeholder="Aminata" required="" type="text" />
+                            </div>
+                            <div>
+                                <label class="block font-label-md text-label-md text-on-surface mb-1 font-bold"
+                                    for="reg-lastname">Nom</label>
+                                <input
+                                    class="w-full bg-surface-container-lowest text-on-surface px-3 py-2.5 rounded-lg border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary font-body-md text-body-md outline-none"
+                                    id="reg-lastname" placeholder="Diallo" required="" type="text" />
+                            </div>
+                        </div>
+                        <!-- Organisation / Entreprise -->
+                        <div>
+                            <label class="block font-label-md text-label-md text-on-surface mb-1 font-bold"
+                                for="reg-company">Organisation / Entreprise / Institution</label>
+                            <div class="relative">
+                                <span
+                                    class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-lg pointer-events-none">corporate_fare</span>
+                                <input
+                                    class="w-full bg-surface-container-lowest text-on-surface pl-9 pr-3 py-2.5 rounded-lg border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary font-body-md text-body-md outline-none"
+                                    id="reg-company" placeholder="Groupe Foncier de l'Union, Caisse Immobilière..."
+                                    required="" type="text" />
+                            </div>
+                        </div>
+                        <!-- Professional Email -->
+                        <div>
+                            <label class="block font-label-md text-label-md text-on-surface mb-1 font-bold"
+                                for="reg-email">Adresse e-mail professionnelle</label>
+                            <div class="relative">
+                                <span
+                                    class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-lg pointer-events-none">mail</span>
+                                <input
+                                    class="w-full bg-surface-container-lowest text-on-surface pl-9 pr-3 py-2.5 rounded-lg border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary font-body-md text-body-md outline-none"
+                                    id="reg-email" placeholder="a.diallo@institution.sn" required="" type="email" />
+                            </div>
+                        </div>
+                        <!-- Phone with country indicator -->
+                        <div>
+                            <label class="block font-label-md text-label-md text-on-surface mb-1 font-bold"
+                                for="reg-phone">Numéro de téléphone mobile</label>
+                            <div class="flex gap-2">
+                                <select
+                                    class="bg-surface-container-low text-on-surface px-2.5 py-2.5 rounded-lg border border-outline-variant font-label-md text-label-md font-semibold outline-none focus:border-primary">
+                                    <option value="+221">🇸🇳 +221 (Sénégal)</option>
+                                    <option value="+225">🇨🇮 +225 (Côte d'Ivoire)</option>
+                                    <option value="+229">🇧🇯 +229 (Bénin)</option>
+                                    <option value="+228">🇹🇬 +228 (Togo)</option>
+                                    <option value="+226">🇧🇫 +226 (Burkina)</option>
+                                    <option value="+223">🇲🇱 +223 (Mali)</option>
+                                    <option value="+237">🇨🇲 +237 (Cameroun)</option>
+                                    <option value="+33">🇫🇷 +33 (France)</option>
+                                </select>
+                                <input
+                                    class="flex-1 bg-surface-container-lowest text-on-surface px-3 py-2.5 rounded-lg border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary font-body-md text-body-md outline-none"
+                                    id="reg-phone" placeholder="77 450 89 20" required="" type="tel" />
+                            </div>
+                        </div>
+                        <!-- Password Fields Grid -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <div>
+                                <label class="block font-label-md text-label-md text-on-surface mb-1 font-bold"
+                                    for="reg-pwd">Mot de passe</label>
+                                <div class="relative">
+                                    <input
+                                        class="w-full bg-surface-container-lowest text-on-surface pl-3 pr-8 py-2.5 rounded-lg border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary font-body-md text-body-md outline-none"
+                                        id="reg-pwd" placeholder="Min. 8 car., 1 chiffre" required="" type="password" />
+                                    <button
+                                        class="absolute right-2 top-1/2 -translate-y-1/2 text-outline hover:text-primary"
+                                        onclick="togglePasswordVisibility('reg-pwd', 'toggle-reg-pwd-icon-1')"
+                                        type="button">
+                                        <span class="material-symbols-outlined text-base"
+                                            id="toggle-reg-pwd-icon-1">visibility</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block font-label-md text-label-md text-on-surface mb-1 font-bold"
+                                    for="reg-pwd-confirm">Confirmer</label>
+                                <div class="relative">
+                                    <input
+                                        class="w-full bg-surface-container-lowest text-on-surface pl-3 pr-8 py-2.5 rounded-lg border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary font-body-md text-body-md outline-none"
+                                        id="reg-pwd-confirm" placeholder="Répéter mot de passe" required=""
+                                        type="password" />
+                                    <button
+                                        class="absolute right-2 top-1/2 -translate-y-1/2 text-outline hover:text-primary"
+                                        onclick="togglePasswordVisibility('reg-pwd-confirm', 'toggle-reg-pwd-icon-2')"
+                                        type="button">
+                                        <span class="material-symbols-outlined text-base"
+                                            id="toggle-reg-pwd-icon-2">visibility</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Terms Checkbox -->
+                        <div class="pt-1">
+                            <label class="flex items-start gap-2.5 cursor-pointer select-none">
+                                <input
+                                    class="mt-1 w-4 h-4 rounded text-primary focus:ring-primary/20 border-outline-variant"
+                                    required="" type="checkbox" />
+                                <span class="font-body-sm text-body-sm text-on-surface-variant leading-snug">
+                                    J'accepte les <a class="text-primary font-semibold underline underline-offset-2"
+                                        href="#">conditions générales d'utilisation</a> et la <a
+                                        class="text-primary font-semibold underline underline-offset-2"
+                                        href="#">politique de confidentialité</a> de l'Institut VIZATI (conforme UEMOA
+                                    &amp; RGPD).
+                                </span>
+                            </label>
+                        </div>
+                        <!-- Submit Registration -->
+                        <button
+                            class="w-full mt-2 py-3 px-space-md rounded-xl bg-primary text-on-primary font-label-lg text-label-lg font-bold flex items-center justify-center gap-2 hover:bg-primary-container active:scale-[0.99] transition-all shadow-sm"
+                            type="submit">
+                            <span class="material-symbols-outlined text-lg">how_to_reg</span>
+                            <span>Créer mon compte</span>
+                        </button>
+                    </form>
+                    <div class="mt-4 text-center">
+                        <p class="font-body-md text-body-md text-on-surface-variant">
+                            Vous possédez déjà un compte ?
+                            <button class="text-primary font-bold hover:underline underline-offset-2 ml-1"
+                                onclick="switchAuthTab('login')" type="button">
+                                Se connecter
+                            </button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- Footer Info and Academic Legal Disclaimers -->
+            <footer
+                class="pt-space-md border-t border-outline-variant/40 flex flex-col sm:flex-row items-center justify-between text-outline gap-2">
+                <div class="flex items-center gap-2 font-label-md text-label-md">
+                    <span class="material-symbols-outlined text-base text-tertiary-fixed-dim">verified</span>
+                    <span>VIZATI Learner OS — Architecture V3.4</span>
+                </div>
+                <div class="flex items-center gap-4 font-body-sm text-body-sm text-on-surface-variant">
+                    <a class="hover:text-primary transition-colors" href="#">Mentions légales</a>
+                    <span>•</span>
+                    <a class="hover:text-primary transition-colors" href="#">Assistance académique</a>
+                    <span>•</span>
+                    <a class="hover:text-primary transition-colors" href="#">Cadre OHADA / Foncier</a>
+                </div>
+            </footer>
+        </main>
+    </div>
+    <!-- Interactive State Controller -->
+    <script>
+        function switchAuthTab(target) {
+            const loginTab = document.getElementById('tab-login-btn');
+            const regTab = document.getElementById('tab-register-btn');
+            const loginContainer = document.getElementById('login-container');
+            const regContainer = document.getElementById('register-container');
+
+            if (target === 'login') {
+                loginTab.className = "px-4 py-1.5 rounded-lg bg-primary text-on-primary font-label-md text-label-md font-bold shadow-sm transition-all duration-150";
+                regTab.className = "px-4 py-1.5 rounded-lg text-on-surface-variant font-label-md text-label-md font-semibold hover:text-primary transition-all duration-150";
+                loginContainer.classList.remove('hidden');
+                regContainer.classList.add('hidden');
+            } else {
+                regTab.className = "px-4 py-1.5 rounded-lg bg-primary text-on-primary font-label-md text-label-md font-bold shadow-sm transition-all duration-150";
+                loginTab.className = "px-4 py-1.5 rounded-lg text-on-surface-variant font-label-md text-label-md font-semibold hover:text-primary transition-all duration-150";
+                regContainer.classList.remove('hidden');
+                loginContainer.classList.add('hidden');
+            }
+        }
+
+        function togglePasswordVisibility(inputId, iconId) {
+            const input = document.getElementById(inputId);
+            const icon = document.getElementById(iconId);
+            if (input.type === 'password') {
+                input.type = 'text';
+                icon.textContent = 'visibility_off';
+            } else {
+                input.type = 'password';
+                icon.textContent = 'visibility';
+            }
+        }
+
+        function toggleForgotPassword() {
+            const panel = document.getElementById('forgot-password-panel');
+            panel.classList.toggle('hidden');
+        }
+
+        function sendPasswordReset() {
+            const input = document.getElementById('reset-email-input');
+            const resetBanner = document.getElementById('reset-success-banner');
+            const panel = document.getElementById('forgot-password-panel');
+            if (input.value) {
+                panel.classList.add('hidden');
+                resetBanner.classList.remove('hidden');
+            }
+        }
+
+        function handleLoginSubmit(e) {
+            e.preventDefault();
+            const lockIcon = document.getElementById('login-lock-icon');
+            const spinner = document.getElementById('login-spinner');
+            const btnText = document.getElementById('login-btn-text');
+
+            lockIcon.classList.add('hidden');
+            spinner.classList.remove('hidden');
+            btnText.textContent = "Authentification sécurisée...";
+
+            setTimeout(() => {
+                spinner.classList.add('hidden');
+                lockIcon.classList.remove('hidden');
+                btnText.textContent = "Se connecter à mon espace";
+                // Reveal simulated error notification banner for visual state confirmation
+                const errorBanner = document.getElementById('simulated-error-banner');
+                errorBanner.classList.remove('hidden');
+            }, 1200);
+        }
+
+        function handleRegisterSubmit(e) {
+            e.preventDefault();
+            alert("Votre demande d'inscription institutionnelle a été enregistrée. Une confirmation a été transmise à votre adresse e-mail professionnelle.");
+            switchAuthTab('login');
+        }
+    </script>
+</body>
+
+</html>

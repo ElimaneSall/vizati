@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Gestionnaire de portefeuille locatif | VIZATI Executive Academy</title>
+<!-- Google Fonts: Manrope & Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 with plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration verbatim -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "primary-fixed": "#d3e3ff",
+            "on-primary-fixed-variant": "#324864",
+            "error": "#ba1a1a",
+            "on-primary": "#ffffff",
+            "tertiary-container": "#3a2600",
+            "on-primary-container": "#7d93b3",
+            "surface-dim": "#d0daf2",
+            "on-background": "#111c2d",
+            "on-error": "#ffffff",
+            "on-primary-fixed": "#031c37",
+            "primary-container": "#142b46",
+            "on-surface": "#111c2d",
+            "surface-variant": "#d9e3fb",
+            "inverse-surface": "#273143",
+            "tertiary-fixed-dim": "#edbf73",
+            "on-tertiary": "#ffffff",
+            "secondary-container": "#b9d7ff",
+            "outline": "#74777e",
+            "on-tertiary-fixed": "#271900",
+            "primary": "#00162f",
+            "secondary-fixed-dim": "#abc9f1",
+            "on-tertiary-fixed-variant": "#5f4100",
+            "secondary": "#436083",
+            "on-secondary-container": "#405d80",
+            "on-secondary-fixed-variant": "#2a486a",
+            "surface-container-high": "#dfe8ff",
+            "inverse-primary": "#b2c8ea",
+            "on-tertiary-container": "#b38a44",
+            "surface-container-highest": "#d9e3fb",
+            "inverse-on-surface": "#ecf0ff",
+            "surface-tint": "#4a607d",
+            "tertiary": "#201300",
+            "surface-bright": "#f9f9ff",
+            "on-secondary-fixed": "#001d37",
+            "error-container": "#ffdad6",
+            "on-error-container": "#93000a",
+            "primary-fixed-dim": "#b2c8ea",
+            "secondary-fixed": "#d2e4ff",
+            "on-secondary": "#ffffff",
+            "on-surface-variant": "#44474d",
+            "surface": "#f9f9ff",
+            "surface-container": "#e8eeff",
+            "tertiary-fixed": "#ffdeab",
+            "surface-container-low": "#f0f3ff",
+            "surface-container-lowest": "#ffffff",
+            "outline-variant": "#c4c6ce",
+            "background": "#f9f9ff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "margin": "3rem",
+            "space-2xl": "4rem",
+            "gutter": "1.5rem",
+            "space-lg": "1.5rem",
+            "gutter-mobile": "1rem",
+            "margin-mobile": "1rem",
+            "space-sm": "0.5rem",
+            "space-xs": "0.25rem",
+            "space-xl": "2.5rem",
+            "space-md": "1rem"
+          },
+          "fontFamily": {
+            "headline-xl-mobile": ["Manrope"],
+            "body-md": ["Inter"],
+            "display-hero-mobile": ["Manrope"],
+            "label-lg": ["Inter"],
+            "label-xs": ["Inter"],
+            "headline-md": ["Manrope"],
+            "body-lg": ["Inter"],
+            "headline-sm": ["Manrope"],
+            "code-num": ["Inter"],
+            "headline-lg": ["Manrope"],
+            "label-md": ["Inter"],
+            "body-sm": ["Inter"],
+            "body-xl": ["Inter"],
+            "headline-xl": ["Manrope"],
+            "display-hero": ["Manrope"]
+          },
+          "fontSize": {
+            "headline-xl-mobile": ["26px", {"lineHeight": "34px", "letterSpacing": "-0.015em", "fontWeight": "700"}],
+            "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+            "display-hero-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+            "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+            "label-xs": ["10px", {"lineHeight": "14px", "letterSpacing": "0.06em", "fontWeight": "700"}],
+            "headline-md": ["22px", {"lineHeight": "30px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+            "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+            "headline-sm": ["18px", {"lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "600"}],
+            "code-num": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+            "headline-lg": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+            "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+            "body-sm": ["12px", {"lineHeight": "18px", "fontWeight": "400"}],
+            "body-xl": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+            "headline-xl": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "display-hero": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+          }
+        },
+      },
+    }
+  </script>
+</head>
+<body class="bg-surface text-on-surface font-body-md text-body-md antialiased selection:bg-tertiary-fixed selection:text-tertiary">
+<!-- Top Institutional Bar & Accreditation -->
+<aside class="bg-primary text-surface py-2 border-b border-outline-variant/30 text-label-xs font-label-xs">
+<div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-tertiary-fixed-dim" data-icon="verified_user">verified_user</span>
+<span class="tracking-wide">INSTITUT PANAFRICAIN D'EXPERTISE IMMOBILIÈRE • CONFORMITÉ OHADA &amp; UEMOA</span>
+</div>
+<div class="hidden md:flex items-center gap-6">
+<span class="text-surface-variant flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+          Sessions d'automne ouvertes
+        </span>
+<a class="text-tertiary-fixed hover:underline flex items-center gap-1 font-label-xs" href="#tarifs">
+<span>Barème Régional 2024-2025</span>
+<span class="material-symbols-outlined text-[14px]" data-icon="north_east">north_east</span>
+</a>
+</div>
+</div>
+</aside>
+<!-- TopAppBar Component (from Shared Components JSON) -->
+<header class="bg-surface sticky top-0 z-50 shadow-sm border-b border-outline-variant">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
+<!-- Brand & Leading -->
+<div class="flex items-center gap-8">
+<a class="flex items-center gap-2 group" href="./01-accueil.html">
+<div class="w-9 h-9 rounded-lg bg-primary-container text-tertiary-fixed flex items-center justify-center shadow-inner">
+<span class="material-symbols-outlined text-[20px]" data-icon="verified_user">verified_user</span>
+</div>
+<div class="flex flex-col">
+<span class="text-headline-md font-headline-md font-bold tracking-tight text-primary uppercase">VIZATI</span>
+<span class="text-[9px] font-label-xs tracking-wider text-outline -mt-1 uppercase">Executive Academy</span>
+</div>
+</a>
+<!-- Global Navigation -->
+<nav class="hidden lg:flex items-center gap-7 text-label-md font-label-md">
+<a class="text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors duration-150 py-1 px-2 rounded" href="./01-accueil.html">Accueil</a>
+<a class="text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors duration-150 py-1 px-2 rounded" href="./02-institut.html">L'Institut</a>
+<a class="text-primary font-bold border-b-2 border-on-tertiary-container pb-1 transition-colors duration-150" href="./03-formations.html">Formations</a>
+<a class="text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors duration-150 py-1 px-2 rounded" href="./05-publication.html">Publications</a>
+<a class="text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors duration-150 py-1 px-2 rounded" href="./07-bibliotheque.html">Ressources</a>
+<a class="text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors duration-150 py-1 px-2 rounded" href="./09-evenements.html">Événements</a>
+</nav>
+</div>
+<!-- Trailing CTA Actions -->
+<div class="flex items-center gap-3">
+<a class="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-2 text-label-md font-label-md text-primary-container hover:bg-surface-container rounded-lg border border-outline-variant transition-colors duration-150" href="#">
+<span class="material-symbols-outlined text-[18px]" data-icon="download">download</span>
+<span>Télécharger la brochure</span>
+</a>
+<a class="inline-flex items-center gap-1.5 px-4 py-2 text-label-md font-label-md text-on-primary bg-primary-container hover:bg-primary rounded-lg transition-transform duration-150 active:scale-[0.99] shadow-sm" href="#">
+<span class="material-symbols-outlined text-[18px]" data-icon="lock">lock</span>
+<span>Se connecter</span>
+</a>
+</div>
+</div>
+</header>
+<!-- Breadcrumbs Bar -->
+<nav aria-label="Breadcrumb" class="bg-surface-container-low border-b border-outline-variant/60 py-3">
+<div class="max-w-7xl mx-auto px-6 flex items-center text-body-sm font-body-sm text-on-surface-variant">
+<a class="hover:text-primary transition-colors flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-[16px]" data-icon="home">home</span>
+<span>Accueil</span>
+</a>
+<span class="material-symbols-outlined mx-2 text-[14px] text-outline" data-icon="chevron_right">chevron_right</span>
+<a class="hover:text-primary transition-colors" href="#">Formations</a>
+<span class="material-symbols-outlined mx-2 text-[14px] text-outline" data-icon="chevron_right">chevron_right</span>
+<span class="text-primary font-medium truncate">Gestionnaire de portefeuille locatif</span>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="bg-gradient-to-b from-surface-container-low to-surface pt-10 pb-14 border-b border-outline-variant/80">
+<div class="max-w-7xl mx-auto px-6">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+<!-- Left Hero Content (7 Cols) -->
+<div class="lg:col-span-7 flex flex-col space-y-6">
+<div class="inline-flex items-center gap-2 self-start px-3.5 py-1 rounded-full bg-primary-container text-tertiary-fixed border border-on-tertiary-container/30">
+<span class="material-symbols-outlined text-[14px] text-tertiary-fixed-dim" data-icon="workspace_premium" data-weight="fill" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+<span class="text-label-xs font-label-xs tracking-wider uppercase">PARCOURS CERTIFIANT EXÉCUTIF • RENTRÉE 2024-2025</span>
+</div>
+<div class="space-y-3">
+<h1 class="text-headline-xl font-headline-xl text-primary tracking-tight md:text-[42px] md:leading-[50px]">
+              Gestionnaire de portefeuille locatif
+            </h1>
+<p class="text-body-lg font-body-lg text-on-surface-variant max-w-2xl leading-relaxed">
+              Maîtrisez le pilotage stratégique, la rentabilité nette et la sécurisation juridique des parcs résidentiels et tertiaires dans l’espace UEMOA, en stricte conformité avec le régime des baux de l'Acte Uniforme OHADA.
+            </p>
+</div>
+<!-- Metadata Badges / Key Specs Grid -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-1">
+<div class="bg-surface-container-lowest p-3 rounded-xl border border-outline-variant/70 shadow-sm flex flex-col">
+<span class="text-label-xs font-label-xs text-outline uppercase">Volume Horaire</span>
+<span class="text-label-lg font-label-lg text-primary mt-0.5">130 Heures</span>
+<span class="text-[11px] text-on-surface-variant">70h tronc + 60h spéc.</span>
+</div>
+<div class="bg-surface-container-lowest p-3 rounded-xl border border-outline-variant/70 shadow-sm flex flex-col">
+<span class="text-label-xs font-label-xs text-outline uppercase">Modalité</span>
+<span class="text-label-lg font-label-lg text-primary mt-0.5">Hybride</span>
+<span class="text-[11px] text-on-surface-variant">Dakar / Abidjan / SaaS</span>
+</div>
+<div class="bg-surface-container-lowest p-3 rounded-xl border border-outline-variant/70 shadow-sm flex flex-col">
+<span class="text-label-xs font-label-xs text-outline uppercase">Langue d'examen</span>
+<span class="text-label-lg font-label-lg text-primary mt-0.5">Français</span>
+<span class="text-[11px] text-on-surface-variant">Norme Juridique OHADA</span>
+</div>
+<div class="bg-surface-container-lowest p-3 rounded-xl border border-outline-variant/70 shadow-sm flex flex-col">
+<span class="text-label-xs font-label-xs text-outline uppercase">Prochaine Cohorte</span>
+<span class="text-label-lg font-label-lg text-tertiary-container mt-0.5 font-bold">15 Octobre 2024</span>
+<span class="text-[11px] text-emerald-700 font-medium">8 places restantes</span>
+</div>
+</div>
+<!-- Pricing Banner & Immediate Actions -->
+<div class="bg-surface-container-lowest border border-outline-variant p-5 rounded-2xl shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-5">
+<div>
+<span class="text-label-xs font-label-xs text-outline uppercase tracking-wider block">Frais d'accréditation &amp; Inscription</span>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="text-headline-lg font-headline-lg text-primary">220 000 FCFA</span>
+<span class="text-body-sm font-body-sm text-on-surface-variant">TTC</span>
+</div>
+<p class="text-label-md font-label-md text-on-tertiary-container mt-0.5 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]" data-icon="payments">payments</span>
+                Facilités : 3 mensualités sans frais de 75 000 FCFA
+              </p>
+</div>
+<div class="flex flex-col sm:flex-row gap-3">
+<a class="px-5 py-3 rounded-xl bg-primary-container text-on-primary hover:bg-primary font-label-lg text-label-lg text-center shadow-md transition-all active:scale-[0.98] flex items-center justify-center gap-2" href="#candidature">
+<span>Demander une inscription</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="arrow_forward">arrow_forward</span>
+</a>
+<button class="px-4 py-3 rounded-xl border border-outline-variant text-on-surface-variant hover:bg-surface-container font-label-lg text-label-lg flex items-center justify-center gap-2 transition-colors" onclick="window.print()">
+<span class="material-symbols-outlined text-[18px]" data-icon="download_for_offline">download_for_offline</span>
+<span>Programme (PDF)</span>
+</button>
+</div>
+</div>
+<!-- Regulatory Assurance Disclaimer -->
+<div class="flex items-start gap-2.5 p-3 rounded-lg bg-surface-container/60 border border-outline-variant/40">
+<span class="material-symbols-outlined text-outline text-[18px] shrink-0 mt-0.5" data-icon="info">info</span>
+<p class="text-[12px] leading-relaxed text-on-surface-variant">
+<strong class="text-on-surface font-semibold">Réassurance Juridique :</strong> Attestation professionnelle d'expertise délivrée par un jury de pairs notariaux et gestionnaires agréés. Non assimilé à un diplôme d'État unilatéral. Conforme aux décrets d'exercice régissant la transaction et la gestion immobilière dans l'espace UEMOA.
+            </p>
+</div>
+</div>
+<!-- Right Hero Visual (5 Cols - Immersive Photo) -->
+<div class="lg:col-span-5 relative">
+<div class="relative rounded-2xl overflow-hidden shadow-2xl border border-outline-variant/80 bg-surface-container-highest">
+<img alt="Gestionnaire de portefeuille locatif à son bureau exécutif avec vue panoramique sur la rade de Dakar" class="w-full h-[460px] object-cover object-center transform hover:scale-[1.02] transition-transform duration-700 ease-out" src="https://lh3.googleusercontent.com/aida/ALJJyrCes-uGcDaRJddSALChpSAA-bPYZOMvZM898a0SL8F2QTSCBThKHraU01HPFxlm5VKmpq_ra0jBI3AdWaf2ld5UP2fy9rsfT9u9ZBSrK6AOXMegsZ1ZsetuOCoP82eaRfDllBwRVXRNemHV4yv3k3t_DCyjhpvvyUlWwOZtGjRUJGsKEL0hbDXdeVg9FpIZLf8bdlgrwI-t_1Lp0FLdReTWoKtHTyywOMMALBE4Fww"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent"></div>
+<!-- Overlay Info Badge -->
+<div class="absolute bottom-5 left-5 right-5 p-4 rounded-xl bg-surface-container-lowest/95 backdrop-blur-md border border-outline-variant/50 shadow-lg">
+<div class="flex items-center justify-between">
+<div>
+<div class="flex items-center gap-1.5 text-label-xs font-label-xs text-primary font-bold">
+<span class="material-symbols-outlined text-[16px] text-tertiary-fixed-dim" data-icon="location_city">location_city</span>
+<span>Centre Opérationnel Dakar Plateau &amp; Abidjan</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-0.5">Études de cas réelles sur les baux d'habitation de standing et centres d'affaires.</p>
+</div>
+<div class="w-10 h-10 rounded-full bg-primary-container text-tertiary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]" data-icon="apartment">apartment</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Main Body Content: Two Columns Layout (Desktop 65% / 35%) -->
+<main class="max-w-7xl mx-auto px-6 py-12">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+<!-- Left Column: Rich Pedagogical & Strategic Modules (65% -> 8 Cols) -->
+<section class="lg:col-span-8 space-y-12">
+<!-- Section A: Objectifs & Compétences Visées -->
+<div class="space-y-6">
+<div class="flex items-center gap-3">
+<div class="w-2.5 h-6 bg-tertiary-container rounded-sm"></div>
+<h2 class="text-headline-lg font-headline-lg text-primary">Objectifs opérationnels &amp; Compétences visées</h2>
+</div>
+<p class="text-body-lg font-body-lg text-on-surface-variant">
+            Ce parcours immersif forme des professionnels capables d’assumer l'intégralité du cycle de vie des baux, de la sélection rigoureuse des locataires jusqu’à la reddition de comptes trimestrielle auprès des bailleurs particuliers et investisseurs institutionnels.
+          </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Bloc 1 -->
+<div class="p-5 rounded-xl border border-outline-variant bg-surface-container-lowest hover:border-primary transition-all shadow-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high text-primary flex items-center justify-center mb-3">
+<span class="material-symbols-outlined text-[22px]" data-icon="gavel">gavel</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-primary">Sécurisation contractuelle OHADA</h3>
+<p class="text-body-md font-body-md text-on-surface-variant mt-2">
+                Rédaction irréprochable de baux d'habitation et commerciaux sous l'Acte Uniforme portant droit commercial général. Clauses de révision, dépôts de garantie et annexes obligatoires.
+              </p>
+</div>
+<!-- Bloc 2 -->
+<div class="p-5 rounded-xl border border-outline-variant bg-surface-container-lowest hover:border-primary transition-all shadow-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high text-primary flex items-center justify-center mb-3">
+<span class="material-symbols-outlined text-[22px]" data-icon="account_balance_wallet">account_balance_wallet</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-primary">Optimisation financière &amp; Loyers</h3>
+<p class="text-body-md font-body-md text-on-surface-variant mt-2">
+                Structuration des protocoles d'encaissement, traitement préventif des arriérés, conciliation amiable et activation diligente des procédures d'injonction de payer.
+              </p>
+</div>
+<!-- Bloc 3 -->
+<div class="p-5 rounded-xl border border-outline-variant bg-surface-container-lowest hover:border-primary transition-all shadow-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high text-primary flex items-center justify-center mb-3">
+<span class="material-symbols-outlined text-[22px]" data-icon="construction">construction</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-primary">Gestion technique &amp; Maintenance</h3>
+<p class="text-body-md font-body-md text-on-surface-variant mt-2">
+                Conduite d'états des lieux normés sur tablette, ordonnancement des travaux de conservation du bâti, répartition rigoureuse bailleur-locataire et gestion des prestataires agréés.
+              </p>
+</div>
+<!-- Bloc 4 -->
+<div class="p-5 rounded-xl border border-outline-variant bg-surface-container-lowest hover:border-primary transition-all shadow-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high text-primary flex items-center justify-center mb-3">
+<span class="material-symbols-outlined text-[22px]" data-icon="trending_up">trending_up</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-primary">Arbitrage &amp; Conseil Propriétaire</h3>
+<p class="text-body-md font-body-md text-on-surface-variant mt-2">
+                Élaboration de tableaux de bord de rentabilité nette, calcul des taux d'occupation financière et recommandations d'arbitrage patrimonial auprès des propriétaires.
+              </p>
+</div>
+</div>
+</div>
+<!-- Section B: Débouchés Professionnels & Insertion -->
+<div class="p-6 rounded-2xl bg-surface-container-low border border-outline-variant space-y-6">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-[28px]" data-icon="badge">badge</span>
+<div>
+<h2 class="text-headline-md font-headline-md text-primary">Débouchés professionnels &amp; Métiers cibles</h2>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Des perspectives d'embauche immédiates dans les capitales de l'UEMOA</p>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="flex items-start gap-3 bg-surface-container-lowest p-4 rounded-xl border border-outline-variant/60">
+<span class="material-symbols-outlined text-tertiary-container mt-0.5" data-icon="check_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-primary text-[16px]">Responsable de gestion locative</h4>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-0.5">Au sein d'agences immobilières de référence et cabinets de syndics à Dakar et Abidjan.</p>
+</div>
+</div>
+<div class="flex items-start gap-3 bg-surface-container-lowest p-4 rounded-xl border border-outline-variant/60">
+<span class="material-symbols-outlined text-tertiary-container mt-0.5" data-icon="check_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-primary text-[16px]">Gestionnaire de patrimoine privé</h4>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-0.5">Pour le compte de family offices, holdings familiales et grandes fortunes d'Afrique de l'Ouest.</p>
+</div>
+</div>
+<div class="flex items-start gap-3 bg-surface-container-lowest p-4 rounded-xl border border-outline-variant/60">
+<span class="material-symbols-outlined text-tertiary-container mt-0.5" data-icon="check_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-primary text-[16px]">Administrateur de biens institutionnels</h4>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-0.5">Sociétés d'assurance, caisses de retraite (IPRES, CNPS), foncières et banques régionales.</p>
+</div>
+</div>
+<div class="flex items-start gap-3 bg-surface-container-lowest p-4 rounded-xl border border-outline-variant/60">
+<span class="material-symbols-outlined text-tertiary-container mt-0.5" data-icon="check_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-primary text-[16px]">Consultant indépendant en gestion de parc</h4>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-0.5">Création et direction de structure indépendante avec mandat de gestion certifié.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Section C: Programme Pédagogique Détaillé (2 Volets Majeurs) -->
+<div class="space-y-6">
+<div class="flex justify-between items-end">
+<div>
+<span class="text-label-xs font-label-xs text-outline uppercase tracking-wider">Ingénierie de Formation</span>
+<h2 class="text-headline-lg font-headline-lg text-primary mt-1">Programme pédagogique certifié</h2>
+</div>
+<span class="text-label-md font-label-md px-3 py-1 bg-surface-container text-primary rounded-full font-semibold border border-outline-variant">
+              130 Heures Académiques &amp; Pratiques
+            </span>
+</div>
+<!-- Volet 1: Tronc Commun -->
+<div class="border border-outline-variant rounded-2xl bg-surface-container-lowest overflow-hidden shadow-sm">
+<div class="bg-primary p-5 text-on-primary flex justify-between items-center">
+<div class="flex items-center gap-3">
+<span class="w-8 h-8 rounded-lg bg-surface/10 flex items-center justify-center font-bold text-tertiary-fixed">1</span>
+<div>
+<h3 class="font-headline-sm text-headline-sm tracking-tight">Volet 1 : Tronc commun fondamental</h3>
+<p class="text-label-xs font-label-xs text-surface-variant/80">Socle transverse obligatoire des métiers de l'immobilier</p>
+</div>
+</div>
+<span class="text-label-md font-label-md bg-tertiary-container text-tertiary-fixed px-3 py-1 rounded-md font-bold">70 Heures</span>
+</div>
+<div class="divide-y divide-outline-variant/50">
+<!-- Item 1.1 -->
+<div class="p-5 flex flex-col sm:flex-row sm:items-start justify-between gap-4">
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="font-label-lg text-label-lg text-primary">Cadre juridique, OHADA et éthique professionnelle</span>
+<span class="text-[11px] font-semibold px-2 py-0.5 rounded bg-surface-container text-secondary">20 Heures</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant">
+                    Baux d'habitation, baux professionnels et commerciaux sous l'Acte Uniforme OHADA. Clauses résolutoires de plein droit, déontologie, mandats écrits obligatoires et prévention du contentieux immobilier.
+                  </p>
+</div>
+</div>
+<!-- Item 1.2 -->
+<div class="p-5 flex flex-col sm:flex-row sm:items-start justify-between gap-4">
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="font-label-lg text-label-lg text-primary">Outils numériques et PropTech</span>
+<span class="text-[11px] font-semibold px-2 py-0.5 rounded bg-surface-container text-secondary">20 Heures</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant">
+                    Maîtrise des suites logicielles de gestion de parc locatif, plateformes de signature électronique certifiée, bases cadastrales locales (NICAD, livre foncier) et CRM de gestion des baux.
+                  </p>
+</div>
+</div>
+<!-- Item 1.3 -->
+<div class="p-5 flex flex-col sm:flex-row sm:items-start justify-between gap-4">
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="font-label-lg text-label-lg text-primary">Relation client et médiation des conflits</span>
+<span class="text-[11px] font-semibold px-2 py-0.5 rounded bg-surface-container text-secondary">15 Heures</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant">
+                    Gestion relationnelle des tensions bailleurs-preneurs, psychologie de la négociation foncière, techniques d’arbitrage amiable, formalisation des procès-verbaux de conciliation.
+                  </p>
+</div>
+</div>
+<!-- Item 1.4 -->
+<div class="p-5 flex flex-col sm:flex-row sm:items-start justify-between gap-4">
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="font-label-lg text-label-lg text-primary">Comptabilité mandataire et suivi financier</span>
+<span class="text-[11px] font-semibold px-2 py-0.5 rounded bg-surface-container text-secondary">15 Heures</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant">
+                    Séparation stricte des comptes mandants, journal de trésorerie, reddition des comptes périodique, retenues à la source foncières (BNC/IRVM) et fiscalité locale dans l'UEMOA.
+                  </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Volet 2: Spécialisation Métier -->
+<div class="border border-outline-variant rounded-2xl bg-surface-container-lowest overflow-hidden shadow-sm">
+<div class="bg-primary-container p-5 text-on-primary flex justify-between items-center">
+<div class="flex items-center gap-3">
+<span class="w-8 h-8 rounded-lg bg-surface/10 flex items-center justify-center font-bold text-tertiary-fixed">2</span>
+<div>
+<h3 class="font-headline-sm text-headline-sm tracking-tight">Volet 2 : Spécialisation métier &amp; Portefeuille actif</h3>
+<p class="text-label-xs font-label-xs text-on-primary-container">Maîtrise technique et financière de la gestion locative</p>
+</div>
+</div>
+<span class="text-label-md font-label-md bg-tertiary-container text-tertiary-fixed px-3 py-1 rounded-md font-bold">60 Heures</span>
+</div>
+<div class="p-5 space-y-4">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="p-4 rounded-xl bg-surface-container-low border border-outline-variant/60">
+<div class="flex items-center gap-2 text-primary font-label-lg">
+<span class="material-symbols-outlined text-[18px] text-tertiary-container" data-icon="task_alt">task_alt</span>
+<span>Gestion opérationnelle des biens</span>
+</div>
+<p class="text-body-sm text-on-surface-variant mt-1.5">
+                    Protocoles d’états des lieux d'entrée et de sortie assistés par IA/tablette, grille de vétusté contractuelle, diagnostics et inventaires exhaustifs du mobilier.
+                  </p>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low border border-outline-variant/60">
+<div class="flex items-center gap-2 text-primary font-label-lg">
+<span class="material-symbols-outlined text-[18px] text-tertiary-container" data-icon="priority_high">priority_high</span>
+<span>Suivi des loyers &amp; Impayés</span>
+</div>
+<p class="text-body-sm text-on-surface-variant mt-1.5">
+                    Plan de relance gradué (SMS, courriers formels), mise en œuvre de la sommation d'expulser, collaboration étroite avec les huissiers de justice instrumentaires.
+                  </p>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low border border-outline-variant/60">
+<div class="flex items-center gap-2 text-primary font-label-lg">
+<span class="material-symbols-outlined text-[18px] text-tertiary-container" data-icon="security">security</span>
+<span>Assurances et obligations</span>
+</div>
+<p class="text-body-sm text-on-surface-variant mt-1.5">
+                    Souscription et pilotage des contrats multirisque habitation, garanties des loyers impayés (GLI), responsabilité civile professionnelle du mandataire immobilier.
+                  </p>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low border border-outline-variant/60">
+<div class="flex items-center gap-2 text-primary font-label-lg">
+<span class="material-symbols-outlined text-[18px] text-tertiary-container" data-icon="calculate">calculate</span>
+<span>Charges récupérables &amp; Cash-flows</span>
+</div>
+<p class="text-body-sm text-on-surface-variant mt-1.5">
+                    Modélisation des provisions pour charges, arrêté annuel des comptes d'immeuble, calcul des cash-flows nets et régularisations auprès des locataires.
+                  </p>
+</div>
+</div>
+<!-- Module Clôture Volet 2 -->
+<div class="p-4 rounded-xl bg-surface-container-high border border-outline-variant/80">
+<div class="flex items-center gap-2 text-primary font-label-lg">
+<span class="material-symbols-outlined text-[20px] text-tertiary-container" data-icon="insights">insights</span>
+<span>Reporting exécutif &amp; Relation propriétaires</span>
+</div>
+<p class="text-body-sm text-on-surface-variant mt-1.5">
+                  Élaboration d'outils décisionnels pour le bailleur : ratio de vacance locative, taux de recouvrement brut et net, plan pluriannuel de gros travaux et valorisation de l'actif foncier.
+                </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Section D: Méthodes Pédagogiques & Outils -->
+<div class="p-6 rounded-2xl bg-surface-container-lowest border border-outline-variant space-y-4">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-primary text-[24px]" data-icon="psychology">psychology</span>
+<h3 class="text-headline-sm font-headline-sm text-primary">Méthodes pédagogiques &amp; Outils professionnels</h3>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant">
+            L'académie privilégie une approche par compétences ancrée dans les réalités des marchés ouest-africains :
+          </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-on-tertiary-container mt-0.5" data-icon="developer_board">developer_board</span>
+<div>
+<strong class="text-body-md font-label-lg text-primary block">Mises en situation sur cas réels</strong>
+<p class="text-body-sm text-on-surface-variant mt-0.5">Études de baux commerciaux complexes à Dakar Plateau, Almadies, Cocody et Zone 4 Marcory.</p>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-on-tertiary-container mt-0.5" data-icon="terminal">terminal</span>
+<div>
+<strong class="text-body-md font-label-lg text-primary block">Accès aux suites PropTech SaaS</strong>
+<p class="text-body-sm text-on-surface-variant mt-0.5">Licence d'entraînement offerte pendant 6 mois sur les logiciels de gestion de parcs les plus utilisés.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Section E: Profil des Formateurs & Intervenants -->
+<div class="space-y-4">
+<div class="flex items-center gap-3">
+<div class="w-2.5 h-6 bg-tertiary-container rounded-sm"></div>
+<h2 class="text-headline-md font-headline-md text-primary">Corps professoral &amp; Formateurs praticiens</h2>
+</div>
+<p class="text-body-md text-on-surface-variant">
+            Tous nos modules sont animés par des praticiens en exercice au Barreau, en banques d'affaires et en études notariales.
+          </p>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
+<!-- Formateur 1 -->
+<div class="p-4 rounded-xl border border-outline-variant bg-surface-container-lowest flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 rounded-full bg-primary-container text-tertiary-fixed flex items-center justify-center font-bold text-headline-sm mb-3">
+                  MD
+                </div>
+<h4 class="font-headline-sm text-[16px] text-primary">Me Moustapha Diagne</h4>
+<p class="text-label-xs text-on-tertiary-container font-semibold mt-0.5">Avocat au Barreau du Sénégal</p>
+<p class="text-body-sm text-on-surface-variant mt-2">
+                  Spécialiste du contentieux foncier et de l'Acte Uniforme OHADA. Plus de 18 ans de pratique des litiges locatifs complexes.
+                </p>
+</div>
+<div class="mt-4 pt-3 border-t border-outline-variant/40 flex items-center gap-1.5 text-[11px] text-outline">
+<span class="material-symbols-outlined text-[14px]" data-icon="school">school</span>
+<span>Intervenant Tronc Juridique</span>
+</div>
+</div>
+<!-- Formateur 2 -->
+<div class="p-4 rounded-xl border border-outline-variant bg-surface-container-lowest flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 rounded-full bg-primary-container text-tertiary-fixed flex items-center justify-center font-bold text-headline-sm mb-3">
+                  AK
+                </div>
+<h4 class="font-headline-sm text-[16px] text-primary">Aminata Kouamé</h4>
+<p class="text-label-xs text-on-tertiary-container font-semibold mt-0.5">Directrice de Gestion de Patrimoine</p>
+<p class="text-body-sm text-on-surface-variant mt-2">
+                  Ancienne directrice de portefeuille chez un leader bancaire à Abidjan. Gestionnaire d'un actif immobilier sous mandat de 45 milliards FCFA.
+                </p>
+</div>
+<div class="mt-4 pt-3 border-t border-outline-variant/40 flex items-center gap-1.5 text-[11px] text-outline">
+<span class="material-symbols-outlined text-[14px]" data-icon="school">school</span>
+<span>Intervenante Volet Financier</span>
+</div>
+</div>
+<!-- Formateur 3 -->
+<div class="p-4 rounded-xl border border-outline-variant bg-surface-container-lowest flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 rounded-full bg-primary-container text-tertiary-fixed flex items-center justify-center font-bold text-headline-sm mb-3">
+                  BN
+                </div>
+<h4 class="font-headline-sm text-[16px] text-primary">Babacar Ndiaye</h4>
+<p class="text-label-xs text-on-tertiary-container font-semibold mt-0.5">Expert Judiciaire Foncier Agréé</p>
+<p class="text-body-sm text-on-surface-variant mt-2">
+                  Membre de l'Ordre des Experts Évaluateurs et Gestionnaires Immobiliers. Spécialiste de la pathologie du bâtiment et des états des lieux.
+                </p>
+</div>
+<div class="mt-4 pt-3 border-t border-outline-variant/40 flex items-center gap-1.5 text-[11px] text-outline">
+<span class="material-symbols-outlined text-[14px]" data-icon="school">school</span>
+<span>Intervenant Volet Technique</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Section F: Modalités d'Évaluation & Certification -->
+<div class="p-6 rounded-2xl bg-surface-container-low border border-outline-variant space-y-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-[28px]" data-icon="verified">verified</span>
+<h3 class="text-headline-md font-headline-md text-primary">Modalités d'évaluation &amp; Délivrance de l'attestation</h3>
+</div>
+<p class="text-body-md text-on-surface-variant">
+            L'obtention de la certification VIZATI sanctionne l'acquisition réelle de compétences opérationnelles selon un barème d'excellence :
+          </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+<div class="bg-surface-container-lowest p-4 rounded-xl border border-outline-variant">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-[16px] text-primary">Contrôle continu sur cas réels</span>
+<span class="font-bold text-tertiary-container bg-surface-container px-2.5 py-1 rounded">40%</span>
+</div>
+<p class="text-body-sm text-on-surface-variant mt-2">
+                4 dossiers pratiques notés : rédaction d'un bail commercial complexe, audit d'impayés, rapport d'état des lieux contradictoire et tableau de bord de reddition.
+              </p>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-xl border border-outline-variant">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-[16px] text-primary">Grand Oral devant Jury de Pairs</span>
+<span class="font-bold text-tertiary-container bg-surface-container px-2.5 py-1 rounded">60%</span>
+</div>
+<p class="text-body-sm text-on-surface-variant mt-2">
+                Soutenance de 30 minutes portant sur la gestion d'un portefeuille locatif simulé devant un collège composé d'un notaire, d'un avocat et d'un directeur d'agence.
+              </p>
+</div>
+</div>
+</div>
+<!-- Section G: Conditions d'Admission & Prérequis -->
+<div class="space-y-4">
+<div class="flex items-center gap-3">
+<div class="w-2.5 h-6 bg-tertiary-container rounded-sm"></div>
+<h2 class="text-headline-md font-headline-md text-primary">Conditions d'admission &amp; Prérequis</h2>
+</div>
+<div class="p-6 rounded-2xl bg-surface-container-lowest border border-outline-variant flex flex-col md:flex-row items-center gap-6">
+<div class="w-14 h-14 rounded-2xl bg-surface-container text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[32px]" data-icon="how_to_reg">how_to_reg</span>
+</div>
+<div class="space-y-2">
+<h4 class="font-headline-sm text-headline-sm text-primary">Profils éligibles</h4>
+<p class="text-body-md text-on-surface-variant leading-relaxed">
+                Niveau <strong>Bac+2</strong> (Droit, Économie, Gestion, Commerce) validé ou expérience professionnelle équivalente de <strong>2 années</strong> dans les métiers de l’immobilier, du notariat ou de la gestion commerciale. Sélection sur dossier de candidature et entretien d'orientation individuel avec un responsable pédagogique.
+              </p>
+</div>
+</div>
+</div>
+<!-- Section H: FAQ Accordéons -->
+<div class="space-y-4">
+<div class="flex items-center gap-3">
+<div class="w-2.5 h-6 bg-tertiary-container rounded-sm"></div>
+<h2 class="text-headline-md font-headline-md text-primary">Foire aux questions (FAQ)</h2>
+</div>
+<div class="space-y-3">
+<!-- FAQ 1 -->
+<details class="group bg-surface-container-lowest border border-outline-variant rounded-xl p-4 transition-all duration-200 open:border-primary">
+<summary class="flex justify-between items-center font-headline-sm text-[16px] text-primary cursor-pointer list-none">
+<span>Quel est le rythme hebdomadaire pour les professionnels en activité ?</span>
+<span class="material-symbols-outlined group-open:rotate-180 transition-transform text-outline" data-icon="expand_more">expand_more</span>
+</summary>
+<div class="mt-3 pt-3 border-t border-outline-variant/40 text-body-md text-on-surface-variant">
+                Le parcours est spécialement calibré pour les cadres et salariés : 6 heures de classes virtuelles interactives par semaine (vendredi soir de 18h à 21h et samedi matin de 9h à 12h GMT), complétées par des modules e-learning consultables à votre propre rythme 24h/24.
+              </div>
+</details>
+<!-- FAQ 2 -->
+<details class="group bg-surface-container-lowest border border-outline-variant rounded-xl p-4 transition-all duration-200 open:border-primary">
+<summary class="flex justify-between items-center font-headline-sm text-[16px] text-primary cursor-pointer list-none">
+<span>Cette formation peut-elle être prise en charge par mon employeur ?</span>
+<span class="material-symbols-outlined group-open:rotate-180 transition-transform text-outline" data-icon="expand_more">expand_more</span>
+</summary>
+<div class="mt-3 pt-3 border-t border-outline-variant/40 text-body-md text-on-surface-variant">
+                Oui. VIZATI est un organisme de formation professionnelle accrédité. La formation est éligible aux financements des fonds de développement de l'apprentissage et de la formation professionnelle (3FPT au Sénégal, FDFP en Côte d'Ivoire). Notre bureau des admissions fournit les conventions tripartites.
+              </div>
+</details>
+<!-- FAQ 3 -->
+<details class="group bg-surface-container-lowest border border-outline-variant rounded-xl p-4 transition-all duration-200 open:border-primary">
+<summary class="flex justify-between items-center font-headline-sm text-[16px] text-primary cursor-pointer list-none">
+<span>Comment fonctionne le paiement échelonné sans frais ?</span>
+<span class="material-symbols-outlined group-open:rotate-180 transition-transform text-outline" data-icon="expand_more">expand_more</span>
+</summary>
+<div class="mt-3 pt-3 border-t border-outline-variant/40 text-body-md text-on-surface-variant">
+                Le règlement s’effectue en 3 tranches : un premier versement de 75 000 FCFA lors de la confirmation d'admission, suivi de deux échéances de 72 500 FCFA à 30 et 60 jours après le début de la cohorte, sans aucun intérêt ni frais de dossier additionnel.
+              </div>
+</details>
+<!-- FAQ 4 -->
+<details class="group bg-surface-container-lowest border border-outline-variant rounded-xl p-4 transition-all duration-200 open:border-primary">
+<summary class="flex justify-between items-center font-headline-sm text-[16px] text-primary cursor-pointer list-none">
+<span>Quel est le statut du réseau d’Alumni VIZATI ?</span>
+<span class="material-symbols-outlined group-open:rotate-180 transition-transform text-outline" data-icon="expand_more">expand_more</span>
+</summary>
+<div class="mt-3 pt-3 border-t border-outline-variant/40 text-body-md text-on-surface-variant">
+                Dès la validation de votre attestation, vous intégrez le Cercle VIZATI Real Estate qui réunit plus de 650 dirigeants d'agences, notaires, juristes et promoteurs dans 8 pays d'Afrique de l'Ouest. Vous bénéficiez d'un accès illimité à la bourse des mandats et aux webinaires trimestriels de veille juridique.
+              </div>
+</details>
+</div>
+</div>
+<!-- Section I: Formations Similaires / Parcours Complémentaires -->
+<div class="space-y-4 pt-4">
+<div class="flex items-center gap-3">
+<div class="w-2.5 h-6 bg-tertiary-container rounded-sm"></div>
+<h2 class="text-headline-md font-headline-md text-primary">Parcours complémentaires recommandés</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Carte Miroir 1 -->
+<div class="border border-outline-variant rounded-xl p-5 bg-surface-container-lowest hover:shadow-md transition-shadow flex flex-col justify-between">
+<div>
+<span class="text-label-xs font-label-xs text-on-tertiary-container bg-surface-container px-2 py-0.5 rounded font-semibold uppercase">Transaction Foncière</span>
+<h4 class="font-headline-sm text-headline-sm text-primary mt-2">Conseiller en transaction immobilière</h4>
+<p class="text-body-sm text-on-surface-variant mt-2">
+                  Maîtrise de la négociation, valorisation vénale des actifs, sécurisation des compromis de vente et réglementation des commissions d'agence.
+                </p>
+<div class="mt-3 flex items-baseline gap-2">
+<span class="font-headline-sm text-primary font-bold">240 000 FCFA</span>
+<span class="text-label-xs text-outline">120h • Hybride</span>
+</div>
+</div>
+<a class="mt-4 inline-flex items-center gap-1.5 text-label-md font-label-md text-primary hover:text-on-tertiary-container font-semibold" href="#">
+<span>Découvrir le programme</span>
+<span class="material-symbols-outlined text-[16px]" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+<!-- Carte Miroir 2 -->
+<div class="border border-outline-variant rounded-xl p-5 bg-surface-container-lowest hover:shadow-md transition-shadow flex flex-col justify-between">
+<div>
+<span class="text-label-xs font-label-xs text-on-tertiary-container bg-surface-container px-2 py-0.5 rounded font-semibold uppercase">Copropriété &amp; Syndic</span>
+<h4 class="font-headline-sm text-headline-sm text-primary mt-2">Gestionnaire de copropriété et syndic</h4>
+<p class="text-body-sm text-on-surface-variant mt-2">
+                  Tenue des assemblées générales d’immeubles, calcul des tantièmes, recouvrement des charges et gestion des équipements collectifs.
+                </p>
+<div class="mt-3 flex items-baseline gap-2">
+<span class="font-headline-sm text-primary font-bold">250 000 FCFA</span>
+<span class="text-label-xs text-outline">140h • Hybride</span>
+</div>
+</div>
+<a class="mt-4 inline-flex items-center gap-1.5 text-label-md font-label-md text-primary hover:text-on-tertiary-container font-semibold" href="#">
+<span>Découvrir le programme</span>
+<span class="material-symbols-outlined text-[16px]" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Right Column: Sticky Commercial & Admission Sidebar (35% -> 4 Cols) -->
+<aside class="lg:col-span-4" id="candidature">
+<div class="sticky top-24 space-y-6">
+<!-- Sticky Lead Capture Box -->
+<div class="rounded-2xl border-2 border-on-tertiary-container/40 bg-surface-container-lowest p-6 shadow-xl relative overflow-hidden">
+<!-- Top Status Pill -->
+<div class="flex items-center justify-between mb-4">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-label-xs font-label-xs font-bold bg-emerald-100 text-emerald-900 border border-emerald-300">
+<span class="w-2 h-2 rounded-full bg-emerald-600 animate-pulse"></span>
+                Session Ouverte • 20 auditeurs max
+              </span>
+<span class="text-label-xs font-label-xs text-outline font-semibold">Promo 2024-B</span>
+</div>
+<!-- Price Block -->
+<div class="pb-4 border-b border-outline-variant/60">
+<span class="text-label-xs font-label-xs text-outline uppercase tracking-wider block">Investissement formation</span>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="text-headline-xl font-headline-xl text-primary font-extrabold">220 000</span>
+<span class="text-headline-sm font-headline-sm text-primary font-bold">FCFA</span>
+<span class="text-body-sm text-on-surface-variant font-medium">TTC</span>
+</div>
+<div class="mt-2 p-2.5 rounded-lg bg-surface-container-low border border-outline-variant/50">
+<p class="text-label-sm font-label-md text-primary font-semibold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-tertiary-container text-[18px]" data-icon="credit_score">credit_score</span>
+<span>Option 3x sans frais : 75 000 FCFA/mois</span>
+</p>
+<span class="text-[11px] text-on-surface-variant block mt-0.5">Premier versement de 75 000 FCFA à l'inscription définitive.</span>
+</div>
+</div>
+<!-- Action Form / Immediate CTA -->
+<form class="space-y-4 pt-4" onsubmit="event.preventDefault(); alert('Votre pré-candidature a été enregistrée avec succès. Un conseiller VIZATI vous contactera sous 24 heures.');">
+<div class="space-y-3">
+<div>
+<label class="block text-label-xs font-label-xs uppercase text-on-surface-variant mb-1" for="nom_candidat">Nom complet *</label>
+<input class="w-full px-3.5 py-2.5 rounded-lg border border-outline-variant text-body-md text-on-surface bg-surface-container-lowest focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none transition-all" id="nom_candidat" placeholder="Ex : Fatou Bintou Ndiaye" required="" type="text"/>
+</div>
+<div>
+<label class="block text-label-xs font-label-xs uppercase text-on-surface-variant mb-1" for="email_candidat">Adresse e-mail professionnelle *</label>
+<input class="w-full px-3.5 py-2.5 rounded-lg border border-outline-variant text-body-md text-on-surface bg-surface-container-lowest focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none transition-all" id="email_candidat" placeholder="nom@entreprise.sn" required="" type="email"/>
+</div>
+<div>
+<label class="block text-label-xs font-label-xs uppercase text-on-surface-variant mb-1" for="tel_candidat">Téléphone / WhatsApp *</label>
+<input class="w-full px-3.5 py-2.5 rounded-lg border border-outline-variant text-body-md text-on-surface bg-surface-container-lowest focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none transition-all" id="tel_candidat" placeholder="+221 77 000 00 00" required="" type="tel"/>
+</div>
+</div>
+<button class="w-full py-3.5 px-4 rounded-xl bg-primary text-on-primary hover:bg-primary-container font-label-lg text-label-lg shadow-md hover:shadow-lg transition-all duration-150 active:scale-[0.99] flex items-center justify-center gap-2" href="./28-parcours-inscription.html" type="submit">
+<span>Déposer mon dossier de candidature</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="send">send</span>
+</button>
+<a class="w-full py-2.5 px-4 rounded-xl border border-outline-variant text-primary hover:bg-surface-container font-label-md text-label-md flex items-center justify-center gap-2 transition-colors" href="./11-contacts.html">
+<span class="material-symbols-outlined text-[18px]" data-icon="phone_in_talk">phone_in_talk</span>
+<span>Planifier un appel d'orientation de 15 min</span>
+</a>
+</form>
+<!-- Key Milestones -->
+<div class="mt-6 pt-5 border-t border-outline-variant/60 space-y-2.5 text-body-sm font-body-sm">
+<div class="flex justify-between items-center">
+<span class="text-on-surface-variant">Durée totale :</span>
+<span class="font-semibold text-primary">130 Heures (10 semaines)</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-on-surface-variant">Format :</span>
+<span class="font-semibold text-primary">Hybride (E-learning + Live)</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-on-surface-variant">Début cohorte :</span>
+<span class="font-semibold text-primary">15 Octobre 2024</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-on-surface-variant">Clôture inscriptions :</span>
+<span class="font-semibold text-error">05 Octobre 2024</span>
+</div>
+</div>
+<!-- Trust Badges & Reassurance -->
+<div class="mt-6 pt-4 border-t border-outline-variant/50 space-y-2">
+<div class="flex items-center gap-2 text-label-xs font-label-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-tertiary-container text-[16px]" data-icon="verified_user">verified_user</span>
+<span>Attestation certifiante délivrée par jury de pairs</span>
+</div>
+<div class="flex items-center gap-2 text-label-xs font-label-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-tertiary-container text-[16px]" data-icon="headset_mic">headset_mic</span>
+<span>Support pédagogique individualisé 7j/7</span>
+</div>
+<div class="flex items-center gap-2 text-label-xs font-label-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-tertiary-container text-[16px]" data-icon="lock">lock</span>
+<span>Chiffrement TLS 256-bit • Données conformes RGPD</span>
+</div>
+</div>
+<!-- Direct Advisor Contacts -->
+<div class="mt-5 p-3.5 rounded-xl bg-surface-container-high/80 border border-outline-variant/60 flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-container text-tertiary-fixed flex items-center justify-center font-bold">
+<span class="material-symbols-outlined text-[20px]" data-icon="support_agent">support_agent</span>
+</div>
+<div class="text-[12px]">
+<strong class="text-primary font-semibold block">Bureau des Admissions</strong>
+<a class="text-on-surface-variant hover:text-primary transition-colors block" href="tel:+221338000000">+221 33 800 00 00</a>
+<a class="text-on-tertiary-container hover:underline block" href="mailto:admissions@vizati.sn">admissions@vizati.sn</a>
+</div>
+</div>
+</div>
+<!-- Mini Institutional Credentials Callout -->
+<div class="p-5 rounded-2xl bg-surface-container-low border border-outline-variant text-center space-y-3">
+<span class="material-symbols-outlined text-[32px] text-tertiary-container" data-icon="account_balance">account_balance</span>
+<h4 class="font-headline-sm text-headline-sm text-primary">VIZATI Executive Academy</h4>
+<p class="text-body-sm text-on-surface-variant">
+              Reconnue par les associations régionales de professionnels de l'immobilier au Sénégal, en Côte d'Ivoire, au Bénin et au Togo.
+            </p>
+</div>
+</div>
+</aside>
+</div>
+</main>
+<!-- Footer Component (from Shared Components JSON verbatim styles and content) -->
+<footer class="bg-surface-container-low border-t border-outline-variant mt-16">
+<div class="w-full px-6 py-8 border-t border-outline-variant max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+<!-- Brand & Copyright -->
+<div class="flex flex-col md:flex-row items-center gap-4 text-center md:text-left">
+<span class="text-headline-sm font-headline-sm font-bold text-primary uppercase">VIZATI</span>
+<span class="text-outline hidden md:inline">|</span>
+<p class="text-body-sm font-body-sm text-on-surface-variant">
+          © 2024 VIZATI Intelligence &amp; Executive Academy. Conforme RGPD &amp; Cadre Réglementaire UEMOA. Chiffrement TLS 256-bit.
+        </p>
+</div>
+<!-- Links from JSON -->
+<div class="flex flex-wrap justify-center items-center gap-6 text-label-xs font-label-xs">
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-150 active:opacity-80" href="#">Cadre Réglementaire UEMOA</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-150 active:opacity-80" href="#">Confidentialité &amp; Données</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-150 active:opacity-80" href="#">Assistance Sécurité</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-150 active:opacity-80" href="#">Support Administrateur</a>
+</div>
+</div>
+</footer>
+</body></html>

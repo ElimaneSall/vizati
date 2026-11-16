@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-background" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>VIZATI Faculty OS — Espace Enseignant &amp; Maître de Conférence</title>
+<!-- Google Fonts: Manrope & Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Manrope:wght@500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "primary-fixed-dim": "#b2c8ea",
+            "error": "#ba1a1a",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-highest": "#d9e3fb",
+            "on-primary-fixed": "#031c37",
+            "on-background": "#111c2d",
+            "on-primary-container": "#7d93b3",
+            "surface-dim": "#d0daf2",
+            "on-tertiary-fixed-variant": "#5f4100",
+            "on-secondary-fixed": "#001d37",
+            "primary": "#00162f",
+            "tertiary-fixed": "#ffdeab",
+            "secondary-fixed": "#d2e4ff",
+            "on-surface-variant": "#44474d",
+            "on-surface": "#111c2d",
+            "on-tertiary": "#ffffff",
+            "tertiary": "#201300",
+            "on-secondary-fixed-variant": "#2a486a",
+            "on-secondary-container": "#405d80",
+            "primary-container": "#142b46",
+            "surface-bright": "#f9f9ff",
+            "on-tertiary-container": "#b38a44",
+            "surface-container": "#e8eeff",
+            "secondary": "#436083",
+            "on-primary": "#ffffff",
+            "outline": "#74777e",
+            "on-primary-fixed-variant": "#324864",
+            "surface-variant": "#d9e3fb",
+            "on-error-container": "#93000a",
+            "on-secondary": "#ffffff",
+            "surface": "#f9f9ff",
+            "surface-tint": "#4a607d",
+            "outline-variant": "#c4c6ce",
+            "tertiary-fixed-dim": "#edbf73",
+            "primary-fixed": "#d3e3ff",
+            "on-tertiary-fixed": "#271900",
+            "surface-container-low": "#f0f3ff",
+            "secondary-fixed-dim": "#abc9f1",
+            "background": "#f9f9ff",
+            "tertiary-container": "#3a2600",
+            "inverse-primary": "#b2c8ea",
+            "surface-container-high": "#dfe8ff",
+            "inverse-surface": "#273143",
+            "inverse-on-surface": "#ecf0ff",
+            "error-container": "#ffdad6",
+            "on-error": "#ffffff",
+            "secondary-container": "#b9d7ff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "margin": "3rem",
+            "space-xs": "0.25rem",
+            "space-md": "1rem",
+            "space-lg": "1.5rem",
+            "space-sm": "0.5rem",
+            "gutter": "1.5rem",
+            "margin-mobile": "1rem",
+            "gutter-mobile": "1rem",
+            "space-2xl": "4rem",
+            "space-xl": "2.5rem"
+          },
+          "fontFamily": {
+            "label-lg": ["Inter"],
+            "headline-sm": ["Manrope"],
+            "body-xl": ["Inter"],
+            "code-num": ["Inter"],
+            "body-lg": ["Inter"],
+            "headline-lg": ["Manrope"],
+            "headline-xl": ["Manrope"],
+            "body-sm": ["Inter"],
+            "display-hero": ["Manrope"],
+            "label-md": ["Inter"],
+            "body-md": ["Inter"],
+            "headline-xl-mobile": ["Manrope"],
+            "label-xs": ["Inter"],
+            "display-hero-mobile": ["Manrope"],
+            "headline-md": ["Manrope"]
+          },
+          "fontSize": {
+            "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+            "headline-sm": ["18px", { "lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "600" }],
+            "body-xl": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "code-num": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "headline-xl": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "display-hero": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "headline-xl-mobile": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+            "label-xs": ["10px", { "lineHeight": "14px", "letterSpacing": "0.06em", "fontWeight": "700" }],
+            "display-hero-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+            "headline-md": ["22px", { "lineHeight": "30px", "letterSpacing": "-0.01em", "fontWeight": "600" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 5px;
+      height: 5px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: #f0f3ff;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #c4c6ce;
+      border-radius: 4px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+      background: #74777e;
+    }
+  </style>
+</head>
+<body class="h-full font-body-md text-on-surface bg-background flex overflow-hidden antialiased">
+<!-- ========================================================================= -->
+<!-- SIDEBAR FORMATEUR (Dedicated Faculty Navigation)                          -->
+<!-- ========================================================================= -->
+<aside class="fixed top-0 left-0 h-screen w-64 md:w-72 flex flex-col bg-surface-container-lowest border-r border-outline-variant shadow-sm z-40">
+<!-- Top Branding & Academic Seal -->
+<div class="px-space-md py-space-md border-b border-outline-variant flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-primary-container text-tertiary-fixed-dim flex items-center justify-center font-headline-md font-bold shadow-sm border border-tertiary-fixed-dim/30">
+<span class="material-symbols-outlined text-tertiary-fixed-dim" data-icon="account_balance">account_balance</span>
+</div>
+<div>
+<div class="font-headline-md text-headline-md tracking-wider font-bold text-primary flex items-center gap-1.5 leading-none">
+<span>VIZATI</span>
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-tertiary-fixed-dim"></span>
+</div>
+<span class="font-label-xs text-label-xs uppercase tracking-widest text-secondary block mt-1 font-semibold">Faculty &amp; Enseignement</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed/40 text-on-tertiary-fixed-variant font-label-xs text-label-xs border border-tertiary-fixed-dim/50 font-bold">
+        FACULTY
+      </span>
+</div>
+<!-- Navigation Tab Links -->
+<nav class="flex-1 overflow-y-auto px-space-md py-space-md space-y-1 custom-scrollbar">
+<!-- Vue d'ensemble (Actif) -->
+<a class="flex items-center justify-between px-space-md py-space-sm rounded-lg bg-surface-container-high text-primary font-bold border-l-4 border-tertiary-fixed-dim transition-all duration-200" href="#">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary" data-icon="dashboard">dashboard</span>
+<span class="font-label-lg text-label-lg">Vue d'ensemble</span>
+</div>
+</a>
+<!-- Mes formations (Badge 3) -->
+<a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container hover:text-primary transition-colors duration-150" href="#">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined" data-icon="school">school</span>
+<span>Mes formations</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-primary-container text-surface-bright font-label-xs text-label-xs font-bold">
+          3
+        </span>
+</a>
+<!-- Créer un cours -->
+<a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container hover:text-primary transition-colors duration-150" href="#">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary" data-icon="add_circle">add_circle</span>
+<span>Créer un cours</span>
+</div>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-primary font-label-xs text-label-xs">Nouveau</span>
+</a>
+<!-- Mes apprenants (Badge 148) -->
+<a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container hover:text-primary transition-colors duration-150" href="#">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined" data-icon="groups">groups</span>
+<span>Mes apprenants</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface font-label-xs text-label-xs font-bold">
+          148
+        </span>
+</a>
+<!-- Évaluations (Badge 12 à corriger) -->
+<a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container hover:text-primary transition-colors duration-150" href="#">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined" data-icon="fact_check">fact_check</span>
+<span>Évaluations</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-xs text-label-xs font-bold flex items-center gap-1 border border-tertiary-fixed-dim/60">
+<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-fixed-variant animate-pulse"></span>
+          12
+        </span>
+</a>
+<!-- Résultats & Statistiques -->
+<a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container hover:text-primary transition-colors duration-150" href="#">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined" data-icon="query_stats">query_stats</span>
+<span>Résultats &amp; Statistiques</span>
+</div>
+</a>
+<!-- Calendrier & Masterclasses -->
+<a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container hover:text-primary transition-colors duration-150" href="#">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+<span>Calendrier &amp; Masterclasses</span>
+</div>
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+</a>
+<!-- Ressources pédagogiques -->
+<a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container hover:text-primary transition-colors duration-150" href="#">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+<span>Ressources pédagogiques</span>
+</div>
+</a>
+<!-- Séparateur institutionnel subtil -->
+<div class="pt-2 pb-1">
+<div class="h-px bg-outline-variant/60 w-full"></div>
+</div>
+<!-- Mon profil -->
+<a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container hover:text-primary transition-colors duration-150" href="#">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+<span>Mon profil</span>
+</div>
+</a>
+</nav>
+<!-- Faculty Member Bottom Capsule & Logout -->
+<div class="p-space-md border-t border-outline-variant bg-surface-container-low/60">
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-lowest border border-outline-variant/80 mb-2">
+<div class="flex items-center gap-2.5 overflow-hidden">
+<img class="w-10 h-10 rounded-full object-cover border border-tertiary-fixed-dim shrink-0" data-alt="Portrait académique officiel du Dr Cheikh Oumar Sylla et de Monsieur Diop, enseignants chercheurs émérites en droit foncier et finance immobilière, costume bleu marine institutionnel, fond feutré bibliothèque universitaire, éclairage studio doux et chaleureux." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQTrVwjHl_EWJYA-UsV7M0ug_V_3a9zEYAJHpp5Rz-1gc330_U4qX89yxIyd9O9UUvqP5wI5UgTyFRvhbRjOxGvWRbTwdgV6xeDEyItfdfKO7JgTWRfpbVpSsl7Fpuc8kGX1FSHeCWRb8caQOPmNhh4DcMnY3w3JWapvxWtZSSIFevDMG0MjnpGloAecfJn3MRTHU-nHh2CDkieuWEsD3-Mese7tTMBk4taqy5JYs"/>
+<div class="truncate">
+<p class="font-label-lg text-label-lg font-bold text-primary truncate leading-tight">Dr. Sylla &amp; M. Diop</p>
+<p class="font-body-sm text-body-sm text-secondary truncate">Chaire Droit &amp; Actifs Tertiaires</p>
+</div>
+</div>
+</div>
+<a class="w-full flex items-center justify-center gap-2 px-3 py-2 rounded-lg text-error hover:bg-error-container/30 transition-colors font-label-md text-label-md font-semibold" href="#">
+<span class="material-symbols-outlined text-[18px]" data-icon="logout">logout</span>
+<span>Déconnexion</span>
+</a>
+</div>
+</aside>
+<!-- ========================================================================= -->
+<!-- MAIN CONTAINER (Fixed TopBar + Fluid Content Canvas)                      -->
+<!-- ========================================================================= -->
+<div class="pl-64 md:pl-72 flex-1 flex flex-col h-screen overflow-hidden">
+<!-- TOP BAR (Institutional & Academic) -->
+<header class="h-16 px-space-lg bg-surface-container-lowest border-b border-outline-variant flex items-center justify-between shrink-0 z-30">
+<!-- Left: Title & Academic Segment -->
+<div class="flex items-center gap-4">
+<div>
+<h1 class="font-headline-sm text-headline-sm text-primary font-bold leading-none tracking-tight flex items-center gap-2">
+<span>VIZATI Faculty OS</span>
+<span class="text-outline-variant font-light">|</span>
+<span class="font-body-md text-body-md text-secondary font-medium hidden lg:inline">Espace Enseignant &amp; Maître de Conférence</span>
+</h1>
+</div>
+<!-- Academic Session Selector -->
+<div class="relative ml-2 hidden sm:block">
+<button class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container text-primary font-label-md text-label-md border border-outline-variant/80 hover:bg-surface-container-high transition-colors">
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim"></span>
+<span class="font-semibold">Semestre 2024-Q4</span>
+<span class="material-symbols-outlined text-[16px] text-secondary" data-icon="expand_more">expand_more</span>
+</button>
+</div>
+</div>
+<!-- Center & Right: Search, Notifications & Contextual Badges -->
+<div class="flex items-center gap-3">
+<!-- Live Academic Search Bar -->
+<div class="relative hidden md:block w-72">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[18px]" data-icon="search">search</span>
+<input class="w-full pl-9 pr-3 py-1.5 rounded-lg border border-outline-variant text-body-sm font-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary bg-surface-container-low/40" placeholder="Rechercher un apprenant, un devoir..." type="text"/>
+</div>
+<!-- Accréditation / Chiffrement Pill -->
+<div class="hidden xl:flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-low border border-tertiary-fixed-dim/40 text-primary">
+<span class="material-symbols-outlined text-[16px] text-tertiary-fixed-dim" data-icon="verified_user">verified_user</span>
+<span class="font-label-xs text-label-xs font-semibold">Chiffré SSL 256-bit</span>
+</div>
+<!-- Notification Bell with Counter -->
+<button class="relative p-2 rounded-lg text-secondary hover:bg-surface-container hover:text-primary transition-colors" title="Notifications">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2.5 h-2.5 rounded-full bg-error ring-2 ring-surface-container-lowest"></span>
+</button>
+<!-- Help Center -->
+<button class="p-2 rounded-lg text-secondary hover:bg-surface-container hover:text-primary transition-colors" title="Support académique">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+</button>
+<!-- Profile Chip in TopBar -->
+<div class="flex items-center gap-2 pl-2 border-l border-outline-variant/60">
+<img class="w-8 h-8 rounded-full object-cover border border-outline-variant" data-alt="Portrait rapproché de Dr. Cheikh Oumar Sylla et M. Diop, expression bienveillante et déterminée, veste de costume de confection soignée avec épinglette de l'Institut VIZATI, fond de boiseries claires et vitrage moderne." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBW3SNs9AK3_OpjG6hQ-GFlnTKq4gZXxUQIfwkvl1zWiYJACyHzet62W5QId2omKBhl3TtxxcO_wOM4TBERXWSALkI6cFX0_RJWfsKy0d0ouWFraGnNrS5JiQ1tuTQ-S5ftDxB5Dn_JTCn7KiUck5mKGEUItdAg3C7jy3stJpzk0H-0PSyZKgNCuqMelvJPmzUz1lFg6AGgH2_rt7a8rBbdhYlutoCm-trFTQ40lss"/>
+<span class="font-label-md text-label-md text-primary font-bold hidden sm:inline">M. Diop</span>
+</div>
+</div>
+</header>
+<!-- CONTENT CANVAS (Scrollable) -->
+<main class="flex-1 overflow-y-auto p-space-lg space-y-space-lg custom-scrollbar">
+<!-- ========================================================================= -->
+<!-- 1. BIENVENUE CHALEUREUSE ET INSTITUTIONNELLE                               -->
+<!-- ========================================================================= -->
+<section class="bg-surface-container-lowest rounded-xl border border-outline-variant p-space-lg shadow-sm relative overflow-hidden">
+<!-- Subtle Institutional Architectural Accent -->
+<div class="absolute right-0 top-0 bottom-0 w-80 bg-gradient-to-l from-surface-container-high/40 to-transparent pointer-events-none hidden lg:block"></div>
+<div class="absolute -right-10 -bottom-10 opacity-5 pointer-events-none">
+<span class="material-symbols-outlined text-[240px] text-primary" data-icon="assured_workload">assured_workload</span>
+</div>
+<div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="px-2.5 py-0.5 rounded-md bg-tertiary-fixed/60 text-on-tertiary-fixed font-label-xs text-label-xs font-bold border border-tertiary-fixed-dim">
+                SESSION ACTIVE : AUTOMNE 2024
+              </span>
+<span class="font-body-sm text-body-sm text-secondary font-medium">Faculté de Droit &amp; Ingénierie Foncière</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-primary font-bold tracking-tight">
+              Bonjour, Monsieur Diop
+            </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl">
+              Gérez vos formations, animez vos cohortes et accompagnez la montée en compétences de vos <strong class="text-primary font-bold">148 apprenants cadres</strong> en zone UEMOA et CEMAC.
+            </p>
+</div>
+<div class="flex items-center gap-2.5 shrink-0">
+<a class="px-4 py-2 rounded-lg bg-surface-container text-primary font-label-lg text-label-lg font-bold hover:bg-surface-container-high border border-outline-variant transition-colors flex items-center gap-1.5" href="#quick-actions">
+<span class="material-symbols-outlined text-[18px]" data-icon="tune">tune</span>
+<span>Paramètres cohorte</span>
+</a>
+<a class="px-4 py-2 rounded-lg bg-primary-container text-surface-bright font-label-lg text-label-lg font-bold hover:bg-primary transition-all duration-200 shadow-sm flex items-center gap-2" href="#grading-section">
+<span class="material-symbols-outlined text-tertiary-fixed-dim text-[18px]" data-icon="grading">grading</span>
+<span>Corriger les 12 copies</span>
+</a>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- 2. RANGÉE DE 4 CARTES D'INDICATEURS CLÉS (KPI FORMATEUR)                   -->
+<!-- ========================================================================= -->
+<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<!-- KPI 1 : Formations attribuées -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant p-4 shadow-sm hover:shadow-md transition-shadow">
+<div class="flex items-start justify-between">
+<div>
+<p class="font-label-md text-label-md text-secondary uppercase font-semibold tracking-wider">Formations attribuées</p>
+<h3 class="font-headline-xl text-headline-xl text-primary font-extrabold mt-1">3</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 flex items-center gap-1">
+<span class="text-primary font-semibold">Parcours certifiants actifs</span>
+</p>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]" data-icon="school">school</span>
+</div>
+</div>
+<div class="mt-3 pt-3 border-t border-outline-variant/50 flex items-center justify-between text-body-sm font-body-sm">
+<span class="text-secondary">Dakar, Abidjan &amp; Hybride</span>
+<span class="text-primary font-bold">100% assigné</span>
+</div>
+</div>
+<!-- KPI 2 : Apprenants inscrits -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant p-4 shadow-sm hover:shadow-md transition-shadow">
+<div class="flex items-start justify-between">
+<div>
+<p class="font-label-md text-label-md text-secondary uppercase font-semibold tracking-wider">Apprenants inscrits</p>
+<h3 class="font-headline-xl text-headline-xl text-primary font-extrabold mt-1">148</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 flex items-center gap-1">
+<span class="font-semibold text-primary">Cadres dirigeants &amp; juristes</span>
+</p>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]" data-icon="groups">groups</span>
+</div>
+</div>
+<div class="mt-3 pt-3 border-t border-outline-variant/50 flex items-center justify-between text-body-sm font-body-sm">
+<span class="text-secondary">Taux d'engagement moyen</span>
+<span class="text-primary font-bold">84.6%</span>
+</div>
+</div>
+<!-- KPI 3 : Cours publiés -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant p-4 shadow-sm hover:shadow-md transition-shadow">
+<div class="flex items-start justify-between">
+<div>
+<p class="font-label-md text-label-md text-secondary uppercase font-semibold tracking-wider">Cours publiés</p>
+<h3 class="font-headline-xl text-headline-xl text-primary font-extrabold mt-1">36</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 flex items-center gap-1">
+<span class="text-primary font-semibold">Modules multimédias en ligne</span>
+</p>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]" data-icon="auto_stories">auto_stories</span>
+</div>
+</div>
+<div class="mt-3 pt-3 border-t border-outline-variant/50 flex items-center justify-between text-body-sm font-body-sm">
+<span class="text-secondary">Heures académiques</span>
+<span class="text-primary font-bold">120 hrs</span>
+</div>
+</div>
+<!-- KPI 4 : Évaluations à corriger (Badge alerte or sable) -->
+<div class="bg-surface-container-lowest rounded-xl border-2 border-tertiary-fixed-dim/90 p-4 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden bg-gradient-to-br from-surface-container-lowest via-surface-container-lowest to-tertiary-fixed/15">
+<div class="flex items-start justify-between">
+<div>
+<div class="flex items-center gap-1.5">
+<p class="font-label-md text-label-md text-on-tertiary-fixed-variant uppercase font-bold tracking-wider">Évaluations à corriger</p>
+</div>
+<div class="flex items-baseline gap-2 mt-1">
+<h3 class="font-headline-xl text-headline-xl text-tertiary font-extrabold">12</h3>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-xs text-label-xs font-bold border border-tertiary-fixed-dim animate-pulse">
+                  Attente urgente
+                </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                Copies et cas pratiques soumis
+              </p>
+</div>
+<div class="w-10 h-10 rounded-lg bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[22px]" data-icon="fact_check">fact_check</span>
+</div>
+</div>
+<div class="mt-3 pt-3 border-t border-tertiary-fixed-dim/40 flex items-center justify-between text-body-sm font-body-sm">
+<span class="text-on-tertiary-fixed-variant font-semibold">Délai contractuel J-3</span>
+<a class="text-primary font-bold hover:underline flex items-center gap-0.5" href="#grading-section">
+<span>Corriger</span>
+<span class="material-symbols-outlined text-[14px]" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- 3. SECTION "ACTIONS RAPIDES FORMATEUR"                                      -->
+<!-- ========================================================================= -->
+<section class="bg-surface-container-lowest rounded-xl border border-outline-variant p-space-md shadow-sm" id="quick-actions">
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]" data-icon="bolt">bolt</span>
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold">Actions Rapides Formateur</h3>
+</div>
+<span class="font-body-sm text-body-sm text-secondary">Raccourcis de production pédagogique</span>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
+<!-- Bouton 1 : Créer un cours -->
+<button class="flex flex-col items-center justify-center text-center p-3.5 rounded-lg border border-outline-variant/80 hover:border-primary hover:bg-surface-container-low transition-all duration-150 group">
+<div class="w-10 h-10 rounded-lg bg-primary-container text-surface-bright flex items-center justify-center mb-2 group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[22px]" data-icon="add_circle">add_circle</span>
+</div>
+<span class="font-label-md text-label-md font-bold text-primary group-hover:text-primary-container leading-tight">Créer un cours</span>
+<span class="font-body-sm text-body-sm text-secondary text-[11px] mt-0.5">Nouveau syllabus</span>
+</button>
+<!-- Bouton 2 : Ajouter une leçon -->
+<button class="flex flex-col items-center justify-center text-center p-3.5 rounded-lg border border-outline-variant/80 hover:border-primary hover:bg-surface-container-low transition-all duration-150 group">
+<div class="w-10 h-10 rounded-lg bg-surface-container text-primary flex items-center justify-center mb-2 group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[22px]" data-icon="post_add">post_add</span>
+</div>
+<span class="font-label-md text-label-md font-bold text-primary group-hover:text-primary-container leading-tight">Ajouter une leçon</span>
+<span class="font-body-sm text-body-sm text-secondary text-[11px] mt-0.5">Support &amp; vidéo</span>
+</button>
+<!-- Bouton 3 : Créer une évaluation -->
+<button class="flex flex-col items-center justify-center text-center p-3.5 rounded-lg border border-outline-variant/80 hover:border-primary hover:bg-surface-container-low transition-all duration-150 group">
+<div class="w-10 h-10 rounded-lg bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center mb-2 group-hover:scale-105 transition-transform border border-tertiary-fixed-dim/40">
+<span class="material-symbols-outlined text-[22px]" data-icon="quiz">quiz</span>
+</div>
+<span class="font-label-md text-label-md font-bold text-primary group-hover:text-primary-container leading-tight">Créer une évaluation</span>
+<span class="font-body-sm text-body-sm text-secondary text-[11px] mt-0.5">Cas pratique ou QCM</span>
+</button>
+<!-- Bouton 4 : Consulter les apprenants -->
+<button class="flex flex-col items-center justify-center text-center p-3.5 rounded-lg border border-outline-variant/80 hover:border-primary hover:bg-surface-container-low transition-all duration-150 group">
+<div class="w-10 h-10 rounded-lg bg-surface-container text-primary flex items-center justify-center mb-2 group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[22px]" data-icon="group">group</span>
+</div>
+<span class="font-label-md text-label-md font-bold text-primary group-hover:text-primary-container leading-tight">Consulter les apprenants</span>
+<span class="font-body-sm text-body-sm text-secondary text-[11px] mt-0.5">Registre &amp; présences</span>
+</button>
+<!-- Bouton 5 : Programmer une masterclass live -->
+<button class="flex flex-col items-center justify-center text-center p-3.5 rounded-lg border border-outline-variant/80 hover:border-primary hover:bg-surface-container-low transition-all duration-150 group col-span-2 sm:col-span-1">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high text-primary flex items-center justify-center mb-2 group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[22px]" data-icon="video_call">video_call</span>
+</div>
+<span class="font-label-md text-label-md font-bold text-primary group-hover:text-primary-container leading-tight">Programmer un direct</span>
+<span class="font-body-sm text-body-sm text-secondary text-[11px] mt-0.5">Masterclass live</span>
+</button>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- 4. SECTION "MES FORMATIONS EN ENSEIGNEMENT" (CARTES DE PARCOURS)          -->
+<!-- ========================================================================= -->
+<section class="space-y-space-md">
+<div class="flex items-center justify-between">
+<div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]" data-icon="cast_for_education">cast_for_education</span>
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold">Mes Formations en Enseignement</h3>
+</div>
+<p class="font-body-sm text-body-sm text-secondary">Suivi des cohortes certifiantes sous votre responsabilité académique</p>
+</div>
+<button class="text-primary font-label-md text-label-md font-bold hover:underline flex items-center gap-1">
+<span>Voir tout le catalogue</span>
+<span class="material-symbols-outlined text-[16px]" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-space-md">
+<!-- FORMATION 1 -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant p-5 shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow relative">
+<div>
+<div class="flex items-center justify-between mb-3">
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container text-primary font-label-xs text-label-xs font-bold uppercase tracking-wider">
+                  Executive Certificate
+                </span>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container-high text-primary font-label-xs text-label-xs font-bold flex items-center gap-1 border border-outline-variant/60">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed-dim"></span>
+                  Statut : Actif
+                </span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-primary font-bold leading-snug mb-3">
+                Gestionnaire de portefeuille locatif &amp; actifs tertiaires
+              </h4>
+<!-- Specs Grid -->
+<div class="grid grid-cols-2 gap-2 py-3 border-y border-outline-variant/60 text-body-sm font-body-sm mb-4">
+<div>
+<span class="text-secondary block font-medium">Cohorte active</span>
+<span class="font-bold text-primary font-headline-sm text-[16px]">68 apprenants</span>
+</div>
+<div>
+<span class="text-secondary block font-medium">Taux réussite éval</span>
+<span class="font-bold text-primary font-headline-sm text-[16px]">88%</span>
+</div>
+</div>
+<!-- Pedagogical Progress Tracker -->
+<div class="space-y-1.5 mb-5">
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<span class="text-secondary font-medium">Progression moyenne globale</span>
+<span class="font-bold text-primary">72%</span>
+</div>
+<div class="w-full bg-surface-container rounded-full h-2 overflow-hidden">
+<div class="bg-tertiary-fixed-dim h-2 rounded-full transition-all duration-500" style="width: 72%"></div>
+</div>
+<div class="flex justify-between items-center text-[11px] text-secondary">
+<span>Module 6 / 8</span>
+<span>Session Live prévue le 14 Nov</span>
+</div>
+</div>
+</div>
+<!-- Footer Action -->
+<div class="pt-3 border-t border-outline-variant/60 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]" data-icon="pin_drop">pin_drop</span>
+<span class="text-body-sm font-body-sm text-secondary">Dakar &amp; Hybride</span>
+</div>
+<button class="px-4 py-2 rounded-lg bg-primary-container text-surface-bright font-label-md text-label-md font-bold hover:bg-primary transition-colors flex items-center gap-1.5 shadow-sm">
+<span>Gérer le cours</span>
+<span class="material-symbols-outlined text-[16px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- FORMATION 2 -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant p-5 shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow relative">
+<div>
+<div class="flex items-center justify-between mb-3">
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container text-primary font-label-xs text-label-xs font-bold uppercase tracking-wider">
+                  Masterclass Juridique
+                </span>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container-lowest text-secondary font-label-xs text-label-xs font-bold flex items-center gap-1 border border-outline-variant">
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span>
+                  Session clôturée
+                </span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-primary font-bold leading-snug mb-3">
+                Pratique des Baux Commerciaux OHADA &amp; Contentieux
+              </h4>
+<!-- Specs Grid -->
+<div class="grid grid-cols-2 gap-2 py-3 border-y border-outline-variant/60 text-body-sm font-body-sm mb-4">
+<div>
+<span class="text-secondary block font-medium">Diplômés certifiés</span>
+<span class="font-bold text-primary font-headline-sm text-[16px]">54 apprenants</span>
+</div>
+<div>
+<span class="text-secondary block font-medium">Taux de réussite</span>
+<span class="font-bold text-primary font-headline-sm text-[16px]">92%</span>
+</div>
+</div>
+<!-- Pedagogical Progress Tracker -->
+<div class="space-y-1.5 mb-5">
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<span class="text-secondary font-medium">Progression moyenne globale</span>
+<span class="font-bold text-primary">94%</span>
+</div>
+<div class="w-full bg-surface-container rounded-full h-2 overflow-hidden">
+<div class="bg-primary-container h-2 rounded-full transition-all duration-500" style="width: 94%"></div>
+</div>
+<div class="flex justify-between items-center text-[11px] text-secondary">
+<span>Certification émise</span>
+<span class="text-on-tertiary-fixed-variant font-semibold">54 diplômes horodatés</span>
+</div>
+</div>
+</div>
+<!-- Footer Action -->
+<div class="pt-3 border-t border-outline-variant/60 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]" data-icon="verified">verified</span>
+<span class="text-body-sm font-body-sm text-secondary">Archives &amp; Bilans</span>
+</div>
+<button class="px-4 py-2 rounded-lg bg-surface-container text-primary font-label-md text-label-md font-bold hover:bg-surface-container-high transition-colors flex items-center gap-1.5 border border-outline-variant">
+<span>Rapports finaux</span>
+<span class="material-symbols-outlined text-[16px]" data-icon="article">article</span>
+</button>
+</div>
+</div>
+<!-- FORMATION 3 -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant p-5 shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow relative">
+<div>
+<div class="flex items-center justify-between mb-3">
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container text-primary font-label-xs text-label-xs font-bold uppercase tracking-wider">
+                  Programme Avancé
+                </span>
+<span class="px-2.5 py-0.5 rounded-full bg-tertiary-fixed/60 text-on-tertiary-fixed font-label-xs text-label-xs font-bold flex items-center gap-1 border border-tertiary-fixed-dim/60">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed-dim"></span>
+                  Statut : En cours
+                </span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-primary font-bold leading-snug mb-3">
+                Montage d'opérations et financements structurés en zone UEMOA
+              </h4>
+<!-- Specs Grid -->
+<div class="grid grid-cols-2 gap-2 py-3 border-y border-outline-variant/60 text-body-sm font-body-sm mb-4">
+<div>
+<span class="text-secondary block font-medium">Cohorte finance</span>
+<span class="font-bold text-primary font-headline-sm text-[16px]">26 apprenants</span>
+</div>
+<div>
+<span class="text-secondary block font-medium">Cas pratiques rendus</span>
+<span class="font-bold text-primary font-headline-sm text-[16px]">18 / 26</span>
+</div>
+</div>
+<!-- Pedagogical Progress Tracker -->
+<div class="space-y-1.5 mb-5">
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<span class="text-secondary font-medium">Progression moyenne globale</span>
+<span class="font-bold text-primary">41%</span>
+</div>
+<div class="w-full bg-surface-container rounded-full h-2 overflow-hidden">
+<div class="bg-tertiary-fixed-dim h-2 rounded-full transition-all duration-500" style="width: 41%"></div>
+</div>
+<div class="flex justify-between items-center text-[11px] text-secondary">
+<span>Module 3 / 7</span>
+<span>Prochaine remise : 10 Nov</span>
+</div>
+</div>
+</div>
+<!-- Footer Action -->
+<div class="pt-3 border-t border-outline-variant/60 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]" data-icon="pin_drop">pin_drop</span>
+<span class="text-body-sm font-body-sm text-secondary">Abidjan &amp; En ligne</span>
+</div>
+<button class="px-4 py-2 rounded-lg bg-primary-container text-surface-bright font-label-md text-label-md font-bold hover:bg-primary transition-colors flex items-center gap-1.5 shadow-sm">
+<span>Gérer le cours</span>
+<span class="material-symbols-outlined text-[16px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- 5. SECTION "ACTIVITÉ DES APPRENANTS & SUIVI PÉDAGOGIQUE" (4 BLOCS / TAB)    -->
+<!-- ========================================================================= -->
+<section class="bg-surface-container-lowest rounded-xl border border-outline-variant shadow-sm overflow-hidden" id="grading-section">
+<!-- Header & Tabs Controller -->
+<div class="p-space-md border-b border-outline-variant flex flex-col md:flex-row md:items-center justify-between gap-4 bg-surface-container-lowest">
+<div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]" data-icon="analytics">analytics</span>
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold">Activité des Apprenants &amp; Suivi Pédagogique</h3>
+</div>
+<p class="font-body-sm text-body-sm text-secondary">Contrôle continu, notation des épreuves et alertes d'assiduité</p>
+</div>
+<!-- Filter Navigation Tabs -->
+<div class="flex items-center gap-1 bg-surface-container p-1 rounded-lg border border-outline-variant overflow-x-auto">
+<button class="px-3 py-1.5 rounded-md bg-surface-container-lowest text-primary font-label-md text-label-md font-bold shadow-sm flex items-center gap-1.5 shrink-0">
+<span class="material-symbols-outlined text-[16px] text-tertiary-fixed-dim" data-icon="pending_actions">pending_actions</span>
+<span>À Corriger (12)</span>
+</button>
+<button class="px-3 py-1.5 rounded-md text-secondary font-label-md text-label-md hover:text-primary transition-colors flex items-center gap-1.5 shrink-0">
+<span class="material-symbols-outlined text-[16px]" data-icon="person_add">person_add</span>
+<span>Nouveaux Inscrits</span>
+</button>
+<button class="px-3 py-1.5 rounded-md text-secondary font-label-md text-label-md hover:text-primary transition-colors flex items-center gap-1.5 shrink-0">
+<span class="material-symbols-outlined text-[16px]" data-icon="schedule">schedule</span>
+<span>En Retard (4)</span>
+</button>
+<button class="px-3 py-1.5 rounded-md text-secondary font-label-md text-label-md hover:text-primary transition-colors flex items-center gap-1.5 shrink-0">
+<span class="material-symbols-outlined text-[16px]" data-icon="workspace_premium">workspace_premium</span>
+<span>Attestations à Signer</span>
+</button>
+</div>
+</div>
+<!-- 4 Structured Sub-Panels Bento View -->
+<div class="grid grid-cols-1 xl:grid-cols-2 divide-y xl:divide-y-0 xl:divide-x divide-outline-variant">
+<!-- LEFT COLUMN: Évaluations urgentes & Nouveaux Apprenants -->
+<div class="p-space-md space-y-space-md">
+<!-- BLOC A : Dernières évaluations soumises nécessitant notation -->
+<div>
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary-fixed-dim"></span>
+<h4 class="font-headline-sm text-[16px] text-primary font-bold">Évaluations à valider (Prioritaires)</h4>
+</div>
+<span class="font-label-xs text-label-xs text-on-tertiary-fixed-variant font-bold bg-tertiary-fixed/40 px-2 py-0.5 rounded border border-tertiary-fixed-dim/40">12 COPIES DISPONIBLES</span>
+</div>
+<div class="space-y-2.5">
+<!-- Evaluation Item 1 -->
+<div class="p-3 rounded-lg border border-outline-variant bg-surface-container-low/40 flex items-center justify-between hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-primary-container text-surface-bright flex items-center justify-center font-bold text-sm shrink-0">
+                      MK
+                    </div>
+<div>
+<p class="font-label-lg text-label-lg font-bold text-primary leading-tight">Me Koffi — Avocat associé</p>
+<p class="font-body-sm text-body-sm text-secondary">Étude de cas : Clause résolutoire &amp; Baux OHADA</p>
+<span class="text-[11px] text-on-surface-variant">Soumis il y a 2h • Fichier PDF annotable (4.2 Mo)</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-3 py-1.5 rounded-md bg-primary-container text-surface-bright font-label-md text-label-md font-bold hover:bg-primary transition-colors flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[16px]" data-icon="edit_note">edit_note</span>
+<span>Noter</span>
+</button>
+</div>
+</div>
+<!-- Evaluation Item 2 -->
+<div class="p-3 rounded-lg border border-outline-variant bg-surface-container-low/40 flex items-center justify-between hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-secondary text-surface-bright flex items-center justify-center font-bold text-sm shrink-0">
+                      FS
+                    </div>
+<div>
+<p class="font-label-lg text-label-lg font-bold text-primary leading-tight">Fatou Sow — Dir. Patrimoine SOGEPI</p>
+<p class="font-body-sm text-body-sm text-secondary">Audit technique &amp; Quitus locatif commercial</p>
+<span class="text-[11px] text-on-surface-variant">Soumis hier à 18:40 • Tableau financier Excel &amp; Note</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-3 py-1.5 rounded-md bg-primary-container text-surface-bright font-label-md text-label-md font-bold hover:bg-primary transition-colors flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[16px]" data-icon="edit_note">edit_note</span>
+<span>Noter</span>
+</button>
+</div>
+</div>
+<!-- Evaluation Item 3 -->
+<div class="p-3 rounded-lg border border-outline-variant bg-surface-container-low/40 flex items-center justify-between hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-primary text-surface-bright flex items-center justify-center font-bold text-sm shrink-0">
+                      BT
+                    </div>
+<div>
+<p class="font-label-lg text-label-lg font-bold text-primary leading-tight">Bakary Traoré — Analyste Foncier UEMOA</p>
+<p class="font-body-sm text-body-sm text-secondary">Modélisation de cash-flow et structuration VEFA</p>
+<span class="text-[11px] text-on-surface-variant">Soumis hier à 14:15 • Mémoire intermédiaire (18 pages)</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-3 py-1.5 rounded-md bg-primary-container text-surface-bright font-label-md text-label-md font-bold hover:bg-primary transition-colors flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[16px]" data-icon="edit_note">edit_note</span>
+<span>Noter</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- BLOC B : Nouveaux inscrits récents -->
+<div class="pt-4 border-t border-outline-variant/60">
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]" data-icon="person_add">person_add</span>
+<h4 class="font-headline-sm text-[16px] text-primary font-bold">Nouveaux inscrits récents</h4>
+</div>
+<span class="font-body-sm text-body-sm text-secondary">Dernières 48 heures</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+<!-- New Learner 1 -->
+<div class="p-3 rounded-lg border border-outline-variant bg-surface-container-lowest flex flex-col justify-between">
+<div class="flex items-center gap-2 mb-2">
+<div class="w-8 h-8 rounded-full bg-surface-container-high text-primary flex items-center justify-center font-bold text-xs">
+                      AD
+                    </div>
+<div class="overflow-hidden">
+<p class="font-label-md text-label-md font-bold text-primary truncate leading-tight">Aminata Diallo</p>
+<p class="text-[11px] text-secondary truncate">Juriste Senior — Dakar</p>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-container font-label-xs text-label-xs text-primary font-medium truncate block">
+                    Baux Commerciaux OHADA
+                  </span>
+</div>
+<!-- New Learner 2 -->
+<div class="p-3 rounded-lg border border-outline-variant bg-surface-container-lowest flex flex-col justify-between">
+<div class="flex items-center gap-2 mb-2">
+<div class="w-8 h-8 rounded-full bg-surface-container-high text-primary flex items-center justify-center font-bold text-xs">
+                      MK
+                    </div>
+<div class="overflow-hidden">
+<p class="font-label-md text-label-md font-bold text-primary truncate leading-tight">Moussa Konaté</p>
+<p class="text-[11px] text-secondary truncate">Directeur d'Agence — Abidjan</p>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-container font-label-xs text-label-xs text-primary font-medium truncate block">
+                    Gestion Actifs Tertiaires
+                  </span>
+</div>
+<!-- New Learner 3 -->
+<div class="p-3 rounded-lg border border-outline-variant bg-surface-container-lowest flex flex-col justify-between">
+<div class="flex items-center gap-2 mb-2">
+<div class="w-8 h-8 rounded-full bg-surface-container-high text-primary flex items-center justify-center font-bold text-xs">
+                      ST
+                    </div>
+<div class="overflow-hidden">
+<p class="font-label-md text-label-md font-bold text-primary truncate leading-tight">Sarah Touré</p>
+<p class="text-[11px] text-secondary truncate">Asset Manager — Lomé</p>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-container font-label-xs text-label-xs text-primary font-medium truncate block">
+                    Montage Financements
+                  </span>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN: Retards d'échéance & Certifications à signer -->
+<div class="p-space-md space-y-space-md bg-surface-container-low/20">
+<!-- BLOC C : Apprenants en retard d'échéance -->
+<div>
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-error text-[18px]" data-icon="alarm_off">alarm_off</span>
+<h4 class="font-headline-sm text-[16px] text-primary font-bold">Apprenants en retard d'échéance</h4>
+</div>
+<span class="font-label-xs text-label-xs text-error font-bold bg-error-container/40 px-2 py-0.5 rounded border border-error/20">4 NON-CONFORMITÉS</span>
+</div>
+<div class="space-y-2.5">
+<!-- Late Learner 1 -->
+<div class="p-3 rounded-lg border border-outline-variant bg-surface-container-lowest flex items-center justify-between">
+<div>
+<div class="flex items-center gap-2">
+<p class="font-label-lg text-label-lg font-bold text-primary">Ibrahima Cissé</p>
+<span class="px-1.5 py-0.2 rounded bg-error-container text-on-error-container font-label-xs text-[10px] font-bold">J+4 de retard</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary">Module 4 : Audit de rentabilité et calcul de TRI</p>
+<p class="text-[11px] text-outline">Dernière connexion : Il y a 6 jours</p>
+</div>
+<button class="px-3 py-1.5 rounded-md bg-surface-container text-primary font-label-md text-label-md font-bold hover:bg-surface-container-high transition-colors flex items-center gap-1 border border-outline-variant">
+<span class="material-symbols-outlined text-[16px] text-secondary" data-icon="mail">mail</span>
+<span>Relancer par e-mail</span>
+</button>
+</div>
+<!-- Late Learner 2 -->
+<div class="p-3 rounded-lg border border-outline-variant bg-surface-container-lowest flex items-center justify-between">
+<div>
+<div class="flex items-center gap-2">
+<p class="font-label-lg text-label-lg font-bold text-primary">Christelle Kouamé</p>
+<span class="px-1.5 py-0.2 rounded bg-error-container text-on-error-container font-label-xs text-[10px] font-bold">J+2 de retard</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary">Cas pratique : Rédaction d'un avenant commercial</p>
+<p class="text-[11px] text-outline">Dernière connexion : Hier à 09:30</p>
+</div>
+<button class="px-3 py-1.5 rounded-md bg-surface-container text-primary font-label-md text-label-md font-bold hover:bg-surface-container-high transition-colors flex items-center gap-1 border border-outline-variant">
+<span class="material-symbols-outlined text-[16px] text-secondary" data-icon="mail">mail</span>
+<span>Relancer par e-mail</span>
+</button>
+</div>
+</div>
+</div>
+<!-- BLOC D : Formations récemment terminées avec attestations à signer -->
+<div class="pt-4 border-t border-outline-variant/60">
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary-fixed-dim text-[18px]" data-icon="verified">verified</span>
+<h4 class="font-headline-sm text-[16px] text-primary font-bold">Attestations &amp; Parchemin à signer</h4>
+</div>
+<span class="font-label-xs text-label-xs text-primary font-bold bg-surface-container-high px-2 py-0.5 rounded">SCEAU ACADÉMIQUE</span>
+</div>
+<!-- Certificate Signing Action Block -->
+<div class="p-3.5 rounded-lg border-2 border-dashed border-tertiary-fixed-dim/80 bg-surface-container-lowest flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center font-bold shrink-0">
+<span class="material-symbols-outlined" data-icon="draw">draw</span>
+</div>
+<div>
+<p class="font-label-lg text-label-lg font-bold text-primary">Lot #Baux-2024-Q3 — 54 Diplômes</p>
+<p class="font-body-sm text-body-sm text-secondary">Executive Masterclass Baux OHADA • Validation finale du jury</p>
+<span class="text-[11px] text-on-tertiary-fixed-variant font-medium">Signature numérique cryptographique requise</span>
+</div>
+</div>
+<div class="flex items-center gap-2 shrink-0">
+<button class="px-4 py-2 rounded-lg bg-primary-container text-surface-bright font-label-md text-label-md font-bold hover:bg-primary transition-colors flex items-center gap-1.5 shadow-sm">
+<span class="material-symbols-outlined text-tertiary-fixed-dim text-[16px]" data-icon="gesture">gesture</span>
+<span>Signer le lot (54)</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Institutional Footer Note -->
+<footer class="pt-4 pb-8 flex flex-col sm:flex-row items-center justify-between text-body-sm font-body-sm text-secondary border-t border-outline-variant/40 gap-2">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim"></span>
+<span>VIZATI Faculty Operating System • Version 3.4.1 (Édition Enseignant-Chercheur)</span>
+</div>
+<div class="flex items-center gap-4 text-[12px]">
+<a class="hover:text-primary transition-colors" href="#">Guide pédagogique du formateur</a>
+<a class="hover:text-primary transition-colors" href="#">Charte d'évaluation académique</a>
+<a class="hover:text-primary transition-colors" href="#">Support IT Enseignant</a>
+</div>
+</footer>
+</main>
+</div>
+</body></html>

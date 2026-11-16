@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-background" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>VIZATI Academy — Administration de la Veille Immobilière &amp; Flux IA</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Manrope:wght@500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-primary-fixed-variant": "#324864",
+            "primary-fixed": "#d3e3ff",
+            "on-tertiary-fixed-variant": "#5f4100",
+            "surface-dim": "#d0daf2",
+            "on-tertiary": "#ffffff",
+            "on-secondary-fixed-variant": "#2a486a",
+            "surface-container-highest": "#d9e3fb",
+            "on-secondary-container": "#405d80",
+            "surface": "#f9f9ff",
+            "on-secondary": "#ffffff",
+            "on-tertiary-fixed": "#271900",
+            "on-primary-fixed": "#031c37",
+            "outline-variant": "#c4c6ce",
+            "outline": "#74777e",
+            "secondary-fixed-dim": "#abc9f1",
+            "on-error-container": "#93000a",
+            "tertiary": "#201300",
+            "surface-tint": "#4a607d",
+            "secondary-fixed": "#d2e4ff",
+            "surface-container-lowest": "#ffffff",
+            "primary-container": "#142b46",
+            "secondary-container": "#b9d7ff",
+            "primary-fixed-dim": "#b2c8ea",
+            "on-error": "#ffffff",
+            "on-surface": "#111c2d",
+            "secondary": "#436083",
+            "surface-container-high": "#dfe8ff",
+            "primary": "#00162f",
+            "inverse-on-surface": "#ecf0ff",
+            "tertiary-fixed-dim": "#edbf73",
+            "background": "#f9f9ff",
+            "inverse-primary": "#b2c8ea",
+            "surface-variant": "#d9e3fb",
+            "on-secondary-fixed": "#001d37",
+            "surface-container-low": "#f0f3ff",
+            "inverse-surface": "#273143",
+            "on-surface-variant": "#44474d",
+            "surface-bright": "#f9f9ff",
+            "error": "#ba1a1a",
+            "tertiary-container": "#3a2600",
+            "on-tertiary-container": "#b38a44",
+            "on-primary": "#ffffff",
+            "surface-container": "#e8eeff",
+            "tertiary-fixed": "#ffdeab",
+            "error-container": "#ffdad6",
+            "on-background": "#111c2d",
+            "on-primary-container": "#7d93b3"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "space-sm": "0.5rem",
+            "space-lg": "1.5rem",
+            "margin": "3rem",
+            "space-md": "1rem",
+            "space-xl": "2.5rem",
+            "space-2xl": "4rem",
+            "gutter-mobile": "1rem",
+            "margin-mobile": "1rem",
+            "gutter": "1.5rem",
+            "space-xs": "0.25rem"
+          },
+          "fontFamily": {
+            "headline-xl": ["Manrope"],
+            "body-xl": ["Inter"],
+            "label-lg": ["Inter"],
+            "code-num": ["Inter"],
+            "body-md": ["Inter"],
+            "headline-sm": ["Manrope"],
+            "body-lg": ["Inter"],
+            "headline-lg": ["Manrope"],
+            "headline-md": ["Manrope"],
+            "display-hero-mobile": ["Manrope"],
+            "body-sm": ["Inter"],
+            "display-hero": ["Manrope"],
+            "headline-xl-mobile": ["Manrope"],
+            "label-md": ["Inter"],
+            "label-xs": ["Inter"]
+          },
+          "fontSize": {
+            "headline-xl": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "body-xl": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+            "code-num": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+            "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "headline-sm": ["18px", { "lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "600" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "headline-md": ["22px", { "lineHeight": "30px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "display-hero-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "display-hero": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+            "headline-xl-mobile": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "label-xs": ["10px", { "lineHeight": "14px", "letterSpacing": "0.06em", "fontWeight": "700" }]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="min-h-screen bg-background text-on-surface antialiased flex flex-col font-body-md text-body-md">
+<!-- ========================================================================= -->
+<!-- SHARED COMPONENT 1: SideNavBar                                           -->
+<!-- ========================================================================= -->
+<aside class="fixed inset-y-0 left-0 w-72 flex flex-col z-40 bg-primary text-on-primary border-r border-outline-variant/20 shadow-md">
+<!-- Brand / Seal Section -->
+<div class="px-6 py-6 border-b border-outline-variant/15 flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-primary-container border border-on-tertiary-container/40 flex items-center justify-center shrink-0 shadow-inner">
+<span class="material-symbols-outlined text-on-tertiary-container" data-icon="account_balance">account_balance</span>
+</div>
+<div>
+<h1 class="text-headline-md font-headline-md tracking-tight uppercase text-on-primary leading-none">VIZATI ACADEMY</h1>
+<p class="text-label-xs font-label-xs text-on-primary-container tracking-wider uppercase mt-1">Super-Admin &amp; CMS Suite</p>
+</div>
+</div>
+<!-- Navigation List (Shared Blueprint tabs with 'Observatoire Marché' active) -->
+<nav class="flex-1 px-4 py-6 space-y-1 overflow-y-auto">
+<div class="px-3 pb-2 text-label-xs font-label-xs uppercase tracking-widest text-on-primary-container/80 font-bold">
+        Gouvernance Académique
+      </div>
+<!-- Tab 0: Tableau de Bord -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-primary-container hover:text-on-primary hover:bg-primary-container/40 font-label-lg transition-colors cursor-pointer" href="#">
+<span class="material-symbols-outlined shrink-0" data-icon="dashboard">dashboard</span>
+<span>Tableau de Bord</span>
+</a>
+<!-- Tab 1: Observatoire Marché (Active context: Veille Immobilière & Flux IA) -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg bg-primary-container text-on-primary font-label-lg transition-colors border-l-4 border-on-tertiary-container cursor-pointer shadow-sm" href="#">
+<span class="material-symbols-outlined shrink-0 text-on-tertiary-container" data-icon="analytics">analytics</span>
+<div class="flex-1 flex items-center justify-between">
+<span>Observatoire Marché</span>
+<span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-bold bg-on-tertiary-container/20 text-on-tertiary-container">LIVE</span>
+</div>
+</a>
+<!-- Tab 2: Programmes Exécutifs -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-primary-container hover:text-on-primary hover:bg-primary-container/40 font-label-lg transition-colors cursor-pointer" href="#">
+<span class="material-symbols-outlined shrink-0" data-icon="school">school</span>
+<span>Programmes Exécutifs</span>
+</a>
+<!-- Tab 3: Registres Cadastraux -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-primary-container hover:text-on-primary hover:bg-primary-container/40 font-label-lg transition-colors cursor-pointer" href="#">
+<span class="material-symbols-outlined shrink-0" data-icon="domain">domain</span>
+<span>Registres Cadastraux</span>
+</a>
+<!-- Tab 4: CMS & Publications -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-primary-container hover:text-on-primary hover:bg-primary-container/40 font-label-lg transition-colors cursor-pointer" href="#">
+<span class="material-symbols-outlined shrink-0" data-icon="edit_note">edit_note</span>
+<span>CMS &amp; Publications</span>
+</a>
+<!-- Tab 5: Gouvernance & Droits -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-primary-container hover:text-on-primary hover:bg-primary-container/40 font-label-lg transition-colors cursor-pointer" href="#">
+<span class="material-symbols-outlined shrink-0" data-icon="admin_panel_settings">admin_panel_settings</span>
+<span>Gouvernance &amp; Droits</span>
+</a>
+<!-- CTA Box -->
+<div class="pt-6 px-1">
+<div class="bg-primary-container/60 border border-on-tertiary-container/30 rounded-lg p-3 text-center">
+<p class="text-label-xs font-label-xs text-on-primary-container mb-2">Ingestion &amp; Sync BCEAO/OHADA</p>
+<button class="w-full py-2 px-3 bg-on-tertiary-container text-primary font-label-md rounded text-center font-bold hover:brightness-110 active:scale-98 transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[16px]" data-icon="sync">sync</span>
+<span>Déployer Rapport Sync</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Footer Links -->
+<div class="px-4 py-4 border-t border-outline-variant/15 space-y-1 bg-primary/95">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-primary-container hover:text-on-primary hover:bg-primary-container/40 font-label-md transition-colors" href="#">
+<span class="material-symbols-outlined shrink-0 text-body-lg" data-icon="settings">settings</span>
+<span>Paramètres Système</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-primary-container hover:text-on-primary hover:bg-primary-container/40 font-label-md transition-colors" href="#">
+<span class="material-symbols-outlined shrink-0 text-body-lg" data-icon="help_outline">help_outline</span>
+<span>Support Régional</span>
+</a>
+</div>
+</aside>
+<!-- ========================================================================= -->
+<!-- SHARED COMPONENT 2: TopNavBar                                             -->
+<!-- ========================================================================= -->
+<header class="sticky top-0 right-0 pl-72 pr-8 w-full z-30 h-16 flex items-center justify-between bg-surface-container-lowest border-b border-outline-variant/30 shadow-sm">
+<!-- Left Zone: Console Title + Search -->
+<div class="flex items-center gap-6 flex-1 max-w-2xl pl-8">
+<div class="flex items-center gap-2 shrink-0">
+<span class="text-headline-sm font-headline-sm font-bold text-primary tracking-wide">VIZATI Executive Console</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-semibold bg-primary/10 text-primary">v4.8-PRO</span>
+</div>
+<!-- Search Bar -->
+<div class="relative w-full max-w-md">
+<span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-outline">
+<span class="material-symbols-outlined text-body-md" data-icon="search">search</span>
+</span>
+<input class="w-full pl-9 pr-4 py-1.5 text-body-sm bg-surface-container-low border border-outline-variant/50 rounded-lg text-on-surface placeholder:text-outline focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary" placeholder="Rechercher une source, un décret, un cadastre..." type="text"/>
+</div>
+</div>
+<!-- Center/Right Zone: Institutional Hubs, Telemetry & Actions -->
+<div class="flex items-center gap-5">
+<!-- Hub Selector / Institutional Links -->
+<div class="hidden xl:flex items-center gap-4 border-r border-outline-variant/30 pr-5">
+<a class="text-primary font-label-md border-b-2 border-on-tertiary-container pb-1" href="#">Institut Dakar</a>
+<a class="text-on-surface-variant font-label-md hover:text-primary transition-colors" href="#">Hub Abidjan</a>
+<a class="text-on-surface-variant font-label-md hover:text-primary transition-colors" href="#">Région UEMOA</a>
+</div>
+<!-- Realtime Cluster State -->
+<div class="hidden lg:flex items-center gap-2 px-2.5 py-1 rounded bg-surface-container-low border border-outline-variant/30 text-body-sm font-code-num text-on-surface-variant">
+<span class="w-2 h-2 rounded-full bg-emerald-600 animate-pulse"></span>
+<span class="font-medium text-primary">Cluster SSL Ingestion</span>
+<span class="text-outline">|</span>
+<span class="text-[11px] text-on-surface">GMT 14:38:02</span>
+</div>
+<!-- Action Cluster -->
+<div class="flex items-center gap-2">
+<button class="p-2 text-on-surface-variant hover:text-primary hover:bg-surface-container rounded-lg transition-colors" title="Cluster Sync (SSL)">
+<span class="material-symbols-outlined" data-icon="sync_lock">sync_lock</span>
+</button>
+<button class="relative p-2 text-on-surface-variant hover:text-primary hover:bg-surface-container rounded-lg transition-colors" title="Notifications">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-error"></span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-primary hover:bg-surface-container rounded-lg transition-colors" title="Options &amp; Filtres">
+<span class="material-symbols-outlined" data-icon="tune">tune</span>
+</button>
+<button class="ml-2 px-3 py-1.5 bg-primary text-on-primary font-label-md font-semibold rounded-lg hover:bg-primary-container transition-all flex items-center gap-1.5 shadow-sm cursor-pointer">
+<span class="material-symbols-outlined text-[16px] text-on-tertiary-container" data-icon="publish">publish</span>
+<span>Publier Révision</span>
+</button>
+<!-- Profile Avatar -->
+<div class="ml-3 pl-3 border-l border-outline-variant/30 flex items-center gap-2">
+<img class="w-8 h-8 rounded-full border border-on-tertiary-container/50 object-cover" data-alt="Portrait du Secrétaire Général Administrateur de VIZATI Academy, portant un costume bleu nuit institutionnel dans un bureau feutré baigné de lumière douce avec des boiseries et un sceau officiel doré en arrière-plan." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_C6X09k57gd5J6bYrZM21TH1ISBZFlXuvaXzKHvskscsfIUtcAxhB3YkhznFKGpXfEWYDPARDFdwaeorVY-URemKRGe2P-yCx35xrW5I88urWE2rfeUTBj14cQFA3sDcDw_YdHfuL2TMhzcHKEMaD6ZPv3T1ax0HwDjouD9KhYi6IsWsRWSILhSqXouEmqaklPbsMgXf9CZikHoDQ92kpOx6ZKag6cVe1yKduDy4"/>
+</div>
+</div>
+</div>
+</header>
+<!-- ========================================================================= -->
+<!-- MAIN WORKSPACE CANVAS                                                     -->
+<!-- ========================================================================= -->
+<main class="pl-72 flex-1 pb-16">
+<div class="max-w-[1440px] mx-auto px-8 py-8 space-y-6">
+<!-- 1. En-tête de page -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-2 border-b border-outline-variant/30">
+<div>
+<div class="flex items-center gap-2.5">
+<span class="px-2 py-0.5 rounded text-[11px] font-bold bg-on-tertiary-container/15 text-tertiary-container uppercase tracking-wider border border-on-tertiary-container/30">
+              Observatoire Régional UEMOA / CEMAC
+            </span>
+<span class="text-body-sm text-outline">Mis à jour il y a 3 minutes</span>
+</div>
+<h2 class="text-headline-xl font-headline-xl text-primary mt-1 tracking-tight">
+            Administration du Moteur de Veille Foncière &amp; Intelligence IA
+          </h2>
+<p class="text-body-md font-body-md text-on-surface-variant mt-1 max-w-4xl">
+            Surveillance algorithmique multi-sources, qualification doctrinale et orchestration des synthèses assistées par IA pour l'Afrique de l'Ouest &amp; Centrale.
+          </p>
+</div>
+<div class="flex items-center gap-3 shrink-0">
+<button class="px-4 py-2.5 border border-outline-variant/80 bg-surface-container-lowest text-primary font-label-md font-semibold rounded-lg hover:bg-surface-container-low transition-colors flex items-center gap-2 shadow-sm">
+<span class="material-symbols-outlined text-[18px] text-on-tertiary-container" data-icon="refresh">refresh</span>
+<span>Lancer collecte manuelle</span>
+</button>
+<button class="px-4 py-2.5 bg-primary-container text-on-primary font-label-md font-semibold rounded-lg hover:bg-primary transition-all flex items-center gap-2 shadow-sm">
+<span class="material-symbols-outlined text-[18px]" data-icon="add_circle">add_circle</span>
+<span>Configurer nouvelle source</span>
+</button>
+</div>
+</div>
+<!-- 2. Indicateurs Clés de Veille (5 KPI Cards au style épuré) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+<!-- KPI 1 -->
+<div class="bg-surface-container-lowest p-5 rounded-lg border border-outline-variant/40 shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="text-label-md font-label-md text-on-surface-variant uppercase tracking-wider">Sources Actives</span>
+<span class="p-1.5 rounded-md bg-surface-container text-primary material-symbols-outlined text-body-lg" data-icon="sensors">sensors</span>
+</div>
+<div class="mt-4">
+<div class="flex items-baseline gap-2">
+<span class="text-headline-lg font-headline-lg text-primary font-bold font-code-num">48</span>
+<span class="text-body-sm font-code-num text-emerald-700 font-medium">100% opérationnelles</span>
+</div>
+<p class="text-body-sm text-outline mt-1 truncate">J.O., BCEAO, Cadastres, Presse</p>
+</div>
+</div>
+<!-- KPI 2 -->
+<div class="bg-surface-container-lowest p-5 rounded-lg border border-outline-variant/40 shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="text-label-md font-label-md text-on-surface-variant uppercase tracking-wider">Informations Collectées</span>
+<span class="p-1.5 rounded-md bg-surface-container text-primary material-symbols-outlined text-body-lg" data-icon="feed">feed</span>
+</div>
+<div class="mt-4">
+<div class="flex items-baseline gap-2">
+<span class="text-headline-lg font-headline-lg text-primary font-bold font-code-num">1 240</span>
+<span class="text-body-sm font-code-num text-emerald-700 font-semibold bg-emerald-50 px-1.5 py-0.5 rounded">+24% ce mois</span>
+</div>
+<p class="text-body-sm text-outline mt-1 truncate">Dépêches &amp; textes légaux bruts</p>
+</div>
+</div>
+<!-- KPI 3 -->
+<div class="bg-surface-container-lowest p-5 rounded-lg border border-on-tertiary-container/30 bg-gradient-to-b from-surface-container-lowest to-surface-container-low shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="text-label-md font-label-md text-tertiary-container uppercase tracking-wider font-bold">À Examiner</span>
+<span class="p-1.5 rounded-md bg-tertiary-container/10 text-on-tertiary-container material-symbols-outlined text-body-lg" data-icon="priority_high">priority_high</span>
+</div>
+<div class="mt-4">
+<div class="flex items-baseline gap-2">
+<span class="text-headline-lg font-headline-lg text-primary font-bold font-code-num">14</span>
+<span class="text-body-sm text-on-tertiary-container font-medium">Qualification requise</span>
+</div>
+<p class="text-body-sm text-outline mt-1 truncate">Alertes réglementaires critiques</p>
+</div>
+</div>
+<!-- KPI 4 -->
+<div class="bg-surface-container-lowest p-5 rounded-lg border border-outline-variant/40 shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="text-label-md font-label-md text-on-surface-variant uppercase tracking-wider">Synthèses IA Générées</span>
+<span class="p-1.5 rounded-md bg-surface-container text-secondary material-symbols-outlined text-body-lg" data-icon="psychology">psychology</span>
+</div>
+<div class="mt-4">
+<div class="flex items-baseline gap-2">
+<span class="text-headline-lg font-headline-lg text-primary font-bold font-code-num">38</span>
+<span class="text-body-sm text-secondary font-medium">Fiches prêtes</span>
+</div>
+<p class="text-body-sm text-outline mt-1 truncate">Moteur NLP UEMOA GPT-4</p>
+</div>
+</div>
+<!-- KPI 5 -->
+<div class="bg-surface-container-lowest p-5 rounded-lg border border-outline-variant/40 shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="text-label-md font-label-md text-on-surface-variant uppercase tracking-wider">Publications Validées</span>
+<span class="p-1.5 rounded-md bg-surface-container text-emerald-800 material-symbols-outlined text-body-lg" data-icon="verified">verified</span>
+</div>
+<div class="mt-4">
+<div class="flex items-baseline gap-2">
+<span class="text-headline-lg font-headline-lg text-primary font-bold font-code-num">26</span>
+<span class="text-body-sm text-emerald-700 font-medium">En ligne</span>
+</div>
+<p class="text-body-sm text-outline mt-1 truncate">Média &amp; Espace Membres Pro</p>
+</div>
+</div>
+</div>
+<!-- 3. Navigation secondaire / Filtres thématiques par onglets -->
+<div class="border-b border-outline-variant/30 flex items-center justify-between gap-4 overflow-x-auto">
+<div class="flex items-center space-x-6 min-w-max">
+<button class="py-3 px-1 border-b-2 border-primary text-primary font-label-lg font-semibold flex items-center gap-2">
+<span>Vue d'ensemble &amp; Flux direct</span>
+<span class="w-2 h-2 rounded-full bg-emerald-600"></span>
+</button>
+<button class="py-3 px-1 border-b-2 border-transparent text-on-surface-variant hover:text-primary font-label-lg transition-colors">
+            Gestion des Sources (48)
+          </button>
+<button class="py-3 px-1 border-b-2 border-transparent text-on-surface-variant hover:text-primary font-label-lg transition-colors">
+            Informations Collectées (1 240)
+          </button>
+<button class="py-3 px-1 border-b-2 border-transparent text-on-surface-variant hover:text-primary font-label-lg transition-colors flex items-center gap-1.5">
+<span>Synthèses IA &amp; Brouillons (38)</span>
+<span class="px-1.5 py-0.2 bg-secondary/15 text-secondary text-label-xs rounded">IA</span>
+</button>
+<button class="py-3 px-1 border-b-2 border-transparent text-on-surface-variant hover:text-primary font-label-lg transition-colors">
+            Alertes &amp; Décrets Prioritaires
+          </button>
+<button class="py-3 px-1 border-b-2 border-transparent text-on-surface-variant hover:text-primary font-label-lg transition-colors">
+            Historique &amp; Logs
+          </button>
+</div>
+<div class="flex items-center gap-3 py-2 shrink-0">
+<span class="text-body-sm text-outline">Affichage :</span>
+<div class="inline-flex rounded-md border border-outline-variant/50 bg-surface-container-lowest p-0.5">
+<button class="p-1 rounded bg-surface-container text-primary" title="Vue table">
+<span class="material-symbols-outlined text-[18px]" data-icon="table_rows">table_rows</span>
+</button>
+<button class="p-1 rounded text-outline hover:text-primary" title="Vue partition">
+<span class="material-symbols-outlined text-[18px]" data-icon="splitscreen">splitscreen</span>
+</button>
+</div>
+</div>
+</div>
+<!-- 4. Disposition centrale en 2 colonnes asymétriques (65% / 35%) -->
+<div class="grid grid-cols-12 gap-6 items-start">
+<!-- COLONNE GAUCHE (65% - Tableau de flux d'informations collectées) -->
+<div class="col-span-12 lg:col-span-8 space-y-4">
+<!-- Barre de filtres avancés multi-critères -->
+<div class="bg-surface-container-lowest p-4 rounded-lg border border-outline-variant/40 shadow-sm space-y-3">
+<div class="flex flex-wrap items-center justify-between gap-3">
+<!-- Filtre Pays -->
+<div class="flex items-center gap-2">
+<span class="text-label-xs font-label-xs uppercase text-outline font-bold">Territoire :</span>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2.5 py-1 rounded bg-primary text-on-primary text-body-sm font-semibold cursor-pointer">Tous</span>
+<span class="px-2.5 py-1 rounded bg-surface-container-low text-on-surface hover:bg-surface-container text-body-sm cursor-pointer border border-outline-variant/30">Sénégal (SN)</span>
+<span class="px-2.5 py-1 rounded bg-surface-container-low text-on-surface hover:bg-surface-container text-body-sm cursor-pointer border border-outline-variant/30">Côte d'Ivoire (CI)</span>
+<span class="px-2.5 py-1 rounded bg-surface-container-low text-on-surface hover:bg-surface-container text-body-sm cursor-pointer border border-outline-variant/30">Bénin</span>
+<span class="px-2.5 py-1 rounded bg-surface-container-low text-on-surface hover:bg-surface-container text-body-sm cursor-pointer border border-outline-variant/30">Cameroun</span>
+<span class="px-2.5 py-1 rounded bg-surface-container-low text-on-surface hover:bg-surface-container text-body-sm cursor-pointer border border-outline-variant/30">Zone UEMOA</span>
+</div>
+</div>
+<!-- Statut Ingestion / Qualification -->
+<div class="flex items-center gap-2">
+<span class="text-label-xs font-label-xs uppercase text-outline font-bold">Statut :</span>
+<select class="text-body-sm bg-surface-container-low border border-outline-variant/50 rounded px-2.5 py-1 text-on-surface focus:ring-1 focus:ring-primary">
+<option>Tous les statuts</option>
+<option selected="">À examiner (14)</option>
+<option>Nouveau flux</option>
+<option>Synthèse générée (38)</option>
+<option>Validé &amp; Diffusé</option>
+<option>Rejeté</option>
+</select>
+</div>
+</div>
+<div class="flex flex-wrap items-center justify-between gap-3 pt-2 border-t border-outline-variant/20">
+<!-- Filtres Thématiques -->
+<div class="flex items-center gap-2 overflow-x-auto">
+<span class="text-label-xs font-label-xs uppercase text-outline font-bold">Thématique :</span>
+<button class="px-2.5 py-0.5 rounded text-body-sm bg-primary-container/10 text-primary-container font-medium border border-primary-container/20">Réglementation OHADA</button>
+<button class="px-2.5 py-0.5 rounded text-body-sm bg-surface-container-low text-on-surface-variant hover:text-on-surface border border-outline-variant/30">Cadastre &amp; Titres</button>
+<button class="px-2.5 py-0.5 rounded text-body-sm bg-surface-container-low text-on-surface-variant hover:text-on-surface border border-outline-variant/30">Fiscalité Foncière</button>
+<button class="px-2.5 py-0.5 rounded text-body-sm bg-surface-container-low text-on-surface-variant hover:text-on-surface border border-outline-variant/30">Grands Projets</button>
+<button class="px-2.5 py-0.5 rounded text-body-sm bg-surface-container-low text-on-surface-variant hover:text-on-surface border border-outline-variant/30">Marché Locatif</button>
+</div>
+<div class="text-body-sm text-outline">
+<span class="font-code-num font-semibold text-primary">12</span> dépêches filtrées
+              </div>
+</div>
+</div>
+<!-- TABLEAU DES DÉPÊCHES & FLUX DE VEILLE -->
+<div class="bg-surface-container-lowest rounded-lg border border-outline-variant/40 shadow-sm overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low/70 border-b border-outline-variant/30 text-label-xs font-label-xs uppercase text-on-surface-variant">
+<th class="py-3 px-4 w-8">
+<input class="rounded border-outline text-primary focus:ring-primary" type="checkbox"/>
+</th>
+<th class="py-3 px-3">Date / Territoire</th>
+<th class="py-3 px-4">Dépêche &amp; Source Officielle</th>
+<th class="py-3 px-3">Pertinence IA</th>
+<th class="py-3 px-3">Statut Éditorial</th>
+<th class="py-3 px-3 text-right">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/20 text-body-sm">
+<!-- Ligne 1 : Active (Sélectionnée) -->
+<tr class="bg-surface-container/60 hover:bg-surface-container transition-colors border-l-4 border-on-tertiary-container cursor-pointer">
+<td class="py-3.5 px-4">
+<input checked="" class="rounded border-outline text-primary focus:ring-primary" type="checkbox"/>
+</td>
+<td class="py-3.5 px-3 whitespace-nowrap">
+<div class="font-code-num text-body-sm font-semibold text-on-surface">Aujourd'hui, 11:24</div>
+<div class="inline-flex items-center gap-1 mt-0.5 px-1.5 py-0.2 rounded text-[11px] font-bold bg-amber-100 text-amber-900 border border-amber-300">
+<span>SN</span>
+<span class="text-amber-700">Dakar</span>
+</div>
+</td>
+<td class="py-3.5 px-4 max-w-sm">
+<div class="font-headline-sm text-headline-sm text-primary font-bold line-clamp-1">
+                        Décret présidentiel n° 2024-812 portant plafonnement d'urgence des loyers commerciaux à Dakar Plateau
+                      </div>
+<div class="flex items-center gap-2 mt-1 text-outline text-[12px]">
+<span class="inline-flex items-center gap-1 text-on-surface-variant font-medium">
+<span class="material-symbols-outlined text-[14px]" data-icon="gavel">gavel</span>
+                          Journal Officiel Sénégal
+                        </span>
+<span>•</span>
+<span>Ref: JO-SN-2024-B8</span>
+<span>•</span>
+<span class="text-tertiary-container font-semibold">Réglementation &amp; Baux</span>
+</div>
+</td>
+<td class="py-3.5 px-3 whitespace-nowrap">
+<div class="flex items-center gap-1.5">
+<span class="font-code-num font-bold text-primary">94%</span>
+<div class="w-12 h-1.5 bg-outline-variant/40 rounded-full overflow-hidden">
+<div class="bg-on-tertiary-container h-full" style="width: 94%"></div>
+</div>
+</div>
+<span class="text-[11px] text-outline font-medium">Index Prioritaire</span>
+</td>
+<td class="py-3.5 px-3 whitespace-nowrap">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-label-xs font-label-xs bg-amber-50 text-amber-900 border border-amber-300">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-600"></span>
+                        À examiner
+                      </span>
+</td>
+<td class="py-3.5 px-3 text-right whitespace-nowrap">
+<button class="px-2.5 py-1 bg-primary text-on-primary rounded text-[12px] font-semibold hover:bg-primary-container transition-colors inline-flex items-center gap-1 shadow-sm">
+<span>Inspecter</span>
+<span class="material-symbols-outlined text-[14px]" data-icon="chevron_right">chevron_right</span>
+</button>
+</td>
+</tr>
+<!-- Ligne 2 -->
+<tr class="hover:bg-surface-container-low transition-colors cursor-pointer">
+<td class="py-3.5 px-4">
+<input class="rounded border-outline text-primary focus:ring-primary" type="checkbox"/>
+</td>
+<td class="py-3.5 px-3 whitespace-nowrap">
+<div class="font-code-num text-body-sm font-semibold text-on-surface">Aujourd'hui, 09:15</div>
+<div class="inline-flex items-center gap-1 mt-0.5 px-1.5 py-0.2 rounded text-[11px] font-bold bg-orange-100 text-orange-900 border border-orange-300">
+<span>CI</span>
+<span class="text-orange-700">Abidjan</span>
+</div>
+</td>
+<td class="py-3.5 px-4 max-w-sm">
+<div class="font-headline-sm text-headline-sm text-on-surface font-semibold line-clamp-1 hover:text-primary">
+                        Mise en application du Titre Foncier Numérique Unique (TFNU) en zone lagunaire
+                      </div>
+<div class="flex items-center gap-2 mt-1 text-outline text-[12px]">
+<span class="inline-flex items-center gap-1 text-on-surface-variant font-medium">
+<span class="material-symbols-outlined text-[14px]" data-icon="account_balance">account_balance</span>
+                          Ministère de la Construction CI
+                        </span>
+<span>•</span>
+<span>Cadastre &amp; Titres</span>
+</div>
+</td>
+<td class="py-3.5 px-3 whitespace-nowrap">
+<div class="flex items-center gap-1.5">
+<span class="font-code-num font-bold text-primary">89%</span>
+<div class="w-12 h-1.5 bg-outline-variant/40 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full" style="width: 89%"></div>
+</div>
+</div>
+<span class="text-[11px] text-outline font-medium">Cadastral High</span>
+</td>
+<td class="py-3.5 px-3 whitespace-nowrap">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-label-xs font-label-xs bg-blue-50 text-blue-900 border border-blue-200">
+<span class="w-1.5 h-1.5 rounded-full bg-blue-600"></span>
+                        Synthèse IA prête
+                      </span>
+</td>
+<td class="py-3.5 px-3 text-right whitespace-nowrap">
+<button class="p-1.5 text-on-surface-variant hover:text-primary hover:bg-surface-container rounded transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="visibility">visibility</span>
+</button>
+</td>
+</tr>
+<!-- Ligne 3 -->
+<tr class="hover:bg-surface-container-low transition-colors cursor-pointer">
+<td class="py-3.5 px-4">
+<input class="rounded border-outline text-primary focus:ring-primary" type="checkbox"/>
+</td>
+<td class="py-3.5 px-3 whitespace-nowrap">
+<div class="font-code-num text-body-sm font-semibold text-on-surface">Hier, 17:40</div>
+<div class="inline-flex items-center gap-1 mt-0.5 px-1.5 py-0.2 rounded text-[11px] font-bold bg-slate-100 text-slate-800 border border-slate-300">
+<span>UEMOA</span>
+<span class="text-slate-600">Banque Centrale</span>
+</div>
+</td>
+<td class="py-3.5 px-4 max-w-sm">
+<div class="font-headline-sm text-headline-sm text-on-surface font-semibold line-clamp-1 hover:text-primary">
+                        Circulaire BCEAO n°04-2024 : Normes prudentielles sur les créances hypothécaires bancaires
+                      </div>
+<div class="flex items-center gap-2 mt-1 text-outline text-[12px]">
+<span class="inline-flex items-center gap-1 text-on-surface-variant font-medium">
+<span class="material-symbols-outlined text-[14px]" data-icon="payments">payments</span>
+                          BCEAO Central Portal
+                        </span>
+<span>•</span>
+<span>Financement &amp; Hypothèques</span>
+</div>
+</td>
+<td class="py-3.5 px-3 whitespace-nowrap">
+<div class="flex items-center gap-1.5">
+<span class="font-code-num font-bold text-primary">91%</span>
+<div class="w-12 h-1.5 bg-outline-variant/40 rounded-full overflow-hidden">
+<div class="bg-primary h-full" style="width: 91%"></div>
+</div>
+</div>
+<span class="text-[11px] text-outline font-medium">Bancaire / Macro</span>
+</td>
+<td class="py-3.5 px-3 whitespace-nowrap">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-label-xs font-label-xs bg-emerald-50 text-emerald-900 border border-emerald-300">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
+                        Validé &amp; Diffusé
+                      </span>
+</td>
+<td class="py-3.5 px-3 text-right whitespace-nowrap">
+<button class="p-1.5 text-on-surface-variant hover:text-primary hover:bg-surface-container rounded transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="open_in_new">open_in_new</span>
+</button>
+</td>
+</tr>
+<!-- Ligne 4 -->
+<tr class="hover:bg-surface-container-low transition-colors cursor-pointer">
+<td class="py-3.5 px-4">
+<input class="rounded border-outline text-primary focus:ring-primary" type="checkbox"/>
+</td>
+<td class="py-3.5 px-3 whitespace-nowrap">
+<div class="font-code-num text-body-sm font-semibold text-on-surface">Hier, 14:12</div>
+<div class="inline-flex items-center gap-1 mt-0.5 px-1.5 py-0.2 rounded text-[11px] font-bold bg-amber-100 text-amber-900 border border-amber-300">
+<span>SN</span>
+<span class="text-amber-700">Diamniadio</span>
+</div>
+</td>
+<td class="py-3.5 px-4 max-w-sm">
+<div class="font-headline-sm text-headline-sm text-on-surface font-semibold line-clamp-1 hover:text-primary">
+                        Baromètre trimestriel de l'ANSD : Hausse de 6,8% des matériaux de construction en gros
+                      </div>
+<div class="flex items-center gap-2 mt-1 text-outline text-[12px]">
+<span class="inline-flex items-center gap-1 text-on-surface-variant font-medium">
+<span class="material-symbols-outlined text-[14px]" data-icon="query_stats">query_stats</span>
+                          Baromètre ANSD
+                        </span>
+<span>•</span>
+<span>Indices Marché &amp; Coûts</span>
+</div>
+</td>
+<td class="py-3.5 px-3 whitespace-nowrap">
+<div class="flex items-center gap-1.5">
+<span class="font-code-num font-bold text-primary">78%</span>
+<div class="w-12 h-1.5 bg-outline-variant/40 rounded-full overflow-hidden">
+<div class="bg-outline h-full" style="width: 78%"></div>
+</div>
+</div>
+<span class="text-[11px] text-outline font-medium">Statistique</span>
+</td>
+<td class="py-3.5 px-3 whitespace-nowrap">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-label-xs font-label-xs bg-blue-50 text-blue-900 border border-blue-200">
+<span class="w-1.5 h-1.5 rounded-full bg-blue-600"></span>
+                        Synthèse IA prête
+                      </span>
+</td>
+<td class="py-3.5 px-3 text-right whitespace-nowrap">
+<button class="p-1.5 text-on-surface-variant hover:text-primary hover:bg-surface-container rounded transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="visibility">visibility</span>
+</button>
+</td>
+</tr>
+<!-- Ligne 5 -->
+<tr class="hover:bg-surface-container-low transition-colors cursor-pointer">
+<td class="py-3.5 px-4">
+<input class="rounded border-outline text-primary focus:ring-primary" type="checkbox"/>
+</td>
+<td class="py-3.5 px-3 whitespace-nowrap">
+<div class="font-code-num text-body-sm font-semibold text-on-surface">18 Oct, 16:50</div>
+<div class="inline-flex items-center gap-1 mt-0.5 px-1.5 py-0.2 rounded text-[11px] font-bold bg-green-100 text-green-900 border border-green-300">
+<span>BJ</span>
+<span class="text-green-700">Cotonou</span>
+</div>
+</td>
+<td class="py-3.5 px-4 max-w-sm">
+<div class="font-headline-sm text-headline-sm text-on-surface font-semibold line-clamp-1 hover:text-primary">
+                        Dématérialisation intégrale des attestations de recasement à Abomey-Calavi
+                      </div>
+<div class="flex items-center gap-2 mt-1 text-outline text-[12px]">
+<span class="inline-flex items-center gap-1 text-on-surface-variant font-medium">
+<span class="material-symbols-outlined text-[14px]" data-icon="feed">feed</span>
+                          Agence Nationale du Domaine Bénin
+                        </span>
+<span>•</span>
+<span>Foncier &amp; Notariat</span>
+</div>
+</td>
+<td class="py-3.5 px-3 whitespace-nowrap">
+<div class="flex items-center gap-1.5">
+<span class="font-code-num font-bold text-primary">82%</span>
+<div class="w-12 h-1.5 bg-outline-variant/40 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full" style="width: 82%"></div>
+</div>
+</div>
+<span class="text-[11px] text-outline font-medium">Cadastral</span>
+</td>
+<td class="py-3.5 px-3 whitespace-nowrap">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-label-xs font-label-xs bg-amber-50 text-amber-900 border border-amber-300">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-600"></span>
+                        À examiner
+                      </span>
+</td>
+<td class="py-3.5 px-3 text-right whitespace-nowrap">
+<button class="p-1.5 text-on-surface-variant hover:text-primary hover:bg-surface-container rounded transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="visibility">visibility</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination Bar -->
+<div class="p-3.5 border-t border-outline-variant/30 bg-surface-container-lowest flex items-center justify-between text-body-sm text-on-surface-variant">
+<div>Affichage de <span class="font-semibold text-primary">1 à 5</span> sur <span class="font-semibold text-primary">1 240</span> dépêches enregistrées</div>
+<div class="flex items-center gap-2">
+<button class="px-3 py-1 border border-outline-variant/50 rounded bg-surface-container-low hover:bg-surface-container disabled:opacity-50 text-label-md" disabled="">Précédent</button>
+<span class="px-2 font-code-num font-bold text-primary">1 / 248</span>
+<button class="px-3 py-1 border border-outline-variant/50 rounded bg-surface-container-low hover:bg-surface-container text-label-md">Suivant</button>
+</div>
+</div>
+</div>
+<!-- Module Ingestion Logs & Santé des Connecteurs -->
+<div class="bg-surface-container-lowest p-5 rounded-lg border border-outline-variant/40 shadow-sm">
+<div class="flex items-center justify-between mb-3">
+<h4 class="font-headline-sm text-headline-sm text-primary flex items-center gap-2">
+<span class="material-symbols-outlined text-on-tertiary-container" data-icon="hub">hub</span>
+                Santé des Connecteurs Algorithmiques &amp; Harvesters
+              </h4>
+<span class="text-body-sm text-outline">Latence moyenne: 182ms</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+<div class="p-3 bg-surface-container-low rounded border border-outline-variant/20 flex items-center justify-between">
+<div>
+<div class="font-label-md text-label-md text-on-surface font-semibold">Flux J.O. Sénégal (SNDIGIT)</div>
+<div class="text-[11px] text-outline font-code-num">Dernier crawl: 11:24:00</div>
+</div>
+<span class="w-2.5 h-2.5 rounded-full bg-emerald-600" title="Synchronisé"></span>
+</div>
+<div class="p-3 bg-surface-container-low rounded border border-outline-variant/20 flex items-center justify-between">
+<div>
+<div class="font-label-md text-label-md text-on-surface font-semibold">Guichet Unique Foncier CI</div>
+<div class="text-[11px] text-outline font-code-num">Dernier crawl: 10:55:12</div>
+</div>
+<span class="w-2.5 h-2.5 rounded-full bg-emerald-600" title="Synchronisé"></span>
+</div>
+<div class="p-3 bg-surface-container-low rounded border border-outline-variant/20 flex items-center justify-between">
+<div>
+<div class="font-label-md text-label-md text-on-surface font-semibold">Gazette BCEAO &amp; UEMOA</div>
+<div class="text-[11px] text-outline font-code-num">Dernier crawl: 08:00:22</div>
+</div>
+<span class="w-2.5 h-2.5 rounded-full bg-emerald-600" title="Synchronisé"></span>
+</div>
+</div>
+</div>
+</div>
+<!-- COLONNE DROITE (35% - Tiroir d'inspection 'Assistant IA & Qualification') -->
+<div class="col-span-12 lg:col-span-4 space-y-4">
+<div class="bg-surface-container-lowest rounded-lg border-2 border-primary-container/20 shadow-md p-6 sticky top-24">
+<!-- En-tête Tiroir IA -->
+<div class="flex items-center justify-between pb-4 border-b border-outline-variant/30">
+<div class="flex items-center gap-2">
+<span class="p-1.5 rounded-md bg-primary-container text-on-primary material-symbols-outlined text-body-lg" data-icon="auto_awesome">auto_awesome</span>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold">Assistant IA &amp; Qualification</h3>
+<p class="text-[11px] font-label-xs uppercase text-on-tertiary-container font-semibold tracking-wider">VIZATI Engine v4 (GPT-4 / Juridique UEMOA)</p>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded text-[11px] font-bold bg-amber-50 text-amber-900 border border-amber-300">
+                À Examiner
+              </span>
+</div>
+<!-- Corps de la dépêche inspectée -->
+<div class="mt-4 space-y-4">
+<div>
+<span class="text-label-xs font-label-xs uppercase tracking-wider text-outline font-bold">Dépêche Sélectionnée</span>
+<h4 class="font-headline-sm text-headline-sm text-primary font-bold mt-1 leading-snug">
+                  Décret présidentiel n° 2024-812 portant plafonnement d'urgence des loyers commerciaux à Dakar Plateau
+                </h4>
+</div>
+<!-- Metadata Grid -->
+<div class="grid grid-cols-2 gap-2 p-3 bg-surface-container-low rounded-lg border border-outline-variant/20 text-body-sm">
+<div>
+<span class="text-label-xs text-outline uppercase font-semibold block">Territoire</span>
+<span class="font-medium text-primary flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[15px] text-amber-800" data-icon="location_on">location_on</span>
+                    Sénégal (Dakar)
+                  </span>
+</div>
+<div>
+<span class="text-label-xs text-outline uppercase font-semibold block">Catégorie</span>
+<span class="font-medium text-primary mt-0.5 block truncate">Réglementation &amp; Baux</span>
+</div>
+<div>
+<span class="text-label-xs text-outline uppercase font-semibold block">Impact Juridique</span>
+<span class="inline-flex items-center px-1.5 py-0.5 rounded text-[11px] font-bold bg-error-container text-on-error-container mt-0.5">
+                    Majeur / Rétroactif
+                  </span>
+</div>
+<div>
+<span class="text-label-xs text-outline uppercase font-semibold block">Indice de Confiance IA</span>
+<span class="font-code-num font-bold text-primary mt-0.5 block">94% (High Precision)</span>
+</div>
+</div>
+<!-- Synthèse Automatique Générée par l'IA -->
+<div class="bg-surface-container/40 p-4 rounded-lg border border-outline-variant/30 space-y-2.5">
+<div class="flex items-center justify-between">
+<span class="text-label-sm font-label-lg text-primary font-bold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-on-tertiary-container text-[16px]" data-icon="summarize">summarize</span>
+                    Synthèse Doctrinale IA (3 Points Clés)
+                  </span>
+<span class="text-[11px] text-outline font-code-num">Généré en 1.4s</span>
+</div>
+<ul class="space-y-2 text-body-sm text-on-surface leading-relaxed">
+<li class="flex items-start gap-2">
+<span class="text-on-tertiary-container font-bold">•</span>
+<span><strong>Gel immédiat des révisions triennales :</strong> Blocage temporaire des augmentations de loyers professionnels dans la commune de Dakar Plateau pour une durée de 12 mois renouvelable.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="text-on-tertiary-container font-bold">•</span>
+<span><strong>Plafonnement au m² utile :</strong> Fixation d'une grille barémique contraignante sous peine de sanctions administratives et pénales pour les bailleurs institutionnels.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="text-on-tertiary-container font-bold">•</span>
+<span><strong>Voie de recours accélérée :</strong> Mise en place d'une Commission Spéciale de conciliation rattachée au Tribunal de Grande Instance Hors Classe de Dakar.</span>
+</li>
+</ul>
+</div>
+<!-- Mots-clés extraits -->
+<div>
+<span class="text-label-xs font-label-xs uppercase tracking-wider text-outline font-bold">Mots-clés &amp; Entités Juridiques</span>
+<div class="flex flex-wrap gap-1.5 mt-1.5">
+<span class="px-2 py-0.5 bg-surface-container text-primary font-code-num text-[11px] rounded font-medium border border-outline-variant/30">#DakarPlateau</span>
+<span class="px-2 py-0.5 bg-surface-container text-primary font-code-num text-[11px] rounded font-medium border border-outline-variant/30">#BauxCommerciaux</span>
+<span class="px-2 py-0.5 bg-surface-container text-primary font-code-num text-[11px] rounded font-medium border border-outline-variant/30">#Plafonnement</span>
+<span class="px-2 py-0.5 bg-surface-container text-primary font-code-num text-[11px] rounded font-medium border border-outline-variant/30">#ANSD</span>
+<span class="px-2 py-0.5 bg-surface-container text-primary font-code-num text-[11px] rounded font-medium border border-outline-variant/30">#Décret2024</span>
+</div>
+</div>
+<!-- Contenus similaires liés dans la bibliothèque VIZATI -->
+<div>
+<span class="text-label-xs font-label-xs uppercase tracking-wider text-outline font-bold">Contenus Connexes (Académie &amp; CMS)</span>
+<div class="mt-2 space-y-1.5">
+<a class="p-2 rounded bg-surface-container-low hover:bg-surface-container border border-outline-variant/20 flex items-center justify-between text-body-sm transition-colors group" href="#">
+<div class="flex items-center gap-2 truncate">
+<span class="material-symbols-outlined text-primary text-[16px]" data-icon="article">article</span>
+<span class="truncate font-medium text-on-surface group-hover:text-primary">Analyse : Droit des Baux Commerciaux OHADA (2023)</span>
+</div>
+<span class="material-symbols-outlined text-[14px] text-outline" data-icon="arrow_forward">arrow_forward</span>
+</a>
+<a class="p-2 rounded bg-surface-container-low hover:bg-surface-container border border-outline-variant/20 flex items-center justify-between text-body-sm transition-colors group" href="#">
+<div class="flex items-center gap-2 truncate">
+<span class="material-symbols-outlined text-on-tertiary-container text-[16px]" data-icon="school">school</span>
+<span class="truncate font-medium text-on-surface group-hover:text-primary">Module Executive : Fiscalité Immobilière Dakar</span>
+</div>
+<span class="material-symbols-outlined text-[14px] text-outline" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Lien externe et source officielle -->
+<div class="pt-1 flex items-center justify-between text-body-sm border-t border-outline-variant/20">
+<a class="inline-flex items-center gap-1.5 text-primary font-semibold hover:underline" href="#">
+<span class="material-symbols-outlined text-[16px]" data-icon="picture_as_pdf">picture_as_pdf</span>
+<span>Consulter le Texte Officiel (PDF J.O.)</span>
+</a>
+<span class="text-outline text-[12px]">Source certifiée SSL</span>
+</div>
+<!-- Actions de Gouvernance Humaine Obligatoire -->
+<div class="pt-3 border-t border-outline-variant/30 space-y-2">
+<button class="w-full py-2.5 px-4 bg-primary text-on-primary font-label-md font-bold rounded-lg hover:bg-primary-container transition-all flex items-center justify-center gap-2 shadow-sm active:scale-98">
+<span class="material-symbols-outlined text-[18px] text-on-tertiary-container" data-icon="verified_user">verified_user</span>
+<span>Valider &amp; Générer synthèse publique</span>
+</button>
+<div class="grid grid-cols-2 gap-2">
+<button class="py-2 px-3 border border-outline-variant/80 bg-surface-container-lowest text-on-surface font-label-md font-semibold rounded-lg hover:bg-surface-container-low transition-colors flex items-center justify-center gap-1.5 text-[12px]">
+<span class="material-symbols-outlined text-[16px]" data-icon="edit">edit</span>
+<span>Modifier synthèse</span>
+</button>
+<button class="py-2 px-3 border border-outline-variant/80 bg-surface-container-lowest text-primary font-label-md font-semibold rounded-lg hover:bg-surface-container-low transition-colors flex items-center justify-center gap-1.5 text-[12px]">
+<span class="material-symbols-outlined text-[16px]" data-icon="post_add">post_add</span>
+<span>Vers Brouillon CMS</span>
+</button>
+</div>
+<button class="w-full py-1.5 px-3 border border-error/40 text-error hover:bg-error-container/20 font-label-md font-semibold rounded-lg transition-colors flex items-center justify-center gap-1.5 text-[12px]">
+<span class="material-symbols-outlined text-[16px]" data-icon="delete">delete</span>
+<span>Rejeter la dépêche</span>
+</button>
+</div>
+<!-- Mention Légale de Réassurance -->
+<div class="bg-surface-container-low/70 p-2.5 rounded border border-outline-variant/30 text-center">
+<p class="text-[11px] font-body-sm text-outline leading-tight">
+<span class="font-bold text-on-surface-variant">Conformité Déontologique :</span> Toute publication requiert l'approbation formelle d'un juriste ou éditeur VIZATI accrédité avant réplication sur l'espace pro.
+                </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

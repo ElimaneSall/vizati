@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-surface-bright" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Profil & Paramètres | VIZATI Learner OS</title>
+<!-- Fonts & Material Icons -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Manrope:wght@100..900&display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS via CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "primary-fixed-dim": "#b2c8ea",
+            "error": "#ba1a1a",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-highest": "#d9e3fb",
+            "on-primary-fixed": "#031c37",
+            "on-background": "#111c2d",
+            "on-primary-container": "#7d93b3",
+            "surface-dim": "#d0daf2",
+            "on-tertiary-fixed-variant": "#5f4100",
+            "on-secondary-fixed": "#001d37",
+            "primary": "#00162f",
+            "tertiary-fixed": "#ffdeab",
+            "secondary-fixed": "#d2e4ff",
+            "on-surface-variant": "#44474d",
+            "on-surface": "#111c2d",
+            "on-tertiary": "#ffffff",
+            "tertiary": "#201300",
+            "on-secondary-fixed-variant": "#2a486a",
+            "on-secondary-container": "#405d80",
+            "primary-container": "#142b46",
+            "surface-bright": "#f9f9ff",
+            "on-tertiary-container": "#b38a44",
+            "surface-container": "#e8eeff",
+            "secondary": "#436083",
+            "on-primary": "#ffffff",
+            "outline": "#74777e",
+            "on-primary-fixed-variant": "#324864",
+            "surface-variant": "#d9e3fb",
+            "on-error-container": "#93000a",
+            "on-secondary": "#ffffff",
+            "surface": "#f9f9ff",
+            "surface-tint": "#4a607d",
+            "outline-variant": "#c4c6ce",
+            "tertiary-fixed-dim": "#edbf73",
+            "primary-fixed": "#d3e3ff",
+            "on-tertiary-fixed": "#271900",
+            "surface-container-low": "#f0f3ff",
+            "secondary-fixed-dim": "#abc9f1",
+            "background": "#f9f9ff",
+            "tertiary-container": "#3a2600",
+            "inverse-primary": "#b2c8ea",
+            "surface-container-high": "#dfe8ff",
+            "inverse-surface": "#273143",
+            "inverse-on-surface": "#ecf0ff",
+            "error-container": "#ffdad6",
+            "on-error": "#ffffff",
+            "secondary-container": "#b9d7ff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "margin": "3rem",
+            "space-xs": "0.25rem",
+            "space-md": "1rem",
+            "space-lg": "1.5rem",
+            "space-sm": "0.5rem",
+            "gutter": "1.5rem",
+            "margin-mobile": "1rem",
+            "gutter-mobile": "1rem",
+            "space-2xl": "4rem",
+            "space-xl": "2.5rem"
+          },
+          "fontFamily": {
+            "label-lg": ["Inter"],
+            "headline-sm": ["Manrope"],
+            "body-xl": ["Inter"],
+            "code-num": ["Inter"],
+            "body-lg": ["Inter"],
+            "headline-lg": ["Manrope"],
+            "headline-xl": ["Manrope"],
+            "body-sm": ["Inter"],
+            "display-hero": ["Manrope"],
+            "label-md": ["Inter"],
+            "body-md": ["Inter"],
+            "headline-xl-mobile": ["Manrope"],
+            "label-xs": ["Inter"],
+            "display-hero-mobile": ["Manrope"],
+            "headline-md": ["Manrope"]
+          },
+          "fontSize": {
+            "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+            "headline-sm": ["18px", { "lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "600" }],
+            "body-xl": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "code-num": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "headline-xl": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "display-hero": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "headline-xl-mobile": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+            "label-xs": ["10px", { "lineHeight": "14px", "letterSpacing": "0.06em", "fontWeight": "700" }],
+            "display-hero-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+            "headline-md": ["22px", { "lineHeight": "30px", "letterSpacing": "-0.01em", "fontWeight": "600" }]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-surface-bright text-on-surface antialiased h-full font-body-md text-body-md">
+<!-- ========================================================================= -->
+<!-- SHARED COMPONENT: SideNavBar                                              -->
+<!-- ========================================================================= -->
+<aside class="fixed top-0 left-0 h-screen w-64 md:w-72 flex flex-col bg-surface-container-lowest border-r border-outline-variant shadow-sm z-40">
+<div class="flex flex-col h-full justify-between p-space-md z-40">
+<!-- Brand & Academic Insignia -->
+<div>
+<div class="flex items-center gap-space-sm px-space-md py-space-sm mb-space-md">
+<div class="w-10 h-10 rounded-lg bg-primary-container text-tertiary-fixed-dim flex items-center justify-center font-headline-sm text-headline-sm font-bold shadow-sm border border-tertiary-fixed-dim/30">
+<span class="material-symbols-outlined text-[24px]">account_balance</span>
+</div>
+<div>
+<div class="font-headline-md text-headline-md tracking-wider font-bold text-primary">VIZATI</div>
+<div class="font-label-xs text-label-xs text-secondary tracking-widest uppercase">Institut & Intelligence</div>
+</div>
+</div>
+<!-- Navigation Tabs: Active mapped to 'Mon profil' -->
+<nav class="space-y-1">
+<!-- Vue d'ensemble -->
+<a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-md text-label-md hover:text-on-surface hover:bg-surface-container transition-colors duration-150" href="#">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+<span>Vue d'ensemble</span>
+</a>
+<!-- Mes formations -->
+<a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-md text-label-md hover:text-on-surface hover:bg-surface-container transition-colors duration-150" href="#">
+<span class="material-symbols-outlined text-[20px]">school</span>
+<span>Mes formations</span>
+</a>
+<!-- Catalogue -->
+<a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-md text-label-md hover:text-on-surface hover:bg-surface-container transition-colors duration-150" href="#">
+<span class="material-symbols-outlined text-[20px]">auto_stories</span>
+<span>Catalogue</span>
+</a>
+<!-- Mon calendrier -->
+<a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-md text-label-md hover:text-on-surface hover:bg-surface-container transition-colors duration-150" href="#">
+<span class="material-symbols-outlined text-[20px]">calendar_today</span>
+<span>Mon calendrier</span>
+</a>
+<!-- Mes évaluations -->
+<a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-md text-label-md hover:text-on-surface hover:bg-surface-container transition-colors duration-150" href="#">
+<span class="material-symbols-outlined text-[20px]">fact_check</span>
+<span>Mes évaluations</span>
+</a>
+<!-- Mes certificats -->
+<a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-md text-label-md hover:text-on-surface hover:bg-surface-container transition-colors duration-150" href="#">
+<span class="material-symbols-outlined text-[20px]">verified</span>
+<span>Mes certificats</span>
+</a>
+<!-- Bibliothèque -->
+<a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-md text-label-md hover:text-on-surface hover:bg-surface-container transition-colors duration-150" href="#">
+<span class="material-symbols-outlined text-[20px]">local_library</span>
+<span>Bibliothèque</span>
+</a>
+<!-- Mon profil (ACTIVE) -->
+<a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg bg-surface-container-high text-primary font-bold border-l-4 border-tertiary-fixed-dim" href="#">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">account_circle</span>
+<span>Mon profil</span>
+</a>
+</nav>
+</div>
+<!-- Footer & Pro CTA -->
+<div class="space-y-3 pt-space-md border-t border-outline-variant/60">
+<!-- Pro Portal Access Box -->
+<div class="p-space-md bg-surface-container-low rounded-xl border border-secondary-fixed">
+<div class="flex items-center gap-2 mb-1">
+<span class="material-symbols-outlined text-tertiary-fixed-dim text-[18px]">verified_user</span>
+<span class="font-label-xs text-label-xs uppercase tracking-wider text-primary font-bold">Foncier & SaaS</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-2">Accès aux indices fonciers & cadastres régionaux.</p>
+<a class="inline-flex items-center justify-between w-full px-3 py-1.5 bg-primary-container text-surface-bright rounded text-label-md font-label-md hover:bg-primary transition-colors" href="#">
+<span>Espace Pro & Intelligence</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+<!-- Déconnexion -->
+<a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-error font-label-md text-label-md hover:bg-error-container/20 transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">logout</span>
+<span>Déconnexion</span>
+</a>
+</div>
+</div>
+</aside>
+<!-- ========================================================================= -->
+<!-- SHARED COMPONENT: TopNavBar                                               -->
+<!-- ========================================================================= -->
+<header class="flex justify-between items-center w-full pl-72 pr-space-lg py-space-sm fixed top-0 right-0 z-30 bg-surface-container-lowest border-b border-outline-variant shadow-sm h-16">
+<!-- Left: Search & Breadcrumb Identity -->
+<div class="flex items-center gap-space-lg">
+<div class="font-headline-md text-headline-md font-extrabold text-primary hidden lg:block">
+        VIZATI Learner OS
+      </div>
+<!-- Institutional Search Bar -->
+<div class="relative w-64 md:w-80">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-[18px] text-outline">search</span>
+<input class="w-full bg-surface-container-low border border-outline-variant text-body-md font-body-md rounded-lg pl-9 pr-3 py-1.5 focus:border-primary-container focus:ring-1 focus:ring-primary-container focus:outline-none placeholder:text-outline" placeholder="Rechercher dossiers, cours, textes OHADA..." type="text"/>
+</div>
+</div>
+<!-- Center Navigation Links -->
+<nav class="hidden xl:flex items-center gap-space-lg">
+<a class="text-on-surface-variant font-label-md text-label-md hover:text-primary pb-1" href="#">Institut & Programmes</a>
+<a class="text-on-surface-variant font-label-md text-label-md hover:text-primary pb-1" href="#">Espace Pro & Intelligence</a>
+</nav>
+<!-- Right Controls: SSL Seal, Actions & Avatar -->
+<div class="flex items-center gap-space-md">
+<!-- Trailing Primary Action: SSL Badge -->
+<div class="hidden sm:flex items-center gap-1.5 px-2.5 py-1 bg-surface-container-low text-secondary rounded border border-outline-variant/60 font-label-xs text-label-xs">
+<span class="material-symbols-outlined text-[15px] text-[#263B35]">lock</span>
+<span>Session Chiffrée SSL</span>
+</div>
+<!-- Icon Actions -->
+<div class="flex items-center gap-1">
+<button class="p-2 text-on-surface-variant hover:text-primary hover:bg-surface-container rounded-lg transition-colors relative" title="Notifications" type="button">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 bg-tertiary-fixed-dim rounded-full"></span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-primary hover:bg-surface-container rounded-lg transition-colors" title="Aide & Documentation" type="button">
+<span class="material-symbols-outlined text-[20px]">help_outline</span>
+</button>
+</div>
+<div class="h-6 w-[1px] bg-outline-variant"></div>
+<!-- Profile Avatar Block -->
+<div class="flex items-center gap-2.5 pl-1 cursor-pointer">
+<img alt="Portrait professionnel d'Aminata Diallo" class="w-9 h-9 rounded-full object-cover border border-tertiary-fixed-dim/80 shadow-sm" data-alt="Portrait professionnel d'Aminata Diallo, cadre dirigeante sénégalaise en tailleur d'affaires bleu marine raffiné, assise dans un bureau d'investissement moderne et baigné de lumière naturelle à Dakar, regard bienveillant et assuré face caméra, éclairage de studio feutré, esthétique corporate haut de gamme." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdPeNk7aCA-Tl1KwmxxvpDpL9qBR_y8WxtU7meiAbXnAabo-28vp5PzrbRJS1-1K3CBnw1YZ-dExr8TqQAoVDWszElkbVbAzMojdzQXGT00eJs59Wm85AXU2e_LdlF0Y7hLYvX7SyRZeNzQNZtifGLmuYGY495yzQMk0fvtdARyZXZoR86sV9MnVPSfZfUyB8Bz0ygsWXcOMNZnnJXogq548a6JmjwkHHXs3bmteI"/>
+<div class="hidden md:block text-left">
+<div class="font-label-md text-label-md text-primary font-bold leading-tight">Aminata Diallo</div>
+<div class="font-label-xs text-label-xs text-secondary">Groupe Foncier de l'Union</div>
+</div>
+</div>
+</div>
+</header>
+<!-- ========================================================================= -->
+<!-- MAIN WORKSPACE CANVAS                                                     -->
+<!-- ========================================================================= -->
+<main class="pl-64 md:pl-72 pt-16 min-h-screen">
+<div class="max-w-[1280px] mx-auto px-6 py-8">
+<!-- Breadcrumbs & Institutional Category Stamp -->
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-2 font-label-md text-label-md text-secondary">
+<a class="hover:text-primary transition-colors" href="#">Espace Apprenant</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-primary font-semibold">Profil & Paramètres</span>
+</div>
+<div class="flex items-center gap-2 px-2.5 py-1 bg-surface-container-high rounded text-primary font-label-xs text-label-xs border border-tertiary-fixed-dim/40">
+<span class="material-symbols-outlined text-[14px] text-tertiary-fixed-dim">workspace_premium</span>
+<span>Accréditation CEDE-OHADA Validée</span>
+</div>
+</div>
+<!-- 1. HEADER DE PROFIL : CARTE DE RÉSUMÉ APPRENANT -->
+<section class="bg-surface-container-lowest border border-outline-variant/80 rounded-xl p-6 mb-8 shadow-sm relative overflow-hidden">
+<!-- Subtle Academic Geometric Watermark Texture -->
+<div class="absolute right-0 top-0 translate-x-12 -translate-y-8 pointer-events-none opacity-5">
+<span class="material-symbols-outlined text-[240px] text-primary">account_balance</span>
+</div>
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 relative z-10">
+<div class="flex flex-col sm:flex-row items-start sm:items-center gap-6">
+<!-- Large Avatar Frame with Verification Halo -->
+<div class="relative">
+<div class="w-24 h-24 rounded-xl overflow-hidden border-2 border-tertiary-fixed-dim shadow-md bg-surface-container">
+<img alt="Portrait officiel d'Aminata Diallo" class="w-full h-full object-cover" data-alt="Photographie officielle de portrait d'Aminata Diallo en haute résolution, femme africaine élégante de 38 ans, directrice foncière, expression sereine et prestigieuse, fond architectural contemporain minimaliste avec boiseries et verrières, lumière d'ambiance douce et contrastes précis." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCoqOji50fhFMnb_KbPE2piMCU5pdXesSNndWEdMIsS45zSjNgaTpQ8xQ9KLU3LGBE5-JF_yuj_C1hqncYRrb0ibVE0-azIjBDx1MWkJYIIYt-XboUGwNH46KM7w8Kszj8zR-1Mv1BJ0HnWmOlr_fgzLRZq41VwqZWuHXcQnO9GKKwzPvOzpVpmwl5WDc5zz_wga7SEoL-KNGrKlpDY_2t1EHSlTlkYYoWDZpp5CgM"/>
+</div>
+<div class="absolute -bottom-2 -right-2 bg-primary-container text-tertiary-fixed-dim p-1 rounded-full border border-tertiary-fixed-dim shadow-sm" title="Identité Institutionnelle Certifiée">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+</div>
+</div>
+<!-- Profile Identifiers -->
+<div>
+<div class="flex flex-wrap items-center gap-2.5 mb-1.5">
+<h1 class="font-headline-lg text-headline-lg text-primary tracking-tight font-bold">Aminata Diallo</h1>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-surface-container text-primary font-label-xs text-label-xs font-bold border border-tertiary-fixed-dim">
+<span class="material-symbols-outlined text-[13px] text-tertiary-fixed-dim">verified</span>
+                  Profil Certifié VIZATI
+                </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container-low text-secondary font-label-xs text-label-xs border border-outline-variant">
+<span class="material-symbols-outlined text-[13px] text-[#263B35]">check_circle</span>
+                  KYC Conforme
+                </span>
+</div>
+<div class="font-body-lg text-body-lg text-on-surface font-medium mb-1">
+                Directrice Patrimoine & Investissements Fonciers
+              </div>
+<div class="flex flex-wrap items-center gap-y-1 gap-x-4 font-body-sm text-body-sm text-secondary">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-outline">apartment</span>
+<span>Groupe Foncier de l'Union (Dakar)</span>
+</div>
+<span class="text-outline-variant hidden sm:inline">•</span>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-tertiary-fixed-dim">military_tech</span>
+<span class="text-primary font-semibold">Membre Executive Circle depuis Sept. 2024</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Academic Credential & Security Badges Block -->
+<div class="flex flex-row lg:flex-col justify-start lg:items-end gap-3 pt-4 lg:pt-0 border-t lg:border-t-0 border-outline-variant">
+<div class="text-left lg:text-right">
+<span class="font-label-xs text-label-xs uppercase tracking-wider text-secondary">Statut de sécurité</span>
+<div class="flex items-center lg:justify-end gap-1.5 text-primary font-label-md text-label-md mt-0.5">
+<span class="w-2 h-2 rounded-full bg-[#263B35]"></span>
+<span class="font-semibold">Chiffrement AES-256 actif</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="px-2.5 py-1 bg-surface-container text-primary font-code-num text-code-num rounded border border-outline-variant text-[11px]">
+                ID: VZT-DKR-8924
+              </span>
+</div>
+</div>
+</div>
+</section>
+<!-- 2. ONGLETS DE NAVIGATION DES PARAMÈTRES -->
+<nav class="flex items-center gap-2 border-b border-outline-variant mb-8 overflow-x-auto no-scrollbar">
+<!-- 1. Informations personnelles (Actif) -->
+<button class="flex items-center gap-2 px-4 py-3 font-label-lg text-label-lg font-bold text-primary border-b-2 border-primary-container whitespace-nowrap bg-surface-container-low/50" type="button">
+<span class="material-symbols-outlined text-[18px]">person</span>
+<span>Informations personnelles</span>
+</button>
+<!-- 2. Informations professionnelles -->
+<button class="flex items-center gap-2 px-4 py-3 font-label-lg text-label-lg text-secondary hover:text-primary transition-colors whitespace-nowrap" type="button">
+<span class="material-symbols-outlined text-[18px]">domain</span>
+<span>Informations professionnelles</span>
+</button>
+<!-- 3. Sécurité & Accès -->
+<button class="flex items-center gap-2 px-4 py-3 font-label-lg text-label-lg text-secondary hover:text-primary transition-colors whitespace-nowrap" type="button">
+<span class="material-symbols-outlined text-[18px]">security</span>
+<span>Sécurité & Accès</span>
+</button>
+<!-- 4. Notifications & Alertes -->
+<button class="flex items-center gap-2 px-4 py-3 font-label-lg text-label-lg text-secondary hover:text-primary transition-colors whitespace-nowrap" type="button">
+<span class="material-symbols-outlined text-[18px]">notifications_active</span>
+<span>Notifications & Alertes</span>
+</button>
+<!-- 5. Préférences & Affichage -->
+<button class="flex items-center gap-2 px-4 py-3 font-label-lg text-label-lg text-secondary hover:text-primary transition-colors whitespace-nowrap" type="button">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+<span>Préférences & Affichage</span>
+</button>
+<!-- 6. Mes inscriptions & Historique -->
+<button class="flex items-center gap-2 px-4 py-3 font-label-lg text-label-lg text-secondary hover:text-primary transition-colors whitespace-nowrap" type="button">
+<span class="material-symbols-outlined text-[18px]">history_edu</span>
+<span>Mes inscriptions & Historique</span>
+</button>
+</nav>
+<!-- FORM CONTENT GRID -->
+<form class="space-y-8" onsubmit="event.preventDefault();">
+<!-- 3. SECTION : INFORMATIONS PERSONNELLES -->
+<div class="bg-surface-container-lowest border border-outline-variant/80 rounded-xl p-6 shadow-sm">
+<div class="flex items-center justify-between pb-4 mb-6 border-b border-outline-variant/60">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-primary font-bold">1. Informations personnelles</h2>
+<p class="font-body-sm text-body-sm text-secondary">Données civiles d'identification pour l'édition des diplômes et attestations certifiées.</p>
+</div>
+<span class="px-2.5 py-1 bg-surface-container-low text-secondary font-label-xs text-label-xs rounded">Officiel État Civil</span>
+</div>
+<!-- Photo Profile Management Row -->
+<div class="flex flex-col sm:flex-row sm:items-center gap-6 pb-6 mb-6 border-b border-outline-variant/40">
+<div class="w-20 h-20 rounded-xl overflow-hidden border border-outline-variant shadow-sm bg-surface-container shrink-0">
+<img alt="Photo de profil actuelle d'Aminata Diallo" class="w-full h-full object-cover" data-alt="Portrait en gros plan pour photo d'identité d'Aminata Diallo sur fond blanc cassé épuré, éclairage de studio professionnel net et harmonieux, posture droite institutionnelle, style photographique passeport diplomatique ou carte exécutive." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0lVCBOeP1q5wy_Ml0GbexAdFztvs91AMAxO9QdWTfv0n_Sxal9yzVWvF7XIO5c9M3xCYvkys4I0lc9M7FubxVFkkJaV7jVVCApPRebJoFDFwpKQhQ824DthpsDbcZ4s6Xn6_orO-5xUDxwxQOKtZGPPd5sZRS_gSehEHxiDd6KvrTYHBvILk7ip3kn6qOPWtN6yYzjDPk2mQha0N6n_r58jLnvGy9z5vRIxGzIRw"/>
+</div>
+<div class="space-y-2">
+<div class="font-label-lg text-label-lg text-primary">Photographie d'accréditation académique</div>
+<p class="font-body-sm text-body-sm text-secondary max-w-lg">
+                Format carré recommandé (minimum 600x600 px). Cette photo apparaîtra sur votre certificat de fin de cycle et votre badge d'auditeur.
+              </p>
+<div class="flex items-center gap-3 pt-1">
+<button class="px-3.5 py-1.5 bg-primary-container text-surface-bright font-label-md text-label-md rounded hover:bg-primary transition-colors flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[16px]">upload</span>
+<span>Changer la photo</span>
+</button>
+<button class="px-3.5 py-1.5 border border-outline-variant text-error font-label-md text-label-md rounded hover:bg-error-container/20 transition-colors flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[16px]">delete</span>
+<span>Supprimer</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Personal Fields Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Prénom -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-1.5 font-semibold">Prénom</label>
+<input class="w-full bg-surface-container-lowest border border-[#D0D5DD] rounded px-3.5 py-2.5 font-body-md text-body-md text-on-surface focus:border-primary-container focus:ring-1 focus:ring-primary-container focus:outline-none" type="text" value="Aminata"/>
+</div>
+<!-- Nom -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-1.5 font-semibold">Nom</label>
+<input class="w-full bg-surface-container-lowest border border-[#D0D5DD] rounded px-3.5 py-2.5 font-body-md text-body-md text-on-surface focus:border-primary-container focus:ring-1 focus:ring-primary-container focus:outline-none" type="text" value="Diallo"/>
+</div>
+<!-- Adresse e-mail professionnelle (Vérifiée) -->
+<div>
+<div class="flex items-center justify-between mb-1.5">
+<label class="font-label-md text-label-md text-on-surface font-semibold">Adresse e-mail professionnelle</label>
+<span class="inline-flex items-center gap-1 font-label-xs text-label-xs text-[#263B35] font-bold">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                  Vérifiée
+                </span>
+</div>
+<div class="relative">
+<input class="w-full bg-surface-container-lowest border border-[#D0D5DD] rounded pl-3.5 pr-9 py-2.5 font-body-md text-body-md text-on-surface focus:border-primary-container focus:ring-1 focus:ring-primary-container focus:outline-none" type="email" value="aminata.diallo@groupe-foncier.sn"/>
+<span class="material-symbols-outlined absolute right-3 top-2.5 text-[18px] text-tertiary-fixed-dim">verified</span>
+</div>
+</div>
+<!-- Téléphone -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-1.5 font-semibold">Téléphone mobile sécurisé</label>
+<div class="relative">
+<input class="w-full bg-surface-container-lowest border border-[#D0D5DD] rounded pl-3.5 pr-9 py-2.5 font-body-md text-body-md text-on-surface focus:border-primary-container focus:ring-1 focus:ring-primary-container focus:outline-none" type="tel" value="+221 77 450 12 34"/>
+<span class="material-symbols-outlined absolute right-3 top-2.5 text-[18px] text-outline">call</span>
+</div>
+</div>
+<!-- Pays -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-1.5 font-semibold">Pays de résidence</label>
+<select class="w-full bg-surface-container-lowest border border-[#D0D5DD] rounded px-3.5 py-2.5 font-body-md text-body-md text-on-surface focus:border-primary-container focus:ring-1 focus:ring-primary-container focus:outline-none">
+<option selected="" value="SN">Sénégal</option>
+<option value="CI">Côte d'Ivoire</option>
+<option value="TG">Togo</option>
+<option value="BJ">Bénin</option>
+<option value="ML">Mali</option>
+<option value="CM">Cameroun</option>
+</select>
+</div>
+<!-- Ville -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-1.5 font-semibold">Ville & District</label>
+<input class="w-full bg-surface-container-lowest border border-[#D0D5DD] rounded px-3.5 py-2.5 font-body-md text-body-md text-on-surface focus:border-primary-container focus:ring-1 focus:ring-primary-container focus:outline-none" type="text" value="Dakar Plateau"/>
+</div>
+</div>
+</div>
+<!-- 4. SECTION : INFORMATIONS PROFESSIONNELLES -->
+<div class="bg-surface-container-lowest border border-outline-variant/80 rounded-xl p-6 shadow-sm">
+<div class="flex items-center justify-between pb-4 mb-6 border-b border-outline-variant/60">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-primary font-bold">2. Informations professionnelles</h2>
+<p class="font-body-sm text-body-sm text-secondary">Rattachement institutionnel utilisé pour l'octroi des crédits de formation continue et les cohortes sectorielles.</p>
+</div>
+<span class="px-2.5 py-1 bg-surface-container-low text-secondary font-label-xs text-label-xs rounded">Registre Foncier & Affaires</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Fonction actuelle -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-1.5 font-semibold">Fonction actuelle</label>
+<input class="w-full bg-surface-container-lowest border border-[#D0D5DD] rounded px-3.5 py-2.5 font-body-md text-body-md text-on-surface focus:border-primary-container focus:ring-1 focus:ring-primary-container focus:outline-none" type="text" value="Directrice Patrimoine Immobilier"/>
+</div>
+<!-- Entreprise / Cabinet -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-1.5 font-semibold">Entreprise / Cabinet</label>
+<input class="w-full bg-surface-container-lowest border border-[#D0D5DD] rounded px-3.5 py-2.5 font-body-md text-body-md text-on-surface focus:border-primary-container focus:ring-1 focus:ring-primary-container focus:outline-none" type="text" value="Groupe Foncier de l'Union"/>
+</div>
+<!-- Secteur d'activité -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-1.5 font-semibold">Secteur d'activité principal</label>
+<select class="w-full bg-surface-container-lowest border border-[#D0D5DD] rounded px-3.5 py-2.5 font-body-md text-body-md text-on-surface focus:border-primary-container focus:ring-1 focus:ring-primary-container focus:outline-none">
+<option selected="" value="1">Promotion & Gestion Foncière</option>
+<option value="2">Investissement Institutionnel & Fonds</option>
+<option value="3">Notariat & Droit Immobilier OHADA</option>
+<option value="4">Aménagement Urbain & Cadastre</option>
+<option value="5">Expertise Foncière & Évaluation</option>
+</select>
+</div>
+<!-- Années d'expérience -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-1.5 font-semibold">Années d'expérience dans l'immobilier</label>
+<input class="w-full bg-surface-container-lowest border border-[#D0D5DD] rounded px-3.5 py-2.5 font-body-md text-body-md text-on-surface focus:border-primary-container focus:ring-1 focus:ring-primary-container focus:outline-none" type="text" value="12 ans"/>
+</div>
+<!-- Numéro d'enregistrement professionnel / Ordre -->
+<div class="lg:col-span-2">
+<label class="block font-label-md text-label-md text-on-surface mb-1.5 font-semibold">
+                Numéro d'enregistrement professionnel / Ordre <span class="font-normal text-secondary">(Optionnel)</span>
+</label>
+<div class="relative">
+<input class="w-full bg-surface-container-lowest border border-[#D0D5DD] rounded pl-3.5 pr-9 py-2.5 font-body-md text-body-md text-on-surface focus:border-primary-container focus:ring-1 focus:ring-primary-container focus:outline-none" placeholder="Ex : Ordre des Experts Immobiliers du Sénégal" type="text" value="ORD-FONC-SN-2018-0492"/>
+<span class="material-symbols-outlined absolute right-3 top-2.5 text-[18px] text-outline">badge</span>
+</div>
+</div>
+</div>
+</div>
+<!-- 5. SECTION : SÉCURITÉ & SESSIONS ACTIVES -->
+<div class="bg-surface-container-lowest border border-outline-variant/80 rounded-xl p-6 shadow-sm">
+<div class="flex items-center justify-between pb-4 mb-6 border-b border-outline-variant/60">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-primary font-bold">3. Sécurité & Sessions Actives</h2>
+<p class="font-body-sm text-body-sm text-secondary">Contrôle cryptographique des identifiants et surveillance des accès aux flux pédagogiques et documentaires.</p>
+</div>
+<div class="flex items-center gap-1.5 text-secondary font-label-xs text-label-xs">
+<span class="material-symbols-outlined text-[16px] text-tertiary-fixed-dim">shield</span>
+<span>Authentification Renforcée</span>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+<!-- Bloc Modifier le mot de passe -->
+<div class="p-5 rounded-lg border border-outline-variant bg-surface-bright space-y-4">
+<div class="flex items-center justify-between">
+<div class="font-label-lg text-label-lg text-primary font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">key</span>
+<span>Modifier le mot de passe</span>
+</div>
+<span class="font-label-xs text-label-xs text-secondary">Modifié il y a 3 mois</span>
+</div>
+<!-- Mot de passe actuel -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-1">Mot de passe actuel</label>
+<input class="w-full bg-surface-container-lowest border border-[#D0D5DD] rounded px-3 py-2 font-body-md text-body-md text-on-surface focus:border-primary-container focus:outline-none" type="password" value="••••••••••••••••"/>
+</div>
+<!-- Nouveau mot de passe -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-1">Nouveau mot de passe</label>
+<input class="w-full bg-surface-container-lowest border border-[#D0D5DD] rounded px-3 py-2 font-body-md text-body-md text-on-surface focus:border-primary-container focus:outline-none" type="password" value="Vizati2025!Executive#Dkr"/>
+<!-- Jauge de force -->
+<div class="mt-2">
+<div class="flex items-center justify-between text-[11px] mb-1">
+<span class="font-label-xs text-label-xs text-secondary">Robustesse :</span>
+<span class="font-label-xs text-label-xs text-[#263B35] font-bold">Très fort (24 caractères)</span>
+</div>
+<div class="w-full h-1.5 bg-outline-variant/40 rounded-full overflow-hidden flex gap-1">
+<div class="h-full w-1/4 bg-[#263B35]"></div>
+<div class="h-full w-1/4 bg-[#263B35]"></div>
+<div class="h-full w-1/4 bg-[#263B35]"></div>
+<div class="h-full w-1/4 bg-[#263B35]"></div>
+</div>
+</div>
+</div>
+<!-- Confirmation mot de passe -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-1">Confirmer le nouveau mot de passe</label>
+<input class="w-full bg-surface-container-lowest border border-[#D0D5DD] rounded px-3 py-2 font-body-md text-body-md text-on-surface focus:border-primary-container focus:outline-none" type="password" value="Vizati2025!Executive#Dkr"/>
+</div>
+</div>
+<!-- Bloc Double Authentification (2FA) -->
+<div class="p-5 rounded-lg border border-outline-variant bg-surface-bright flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-3">
+<div class="font-label-lg text-label-lg text-primary font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+<span>Double Authentification (2FA)</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-[#263B35]/10 text-[#263B35] font-label-xs text-label-xs font-bold border border-[#263B35]/30">
+                    Activé
+                  </span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary mb-4 leading-relaxed">
+                  Votre compte requiert une validation cryptographique à chaque nouvelle connexion sur les terminaux non enregistrés de l'espace VIZATI.
+                </p>
+<div class="space-y-3">
+<div class="flex items-center justify-between p-3 bg-surface-container-lowest border border-outline-variant/60 rounded">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-primary text-[20px]">smartphone</span>
+<div>
+<div class="font-label-md text-label-md text-primary font-semibold">Application Authenticator (TOTP)</div>
+<div class="font-body-sm text-body-sm text-secondary">Google Authenticator / YubiKey synchronisé</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-[#263B35] text-[20px]">check_circle</span>
+</div>
+<div class="flex items-center justify-between p-3 bg-surface-container-lowest border border-outline-variant/60 rounded">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-primary text-[20px]">sms</span>
+<div>
+<div class="font-label-md text-label-md text-primary font-semibold">Validation de secours par SMS</div>
+<div class="font-body-sm text-body-sm text-secondary">Terminant par +221 •• •• •• 34</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-[#263B35] text-[20px]">check_circle</span>
+</div>
+</div>
+</div>
+<div class="pt-4 flex items-center gap-2">
+<button class="text-primary hover:underline font-label-md text-label-md font-semibold flex items-center gap-1" type="button">
+<span>Reconfigurer les clés de sécurité 2FA</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Tableau des Sessions actives -->
+<div>
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-3">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary font-semibold">Sessions actives et terminaux autorisés</h3>
+<p class="font-body-sm text-body-sm text-secondary">Surveillez vos points d'accès à l'intelligence de marché et documents cadastrés.</p>
+</div>
+<button class="px-3.5 py-1.5 border border-error text-error hover:bg-error-container/20 rounded font-label-md text-label-md transition-colors flex items-center gap-1.5 self-start sm:self-auto" type="button">
+<span class="material-symbols-outlined text-[16px]">logout</span>
+<span>Déconnecter toutes les autres sessions</span>
+</button>
+</div>
+<div class="overflow-x-auto border border-outline-variant rounded-lg">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low border-b border-outline-variant font-label-md text-label-md text-secondary">
+<th class="py-3 px-4">Terminal & Navigateur</th>
+<th class="py-3 px-4">Emplacement Géographique</th>
+<th class="py-3 px-4">Adresse IP</th>
+<th class="py-3 px-4">Dernière Activité</th>
+<th class="py-3 px-4 text-right">Statut</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/60 font-body-md text-body-md">
+<!-- Session 1: Actuelle -->
+<tr class="hover:bg-surface-bright transition-colors">
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">desktop_mac</span>
+</div>
+<div>
+<div class="font-label-md text-label-md text-primary font-semibold">Chrome sur macOS Sonoma</div>
+<div class="font-body-sm text-body-sm text-secondary">MacBook Pro 16" (Dakar Bureau)</div>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4 text-on-surface">Dakar Plateau, Sénégal</td>
+<td class="py-3.5 px-4 font-code-num text-code-num text-secondary">196.207.244.18</td>
+<td class="py-3.5 px-4 text-on-surface font-medium">Session actuelle (En ligne)</td>
+<td class="py-3.5 px-4 text-right">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-[#263B35]/10 text-[#263B35] font-label-xs text-label-xs font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-[#263B35]"></span>
+                        Active
+                      </span>
+</td>
+</tr>
+<!-- Session 2: iPhone -->
+<tr class="hover:bg-surface-bright transition-colors">
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">phone_iphone</span>
+</div>
+<div>
+<div class="font-label-md text-label-md text-primary font-semibold">Safari sur iPhone 15 Pro</div>
+<div class="font-body-sm text-body-sm text-secondary">Application VIZATI Mobile OS</div>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4 text-on-surface">Dakar Almadies, Sénégal</td>
+<td class="py-3.5 px-4 font-code-num text-code-num text-secondary">41.223.109.52</td>
+<td class="py-3.5 px-4 text-secondary">Il y a 2h</td>
+<td class="py-3.5 px-4 text-right">
+<button class="text-error hover:underline font-label-md text-label-md" type="button">Révoquer</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<!-- 6. SECTION : PRÉFÉRENCES DE NOTIFICATION & AFFICHAGE -->
+<div class="bg-surface-container-lowest border border-outline-variant/80 rounded-xl p-6 shadow-sm">
+<div class="flex items-center justify-between pb-4 mb-6 border-b border-outline-variant/60">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-primary font-bold">4. Préférences de Notification & Affichage</h2>
+<p class="font-body-sm text-body-sm text-secondary">Canaux d'alertes académiques, veille de marché et harmonisation régionale des fuseaux horaires.</p>
+</div>
+<span class="px-2.5 py-1 bg-surface-container-low text-secondary font-label-xs text-label-xs rounded">Zone UEMOA</span>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+<!-- Alertes & Notifications Checkboxes -->
+<div class="space-y-4">
+<div class="font-label-lg text-label-lg text-primary font-bold mb-2">Abonnements aux alertes d'apprentissage</div>
+<!-- Case 1: Alertes de nouvelles leçons -->
+<label class="flex items-start gap-3 cursor-pointer group">
+<input checked="" class="mt-1 w-4 h-4 text-primary-container rounded border-outline focus:ring-primary-container" type="checkbox"/>
+<div>
+<div class="font-label-md text-label-md text-primary font-semibold group-hover:text-primary-container">Alertes de nouvelles leçons & modules débloqués</div>
+<div class="font-body-sm text-body-sm text-secondary">Notification immédiate lors de la mise en ligne des modules de vos masterclasses inscrites.</div>
+</div>
+</label>
+<!-- Case 2: Rappels d'échéances d'évaluations -->
+<label class="flex items-start gap-3 cursor-pointer group">
+<input checked="" class="mt-1 w-4 h-4 text-primary-container rounded border-outline focus:ring-primary-container" type="checkbox"/>
+<div>
+<div class="font-label-md text-label-md text-primary font-semibold group-hover:text-primary-container">Rappels d'échéances d'évaluations (SMS & E-mail)</div>
+<div class="font-body-sm text-body-sm text-secondary">Rappels à J-7 et J-2 avant la clôture des dépôts de mémoires et quiz d'accréditation.</div>
+</div>
+</label>
+<!-- Case 3: Veille juridique hebdomadaire OHADA -->
+<label class="flex items-start gap-3 cursor-pointer group">
+<input checked="" class="mt-1 w-4 h-4 text-primary-container rounded border-outline focus:ring-primary-container" type="checkbox"/>
+<div>
+<div class="font-label-md text-label-md text-primary font-semibold group-hover:text-primary-container">Veille juridique hebdomadaire OHADA & Réformes Foncières</div>
+<div class="font-body-sm text-body-sm text-secondary">Synthèse analytique du vendredi préparée par le collège des juristes VIZATI.</div>
+</div>
+</label>
+<!-- Case 4: Invitations aux masterclasses exclusives -->
+<label class="flex items-start gap-3 cursor-pointer group">
+<input checked="" class="mt-1 w-4 h-4 text-primary-container rounded border-outline focus:ring-primary-container" type="checkbox"/>
+<div>
+<div class="font-label-md text-label-md text-primary font-semibold group-hover:text-primary-container">Invitations aux masterclasses exclusives & Salons Fermés</div>
+<div class="font-body-sm text-body-sm text-secondary">Accès prioritaire aux sommets d'investisseurs de Dakar, Abidjan et Kigali.</div>
+</div>
+</label>
+</div>
+<!-- Paramètres Régionaux & Affichage -->
+<div class="p-5 rounded-lg border border-outline-variant bg-surface-bright space-y-5">
+<div class="font-label-lg text-label-lg text-primary font-bold">Standardisation régionale et linguistique</div>
+<!-- Langue -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-1.5 font-semibold">Langue institutionnelle de travail</label>
+<select class="w-full bg-surface-container-lowest border border-[#D0D5DD] rounded px-3.5 py-2.5 font-body-md text-body-md text-on-surface focus:border-primary-container focus:outline-none">
+<option selected="" value="fr-uemoa">Français (Zone UEMOA - Actes & Terminologie OHADA)</option>
+<option value="en-ecowas">English (ECOWAS Cadastral Guidelines)</option>
+</select>
+</div>
+<!-- Fuseau horaire -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-1.5 font-semibold">Fuseau horaire de référence</label>
+<select class="w-full bg-surface-container-lowest border border-[#D0D5DD] rounded px-3.5 py-2.5 font-body-md text-body-md text-on-surface focus:border-primary-container focus:outline-none">
+<option selected="" value="GMT">GMT (Dakar / Abidjan / Bamako)</option>
+<option value="GMT+1">GMT+1 (Lomé / Cotonou / Douala / Libreville)</option>
+<option value="GMT+2">GMT+2 (Kigali / Bujumbura)</option>
+</select>
+<p class="font-body-sm text-body-sm text-secondary mt-1">Tous les cours magistraux en direct sont planifiés sur ce fuseau.</p>
+</div>
+<!-- Format monétaire -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-1.5 font-semibold">Unité monétaire pour les indices de marché</label>
+<div class="flex items-center gap-3">
+<span class="px-3 py-1.5 bg-surface-container rounded border border-outline-variant font-label-md text-label-md text-primary font-bold">FCFA (XOF / XAF)</span>
+<span class="text-secondary text-body-sm">Indexation automatique BCEAO</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- 7. BOUTONS D'ACTION EN BAS & HORODATAGE INSTITUTIONNEL -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-5 bg-surface-container-lowest border border-outline-variant/80 rounded-xl shadow-sm sticky bottom-4 z-20">
+<div class="flex items-center gap-2 text-secondary font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px] text-tertiary-fixed-dim">history</span>
+<span>Dernière mise à jour : 18 Novembre 2024 à 14h20</span>
+</div>
+<div class="flex items-center gap-3">
+<!-- Bouton Annuler -->
+<button class="px-5 py-2.5 border border-outline-variant text-primary font-label-lg text-label-lg rounded hover:bg-surface-container transition-colors" type="button">
+              Annuler
+            </button>
+<!-- Bouton Enregistrer les modifications -->
+<button class="px-6 py-2.5 bg-primary text-surface-bright font-label-lg text-label-lg font-bold rounded shadow hover:bg-primary-container transition-all active:scale-[0.98] flex items-center gap-2" type="submit">
+<span class="material-symbols-outlined text-[18px]">save</span>
+<span>Enregistrer les modifications</span>
+</button>
+</div>
+</div>
+</form>
+</div>
+</main>
+</body></html>

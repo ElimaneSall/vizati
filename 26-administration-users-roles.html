@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-background" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>VIZATI ACADEMY — Administration des Utilisateurs &amp; Gestion des Rôles</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Fonts: Manrope & Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Theme Configuration -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-tertiary-fixed-variant": "#5f4100",
+            "on-primary-fixed": "#031c37",
+            "on-secondary": "#ffffff",
+            "surface-dim": "#d0daf2",
+            "on-primary": "#ffffff",
+            "on-tertiary": "#ffffff",
+            "surface-container-highest": "#d9e3fb",
+            "on-secondary-fixed-variant": "#2a486a",
+            "surface-bright": "#f9f9ff",
+            "secondary-fixed": "#d2e4ff",
+            "outline-variant": "#c4c6ce",
+            "tertiary-container": "#3a2600",
+            "on-primary-container": "#7d93b3",
+            "surface-container": "#e8eeff",
+            "on-tertiary-container": "#b38a44",
+            "on-surface-variant": "#44474d",
+            "on-background": "#111c2d",
+            "background": "#f9f9ff",
+            "surface-container-low": "#f0f3ff",
+            "tertiary-fixed": "#ffdeab",
+            "on-secondary-fixed": "#001d37",
+            "tertiary-fixed-dim": "#edbf73",
+            "inverse-on-surface": "#ecf0ff",
+            "surface-tint": "#4a607d",
+            "outline": "#74777e",
+            "error": "#ba1a1a",
+            "error-container": "#ffdad6",
+            "secondary-fixed-dim": "#abc9f1",
+            "surface": "#f9f9ff",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-high": "#dfe8ff",
+            "on-tertiary-fixed": "#271900",
+            "primary-fixed": "#d3e3ff",
+            "on-error-container": "#93000a",
+            "on-surface": "#111c2d",
+            "primary-fixed-dim": "#b2c8ea",
+            "on-primary-fixed-variant": "#324864",
+            "primary-container": "#142b46",
+            "primary": "#00162f",
+            "secondary": "#436083",
+            "inverse-surface": "#273143",
+            "on-error": "#ffffff",
+            "on-secondary-container": "#405d80",
+            "secondary-container": "#b9d7ff",
+            "inverse-primary": "#b2c8ea",
+            "surface-variant": "#d9e3fb",
+            "tertiary": "#201300"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "margin-mobile": "1rem",
+            "margin": "3rem",
+            "space-xs": "0.25rem",
+            "gutter": "1.5rem",
+            "space-xl": "2.5rem",
+            "space-2xl": "4rem",
+            "gutter-mobile": "1rem",
+            "space-sm": "0.5rem",
+            "space-md": "1rem",
+            "space-lg": "1.5rem"
+          },
+          "fontFamily": {
+            "headline-lg": ["Manrope"],
+            "headline-md": ["Manrope"],
+            "code-num": ["Inter"],
+            "headline-sm": ["Manrope"],
+            "body-sm": ["Inter"],
+            "label-lg": ["Inter"],
+            "display-hero": ["Manrope"],
+            "headline-xl": ["Manrope"],
+            "headline-xl-mobile": ["Manrope"],
+            "label-xs": ["Inter"],
+            "display-hero-mobile": ["Manrope"],
+            "body-md": ["Inter"],
+            "body-lg": ["Inter"],
+            "body-xl": ["Inter"],
+            "label-md": ["Inter"]
+          },
+          "fontSize": {
+            "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "headline-md": ["22px", { "lineHeight": "30px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "code-num": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+            "headline-sm": ["18px", { "lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "600" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+            "display-hero": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+            "headline-xl": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "headline-xl-mobile": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+            "label-xs": ["10px", { "lineHeight": "14px", "letterSpacing": "0.06em", "fontWeight": "700" }],
+            "display-hero-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+            "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "body-xl": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="h-full bg-background text-on-surface antialiased overflow-x-hidden">
+<!-- 1. SideNavBar Component (Shared Component Anchor) -->
+<aside class="fixed inset-y-0 left-0 w-72 flex flex-col z-40 bg-primary border-r border-outline-variant/20 shadow-md justify-between shrink-0">
+<!-- Brand / Crest Header -->
+<div class="p-6 border-b border-outline-variant/10">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-tertiary-container border border-on-tertiary-container/60 flex items-center justify-center text-on-tertiary-container shadow-inner">
+<span class="material-symbols-outlined text-2xl" data-weight="fill" style="font-variation-settings: 'FILL' 1;">account_balance</span>
+</div>
+<div>
+<div class="text-headline-md font-headline-md tracking-tight uppercase text-on-primary">VIZATI ACADEMY</div>
+<p class="text-label-xs font-label-xs tracking-wider text-on-tertiary-container uppercase font-bold">Super-Admin &amp; CMS Suite</p>
+</div>
+</div>
+<!-- Institutional Hub Stamp -->
+<div class="mt-4 px-3 py-1.5 rounded-lg bg-primary-container/80 border border-outline-variant/20 flex items-center justify-between text-on-primary-container">
+<span class="text-label-xs font-label-xs font-semibold flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-on-tertiary-container"></span>
+          Cluster UEMOA Titulaire
+        </span>
+<span class="text-label-xs font-label-xs text-on-primary font-bold">v3.8 SEC</span>
+</div>
+</div>
+<!-- Navigation List -->
+<div class="px-4 py-4 flex-1 overflow-y-auto space-y-1">
+<div class="px-3 pb-2 text-label-xs font-label-xs text-on-primary-container/60 uppercase tracking-wider font-bold">
+        Modules Institutionnels
+      </div>
+<!-- Tab 1: Inactive -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-primary-container hover:text-on-primary hover:bg-primary-container/40 font-label-lg transition-colors cursor-pointer active:scale-98" href="#">
+<span class="material-symbols-outlined text-xl">dashboard</span>
+<span class="font-label-lg text-label-lg">Tableau de Bord</span>
+</a>
+<!-- Tab 2: Inactive -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-primary-container hover:text-on-primary hover:bg-primary-container/40 font-label-lg transition-colors cursor-pointer active:scale-98" href="#">
+<span class="material-symbols-outlined text-xl">analytics</span>
+<span class="font-label-lg text-label-lg">Observatoire Marché</span>
+</a>
+<!-- Tab 3: Inactive -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-primary-container hover:text-on-primary hover:bg-primary-container/40 font-label-lg transition-colors cursor-pointer active:scale-98" href="#">
+<span class="material-symbols-outlined text-xl">school</span>
+<span class="font-label-lg text-label-lg">Programmes Exécutifs</span>
+</a>
+<!-- Tab 4: Inactive -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-primary-container hover:text-on-primary hover:bg-primary-container/40 font-label-lg transition-colors cursor-pointer active:scale-98" href="#">
+<span class="material-symbols-outlined text-xl">domain</span>
+<span class="font-label-lg text-label-lg">Registres Cadastraux</span>
+</a>
+<!-- Tab 5: Inactive -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-primary-container hover:text-on-primary hover:bg-primary-container/40 font-label-lg transition-colors cursor-pointer active:scale-98" href="#">
+<span class="material-symbols-outlined text-xl">edit_note</span>
+<span class="font-label-lg text-label-lg">CMS &amp; Publications</span>
+</a>
+<!-- Tab 6: ACTIVE NAVIGATION (Matches Governance & Roles Intent) -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg bg-primary-container text-on-primary font-label-lg transition-colors border-l-4 border-on-tertiary-container cursor-pointer active:scale-98" href="#">
+<span class="material-symbols-outlined text-xl text-on-tertiary-container" data-weight="fill" style="font-variation-settings: 'FILL' 1;">admin_panel_settings</span>
+<span class="font-label-lg text-label-lg flex-1">Gouvernance &amp; Droits</span>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-container text-on-tertiary-container text-label-xs font-label-xs font-bold border border-on-tertiary-container/30">2.4k</span>
+</a>
+<!-- Quick Action / CTA Anchor from JSON -->
+<div class="pt-6 pb-2">
+<button class="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-primary-container border border-on-tertiary-container/40 text-on-primary hover:bg-tertiary-container hover:text-on-tertiary-container transition-all text-label-md font-label-md">
+<span class="material-symbols-outlined text-sm">cloud_sync</span>
+<span>Déployer Rapport Sync</span>
+</button>
+</div>
+</div>
+<!-- Footer SideNav Links -->
+<div class="p-4 border-t border-outline-variant/10 space-y-1">
+<a class="flex items-center gap-3 px-4 py-2.5 rounded-lg text-on-primary-container hover:text-on-primary hover:bg-primary-container/40 font-label-md transition-colors" href="#">
+<span class="material-symbols-outlined text-lg">settings</span>
+<span class="font-label-md text-label-md">Paramètres Système</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2.5 rounded-lg text-on-primary-container hover:text-on-primary hover:bg-primary-container/40 font-label-md transition-colors" href="#">
+<span class="material-symbols-outlined text-lg">help_outline</span>
+<span class="font-label-md text-label-md">Support Régional</span>
+</a>
+</div>
+</aside>
+<!-- Main Administrative Canvas Layout -->
+<div class="pl-72 flex flex-col min-h-screen">
+<!-- 2. TopNavBar Component (Shared Component Anchor) -->
+<header class="sticky top-0 right-0 w-full z-30 flex items-center justify-between h-16 bg-surface-container-lowest border-b border-outline-variant/30 shadow-sm px-8">
+<!-- Search on Left + Product Brand Lockup -->
+<div class="flex items-center gap-6">
+<span class="text-headline-sm font-headline-sm font-bold text-primary uppercase tracking-wide hidden lg:inline">VIZATI Executive Console</span>
+<div class="relative w-80">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-outline text-lg">search</span>
+<input class="w-full pl-9 pr-12 py-1.5 rounded-lg bg-surface-container-low border border-outline-variant/50 text-body-md font-body-md text-on-surface focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container" placeholder="Recherche rapide (Ctrl + K)..." type="text"/>
+<kbd class="absolute right-2.5 top-2 px-1.5 py-0.5 rounded border border-outline-variant/60 bg-surface-container-lowest text-[10px] text-outline font-code-num">⌘K</kbd>
+</div>
+</div>
+<!-- Regional Navigation Links Cluster -->
+<nav class="hidden xl:flex items-center gap-6">
+<a class="text-on-surface-variant font-label-md text-label-md hover:text-primary transition-colors flex items-center gap-1.5" href="#">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+          Institut Dakar
+        </a>
+<a class="text-on-surface-variant font-label-md text-label-md hover:text-primary transition-colors flex items-center gap-1.5" href="#">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+          Hub Abidjan
+        </a>
+<a class="text-primary font-label-md text-label-md border-b-2 border-on-tertiary-container pb-1 font-semibold flex items-center gap-1.5" href="#">
+<span class="w-2 h-2 rounded-full bg-on-tertiary-container animate-pulse"></span>
+          Région UEMOA
+        </a>
+</nav>
+<!-- Trailing Action Cluster & User Profile -->
+<div class="flex items-center gap-3">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-low border border-outline-variant/50 text-primary hover:bg-surface-container font-label-md text-label-md flex items-center gap-2 transition-colors">
+<span class="material-symbols-outlined text-base text-primary">sync_lock</span>
+<span>Cluster Sync (SSL)</span>
+</button>
+<button class="px-3.5 py-1.5 rounded-lg bg-primary-container text-on-primary hover:bg-primary font-label-md text-label-md font-medium shadow-sm transition-all flex items-center gap-2">
+<span class="material-symbols-outlined text-base text-on-tertiary-container">publish</span>
+<span>Publier Révision</span>
+</button>
+<div class="h-6 w-px bg-outline-variant/40 mx-1"></div>
+<button class="p-2 text-outline hover:text-primary rounded-lg hover:bg-surface-container transition-colors relative">
+<span class="material-symbols-outlined text-xl">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-on-tertiary-container"></span>
+</button>
+<button class="p-2 text-outline hover:text-primary rounded-lg hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-xl">tune</span>
+</button>
+<!-- Admin Profile Lockup -->
+<div class="flex items-center gap-3 pl-2 cursor-pointer">
+<img class="w-9 h-9 rounded-full object-cover border border-on-tertiary-container/50" data-alt="Portrait professionnel d'un haut fonctionnaire et Secrétaire Général Administrateur de l'académie VIZATI portant un complet sur mesure bleu nuit dans un bureau exécutif feutré aux finitions de noyer et cuir, éclairage d'ambiance naturel doux." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfhnfh7BWGu-pX_U0_TwmR4rlg8GcxVquTOh4wM7Yxnv6p-lk2blHEri7WaUh0SM6LStJq_KiGWbPgsWHkzgQSeTP1qJEY5ZGdwXHTJYPnamPM8FwjlPWvS5brpQEd_VqX8-mxDtZoXPRBrdtmc2AL1jIPcaRuKZaB-6MF1NQj6W_vnifWzZr2XFn7_2tm3hO92Wx5ZFA7AFUf99OMHpvP7JsFt1zTT7wK7nyaJeU"/>
+<div class="hidden 2xl:block text-left">
+<div class="text-label-md font-label-md font-semibold text-primary">Pr. Amadou Ndiaye</div>
+<div class="text-label-xs font-label-xs text-outline">Secrétaire Général Admin</div>
+</div>
+</div>
+</div>
+</header>
+<!-- Canvas Inner Container -->
+<main class="flex-1 p-8 max-w-[1440px] w-full mx-auto space-y-8">
+<!-- 3. Page Header & Actions -->
+<section class="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-2 border-b border-outline-variant/20">
+<div>
+<!-- Fil d'Ariane -->
+<nav class="flex items-center gap-2 text-label-xs font-label-xs text-outline mb-2">
+<span>Administration Générale</span>
+<span class="material-symbols-outlined text-xs">chevron_right</span>
+<span class="text-primary font-medium">Gouvernance &amp; Droits</span>
+<span class="material-symbols-outlined text-xs">chevron_right</span>
+<span class="text-on-tertiary-container font-semibold">Utilisateurs &amp; Rôles</span>
+</nav>
+<h1 class="text-headline-xl font-headline-xl text-primary tracking-tight">
+            Administration des Utilisateurs &amp; Sécurité des Accès
+          </h1>
+<p class="text-body-md font-body-md text-on-surface-variant max-w-3xl mt-1">
+            Gestion centralisée des comptes, attribution des privilèges d'accès et audit de sécurité conforme au cadre UEMOA/RGPD pour l’ensemble des pôles Dakar, Abidjan et campus partenaires.
+          </p>
+</div>
+<div class="flex items-center gap-3 shrink-0">
+<button class="px-4 py-2.5 rounded-lg bg-surface-container-lowest border border-outline-variant text-primary font-label-lg text-label-lg hover:bg-surface-container-low transition-colors shadow-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">download</span>
+<span>Exporter le registre (CSV/Excel)</span>
+</button>
+<button class="px-5 py-2.5 rounded-lg bg-primary-container text-on-primary font-label-lg text-label-lg font-semibold hover:bg-primary transition-all shadow-md flex items-center gap-2 border border-on-tertiary-container/30" onclick="document.getElementById('modal-action').classList.remove('hidden')">
+<span class="material-symbols-outlined text-lg text-on-tertiary-container">person_add</span>
+<span>+ Créer un utilisateur</span>
+</button>
+</div>
+</section>
+<!-- 4. Key Performance Indicator Cards (4 Syntheses) -->
+<section class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-5">
+<!-- KPI 1 -->
+<div class="p-5 rounded-xl bg-surface-container-lowest border border-outline-variant/40 shadow-sm relative overflow-hidden flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="text-label-md font-label-md text-on-surface-variant">Total Utilisateurs</span>
+<span class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-lg">group</span>
+</span>
+</div>
+<div class="mt-3">
+<div class="text-display-hero-mobile font-display-hero-mobile text-primary font-bold">2 480</div>
+<div class="flex items-center gap-1.5 mt-1 text-label-xs font-label-xs font-semibold text-secondary">
+<span class="material-symbols-outlined text-sm font-bold">trending_up</span>
+<span>+18% ce trimestre académique</span>
+</div>
+</div>
+<div class="w-full bg-surface-container-high h-1 rounded-full mt-4 overflow-hidden">
+<div class="bg-primary h-full w-[82%]"></div>
+</div>
+</div>
+<!-- KPI 2 -->
+<div class="p-5 rounded-xl bg-surface-container-lowest border border-outline-variant/40 shadow-sm relative overflow-hidden flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="text-label-md font-label-md text-on-surface-variant">Actifs en Ligne</span>
+<span class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-on-tertiary-container">
+<span class="material-symbols-outlined text-lg">wifi_tethering</span>
+</span>
+</div>
+<div class="mt-3">
+<div class="text-display-hero-mobile font-display-hero-mobile text-primary font-bold">342</div>
+<div class="flex items-center gap-1.5 mt-1 text-label-xs font-label-xs text-on-surface-variant">
+<span class="w-2 h-2 rounded-full bg-emerald-600 animate-ping"></span>
+<span>Sessions sécurisées TLS 1.3 actives</span>
+</div>
+</div>
+<div class="w-full bg-surface-container-high h-1 rounded-full mt-4 overflow-hidden">
+<div class="bg-on-tertiary-container h-full w-[65%]"></div>
+</div>
+</div>
+<!-- KPI 3 -->
+<div class="p-5 rounded-xl bg-surface-container-lowest border border-outline-variant/40 shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="text-label-md font-label-md text-on-surface-variant">Répartition par Rôles</span>
+<span class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-lg">badge</span>
+</span>
+</div>
+<div class="mt-2 space-y-1">
+<div class="flex justify-between text-body-sm font-body-sm text-on-surface-variant">
+<span>Apprenants &amp; Cadres</span>
+<strong class="text-primary font-code-num">1 890</strong>
+</div>
+<div class="flex justify-between text-body-sm font-body-sm text-on-surface-variant">
+<span>Formateurs &amp; Faculté</span>
+<strong class="text-on-tertiary-container font-code-num">34</strong>
+</div>
+<div class="flex justify-between text-body-sm font-body-sm text-on-surface-variant">
+<span>Administrateurs &amp; CMS</span>
+<strong class="text-primary font-code-num">27</strong>
+</div>
+</div>
+<div class="flex gap-1 h-1.5 rounded-full mt-3 overflow-hidden">
+<div class="bg-primary w-[75%]" title="Apprenants"></div>
+<div class="bg-on-tertiary-container w-[15%]" title="Formateurs"></div>
+<div class="bg-secondary w-[10%]" title="Admins"></div>
+</div>
+</div>
+<!-- KPI 4 -->
+<div class="p-5 rounded-xl bg-surface-container-lowest border border-on-tertiary-container/30 shadow-sm flex flex-col justify-between relative bg-gradient-to-br from-surface-container-lowest to-surface-container-low">
+<div class="flex items-center justify-between">
+<span class="text-label-md font-label-md text-on-surface font-semibold">Alertes &amp; En attente</span>
+<span class="w-8 h-8 rounded-lg bg-tertiary-container text-on-tertiary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-lg">gpp_maybe</span>
+</span>
+</div>
+<div class="mt-2">
+<div class="flex items-baseline gap-2">
+<span class="text-headline-lg font-headline-lg text-primary font-bold">6</span>
+<span class="text-body-sm font-body-sm text-on-surface-variant">comptes non activés</span>
+</div>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="text-headline-sm font-headline-sm text-error font-semibold">2</span>
+<span class="text-body-sm font-body-sm text-error">réinitialisations requises</span>
+</div>
+</div>
+<a class="mt-3 text-label-xs font-label-xs font-semibold text-on-tertiary-container hover:underline flex items-center gap-1" href="#">
+<span>Traiter les exceptions de sécurité</span>
+<span class="material-symbols-outlined text-xs">arrow_forward</span>
+</a>
+</div>
+</section>
+<!-- 5. Multi-criteria Filtering & Search Toolbar -->
+<section class="p-4 rounded-xl bg-surface-container-lowest border border-outline-variant/40 shadow-sm flex flex-wrap items-center justify-between gap-4">
+<div class="flex flex-wrap items-center gap-3 flex-1">
+<!-- Text Search Bar -->
+<div class="relative min-w-[280px] flex-1">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-outline text-lg">search</span>
+<input class="w-full pl-9 pr-4 py-2 rounded-lg bg-surface-container-low border border-outline-variant/50 text-body-md font-body-md text-on-surface focus:outline-none focus:border-primary-container" placeholder="Rechercher par nom, matricule (ex: #VZT-104), e-mail..." type="text"/>
+</div>
+<!-- Role Selector -->
+<div class="relative">
+<select class="appearance-none bg-surface-container-low border border-outline-variant/50 rounded-lg pl-3 pr-8 py-2 text-label-md font-label-md text-primary focus:outline-none focus:border-primary-container cursor-pointer">
+<option value="">Tous les rôles</option>
+<option value="admin">Administrateur</option>
+<option value="pedago">Responsable Pédagogique</option>
+<option value="trainer">Formateur Titulaire</option>
+<option value="student">Apprenant &amp; Auditeur</option>
+<option value="cms">Éditeur de Contenu CMS</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-2.5 text-outline pointer-events-none text-base">expand_more</span>
+</div>
+<!-- Status Selector -->
+<div class="relative">
+<select class="appearance-none bg-surface-container-low border border-outline-variant/50 rounded-lg pl-3 pr-8 py-2 text-label-md font-label-md text-primary focus:outline-none focus:border-primary-container cursor-pointer">
+<option value="">Tous les statuts</option>
+<option value="active">Actif</option>
+<option value="pending">En attente d'activation</option>
+<option value="inactive">Inactif</option>
+<option value="suspended">Suspendu</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-2.5 text-outline pointer-events-none text-base">expand_more</span>
+</div>
+<!-- Date Selector -->
+<div class="relative">
+<select class="appearance-none bg-surface-container-low border border-outline-variant/50 rounded-lg pl-3 pr-8 py-2 text-label-md font-label-md text-primary focus:outline-none focus:border-primary-container cursor-pointer">
+<option value="2024">Année académique 2024-2025</option>
+<option value="quarter">Dernier trimestre</option>
+<option value="month">Ce mois-ci</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-2.5 text-outline pointer-events-none text-base">expand_more</span>
+</div>
+</div>
+<!-- Filter Reset Action -->
+<button class="px-3 py-2 rounded-lg text-outline hover:text-primary text-label-md font-label-md flex items-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-base">filter_alt_off</span>
+<span>Réinitialiser les filtres</span>
+</button>
+</section>
+<!-- 6 & 7. Split Layout: High Density Table + User Inspection Drawer -->
+<section class="grid grid-cols-1 2xl:grid-cols-12 gap-6 items-start">
+<!-- Table Column (Expanded / 8 Columns on 2XL) -->
+<div class="2xl:col-span-8 bg-surface-container-lowest rounded-xl border border-outline-variant/40 shadow-sm overflow-hidden flex flex-col">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low border-b border-outline-variant/30 text-label-xs font-label-xs uppercase tracking-wider text-outline">
+<th class="py-3 px-4 font-semibold">Nom &amp; Matricule</th>
+<th class="py-3 px-4 font-semibold">E-mail Professionnel</th>
+<th class="py-3 px-4 font-semibold">Téléphone</th>
+<th class="py-3 px-4 font-semibold">Rôle Attribué</th>
+<th class="py-3 px-4 font-semibold">Dernière Connexion</th>
+<th class="py-3 px-4 font-semibold">Statut</th>
+<th class="py-3 px-4 font-semibold text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/20 text-body-sm font-body-sm">
+<!-- Row 1: Selected / Inspected User -->
+<tr class="bg-surface-container/40 hover:bg-surface-container/60 transition-colors cursor-pointer border-l-4 border-on-tertiary-container">
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-bold text-label-md shrink-0">
+                        AF
+                      </div>
+<div>
+<div class="text-label-md font-label-md font-semibold text-primary">Me Abdoulaye Fall</div>
+<div class="text-label-xs font-label-xs text-outline font-code-num">#VZT-ADM-104 • SCP Avocats Dakar</div>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="text-on-surface font-code-num">a.fall@cabinetfall-lex.sn</div>
+<span class="inline-flex items-center gap-1 text-[11px] text-secondary font-medium">
+<span class="material-symbols-outlined text-xs text-emerald-600">verified</span> Vérifié SSO
+                    </span>
+</td>
+<td class="py-3.5 px-4 text-on-surface-variant font-code-num">
+                    +221 77 645 89 12
+                  </td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-tertiary-container/10 border border-on-tertiary-container/40 text-on-tertiary-container font-label-xs font-label-xs font-semibold">
+<span class="material-symbols-outlined text-xs">school</span> Formateur Titulaire
+                    </span>
+</td>
+<td class="py-3.5 px-4 text-on-surface-variant font-code-num">
+                    Aujourd'hui 14:15
+                  </td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-medium bg-emerald-50 text-emerald-800 border border-emerald-200">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span> Actif
+                    </span>
+</td>
+<td class="py-3.5 px-4 text-right">
+<div class="inline-flex items-center gap-1">
+<button class="p-1 rounded hover:bg-surface-container text-outline hover:text-primary" title="Voir fiche">
+<span class="material-symbols-outlined text-base">visibility</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container text-outline hover:text-primary" title="Options">
+<span class="material-symbols-outlined text-base">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2: Dr Cheikh Oumar Sylla -->
+<tr class="hover:bg-surface-container-low transition-colors cursor-pointer">
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-bold text-label-md shrink-0">
+                        CS
+                      </div>
+<div>
+<div class="text-label-md font-label-md font-semibold text-primary">Dr. Cheikh Oumar Sylla</div>
+<div class="text-label-xs font-label-xs text-outline font-code-num">#VZT-PED-042 • Chaire Économie Foncière</div>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="text-on-surface font-code-num">c.sylla@vizati-academy.org</div>
+<span class="inline-flex items-center gap-1 text-[11px] text-secondary font-medium">
+<span class="material-symbols-outlined text-xs text-emerald-600">verified</span> Vérifié SSO
+                    </span>
+</td>
+<td class="py-3.5 px-4 text-on-surface-variant font-code-num">
+                    +221 78 120 44 90
+                  </td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-primary-container text-on-primary font-label-xs font-label-xs font-semibold">
+<span class="material-symbols-outlined text-xs text-on-tertiary-container">menu_book</span> Resp. Pédagogique
+                    </span>
+</td>
+<td class="py-3.5 px-4 text-on-surface-variant font-code-num">
+                    Hier 09:30
+                  </td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-medium bg-emerald-50 text-emerald-800 border border-emerald-200">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span> Actif
+                    </span>
+</td>
+<td class="py-3.5 px-4 text-right">
+<div class="inline-flex items-center gap-1">
+<button class="p-1 rounded hover:bg-surface-container text-outline hover:text-primary">
+<span class="material-symbols-outlined text-base">visibility</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container text-outline hover:text-primary">
+<span class="material-symbols-outlined text-base">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3: Super Admin -->
+<tr class="hover:bg-surface-container-low transition-colors cursor-pointer">
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center font-bold text-label-md shrink-0">
+                        AN
+                      </div>
+<div>
+<div class="text-label-md font-label-md font-semibold text-primary">Pr. Amadou Ndiaye</div>
+<div class="text-label-xs font-label-xs text-outline font-code-num">#VZT-SEC-001 • Secrétariat Général</div>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="text-on-surface font-code-num">sg.ndiaye@vizati-academy.org</div>
+<span class="inline-flex items-center gap-1 text-[11px] text-secondary font-medium">
+<span class="material-symbols-outlined text-xs text-emerald-600">verified</span> 2FA FIDO2
+                    </span>
+</td>
+<td class="py-3.5 px-4 text-on-surface-variant font-code-num">
+                    +221 70 800 11 00
+                  </td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-purple-900 text-purple-100 font-label-xs font-label-xs font-semibold">
+<span class="material-symbols-outlined text-xs">security</span> Administrateur
+                    </span>
+</td>
+<td class="py-3.5 px-4 text-on-surface-variant font-code-num">
+                    En ligne
+                  </td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-medium bg-emerald-50 text-emerald-800 border border-emerald-200">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span> Actif
+                    </span>
+</td>
+<td class="py-3.5 px-4 text-right">
+<div class="inline-flex items-center gap-1">
+<button class="p-1 rounded hover:bg-surface-container text-outline hover:text-primary">
+<span class="material-symbols-outlined text-base">visibility</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container text-outline hover:text-primary">
+<span class="material-symbols-outlined text-base">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4: Auditeur Abidjan (Apprenant) -->
+<tr class="hover:bg-surface-container-low transition-colors cursor-pointer">
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center font-bold text-label-md shrink-0">
+                        YB
+                      </div>
+<div>
+<div class="text-label-md font-label-md font-semibold text-primary">Yacine Bamba</div>
+<div class="text-label-xs font-label-xs text-outline font-code-num">#VZT-STU-882 • Banque d'Habitat CI</div>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="text-on-surface font-code-num">y.bamba@bhci.ci</div>
+<span class="inline-flex items-center gap-1 text-[11px] text-outline font-medium">
+                      En attente confirmation
+                    </span>
+</td>
+<td class="py-3.5 px-4 text-on-surface-variant font-code-num">
+                    +225 07 48 99 21
+                  </td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-teal-50 border border-teal-300 text-teal-800 font-label-xs font-label-xs font-semibold">
+<span class="material-symbols-outlined text-xs">local_library</span> Apprenant &amp; Cadre
+                    </span>
+</td>
+<td class="py-3.5 px-4 text-on-surface-variant font-code-num">
+                    Il y a 3 jours
+                  </td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-medium bg-amber-50 text-amber-800 border border-amber-200">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-600"></span> En attente
+                    </span>
+</td>
+<td class="py-3.5 px-4 text-right">
+<div class="inline-flex items-center gap-1">
+<button class="p-1 rounded hover:bg-surface-container text-outline hover:text-primary">
+<span class="material-symbols-outlined text-base">visibility</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container text-outline hover:text-primary">
+<span class="material-symbols-outlined text-base">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 5: CMS Editor -->
+<tr class="hover:bg-surface-container-low transition-colors cursor-pointer">
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-surface-variant text-primary flex items-center justify-center font-bold text-label-md shrink-0">
+                        FD
+                      </div>
+<div>
+<div class="text-label-md font-label-md font-semibold text-primary">Fatou Diome</div>
+<div class="text-label-xs font-label-xs text-outline font-code-num">#VZT-CMS-018 • Pôle Éditorial UEMOA</div>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="text-on-surface font-code-num">f.diome@vizati-academy.org</div>
+<span class="inline-flex items-center gap-1 text-[11px] text-secondary font-medium">
+<span class="material-symbols-outlined text-xs text-emerald-600">verified</span> Vérifié SSO
+                    </span>
+</td>
+<td class="py-3.5 px-4 text-on-surface-variant font-code-num">
+                    +221 76 333 45 78
+                  </td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-slate-100 text-slate-800 border border-slate-300 font-label-xs font-label-xs font-semibold">
+<span class="material-symbols-outlined text-xs">edit_document</span> Éditeur CMS
+                    </span>
+</td>
+<td class="py-3.5 px-4 text-on-surface-variant font-code-num">
+                    Hier 17:40
+                  </td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-medium bg-emerald-50 text-emerald-800 border border-emerald-200">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span> Actif
+                    </span>
+</td>
+<td class="py-3.5 px-4 text-right">
+<div class="inline-flex items-center gap-1">
+<button class="p-1 rounded hover:bg-surface-container text-outline hover:text-primary">
+<span class="material-symbols-outlined text-base">visibility</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container text-outline hover:text-primary">
+<span class="material-symbols-outlined text-base">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 6: Inactive / Suspended Account -->
+<tr class="hover:bg-surface-container-low transition-colors cursor-pointer bg-red-50/20">
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-outline-variant text-on-surface-variant flex items-center justify-center font-bold text-label-md shrink-0">
+                        MK
+                      </div>
+<div>
+<div class="text-label-md font-label-md font-semibold text-on-surface-variant">Marc Kouassi</div>
+<div class="text-label-xs font-label-xs text-outline font-code-num">#VZT-STU-311 • Ex-Auditeur Abidjan</div>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="text-on-surface-variant font-code-num">m.kouassi@finance-ci.com</div>
+<span class="inline-flex items-center gap-1 text-[11px] text-error font-medium">
+                      Tentatives échouées
+                    </span>
+</td>
+<td class="py-3.5 px-4 text-on-surface-variant font-code-num">
+                    +225 05 11 22 33
+                  </td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-gray-100 text-gray-700 font-label-xs font-label-xs font-semibold">
+<span class="material-symbols-outlined text-xs">local_library</span> Apprenant &amp; Cadre
+                    </span>
+</td>
+<td class="py-3.5 px-4 text-on-surface-variant font-code-num">
+                    Il y a 45 jours
+                  </td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800 border border-gray-300">
+<span class="w-1.5 h-1.5 rounded-full bg-gray-500"></span> Inactif
+                    </span>
+</td>
+<td class="py-3.5 px-4 text-right">
+<div class="inline-flex items-center gap-1">
+<button class="p-1 rounded hover:bg-surface-container text-outline hover:text-primary">
+<span class="material-symbols-outlined text-base">visibility</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container text-outline hover:text-primary">
+<span class="material-symbols-outlined text-base">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination Footer -->
+<div class="p-4 bg-surface-container-low border-t border-outline-variant/30 flex items-center justify-between text-body-sm font-body-sm text-on-surface-variant">
+<span>Affichage de <strong>1 à 6</strong> sur <strong>2 480</strong> entrées certifiées</span>
+<div class="flex items-center gap-2">
+<button class="px-3 py-1.5 rounded border border-outline-variant/60 bg-surface-container-lowest text-primary hover:bg-surface-container disabled:opacity-50 text-label-md font-label-md" disabled="">Précédent</button>
+<button class="px-3 py-1.5 rounded bg-primary-container text-on-primary text-label-md font-label-md font-semibold">1</button>
+<button class="px-3 py-1.5 rounded border border-outline-variant/60 bg-surface-container-lowest text-primary hover:bg-surface-container text-label-md font-label-md">2</button>
+<button class="px-3 py-1.5 rounded border border-outline-variant/60 bg-surface-container-lowest text-primary hover:bg-surface-container text-label-md font-label-md">3</button>
+<span class="px-1 text-outline">...</span>
+<button class="px-3 py-1.5 rounded border border-outline-variant/60 bg-surface-container-lowest text-primary hover:bg-surface-container text-label-md font-label-md">414</button>
+<button class="px-3 py-1.5 rounded border border-outline-variant/60 bg-surface-container-lowest text-primary hover:bg-surface-container text-label-md font-label-md">Suivant</button>
+</div>
+</div>
+</div>
+<!-- 7. Inspection Drawer / User Detail Dossier (4 Columns on 2XL) -->
+<aside class="2xl:col-span-4 bg-surface-container-lowest rounded-xl border border-outline-variant/40 shadow-md p-6 space-y-6">
+<!-- Drawer Header with Portrait & Identity -->
+<div class="flex items-start justify-between pb-4 border-b border-outline-variant/20">
+<div class="flex items-center gap-4">
+<div class="relative">
+<img class="w-16 h-16 rounded-xl object-cover border-2 border-on-tertiary-container shadow-sm" data-alt="Portrait en gros plan de face de Me Abdoulaye Fall, éminent juriste sénégalais en droit immobilier OHADA, portant des lunettes cerclées et une robe d'avocat sombre avec col blanc officiel, regard solennel et confiant." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfHwj_GWLPo-c33Dd889O3GL2FX09bAlCwFE3KhNWz3J5l1Uapzn0mKLJzV_LuBetHKyaFgDKf361FDF3KkcqygpgJeJUqoZ7rVxAQq8UKVdgt1iXgCBGL9TL85H9FiHXMkd84--Crs5O76LPkpPwshN_tKnCIJFh3SFpSEUxrJqRKwfEKqMH6jZJ4wGFyP_wkaBUL1ZP5jAULkT-2JVb75l7X913f2B1RUPQIAro"/>
+<span class="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-emerald-500 border-2 border-surface-container-lowest" title="Actif en ligne"></span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h3 class="text-headline-sm font-headline-sm text-primary font-bold">Me Abdoulaye Fall</h3>
+<span class="material-symbols-outlined text-base text-on-tertiary-container" data-weight="fill" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<div class="text-label-md font-label-md text-on-tertiary-container font-semibold">Formateur Titulaire &amp; Faculté</div>
+<div class="text-label-xs font-label-xs text-outline font-code-num">Matricule : #VZT-ADM-104</div>
+</div>
+</div>
+<button class="text-outline hover:text-primary p-1 rounded-lg hover:bg-surface-container">
+<span class="material-symbols-outlined text-xl">close</span>
+</button>
+</div>
+<!-- Academic & Professional Coordinates -->
+<div class="space-y-3">
+<h4 class="text-label-xs font-label-xs font-bold text-outline uppercase tracking-wider">
+              Coordonnées &amp; Titularité
+            </h4>
+<div class="p-3.5 rounded-lg bg-surface-container-low border border-outline-variant/30 space-y-2 text-body-sm font-body-sm">
+<div class="flex items-center justify-between">
+<span class="text-outline flex items-center gap-2">
+<span class="material-symbols-outlined text-base">mail</span> Email Pro :
+                </span>
+<span class="font-code-num font-medium text-primary">a.fall@cabinetfall-lex.sn</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-outline flex items-center gap-2">
+<span class="material-symbols-outlined text-base">call</span> Téléphone :
+                </span>
+<span class="font-code-num font-medium text-primary">+221 77 645 89 12</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-outline flex items-center gap-2">
+<span class="material-symbols-outlined text-base">location_city</span> Attachement :
+                </span>
+<span class="font-medium text-primary">Cabinet Fall &amp; Associés (Dakar Plateau)</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-outline flex items-center gap-2">
+<span class="material-symbols-outlined text-base">gavel</span> Spécialité :
+                </span>
+<span class="font-medium text-on-tertiary-container">Baux Commerciaux OHADA &amp; Foncier</span>
+</div>
+</div>
+</div>
+<!-- Security Settings & 2FA Tokens -->
+<div class="space-y-3">
+<div class="flex items-center justify-between">
+<h4 class="text-label-xs font-label-xs font-bold text-outline uppercase tracking-wider">
+                Sécurité &amp; Authentification
+              </h4>
+<span class="text-[11px] font-semibold text-emerald-800 bg-emerald-100 px-2 py-0.5 rounded">Conforme UEMOA</span>
+</div>
+<div class="p-3.5 rounded-lg bg-surface-container-low border border-outline-variant/30 space-y-2.5 text-body-sm font-body-sm">
+<div class="flex items-center justify-between">
+<span class="text-on-surface font-medium flex items-center gap-2">
+<span class="material-symbols-outlined text-base text-on-tertiary-container">enhanced_encryption</span> Double Facteur (2FA)
+                </span>
+<span class="text-label-xs font-label-xs font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
+                  UEMOA Token Activé
+                </span>
+</div>
+<div class="text-[12px] text-outline flex items-center justify-between">
+<span>Dernière réinit. mot de passe :</span>
+<span class="font-code-num font-medium text-primary">14 Octobre 2024</span>
+</div>
+</div>
+</div>
+<!-- Granular Permissions & Toggles -->
+<div class="space-y-3">
+<h4 class="text-label-xs font-label-xs font-bold text-outline uppercase tracking-wider">
+              Privilèges &amp; Autorisations Granulaires
+            </h4>
+<div class="space-y-2">
+<div class="flex items-center justify-between p-2.5 rounded-lg border border-outline-variant/30 bg-surface-container-lowest">
+<div>
+<div class="text-label-md font-label-md font-semibold text-primary">Notation &amp; Certification</div>
+<div class="text-label-xs font-label-xs text-outline">Validation des jurys et notes d’examens</div>
+</div>
+<!-- Toggle Switch (Active) -->
+<button class="w-10 h-6 bg-primary-container rounded-full relative p-0.5 transition-colors">
+<span class="w-5 h-5 rounded-full bg-on-tertiary-container block ml-auto shadow-sm"></span>
+</button>
+</div>
+<div class="flex items-center justify-between p-2.5 rounded-lg border border-outline-variant/30 bg-surface-container-lowest">
+<div>
+<div class="text-label-md font-label-md font-semibold text-primary">Création de Modules &amp; Syllabus</div>
+<div class="text-label-xs font-label-xs text-outline">Ajout d'unités d'enseignement exécutif</div>
+</div>
+<!-- Toggle Switch (Active) -->
+<button class="w-10 h-6 bg-primary-container rounded-full relative p-0.5 transition-colors">
+<span class="w-5 h-5 rounded-full bg-on-tertiary-container block ml-auto shadow-sm"></span>
+</button>
+</div>
+<div class="flex items-center justify-between p-2.5 rounded-lg border border-outline-variant/30 bg-surface-container-lowest">
+<div>
+<div class="text-label-md font-label-md font-semibold text-primary">Publication Registre Cadastral</div>
+<div class="text-label-xs font-label-xs text-outline">Droit d'indexation de plans topographiques</div>
+</div>
+<!-- Toggle Switch (Inactive) -->
+<button class="w-10 h-6 bg-outline-variant/50 rounded-full relative p-0.5 transition-colors">
+<span class="w-5 h-5 rounded-full bg-surface-container-lowest block mr-auto shadow-sm"></span>
+</button>
+</div>
+</div>
+</div>
+<!-- Chronological Audit Log Trail -->
+<div class="space-y-3">
+<h4 class="text-label-xs font-label-xs font-bold text-outline uppercase tracking-wider">
+              Journal d'Audit &amp; Activité
+            </h4>
+<div class="border-l-2 border-outline-variant/40 pl-3 space-y-3 text-body-sm font-body-sm">
+<div class="relative">
+<span class="absolute -left-[19px] top-1 w-2.5 h-2.5 rounded-full bg-emerald-600"></span>
+<div class="text-label-xs font-label-xs font-code-num text-outline">Aujourd'hui, 14:15 • IP 154.124.62.10 (Dakar Plateau)</div>
+<div class="text-on-surface font-medium">Connexion réussie via certificat matériel SSL.</div>
+</div>
+<div class="relative">
+<span class="absolute -left-[19px] top-1 w-2.5 h-2.5 rounded-full bg-on-tertiary-container"></span>
+<div class="text-label-xs font-label-xs font-code-num text-outline">18 Nov 2024, 11:20</div>
+<div class="text-on-surface font-medium">Validation de la Note de synthèse « Baux Commerciaux OHADA ».</div>
+</div>
+<div class="relative">
+<span class="absolute -left-[19px] top-1 w-2.5 h-2.5 rounded-full bg-secondary"></span>
+<div class="text-label-xs font-label-xs font-code-num text-outline">12 Nov 2024, 16:45</div>
+<div class="text-on-surface font-medium">12 copies corrigées et archivées dans le Registre Central.</div>
+</div>
+</div>
+</div>
+<!-- Drawer Action Controls -->
+<div class="pt-4 border-t border-outline-variant/20 space-y-2">
+<div class="grid grid-cols-2 gap-2">
+<button class="w-full py-2.5 px-3 rounded-lg bg-surface-container-lowest border border-outline-variant text-primary font-label-md text-label-md hover:bg-surface-container transition-colors font-medium">
+                Modifier le profil
+              </button>
+<button class="w-full py-2.5 px-3 rounded-lg bg-surface-container-lowest border border-outline-variant text-on-tertiary-container font-label-md text-label-md hover:bg-surface-container transition-colors font-medium" onclick="document.getElementById('modal-action').classList.remove('hidden')">
+                Réinit. Mot de passe
+              </button>
+</div>
+<button class="w-full py-2.5 px-3 rounded-lg bg-red-50 hover:bg-red-100 border border-red-200 text-error font-label-md text-label-md font-semibold flex items-center justify-center gap-2 transition-colors" onclick="document.getElementById('modal-action').classList.remove('hidden')">
+<span class="material-symbols-outlined text-base">person_off</span>
+<span>Désactiver le compte titulaire</span>
+</button>
+</div>
+</aside>
+</section>
+</main>
+</div>
+<!-- 8. Modal Confirmation Overlay (Sensitive Admin Action) -->
+<div class="fixed inset-0 z-50 flex items-center justify-center bg-primary/60 backdrop-blur-sm p-4 hidden" id="modal-action">
+<div class="w-full max-w-lg bg-surface-container-lowest rounded-2xl border border-outline-variant/40 shadow-2xl overflow-hidden transform transition-all">
+<!-- Modal Header -->
+<div class="p-6 bg-surface-container-low border-b border-outline-variant/30 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-red-100 text-error flex items-center justify-center">
+<span class="material-symbols-outlined text-2xl">warning</span>
+</div>
+<div>
+<h3 class="text-headline-sm font-headline-sm text-primary font-bold">Confirmation d’Opération Critique</h3>
+<p class="text-label-xs font-label-xs text-outline">Protocole de sécurité certifié VIZATI / UEMOA</p>
+</div>
+</div>
+<button class="text-outline hover:text-primary" onclick="document.getElementById('modal-action').classList.add('hidden')">
+<span class="material-symbols-outlined text-xl">close</span>
+</button>
+</div>
+<!-- Modal Body -->
+<div class="p-6 space-y-4">
+<p class="text-body-md font-body-md text-on-surface">
+          Vous vous apprêtez à modifier les privilèges ou l’état d’accès pour l'utilisateur titulaire <strong>Me Abdoulaye Fall (#VZT-ADM-104)</strong>. Cette action sera inscrite dans le journal d'audit immuable de l’Académie.
+        </p>
+<div class="space-y-1.5">
+<label class="text-label-md font-label-md font-semibold text-primary">
+            Motif officiel de l'opération (Obligatoire) *
+          </label>
+<textarea class="w-full p-3 rounded-lg bg-surface-container-low border border-outline-variant/50 text-body-md font-body-md text-on-surface focus:outline-none focus:border-primary-container" placeholder="Ex: Réinitialisation suite à changement de poste au Cabinet Fall ou demande formelle de la direction générale..." rows="3"></textarea>
+</div>
+<div class="p-3 rounded-lg bg-amber-50 border border-amber-200 text-amber-900 text-body-sm font-body-sm flex items-start gap-2">
+<span class="material-symbols-outlined text-amber-600 text-base mt-0.5">info</span>
+<span>Une notification d'alerte sécurisée sera automatiquement acheminée au Secrétariat Général ainsi qu'à l'intéressé.</span>
+</div>
+</div>
+<!-- Modal Actions -->
+<div class="p-4 bg-surface-container-low border-t border-outline-variant/30 flex items-center justify-end gap-3">
+<button class="px-4 py-2.5 rounded-lg bg-surface-container-lowest border border-outline-variant text-primary font-label-md text-label-md hover:bg-surface-container transition-colors" onclick="document.getElementById('modal-action').classList.add('hidden')">
+          Annuler
+        </button>
+<button class="px-5 py-2.5 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md font-semibold hover:bg-primary transition-all border border-on-tertiary-container/30" onclick="document.getElementById('modal-action').classList.add('hidden')">
+          Confirmer l’opération
+        </button>
+</div>
+</div>
+</div>
+</body></html>

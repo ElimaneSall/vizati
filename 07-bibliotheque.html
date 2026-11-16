@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>VIZATI — Centre de Ressources &amp; Documentation Stratégique Panafricaine</title>
+<!-- Google Fonts: Manrope & Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Manrope:wght@500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-tertiary-fixed-variant": "#5f4100",
+            "on-primary-container": "#7d93b3",
+            "secondary-fixed-dim": "#abc9f1",
+            "surface": "#f9f9ff",
+            "surface-variant": "#d9e3fb",
+            "on-secondary-fixed-variant": "#2a486a",
+            "inverse-primary": "#b2c8ea",
+            "primary": "#00162f",
+            "surface-container": "#e8eeff",
+            "on-tertiary-fixed": "#271900",
+            "on-tertiary-container": "#b38a44",
+            "primary-fixed": "#d3e3ff",
+            "on-error": "#ffffff",
+            "surface-bright": "#f9f9ff",
+            "on-tertiary": "#ffffff",
+            "surface-container-high": "#dfe8ff",
+            "on-surface-variant": "#44474d",
+            "secondary-container": "#b9d7ff",
+            "tertiary-container": "#3a2600",
+            "tertiary-fixed-dim": "#edbf73",
+            "secondary": "#436083",
+            "on-background": "#111c2d",
+            "surface-container-low": "#f0f3ff",
+            "tertiary-fixed": "#ffdeab",
+            "surface-container-highest": "#d9e3fb",
+            "error": "#ba1a1a",
+            "secondary-fixed": "#d2e4ff",
+            "inverse-on-surface": "#ecf0ff",
+            "tertiary": "#201300",
+            "primary-container": "#142b46",
+            "background": "#f9f9ff",
+            "on-secondary-container": "#405d80",
+            "outline-variant": "#c4c6ce",
+            "surface-tint": "#4a607d",
+            "inverse-surface": "#273143",
+            "surface-dim": "#d0daf2",
+            "on-secondary-fixed": "#001d37",
+            "on-primary-fixed": "#031c37",
+            "surface-container-lowest": "#ffffff",
+            "on-surface": "#111c2d",
+            "primary-fixed-dim": "#b2c8ea",
+            "on-primary": "#ffffff",
+            "on-primary-fixed-variant": "#324864",
+            "outline": "#74777e",
+            "on-secondary": "#ffffff",
+            "error-container": "#ffdad6",
+            "on-error-container": "#93000a"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "gutter": "1.5rem",
+            "space-lg": "1.5rem",
+            "space-sm": "0.5rem",
+            "margin": "3rem",
+            "space-2xl": "4rem",
+            "space-xs": "0.25rem",
+            "gutter-mobile": "1rem",
+            "space-md": "1rem",
+            "space-xl": "2.5rem",
+            "margin-mobile": "1rem"
+          },
+          "fontFamily": {
+            "body-sm": ["Inter"],
+            "headline-md": ["Manrope"],
+            "label-xs": ["Inter"],
+            "headline-sm": ["Manrope"],
+            "body-lg": ["Inter"],
+            "body-xl": ["Inter"],
+            "label-md": ["Inter"],
+            "headline-xl-mobile": ["Manrope"],
+            "display-hero-mobile": ["Manrope"],
+            "body-md": ["Inter"],
+            "display-hero": ["Manrope"],
+            "headline-lg": ["Manrope"],
+            "code-num": ["Inter"],
+            "label-lg": ["Inter"],
+            "headline-xl": ["Manrope"]
+          },
+          "fontSize": {
+            "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "headline-md": ["22px", { "lineHeight": "30px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "label-xs": ["10px", { "lineHeight": "14px", "letterSpacing": "0.06em", "fontWeight": "700" }],
+            "headline-sm": ["18px", { "lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "600" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "body-xl": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "headline-xl-mobile": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+            "display-hero-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+            "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "display-hero": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+            "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "code-num": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+            "headline-xl": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .custom-scroll::-webkit-scrollbar {
+      height: 4px;
+    }
+    .custom-scroll::-webkit-scrollbar-thumb {
+      background: #c4c6ce;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface antialiased font-body-md selection:bg-secondary-container selection:text-primary">
+<!-- BANDEAU INSTITUTIONNEL SUPÉRIEUR DISCRET -->
+<aside class="bg-primary text-inverse-primary border-b border-outline-variant/30 text-label-xs font-label-xs py-2 px-6">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
+<div class="flex items-center gap-2 tracking-wider">
+<span class="inline-block w-2 h-2 rounded-full bg-on-tertiary-container animate-pulse"></span>
+<span>Accréditation Institutionnelle UEMOA • Observatoire Régional des Marchés • Hubs Dakar &amp; Abidjan • Chiffrement TLS 256-bit</span>
+</div>
+<div class="flex items-center gap-6">
+<span class="flex items-center gap-1.5 text-inverse-primary/80">
+<span class="material-symbols-outlined text-[14px]">lock</span>
+<span>Données Cadastrales Vérifiées</span>
+</span>
+<span class="text-inverse-primary/40">|</span>
+<a class="hover:text-surface-container-lowest transition-colors duration-150 flex items-center gap-1" href="#support">
+<span class="material-symbols-outlined text-[14px]">headset_mic</span>
+<span>Support Sécurisé</span>
+</a>
+</div>
+</div>
+</aside>
+<!-- TOPAPPBAR FIDÈLE AU SHARED COMPONENT -->
+<header class="bg-surface sticky top-0 z-50 border-b border-outline-variant shadow-sm">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
+<!-- Leading Brand & Identity -->
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-lg bg-primary-container flex items-center justify-center text-on-tertiary-container shadow-sm border border-outline-variant/40">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+</div>
+<div>
+<a class="text-headline-md font-headline-md font-bold tracking-tight text-primary uppercase block leading-none" href="./01-accueil.html">
+            VIZATI
+          </a>
+<span class="text-label-xs font-label-xs text-on-surface-variant tracking-wider uppercase">
+            EXECUTIVE ACADEMY &amp; RESEARCH
+          </span>
+</div>
+</div>
+<!-- Navigation Links -->
+<nav class="hidden lg:flex items-center space-x-7 text-label-md font-label-md">
+<a class="text-on-surface-variant hover:text-on-surface transition-colors duration-150" href="./01-accueil.html">Accueil</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors duration-150" href="./02-institut.html">L'Institut</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors duration-150" href="./03-formations.html">Formations</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors duration-150" href="./05-publication.html">Publications</a>
+<a class="text-primary font-bold border-b-2 border-on-tertiary-container pb-1" href="./07-bibliotheque.html">Ressources</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors duration-150" href="./09-evenements.html">Événements</a>
+</nav>
+<!-- Trailing Action Block -->
+<div class="flex items-center gap-3">
+<button class="hidden sm:inline-flex items-center gap-2 px-4 py-2 text-label-md font-label-md text-primary border border-outline-variant rounded-lg hover:bg-surface-container transition-colors duration-150 active:scale-[0.99]">
+<span class="material-symbols-outlined text-[18px]">account_circle</span>
+<span>Se connecter</span>
+</button>
+<button class="inline-flex items-center gap-2 px-4 py-2 text-label-md font-label-md bg-primary-container text-surface-container-lowest rounded-lg hover:bg-primary transition-colors duration-150 shadow-sm active:scale-[0.99]">
+<span class="material-symbols-outlined text-[18px]">dashboard</span>
+<span>Espace Pro &amp; Data / Déposer une ressource</span>
+</button>
+</div>
+</div>
+</header>
+<main>
+<!-- HERO SECTION / PRÉSENTATION ÉDITORIALE -->
+<section class="relative bg-gradient-to-b from-surface-container-low/70 to-background border-b border-outline-variant/60 py-16 overflow-hidden">
+<!-- Subtle Architectural Pattern Grid -->
+<div class="absolute inset-0 opacity-[0.03] pointer-events-none bg-[radial-gradient(#142b46_1px,transparent_1px)] [background-size:20px_20px]"></div>
+<div class="max-w-7xl mx-auto px-6 relative z-10">
+<!-- Breadcrumb / Hierarchy -->
+<nav aria-label="Fil d'Ariane" class="flex items-center gap-2 text-label-xs font-label-xs text-on-surface-variant mb-6">
+<a class="hover:text-primary transition-colors" href="#">Portail Institutionnel</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<a class="hover:text-primary transition-colors" href="#">Bibliothèque Documentaire</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-primary font-semibold">Corpus Régional UEMOA-CEMAC</span>
+</nav>
+<div class="max-w-4xl">
+<!-- Institutional Badge -->
+<div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container-lowest border border-on-tertiary-container/40 text-on-tertiary-container mb-6 shadow-sm">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">account_balance</span>
+<span class="text-label-xs font-label-xs tracking-wider uppercase font-bold">CENTRE DE RESSOURCES &amp; DOCUMENTATION STRATÉGIQUE PANAFRICAINE</span>
+</div>
+<!-- Main Title -->
+<h1 class="text-display-hero font-display-hero text-primary tracking-tight mb-5">
+            Votre centre de ressources immobilières.
+          </h1>
+<!-- Subtitle -->
+<p class="text-body-xl font-body-xl text-on-surface-variant leading-relaxed mb-8 max-w-3xl">
+            Accédez à un corpus documentaire de référence réunissant études de marché, modèles contractuels OHADA, guides d'ingénierie financière et textes réglementaires vérifiés pour les professionnels de l'immobilier en Afrique de l'Ouest et Centrale.
+          </p>
+<!-- Key Metrics Pills -->
+<div class="flex flex-wrap items-center gap-3">
+<div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-surface-container-lowest border border-outline-variant/60 shadow-sm">
+<span class="material-symbols-outlined text-on-tertiary-container text-[18px]">verified</span>
+<span class="text-label-md font-label-md text-primary font-bold">Plus de 650 documents certifiés</span>
+</div>
+<div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-surface-container-lowest border border-outline-variant/60 shadow-sm">
+<span class="material-symbols-outlined text-secondary text-[18px]">public</span>
+<span class="text-label-md font-label-md text-primary font-bold">Zone UEMOA &amp; CEMAC</span>
+</div>
+<div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-surface-container-lowest border border-outline-variant/60 shadow-sm">
+<span class="material-symbols-outlined text-secondary text-[18px]">update</span>
+<span class="text-label-md font-label-md text-primary font-bold">Mise à jour hebdomadaire</span>
+</div>
+<div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-surface-container-lowest border border-outline-variant/60 shadow-sm">
+<span class="material-symbols-outlined text-secondary text-[18px]">security</span>
+<span class="text-label-md font-label-md text-primary font-bold">Conformité légale &amp; archivage sécurisé</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION RECHERCHE ET FILTRAGE MULTICRITÈRES -->
+<section class="max-w-7xl mx-auto px-6 -mt-7 relative z-20">
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant shadow-md p-6 lg:p-7">
+<!-- Barre de recherche centrale -->
+<form class="flex flex-col sm:flex-row gap-3 items-stretch mb-6">
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline text-[22px]">search</span>
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg pl-12 pr-4 py-3 text-body-md font-body-md text-on-surface placeholder:text-on-surface-variant/70 focus:outline-none focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 transition-all shadow-inner" placeholder="Rechercher par mot-clé, texte de loi, auteur, type de contrat (ex: bail commercial OHADA, cap rate, décret loyers)..." type="text"/>
+</div>
+<button class="inline-flex items-center justify-center gap-2 px-8 py-3 bg-primary-container hover:bg-primary text-surface-container-lowest text-label-lg font-label-lg rounded-lg shadow-sm transition-all duration-150 active:scale-[0.99]" type="submit">
+<span class="material-symbols-outlined text-[20px]">search</span>
+<span>Rechercher</span>
+</button>
+</form>
+<!-- Filtres Multicritères en Grille -->
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 pt-4 border-t border-outline-variant/50">
+<!-- Filtre Pays -->
+<div>
+<label class="block text-label-xs font-label-xs text-on-surface-variant uppercase tracking-wider mb-1.5">Pays / Juridiction</label>
+<div class="relative">
+<select class="w-full appearance-none bg-surface-container-low border border-outline-variant rounded-lg py-2 pl-3 pr-8 text-body-sm font-body-sm text-on-surface focus:outline-none focus:border-primary-container">
+<option selected="">Tous les pays</option>
+<option>Sénégal</option>
+<option>Côte d'Ivoire</option>
+<option>Cameroun</option>
+<option>Bénin</option>
+<option>Togo</option>
+<option>Mali</option>
+<option>Gabon</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 text-outline text-[18px] pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- Filtre Type de document -->
+<div>
+<label class="block text-label-xs font-label-xs text-on-surface-variant uppercase tracking-wider mb-1.5">Type de document</label>
+<div class="relative">
+<select class="w-full appearance-none bg-surface-container-low border border-outline-variant rounded-lg py-2 pl-3 pr-8 text-body-sm font-body-sm text-on-surface focus:outline-none focus:border-primary-container">
+<option selected="">Tous types</option>
+<option>Rapports sectoriels</option>
+<option>Guides professionnels</option>
+<option>Fiches pratiques</option>
+<option>Textes réglementaires</option>
+<option>Études de marché</option>
+<option>Modèles de documents</option>
+<option>Référentiels métiers</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 text-outline text-[18px] pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- Filtre Thématique -->
+<div>
+<label class="block text-label-xs font-label-xs text-on-surface-variant uppercase tracking-wider mb-1.5">Thématique</label>
+<div class="relative">
+<select class="w-full appearance-none bg-surface-container-low border border-outline-variant rounded-lg py-2 pl-3 pr-8 text-body-sm font-body-sm text-on-surface focus:outline-none focus:border-primary-container">
+<option selected="">Toutes thématiques</option>
+<option>Droit foncier &amp; OHADA</option>
+<option>Fiscalité &amp; Finance</option>
+<option>Gestion locative &amp; Copropriété</option>
+<option>PropTech &amp; Cadastre</option>
+<option>Développement durable &amp; ESG</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 text-outline text-[18px] pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- Filtre Année -->
+<div>
+<label class="block text-label-xs font-label-xs text-on-surface-variant uppercase tracking-wider mb-1.5">Millésime</label>
+<div class="relative">
+<select class="w-full appearance-none bg-surface-container-low border border-outline-variant rounded-lg py-2 pl-3 pr-8 text-body-sm font-body-sm text-on-surface focus:outline-none focus:border-primary-container">
+<option selected="">Toutes les années</option>
+<option>2024</option>
+<option>2023</option>
+<option>2022</option>
+<option>Archives antérieures</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 text-outline text-[18px] pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- Filtre Format -->
+<div>
+<label class="block text-label-xs font-label-xs text-on-surface-variant uppercase tracking-wider mb-1.5">Format de fichier</label>
+<div class="relative">
+<select class="w-full appearance-none bg-surface-container-low border border-outline-variant rounded-lg py-2 pl-3 pr-8 text-body-sm font-body-sm text-on-surface focus:outline-none focus:border-primary-container">
+<option selected="">Tous formats</option>
+<option>PDF interactif</option>
+<option>Modèle Word / DOCX</option>
+<option>Tableur Excel / XLSX</option>
+<option>Pack ZIP</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 text-outline text-[18px] pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- Filtre Accès -->
+<div>
+<label class="block text-label-xs font-label-xs text-on-surface-variant uppercase tracking-wider mb-1.5">Niveau d'accès</label>
+<div class="relative">
+<select class="w-full appearance-none bg-surface-container-low border border-outline-variant rounded-lg py-2 pl-3 pr-8 text-body-sm font-body-sm text-on-surface focus:outline-none focus:border-primary-container">
+<option selected="">Tous les accès</option>
+<option>Accès libre (Public)</option>
+<option>Réservé aux Membres (Pro)</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 text-outline text-[18px] pointer-events-none">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Contrôles d'affichage & Statut -->
+<div class="flex flex-col sm:flex-row justify-between items-center gap-4 mt-6 pt-4 border-t border-outline-variant/40">
+<div class="flex items-center gap-3">
+<span class="text-body-sm font-body-sm text-on-surface-variant">
+              Affichage de <strong class="text-primary font-semibold">18 documents</strong> sur <span class="font-code-num text-code-num font-semibold text-primary">654</span> références répertoriées
+            </span>
+<button class="text-label-xs font-label-xs text-secondary hover:text-primary transition-colors underline flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[14px]">restart_alt</span>
+<span>Réinitialiser les filtres</span>
+</button>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-label-xs font-label-xs text-on-surface-variant uppercase tracking-wider mr-1">Affichage :</span>
+<div class="inline-flex rounded-lg border border-outline-variant bg-surface-container-low p-1">
+<button class="px-2.5 py-1 rounded bg-surface-container-lowest text-primary shadow-xs flex items-center gap-1 text-label-xs font-label-xs font-bold" title="Vue Grille">
+<span class="material-symbols-outlined text-[16px]">grid_view</span>
+<span>Grille</span>
+</button>
+<button class="px-2.5 py-1 rounded text-on-surface-variant hover:text-on-surface flex items-center gap-1 text-label-xs font-label-xs" title="Vue Liste">
+<span class="material-symbols-outlined text-[16px]">view_list</span>
+<span>Liste</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION RESSOURCES RÉCEMMENT AJOUTÉES (NOUVEAUTÉS) -->
+<section class="max-w-7xl mx-auto px-6 py-12">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-6 pb-3 border-b border-outline-variant/60 gap-4">
+<div>
+<div class="inline-flex items-center gap-1.5 text-label-xs font-label-xs text-on-tertiary-container font-bold uppercase tracking-wider mb-1">
+<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container"></span>
+            Nouveautés Q3/Q4 2024
+          </div>
+<h2 class="text-headline-lg font-headline-lg text-primary tracking-tight">
+            Ressources récemment ajoutées
+          </h2>
+</div>
+<a class="text-label-md font-label-md text-secondary hover:text-primary transition-colors flex items-center gap-1 group" href="#archives">
+<span>Consulter le flux des dépôts récents</span>
+<span class="material-symbols-outlined text-[18px] group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
+</a>
+</div>
+<!-- 3 Cartes Horizontales Premium -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<!-- Nouveauté 1 -->
+<article class="bg-surface-container-lowest rounded-xl border border-outline-variant p-6 flex flex-col justify-between hover:shadow-md transition-shadow duration-200 relative group">
+<div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-on-tertiary-container to-secondary rounded-t-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div>
+<div class="flex items-center justify-between gap-2 mb-3">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded text-label-xs font-label-xs font-semibold bg-surface-container text-primary">
+                Rapport sectoriel
+              </span>
+<span class="inline-flex items-center gap-1 text-label-xs font-label-xs text-on-tertiary-container font-bold">
+<span class="material-symbols-outlined text-[14px]">lock_open</span>
+                Accès Libre
+              </span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-primary mb-2 group-hover:text-secondary transition-colors">
+              Baromètre Régional des Loyers Commerciaux Dakar-Abidjan Q3 2024
+            </h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant mb-4 line-clamp-2">
+              Étude comparative approfondie des valeurs locatives prime, cap rates moyens et rendements observés dans les quartiers d'affaires de Dakar Plateau et Abidjan Plateau.
+            </p>
+</div>
+<div class="pt-4 border-t border-outline-variant/40 flex items-center justify-between text-body-sm font-body-sm text-on-surface-variant">
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-error">picture_as_pdf</span>
+<span class="font-code-num text-code-num">PDF • 8.4 Mo</span>
+</span>
+<span class="text-label-xs font-label-xs font-code-num">18 Oct 2024</span>
+</div>
+</article>
+<!-- Nouveauté 2 -->
+<article class="bg-surface-container-lowest rounded-xl border border-outline-variant p-6 flex flex-col justify-between hover:shadow-md transition-shadow duration-200 relative group">
+<div class="absolute top-0 left-0 right-0 h-1 bg-on-tertiary-container rounded-t-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div>
+<div class="flex items-center justify-between gap-2 mb-3">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded text-label-xs font-label-xs font-semibold bg-surface-container text-primary">
+                Modèle de document
+              </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-label-xs font-label-xs font-bold bg-primary-container text-surface-container-lowest">
+<span class="material-symbols-outlined text-[14px]">lock</span>
+                Réservé aux membres
+              </span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-primary mb-2 group-hover:text-secondary transition-colors">
+              Pack Contractuel 2024 : 12 Modèles de Baux Commerciaux Conformes OHADA
+            </h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant mb-4 line-clamp-2">
+              Clauses d'indexation monétaire, pénalités de retard, résiliation unilatérale et clauses compromissoires validées par la Chambre de Commerce et d'Industrie régionale.
+            </p>
+</div>
+<div class="pt-4 border-t border-outline-variant/40 flex items-center justify-between text-body-sm font-body-sm text-on-surface-variant">
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-secondary">description</span>
+<span class="font-code-num text-code-num">DOCX + PDF • 14.2 Mo</span>
+</span>
+<span class="text-label-xs font-label-xs font-code-num">12 Oct 2024</span>
+</div>
+</article>
+<!-- Nouveauté 3 -->
+<article class="bg-surface-container-lowest rounded-xl border border-outline-variant p-6 flex flex-col justify-between hover:shadow-md transition-shadow duration-200 relative group">
+<div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-secondary to-on-tertiary-container rounded-t-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div>
+<div class="flex items-center justify-between gap-2 mb-3">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded text-label-xs font-label-xs font-semibold bg-surface-container text-primary">
+                Guide professionnel
+              </span>
+<span class="inline-flex items-center gap-1 text-label-xs font-label-xs text-on-tertiary-container font-bold">
+<span class="material-symbols-outlined text-[14px]">lock_open</span>
+                Accès Libre
+              </span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-primary mb-2 group-hover:text-secondary transition-colors">
+              Guide Méthodologique de la Purge des Droits Coutumiers en Côte d'Ivoire
+            </h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant mb-4 line-clamp-2">
+              Procédure administrative, barème d'indemnisation coutumière, gestion des oppositions foncières et étapes d'obtention de l'Arrêté de Concession Définitive (ACD).
+            </p>
+</div>
+<div class="pt-4 border-t border-outline-variant/40 flex items-center justify-between text-body-sm font-body-sm text-on-surface-variant">
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-error">picture_as_pdf</span>
+<span class="font-code-num text-code-num">PDF • 5.6 Mo</span>
+</span>
+<span class="text-label-xs font-label-xs font-code-num">05 Oct 2024</span>
+</div>
+</article>
+</div>
+</section>
+<!-- CORPUS DOCUMENTAIRE PRINCIPAL (CATALOGUE EN GRILLE BENTO / CARTES RICHES) -->
+<section class="max-w-7xl mx-auto px-6 py-6" id="ressources">
+<div class="flex items-center justify-between mb-8 pb-3 border-b border-outline-variant/60">
+<div>
+<h2 class="text-headline-lg font-headline-lg text-primary tracking-tight">
+            Corpus Documentaire Stratégique
+          </h2>
+<p class="text-body-md font-body-md text-on-surface-variant">
+            Base doctrinale, actes juridiques, fiches méthodologiques et modélisations certifiées par le comité scientifique VIZATI.
+          </p>
+</div>
+<div class="hidden sm:flex items-center gap-2">
+<span class="text-label-xs font-label-xs text-on-surface-variant">Trier par :</span>
+<select class="bg-surface-container-low border border-outline-variant rounded-lg text-body-sm font-body-sm py-1.5 px-3 text-primary focus:outline-none focus:border-primary-container">
+<option>Plus récents d'abord</option>
+<option>Plus consultés</option>
+<option>Pertinence juridique</option>
+<option>Ordre alphabétique</option>
+</select>
+</div>
+</div>
+<!-- Grille des Documents Clés (6 à 8 Documents) -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- DOCUMENT 1 -->
+<article class="bg-surface-container-lowest rounded-xl border border-outline-variant p-6 flex flex-col justify-between hover:border-secondary transition-all duration-200 hover:shadow-md group">
+<div>
+<!-- Header Badges -->
+<div class="flex items-start justify-between gap-2 mb-3">
+<span class="inline-block px-2.5 py-1 rounded text-label-xs font-label-xs font-bold uppercase tracking-wider bg-surface-container text-primary">
+                Modèle de document
+              </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded text-label-xs font-label-xs font-bold bg-primary-container text-surface-container-lowest shadow-xs">
+<span class="material-symbols-outlined text-[14px]">lock</span>
+                Réservé aux membres
+              </span>
+</div>
+<!-- Title -->
+<h3 class="text-headline-sm font-headline-sm text-primary mb-3 leading-snug group-hover:text-secondary transition-colors">
+              Modèle type de contrat de bail commercial avec clause résolutoire révisée (Acte Uniforme OHADA)
+            </h3>
+<!-- Context Metadata Grid -->
+<div class="grid grid-cols-2 gap-y-2 gap-x-4 py-3 my-3 border-y border-outline-variant/40 text-body-sm font-body-sm">
+<div>
+<span class="text-label-xs font-label-xs text-on-surface-variant block uppercase">Périmètre :</span>
+<span class="text-primary font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-secondary">domain</span>
+                  Espace OHADA / Régional
+                </span>
+</div>
+<div>
+<span class="text-label-xs font-label-xs text-on-surface-variant block uppercase">Date :</span>
+<span class="font-code-num text-code-num text-on-surface">Octobre 2024</span>
+</div>
+<div class="col-span-2">
+<span class="text-label-xs font-label-xs text-on-surface-variant block uppercase">Auteur(s) :</span>
+<span class="text-on-surface">Commission Juridique VIZATI &amp; Me A. Fall</span>
+</div>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant mb-4">
+              Stipulations relatives au renouvellement automatique, procédure de congé, révision triennale et calcul des charges communes réparties.
+            </p>
+</div>
+<!-- Actions & Format -->
+<div class="pt-2">
+<div class="flex items-center justify-between text-body-sm font-body-sm text-on-surface-variant mb-4">
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-secondary">description</span>
+<span class="font-code-num text-code-num">DOCX &amp; PDF • 2.8 Mo</span>
+</span>
+<span class="text-label-xs font-label-xs text-on-tertiary-container font-semibold">Édition Vérifiée</span>
+</div>
+<div class="grid grid-cols-2 gap-2">
+<button href="./08-detail-bibliotheque.html" class="w-full py-2 px-3 text-label-md font-label-md text-primary border border-outline-variant hover:bg-surface-container rounded-lg transition-colors text-center">
+                Consulter la fiche
+              </button>
+<button class="w-full py-2 px-3 text-label-md font-label-md bg-primary-container hover:bg-primary text-surface-container-lowest rounded-lg transition-colors flex items-center justify-center gap-1.5 shadow-xs">
+<span class="material-symbols-outlined text-[16px]">download</span>
+<span>Télécharger</span>
+</button>
+</div>
+</div>
+</article>
+<!-- DOCUMENT 2 -->
+<article class="bg-surface-container-lowest rounded-xl border border-outline-variant p-6 flex flex-col justify-between hover:border-secondary transition-all duration-200 hover:shadow-md group">
+<div>
+<!-- Header Badges -->
+<div class="flex items-start justify-between gap-2 mb-3">
+<span class="inline-block px-2.5 py-1 rounded text-label-xs font-label-xs font-bold uppercase tracking-wider bg-surface-container text-primary">
+                Rapport sectoriel
+              </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded text-label-xs font-label-xs font-bold bg-surface-container-high text-on-tertiary-container border border-on-tertiary-container/30">
+<span class="material-symbols-outlined text-[14px]">lock_open</span>
+                Accès libre
+              </span>
+</div>
+<!-- Title -->
+<h3 class="text-headline-sm font-headline-sm text-primary mb-3 leading-snug group-hover:text-secondary transition-colors">
+              Rapport Annuel sur les Valeurs Foncières et Rendements Locatifs Tertiaires à Dakar (Plateau, Almadies, Diamniadio)
+            </h3>
+<!-- Context Metadata Grid -->
+<div class="grid grid-cols-2 gap-y-2 gap-x-4 py-3 my-3 border-y border-outline-variant/40 text-body-sm font-body-sm">
+<div>
+<span class="text-label-xs font-label-xs text-on-surface-variant block uppercase">Périmètre :</span>
+<span class="text-primary font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-secondary">location_on</span>
+                  Sénégal (Dakar)
+                </span>
+</div>
+<div>
+<span class="text-label-xs font-label-xs text-on-surface-variant block uppercase">Date :</span>
+<span class="font-code-num text-code-num text-on-surface">Septembre 2024</span>
+</div>
+<div class="col-span-2">
+<span class="text-label-xs font-label-xs text-on-surface-variant block uppercase">Auteur(s) :</span>
+<span class="text-on-surface">Observatoire Foncier VIZATI</span>
+</div>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant mb-4">
+              Analyse transactionnelle des terrains nus et surfaces de bureaux grade A. Cartographie des taux de vacance et rendements bruts moyens (8.2% à 10.5%).
+            </p>
+</div>
+<!-- Actions & Format -->
+<div class="pt-2">
+<div class="flex items-center justify-between text-body-sm font-body-sm text-on-surface-variant mb-4">
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-error">picture_as_pdf</span>
+<span class="font-code-num text-code-num">PDF interactif • 12.4 Mo</span>
+</span>
+<span class="text-label-xs font-label-xs text-secondary font-semibold">Cadastre validé</span>
+</div>
+<div class="grid grid-cols-2 gap-2">
+<button class="w-full py-2 px-3 text-label-md font-label-md text-primary border border-outline-variant hover:bg-surface-container rounded-lg transition-colors text-center">
+                Consulter
+              </button>
+<button class="w-full py-2 px-3 text-label-md font-label-md bg-secondary hover:bg-primary text-surface-container-lowest rounded-lg transition-colors flex items-center justify-center gap-1.5 shadow-xs">
+<span class="material-symbols-outlined text-[16px]">download</span>
+<span>Télécharger</span>
+</button>
+</div>
+</div>
+</article>
+<!-- DOCUMENT 3 -->
+<article class="bg-surface-container-lowest rounded-xl border border-outline-variant p-6 flex flex-col justify-between hover:border-secondary transition-all duration-200 hover:shadow-md group">
+<div>
+<!-- Header Badges -->
+<div class="flex items-start justify-between gap-2 mb-3">
+<span class="inline-block px-2.5 py-1 rounded text-label-xs font-label-xs font-bold uppercase tracking-wider bg-surface-container text-primary">
+                Fiche pratique
+              </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded text-label-xs font-label-xs font-bold bg-surface-container-high text-on-tertiary-container border border-on-tertiary-container/30">
+<span class="material-symbols-outlined text-[14px]">lock_open</span>
+                Accès libre
+              </span>
+</div>
+<!-- Title -->
+<h3 class="text-headline-sm font-headline-sm text-primary mb-3 leading-snug group-hover:text-secondary transition-colors">
+              Fiche Pratique : Calcul de la surface corrigée et application du barème légal d'évaluation locative
+            </h3>
+<!-- Context Metadata Grid -->
+<div class="grid grid-cols-2 gap-y-2 gap-x-4 py-3 my-3 border-y border-outline-variant/40 text-body-sm font-body-sm">
+<div>
+<span class="text-label-xs font-label-xs text-on-surface-variant block uppercase">Périmètre :</span>
+<span class="text-primary font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-secondary">location_on</span>
+                  Sénégal &amp; Côte d'Ivoire
+                </span>
+</div>
+<div>
+<span class="text-label-xs font-label-xs text-on-surface-variant block uppercase">Date :</span>
+<span class="font-code-num text-code-num text-on-surface">Août 2024</span>
+</div>
+<div class="col-span-2">
+<span class="text-label-xs font-label-xs text-on-surface-variant block uppercase">Auteur(s) :</span>
+<span class="text-on-surface">Dr. C. O. Sylla, Ingénieur Foncier</span>
+</div>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant mb-4">
+              Méthodologie pas-à-pas pour les experts évaluateurs : coefficients de vétusté, affectation des dépendances et grilles de conformité réglementaire.
+            </p>
+</div>
+<!-- Actions & Format -->
+<div class="pt-2">
+<div class="flex items-center justify-between text-body-sm font-body-sm text-on-surface-variant mb-4">
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-error">picture_as_pdf</span>
+<span class="font-code-num text-code-num">PDF • 1.9 Mo</span>
+</span>
+<span class="text-label-xs font-label-xs text-secondary font-semibold">Méthode Certifiée</span>
+</div>
+<div class="grid grid-cols-2 gap-2">
+<button class="w-full py-2 px-3 text-label-md font-label-md text-primary border border-outline-variant hover:bg-surface-container rounded-lg transition-colors text-center">
+                Consulter
+              </button>
+<button class="w-full py-2 px-3 text-label-md font-label-md bg-secondary hover:bg-primary text-surface-container-lowest rounded-lg transition-colors flex items-center justify-center gap-1.5 shadow-xs">
+<span class="material-symbols-outlined text-[16px]">download</span>
+<span>Télécharger</span>
+</button>
+</div>
+</div>
+</article>
+<!-- DOCUMENT 4 -->
+<article class="bg-surface-container-lowest rounded-xl border border-outline-variant p-6 flex flex-col justify-between hover:border-secondary transition-all duration-200 hover:shadow-md group">
+<div>
+<!-- Header Badges -->
+<div class="flex items-start justify-between gap-2 mb-3">
+<span class="inline-block px-2.5 py-1 rounded text-label-xs font-label-xs font-bold uppercase tracking-wider bg-surface-container text-primary">
+                Textes réglementaires
+              </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded text-label-xs font-label-xs font-bold bg-surface-container-high text-on-tertiary-container border border-on-tertiary-container/30">
+<span class="material-symbols-outlined text-[14px]">lock_open</span>
+                Accès libre
+              </span>
+</div>
+<!-- Title -->
+<h3 class="text-headline-sm font-headline-sm text-primary mb-3 leading-snug group-hover:text-secondary transition-colors">
+              Recueil des Textes Légaux et Réglementaires Régissant le Titre Foncier et le Livre Foncier en Côte d'Ivoire (Édition 2024)
+            </h3>
+<!-- Context Metadata Grid -->
+<div class="grid grid-cols-2 gap-y-2 gap-x-4 py-3 my-3 border-y border-outline-variant/40 text-body-sm font-body-sm">
+<div>
+<span class="text-label-xs font-label-xs text-on-surface-variant block uppercase">Périmètre :</span>
+<span class="text-primary font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-secondary">location_on</span>
+                  Côte d'Ivoire
+                </span>
+</div>
+<div>
+<span class="text-label-xs font-label-xs text-on-surface-variant block uppercase">Date :</span>
+<span class="font-code-num text-code-num text-on-surface">Juillet 2024</span>
+</div>
+<div class="col-span-2">
+<span class="text-label-xs font-label-xs text-on-surface-variant block uppercase">Auteur(s) :</span>
+<span class="text-on-surface">Direction Générale des Impôts &amp; VIZATI</span>
+</div>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant mb-4">
+              Compendium officiel annoté comprenant les décrets d'application sur la numérisation du cadastre, la conservation foncière et les droits d'enregistrement.
+            </p>
+</div>
+<!-- Actions & Format -->
+<div class="pt-2">
+<div class="flex items-center justify-between text-body-sm font-body-sm text-on-surface-variant mb-4">
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-error">picture_as_pdf</span>
+<span class="font-code-num text-code-num">PDF annoté • 9.1 Mo</span>
+</span>
+<span class="text-label-xs font-label-xs text-on-surface font-semibold">Légal 2024</span>
+</div>
+<div class="grid grid-cols-2 gap-2">
+<button class="w-full py-2 px-3 text-label-md font-label-md text-primary border border-outline-variant hover:bg-surface-container rounded-lg transition-colors text-center">
+                Consulter
+              </button>
+<button class="w-full py-2 px-3 text-label-md font-label-md bg-secondary hover:bg-primary text-surface-container-lowest rounded-lg transition-colors flex items-center justify-center gap-1.5 shadow-xs">
+<span class="material-symbols-outlined text-[16px]">download</span>
+<span>Télécharger</span>
+</button>
+</div>
+</div>
+</article>
+<!-- DOCUMENT 5 -->
+<article class="bg-surface-container-lowest rounded-xl border border-outline-variant p-6 flex flex-col justify-between hover:border-secondary transition-all duration-200 hover:shadow-md group">
+<div>
+<!-- Header Badges -->
+<div class="flex items-start justify-between gap-2 mb-3">
+<span class="inline-block px-2.5 py-1 rounded text-label-xs font-label-xs font-bold uppercase tracking-wider bg-surface-container text-primary">
+                Référentiel métier
+              </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded text-label-xs font-label-xs font-bold bg-surface-container-high text-on-tertiary-container border border-on-tertiary-container/30">
+<span class="material-symbols-outlined text-[14px]">lock_open</span>
+                Accès libre
+              </span>
+</div>
+<!-- Title -->
+<h3 class="text-headline-sm font-headline-sm text-primary mb-3 leading-snug group-hover:text-secondary transition-colors">
+              Référentiel Métier et Grille de Compétences : Le Gestionnaire de Copropriété et Syndic en Afrique de l'Ouest
+            </h3>
+<!-- Context Metadata Grid -->
+<div class="grid grid-cols-2 gap-y-2 gap-x-4 py-3 my-3 border-y border-outline-variant/40 text-body-sm font-body-sm">
+<div>
+<span class="text-label-xs font-label-xs text-on-surface-variant block uppercase">Périmètre :</span>
+<span class="text-primary font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-secondary">domain</span>
+                  Zone UEMOA
+                </span>
+</div>
+<div>
+<span class="text-label-xs font-label-xs text-on-surface-variant block uppercase">Date :</span>
+<span class="font-code-num text-code-num text-on-surface">Juin 2024</span>
+</div>
+<div class="col-span-2">
+<span class="text-label-xs font-label-xs text-on-surface-variant block uppercase">Auteur(s) :</span>
+<span class="text-on-surface">VIZATI Executive Academy</span>
+</div>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant mb-4">
+              Standardisation des obligations comptables, techniques et relationnelles du syndic professionnel. Grille d'évaluation pour recruteurs et asset managers.
+            </p>
+</div>
+<!-- Actions & Format -->
+<div class="pt-2">
+<div class="flex items-center justify-between text-body-sm font-body-sm text-on-surface-variant mb-4">
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-error">picture_as_pdf</span>
+<span class="font-code-num text-code-num">PDF • 4.2 Mo</span>
+</span>
+<span class="text-label-xs font-label-xs text-secondary font-semibold">Standard UEMOA</span>
+</div>
+<div class="grid grid-cols-2 gap-2">
+<button class="w-full py-2 px-3 text-label-md font-label-md text-primary border border-outline-variant hover:bg-surface-container rounded-lg transition-colors text-center">
+                Consulter
+              </button>
+<button class="w-full py-2 px-3 text-label-md font-label-md bg-secondary hover:bg-primary text-surface-container-lowest rounded-lg transition-colors flex items-center justify-center gap-1.5 shadow-xs">
+<span class="material-symbols-outlined text-[16px]">download</span>
+<span>Télécharger</span>
+</button>
+</div>
+</div>
+</article>
+<!-- DOCUMENT 6 -->
+<article class="bg-surface-container-lowest rounded-xl border border-outline-variant p-6 flex flex-col justify-between hover:border-secondary transition-all duration-200 hover:shadow-md group">
+<div>
+<!-- Header Badges -->
+<div class="flex items-start justify-between gap-2 mb-3">
+<span class="inline-block px-2.5 py-1 rounded text-label-xs font-label-xs font-bold uppercase tracking-wider bg-surface-container text-primary">
+                Modèles / Outils
+              </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded text-label-xs font-label-xs font-bold bg-primary-container text-surface-container-lowest shadow-xs">
+<span class="material-symbols-outlined text-[14px]">lock</span>
+                Réservé aux membres
+              </span>
+</div>
+<!-- Title -->
+<h3 class="text-headline-sm font-headline-sm text-primary mb-3 leading-snug group-hover:text-secondary transition-colors">
+              Outil d'Arbitrage Financier et Tableau de Modélisation des Cash-Flows Locatifs (Cap Rates, TRI, TRI Brut/Net)
+            </h3>
+<!-- Context Metadata Grid -->
+<div class="grid grid-cols-2 gap-y-2 gap-x-4 py-3 my-3 border-y border-outline-variant/40 text-body-sm font-body-sm">
+<div>
+<span class="text-label-xs font-label-xs text-on-surface-variant block uppercase">Périmètre :</span>
+<span class="text-primary font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-secondary">analytics</span>
+                  Régional (FCFA / €)
+                </span>
+</div>
+<div>
+<span class="text-label-xs font-label-xs text-on-surface-variant block uppercase">Date :</span>
+<span class="font-code-num text-code-num text-on-surface">Mai 2024</span>
+</div>
+<div class="col-span-2">
+<span class="text-label-xs font-label-xs text-on-surface-variant block uppercase">Auteur(s) :</span>
+<span class="text-on-surface">Pôle Ingénierie Financière VIZATI</span>
+</div>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant mb-4">
+              Matrice financière Excel paramétrable intégrant les régimes fiscaux locaux (BIC, impôt foncier), les charges non récupérables et les scénarios d'exit à 5 et 10 ans.
+            </p>
+</div>
+<!-- Actions & Format -->
+<div class="pt-2">
+<div class="flex items-center justify-between text-body-sm font-body-sm text-on-surface-variant mb-4">
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-on-tertiary-container">table_chart</span>
+<span class="font-code-num text-code-num">XLSX • 4.8 Mo</span>
+</span>
+<span class="text-label-xs font-label-xs text-on-tertiary-container font-semibold">Macro Active</span>
+</div>
+<div class="grid grid-cols-2 gap-2">
+<button class="w-full py-2 px-3 text-label-md font-label-md text-primary border border-outline-variant hover:bg-surface-container rounded-lg transition-colors text-center">
+                Consulter la fiche
+              </button>
+<button class="w-full py-2 px-3 text-label-md font-label-md bg-primary-container hover:bg-primary text-surface-container-lowest rounded-lg transition-colors flex items-center justify-center gap-1.5 shadow-xs">
+<span class="material-symbols-outlined text-[16px]">download</span>
+<span>Télécharger</span>
+</button>
+</div>
+</div>
+</article>
+</div>
+<!-- PAGINATION NUMÉROTÉE ACADÉMIQUE -->
+<div class="mt-12 flex flex-col sm:flex-row items-center justify-between gap-4 pt-6 border-t border-outline-variant/60">
+<p class="text-body-sm font-body-sm text-on-surface-variant">
+          Affichage des résultats <span class="font-medium text-primary">1</span> à <span class="font-medium text-primary">6</span> sur 18 disponibles dans cette sélection
+        </p>
+<div class="inline-flex items-center gap-1">
+<button class="w-9 h-9 rounded-lg border border-outline-variant bg-surface-container-lowest text-on-surface-variant flex items-center justify-center hover:bg-surface-container transition-colors disabled:opacity-50" disabled="">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<button class="w-9 h-9 rounded-lg bg-primary-container text-surface-container-lowest font-code-num text-code-num font-bold flex items-center justify-center">
+            1
+          </button>
+<button class="w-9 h-9 rounded-lg border border-outline-variant bg-surface-container-lowest text-primary hover:bg-surface-container font-code-num text-code-num flex items-center justify-center transition-colors">
+            2
+          </button>
+<button class="w-9 h-9 rounded-lg border border-outline-variant bg-surface-container-lowest text-primary hover:bg-surface-container font-code-num text-code-num flex items-center justify-center transition-colors">
+            3
+          </button>
+<span class="px-2 text-on-surface-variant">...</span>
+<button class="w-9 h-9 rounded-lg border border-outline-variant bg-surface-container-lowest text-primary hover:bg-surface-container font-code-num text-code-num flex items-center justify-center transition-colors">
+            11
+          </button>
+<button class="w-9 h-9 rounded-lg border border-outline-variant bg-surface-container-lowest text-on-surface-variant flex items-center justify-center hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+</section>
+<!-- SECTION ABONNEMENT / ADHÉSION INSTITUTIONNELLE ACCÈS ILLIMITÉ -->
+<section class="max-w-7xl mx-auto px-6 py-12">
+<div class="bg-primary rounded-xl p-8 lg:p-12 text-surface-container-lowest relative overflow-hidden shadow-xl border border-outline-variant/20">
+<!-- Background architectural line decor -->
+<div class="absolute -right-20 -bottom-20 w-96 h-96 rounded-full border border-surface-container-highest/10 pointer-events-none"></div>
+<div class="absolute right-32 top-10 w-48 h-48 rounded-full border border-on-tertiary-container/20 pointer-events-none"></div>
+<div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+<div class="lg:col-span-7">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded bg-tertiary-container/80 text-on-tertiary-container border border-on-tertiary-container/40 text-label-xs font-label-xs font-bold uppercase tracking-wider mb-4">
+<span class="material-symbols-outlined text-[16px]">stars</span>
+              ESPACE PRO &amp; ADHÉSION INSTITUTIONNELLE
+            </div>
+<h2 class="text-headline-xl font-headline-xl text-surface-container-lowest tracking-tight mb-4">
+              Bénéficiez d'un accès intégral et sans restriction au centre de ressources.
+            </h2>
+<p class="text-body-lg font-body-lg text-inverse-primary/90 mb-6 leading-relaxed">
+              Pour les cabinets d'avocats, promoteurs immobiliers, banques de développement, fonds d'investissement et collectivités publiques d'Afrique de l'Ouest et Centrale.
+            </p>
+<!-- Key Advantages List -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
+<div class="flex items-center gap-2.5 text-body-sm font-body-sm text-surface-bright">
+<span class="material-symbols-outlined text-on-tertiary-container text-[18px]">check_circle</span>
+<span>Téléchargement illimité des modèles contractuels éditables</span>
+</div>
+<div class="flex items-center gap-2.5 text-body-sm font-body-sm text-surface-bright">
+<span class="material-symbols-outlined text-on-tertiary-container text-[18px]">check_circle</span>
+<span>Archives juridiques complètes et jurisprudence foncière</span>
+</div>
+<div class="flex items-center gap-2.5 text-body-sm font-body-sm text-surface-bright">
+<span class="material-symbols-outlined text-on-tertiary-container text-[18px]">check_circle</span>
+<span>Données brutes des baromètres et indicateurs de rendement</span>
+</div>
+<div class="flex items-center gap-2.5 text-body-sm font-body-sm text-surface-bright">
+<span class="material-symbols-outlined text-on-tertiary-container text-[18px]">check_circle</span>
+<span>Veille légale personnalisée &amp; alertes réglementaires</span>
+</div>
+</div>
+</div>
+<div class="lg:col-span-5 flex flex-col sm:flex-row lg:flex-col gap-4 justify-center items-stretch">
+<button class="px-6 py-4 rounded-lg bg-on-tertiary-container hover:bg-tertiary-fixed-dim text-on-tertiary-fixed font-headline-sm text-headline-sm font-bold shadow-lg transition-all duration-150 text-center active:scale-[0.99] flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[22px]">workspace_premium</span>
+<span>Rejoindre le Cercle Pro VIZATI</span>
+</button>
+<button class="px-6 py-3.5 rounded-lg border border-outline-variant/60 hover:bg-primary-container text-surface-container-lowest font-label-lg text-label-lg transition-colors text-center active:scale-[0.99] flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[20px]">corporate_fare</span>
+<span>Découvrir les offres institutionnelles</span>
+</button>
+<p class="text-label-xs font-label-xs text-inverse-primary/60 text-center mt-1">
+              Devis d'entreprise disponible pour les équipes pluridisciplinaires • Facturation en FCFA ou Euros.
+            </p>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION DÉPOSER UNE CONTRIBUTION / REVUE PAR LES PAIRS -->
+<section class="max-w-7xl mx-auto px-6 py-6 pb-16">
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-xs">
+<div class="flex items-start gap-4">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[28px]">rate_review</span>
+</div>
+<div>
+<h3 class="text-headline-sm font-headline-sm text-primary mb-1">
+              Vous êtes praticien, chercheur ou représentant d'une institution ?
+            </h3>
+<p class="text-body-md font-body-md text-on-surface-variant max-w-2xl">
+              Contribuez à la base documentaire VIZATI soumise à validation scientifique. Valorisez vos travaux doctrinaux, modèles validés et études sectorielles auprès de 14 000 décideurs de l'écosystème.
+            </p>
+</div>
+</div>
+<button class="shrink-0 px-6 py-3 rounded-lg border border-primary text-primary hover:bg-primary hover:text-surface-container-lowest text-label-lg font-label-lg transition-colors duration-150 flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px]">upload_file</span>
+<span>Proposer une publication</span>
+</button>
+</div>
+</section>
+</main>
+<!-- FOOTER INSTITUTIONNEL FIDÈLE AU SHARED COMPONENT -->
+<footer class="bg-surface-container-low border-t border-outline-variant">
+<div class="max-w-7xl mx-auto px-6 py-12">
+<!-- Top Section: Hubs & Accreditation -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10 pb-8 border-b border-outline-variant/60">
+<div>
+<div class="text-headline-sm font-headline-sm font-bold text-primary uppercase mb-2">
+            VIZATI
+          </div>
+<p class="text-body-sm font-body-sm text-on-surface-variant mb-4">
+            Institut d'enseignement supérieur exécutif, de recherche appliquée et d'intelligence de marché immobilière pour l'Afrique.
+          </p>
+<div class="flex items-center gap-2 text-label-xs font-label-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-on-tertiary-container">security</span>
+<span>Chiffrement certifié TLS 256-bit</span>
+</div>
+</div>
+<div>
+<h4 class="text-label-md font-label-md text-primary font-bold uppercase tracking-wider mb-3">
+            Campus Dakar
+          </h4>
+<p class="text-body-sm font-body-sm text-on-surface-variant leading-relaxed">
+            Immeuble Étoile de Dakar, Avenue Carde, Dakar Plateau, Sénégal<br/>
+<span class="font-code-num text-code-num">+221 33 820 44 00</span><br/>
+            dakar@vizati-academy.org
+          </p>
+</div>
+<div>
+<h4 class="text-label-md font-label-md text-primary font-bold uppercase tracking-wider mb-3">
+            Campus Abidjan
+          </h4>
+<p class="text-body-sm font-body-sm text-on-surface-variant leading-relaxed">
+            Tour Postel 2001, Boulevard de la République, Abidjan Plateau, Côte d'Ivoire<br/>
+<span class="font-code-num text-code-num">+225 27 20 22 55 10</span><br/>
+            abidjan@vizati-academy.org
+          </p>
+</div>
+<div>
+<h4 class="text-label-md font-label-md text-primary font-bold uppercase tracking-wider mb-3">
+            Accréditation &amp; Veille
+          </h4>
+<p class="text-body-sm font-body-sm text-on-surface-variant mb-3">
+            Reconnaissance académique et institutionnelle des programmes dans l'ensemble de l'espace UEMOA et CEMAC.
+          </p>
+<div class="flex items-center gap-2">
+<span class="inline-block px-2 py-1 rounded bg-surface-container text-primary font-bold text-label-xs font-label-xs">
+              UEMOA
+            </span>
+<span class="inline-block px-2 py-1 rounded bg-surface-container text-primary font-bold text-label-xs font-label-xs">
+              CEMAC
+            </span>
+<span class="inline-block px-2 py-1 rounded bg-surface-container text-primary font-bold text-label-xs font-label-xs">
+              OHADA
+            </span>
+</div>
+</div>
+</div>
+<!-- Legal Links & Copyright row defined by Shared Component -->
+<div class="flex flex-col md:flex-row justify-between items-center gap-4 text-body-sm font-body-sm">
+<p class="text-on-surface-variant text-body-sm font-body-sm text-center md:text-left">
+          © 2024 VIZATI Intelligence &amp; Executive Academy. Conforme RGPD &amp; Cadre Réglementaire UEMOA. Chiffrement TLS 256-bit.
+        </p>
+<div class="flex flex-wrap items-center justify-center gap-6 text-label-xs font-label-xs">
+<a class="text-on-surface-variant hover:text-on-surface transition-colors duration-150" href="#uemoa">Cadre Réglementaire UEMOA</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors duration-150" href="#confidentialite">Confidentialité &amp; Données</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors duration-150" href="#assistance">Assistance Sécurité</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors duration-150" href="#support">Support Administrateur</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

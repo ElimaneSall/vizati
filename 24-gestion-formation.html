@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-background text-on-background" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>VIZATI Executive Console — Gestion des Formations &amp; Registres</title>
+<!-- Google Fonts: Manrope & Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Manrope:wght@500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS with forms & container queries -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-tertiary-fixed-variant": "#5f4100",
+            "on-primary-fixed": "#031c37",
+            "on-secondary": "#ffffff",
+            "surface-dim": "#d0daf2",
+            "on-primary": "#ffffff",
+            "on-tertiary": "#ffffff",
+            "surface-container-highest": "#d9e3fb",
+            "on-secondary-fixed-variant": "#2a486a",
+            "surface-bright": "#f9f9ff",
+            "secondary-fixed": "#d2e4ff",
+            "outline-variant": "#c4c6ce",
+            "tertiary-container": "#3a2600",
+            "on-primary-container": "#7d93b3",
+            "surface-container": "#e8eeff",
+            "on-tertiary-container": "#b38a44",
+            "on-surface-variant": "#44474d",
+            "on-background": "#111c2d",
+            "background": "#f9f9ff",
+            "surface-container-low": "#f0f3ff",
+            "tertiary-fixed": "#ffdeab",
+            "on-secondary-fixed": "#001d37",
+            "tertiary-fixed-dim": "#edbf73",
+            "inverse-on-surface": "#ecf0ff",
+            "surface-tint": "#4a607d",
+            "outline": "#74777e",
+            "error": "#ba1a1a",
+            "error-container": "#ffdad6",
+            "secondary-fixed-dim": "#abc9f1",
+            "surface": "#f9f9ff",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-high": "#dfe8ff",
+            "on-tertiary-fixed": "#271900",
+            "primary-fixed": "#d3e3ff",
+            "on-error-container": "#93000a",
+            "on-surface": "#111c2d",
+            "primary-fixed-dim": "#b2c8ea",
+            "on-primary-fixed-variant": "#324864",
+            "primary-container": "#142b46",
+            "primary": "#00162f",
+            "secondary": "#436083",
+            "inverse-surface": "#273143",
+            "on-error": "#ffffff",
+            "on-secondary-container": "#405d80",
+            "secondary-container": "#b9d7ff",
+            "inverse-primary": "#b2c8ea",
+            "surface-variant": "#d9e3fb",
+            "tertiary": "#201300"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "margin-mobile": "1rem",
+            "margin": "3rem",
+            "space-xs": "0.25rem",
+            "gutter": "1.5rem",
+            "space-xl": "2.5rem",
+            "space-2xl": "4rem",
+            "gutter-mobile": "1rem",
+            "space-sm": "0.5rem",
+            "space-md": "1rem",
+            "space-lg": "1.5rem"
+          },
+          "fontFamily": {
+            "headline-lg": ["Manrope"],
+            "headline-md": ["Manrope"],
+            "code-num": ["Inter"],
+            "headline-sm": ["Manrope"],
+            "body-sm": ["Inter"],
+            "label-lg": ["Inter"],
+            "display-hero": ["Manrope"],
+            "headline-xl": ["Manrope"],
+            "headline-xl-mobile": ["Manrope"],
+            "label-xs": ["Inter"],
+            "display-hero-mobile": ["Manrope"],
+            "body-md": ["Inter"],
+            "body-lg": ["Inter"],
+            "body-xl": ["Inter"],
+            "label-md": ["Inter"]
+          },
+          "fontSize": {
+            "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "headline-md": ["22px", { "lineHeight": "30px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "code-num": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+            "headline-sm": ["18px", { "lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "600" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+            "display-hero": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+            "headline-xl": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "headline-xl-mobile": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+            "label-xs": ["10px", { "lineHeight": "14px", "letterSpacing": "0.06em", "fontWeight": "700" }],
+            "display-hero-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+            "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "body-xl": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="min-h-full bg-[#F5F3ED] text-on-surface antialiased flex flex-col font-body-md text-body-md selection:bg-secondary-container selection:text-primary">
+<!-- ========================================================================= -->
+<!-- 1. SideNavBar Component (Source of Truth Execution from Shared JSON)       -->
+<!-- ========================================================================= -->
+<aside class="fixed inset-y-0 left-0 w-72 flex flex-col z-40 bg-primary h-screen justify-between shrink-0 border-r border-outline-variant/20 shadow-md">
+<!-- Brand Header -->
+<div class="p-6 border-b border-outline-variant/10">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-tertiary-container border border-on-tertiary-container/40 flex items-center justify-center shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-on-tertiary-container text-2xl" data-icon="school">school</span>
+</div>
+<div class="flex flex-col">
+<span class="text-headline-md font-headline-md tracking-tight uppercase text-on-primary">VIZATI ACADEMY</span>
+<span class="text-label-md font-label-md text-on-primary-container">Super-Admin &amp; CMS Suite</span>
+</div>
+</div>
+</div>
+<!-- Navigation List (Intent matches: 'Programmes Exécutifs' = active) -->
+<nav class="flex-1 px-4 py-6 space-y-1.5 overflow-y-auto">
+<div class="px-3 pb-2 text-[10px] uppercase font-bold tracking-wider text-on-primary-container/70">Console Centrale</div>
+<!-- Tab 1: Tableau de Bord -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-primary-container hover:text-on-primary hover:bg-primary-container/40 font-label-lg transition-colors cursor-pointer active:scale-98" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="dashboard">dashboard</span>
+<span>Tableau de Bord</span>
+</a>
+<!-- Tab 2: Observatoire Marché -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-primary-container hover:text-on-primary hover:bg-primary-container/40 font-label-lg transition-colors cursor-pointer active:scale-98" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="analytics">analytics</span>
+<span>Observatoire Marché</span>
+</a>
+<!-- Tab 3: ACTIVE Programmes Exécutifs -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg bg-primary-container text-on-primary font-label-lg transition-colors border-l-4 border-on-tertiary-container cursor-pointer active:scale-98" href="#">
+<span class="material-symbols-outlined text-xl text-on-tertiary-container" data-icon="school">school</span>
+<span class="font-semibold">Programmes Exécutifs</span>
+</a>
+<!-- Tab 4: Registres Cadastraux -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-primary-container hover:text-on-primary hover:bg-primary-container/40 font-label-lg transition-colors cursor-pointer active:scale-98" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="domain">domain</span>
+<span>Registres Cadastraux</span>
+</a>
+<!-- Tab 5: CMS & Publications -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-primary-container hover:text-on-primary hover:bg-primary-container/40 font-label-lg transition-colors cursor-pointer active:scale-98" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="edit_note">edit_note</span>
+<span>CMS &amp; Publications</span>
+</a>
+<!-- Tab 6: Gouvernance & Droits -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-primary-container hover:text-on-primary hover:bg-primary-container/40 font-label-lg transition-colors cursor-pointer active:scale-98" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="admin_panel_settings">admin_panel_settings</span>
+<span>Gouvernance &amp; Droits</span>
+</a>
+<!-- CTA Box inside Nav -->
+<div class="pt-6 px-1">
+<button class="w-full py-2.5 px-3 bg-secondary-container hover:bg-secondary-fixed text-on-secondary-fixed rounded-lg text-label-md font-label-md flex items-center justify-center gap-2 transition-all shadow-sm">
+<span class="material-symbols-outlined text-lg" data-icon="sync">sync</span>
+<span>Déployer Rapport Sync</span>
+</button>
+</div>
+</nav>
+<!-- SideNav Footer Tabs -->
+<div class="p-4 border-t border-outline-variant/10 space-y-1">
+<a class="flex items-center gap-3 px-4 py-2.5 rounded-lg text-on-primary-container hover:text-on-primary hover:bg-primary-container/40 font-label-lg transition-colors" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="settings">settings</span>
+<span>Paramètres Système</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2.5 rounded-lg text-on-primary-container hover:text-on-primary hover:bg-primary-container/40 font-label-lg transition-colors" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="help_outline">help_outline</span>
+<span>Support Régional</span>
+</a>
+<div class="pt-2 px-4 flex items-center justify-between text-[11px] text-on-primary-container/60">
+<span>Session UEMOA-DAK-04</span>
+<span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+</div>
+</div>
+</aside>
+<!-- ========================================================================= -->
+<!-- 2. TopNavBar Component (Source of Truth Execution from Shared JSON)        -->
+<!-- ========================================================================= -->
+<header class="sticky top-0 right-0 pl-72 pr-8 w-full z-30 flex items-center justify-between bg-surface-container-lowest h-16 border-b border-outline-variant/30 shadow-sm">
+<!-- Left Section: Search and Product Anchor -->
+<div class="flex items-center gap-6 flex-1 max-w-xl">
+<div class="flex items-center gap-2 text-primary font-headline-sm text-headline-sm uppercase tracking-wide shrink-0">
+<span>VIZATI Executive Console</span>
+<span class="text-xs px-2 py-0.5 rounded bg-surface-container text-secondary font-semibold border border-outline-variant/40">2024-2025</span>
+</div>
+<!-- Search Input -->
+<div class="relative w-full max-w-sm">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-lg" data-icon="search">search</span>
+<input class="w-full pl-9 pr-4 py-1.5 bg-background border border-outline-variant/40 rounded-lg text-body-sm font-body-sm focus:outline-none focus:border-primary-container focus:ring-2 focus:ring-primary-container/10 transition-all placeholder:text-outline/70" placeholder="Rechercher apprenant, dossier, code formation..." type="search"/>
+</div>
+</div>
+<!-- Center/Right Section: Hub Links & Actions -->
+<div class="flex items-center gap-6">
+<!-- Hub Selector Links -->
+<nav class="hidden xl:flex items-center gap-5">
+<a class="text-primary font-label-md border-b-2 border-on-tertiary-container pb-1" href="#">Institut Dakar</a>
+<a class="text-on-surface-variant font-label-md hover:text-primary transition-colors" href="#">Hub Abidjan</a>
+<a class="text-on-surface-variant font-label-md hover:text-primary transition-colors" href="#">Région UEMOA</a>
+</nav>
+<div class="h-6 w-px bg-outline-variant/40 hidden xl:block"></div>
+<!-- Icon Actions -->
+<div class="flex items-center gap-1">
+<button class="p-2 text-on-surface-variant hover:text-primary hover:bg-surface-container rounded-lg transition-colors flex items-center gap-1.5 text-label-md" title="Cluster Sync (SSL)">
+<span class="material-symbols-outlined text-xl" data-icon="sync_lock">sync_lock</span>
+<span class="hidden 2xl:inline text-xs font-medium">Cluster Sync (SSL)</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-primary hover:bg-surface-container rounded-lg transition-colors relative" title="Notifications">
+<span class="material-symbols-outlined text-xl" data-icon="notifications">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-error"></span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-primary hover:bg-surface-container rounded-lg transition-colors" title="Options">
+<span class="material-symbols-outlined text-xl" data-icon="tune">tune</span>
+</button>
+</div>
+<!-- Trailing Primary Action -->
+<button class="bg-primary-container hover:bg-primary text-on-primary font-label-md text-label-md px-3.5 py-2 rounded-lg flex items-center gap-2 shadow-sm transition-all active:opacity-90">
+<span class="material-symbols-outlined text-sm" data-icon="publish">publish</span>
+<span>Publier Révision</span>
+</button>
+<!-- Admin Profile Lockup -->
+<div class="flex items-center gap-3 pl-2 border-l border-outline-variant/30">
+<img class="w-9 h-9 rounded-full object-cover border border-outline-variant/60" data-alt="Photographie portrait officielle en buste d'un haut fonctionnaire sénégalais, Secrétaire Général Administrateur de l'académie, costume cravate marine sombre élégant, arrière-plan sobre institutionnel et boisé avec lumière naturelle équilibrée et chaleureuse." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDboMyrCBegl8f1qtbO-d-STIAW3ldiKGwknmwbYdEqILjTsvZchRaDN3H6hcnAcMiNCVMefuNsB1S2J8ZaiNC7bzSGq7kQNECURFUq421uDXhuVSy1akQ57zwKcojTMZGMgJ5ljAKTaimcRIjAop7ZfbeghGjL0aPXb4efsoXTManoRWdixag5u9N-wh4tE2bE4mL_St5E28EsIsuhdT-NRuFlqKZ9JdDMQBSWvhY"/>
+<div class="hidden lg:flex flex-col text-left">
+<span class="text-body-sm font-semibold text-primary leading-tight">Dr. I. Ndiaye</span>
+<span class="text-label-xs font-label-xs text-outline leading-tight">Secrétaire Général</span>
+</div>
+</div>
+</div>
+</header>
+<!-- ========================================================================= -->
+<!-- 3. MAIN WORKSPACE CANVAS                                                  -->
+<!-- ========================================================================= -->
+<main class="pl-72 flex-1 p-8 flex flex-col gap-6 max-w-[1720px] w-full mx-auto">
+<!-- Page Header & Institutional Context -->
+<div class="flex flex-col xl:flex-row xl:items-end justify-between gap-4 pb-2">
+<div>
+<div class="flex items-center gap-2.5 text-label-sm font-label-md text-secondary mb-1">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-on-tertiary-container" data-icon="verified">verified</span>
+            Agrément Académique Régional UEMOA n° 2024-AD/088
+          </span>
+<span class="text-outline-variant">•</span>
+<span>Exercice Annuel 2024 - 2025</span>
+</div>
+<h1 class="text-headline-xl font-headline-xl text-primary tracking-tight">Gestion Centrale des Formations &amp; Registre des Inscriptions</h1>
+<p class="text-body-md font-body-md text-on-surface-variant max-w-3xl mt-1">
+          Administration des programmes certifiants, validation des candidatures et suivi des flux d'admissions en zone UEMOA/CEMAC.
+        </p>
+</div>
+<!-- Quick Registry Export Toolbar -->
+<div class="flex items-center gap-2.5 shrink-0">
+<button class="px-3 py-2 bg-surface-container-lowest border border-outline-variant/50 hover:bg-surface-container text-on-surface font-label-md text-label-md rounded-lg flex items-center gap-1.5 transition-colors shadow-sm">
+<span class="material-symbols-outlined text-base" data-icon="file_download">file_download</span>
+<span>Export Excel Cohorte</span>
+</button>
+<button class="px-3 py-2 bg-surface-container-lowest border border-outline-variant/50 hover:bg-surface-container text-on-surface font-label-md text-label-md rounded-lg flex items-center gap-1.5 transition-colors shadow-sm">
+<span class="material-symbols-outlined text-base" data-icon="account_balance_wallet">account_balance_wallet</span>
+<span>Export Comptable</span>
+</button>
+<button class="px-3 py-2 bg-surface-container-lowest border border-outline-variant/50 hover:bg-surface-container text-on-surface font-label-md text-label-md rounded-lg flex items-center gap-1.5 transition-colors shadow-sm">
+<span class="material-symbols-outlined text-base" data-icon="print">print</span>
+<span>Registre UEMOA</span>
+</button>
+</div>
+</div>
+<!-- Executive Boardroom Showcase Banner (Image Context Inspiration) -->
+<div class="relative w-full rounded-xl overflow-hidden bg-primary-container border border-outline-variant/30 shadow-md">
+<div class="grid grid-cols-1 lg:grid-cols-12 items-center">
+<div class="lg:col-span-8 p-6 lg:p-8 z-10 text-on-primary">
+<div class="inline-flex items-center gap-2 px-2.5 py-1 rounded bg-tertiary-container/80 text-tertiary-fixed border border-on-tertiary-container/30 text-label-xs font-label-xs uppercase tracking-wider mb-3">
+<span class="material-symbols-outlined text-xs" data-icon="corporate_fare">corporate_fare</span>
+            Comité de Direction Pédagogique &amp; Validation Trimestrielle
+          </div>
+<h2 class="text-headline-lg font-headline-lg font-bold text-on-primary tracking-tight">
+            Session d'Arbitrage et d'Agrément des Candidatures Foncières
+          </h2>
+<p class="text-body-md font-body-md text-on-primary-container max-w-2xl mt-1.5">
+            Dakar Plateau • Conseil des Doyens réuni pour certifier 18 programmes spécialisés en ingénierie foncière, baux commerciaux OHADA et modélisation financière UEMOA.
+          </p>
+<div class="mt-4 flex flex-wrap items-center gap-6 text-label-md font-label-md text-on-primary">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
+<span>18 Programmes Homologués</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-on-tertiary-container"></span>
+<span>148 Inscriptions Régionales Validées</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary-fixed"></span>
+<span>8 Dossiers sous Délibération</span>
+</div>
+</div>
+</div>
+<div class="lg:col-span-4 h-48 lg:h-full min-h-[170px] relative">
+<img class="absolute inset-0 w-full h-full object-cover opacity-85 hover:opacity-100 transition-opacity" data-alt="Vue intérieure panoramique d'une grande salle de conférence vitrée exécutive à Dakar avec hauts fonctionnaires africains et experts en immobilier d'entreprise réunis autour d'une longue table en bois massif, examinant plans cadastraux et graphiques financiers sous une lumière naturelle claire et prestigieuse." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkEwPnsFtd-NmOUGQff7CVygJkObDJut4MUItcVBFduhcoBZfMxPruWYw9Xh2iFbxBdxobUyalzt176B3KTDd8CFt5HsaXSbg8MJcQ-J02KA4ik2y-CD3OJc9dOwCqDigLuA4aVmPyTXUpcnUakkcO-wnUP4UbyfFNr-wB8JYlPKkZ4rGz1mqto67yxtvGE5C2qsYKwgolI6YARU_t2an7LJNxjaUVVv2p71tOolQ"/>
+<div class="absolute inset-0 bg-gradient-to-r from-primary-container via-primary-container/40 to-transparent"></div>
+</div>
+</div>
+</div>
+<!-- Dual Tab System Navigation (Mandated) -->
+<div class="border-b border-outline-variant/40 flex items-center justify-between">
+<div class="flex items-center gap-8 -mb-px">
+<button class="py-3.5 px-2 border-b-2 border-transparent text-on-surface-variant hover:text-primary font-headline-sm text-headline-sm flex items-center gap-2.5 transition-all" id="tab-btn-programmes" onclick="switchMainTab('programmes')">
+<span class="material-symbols-outlined text-xl" data-icon="auto_stories">auto_stories</span>
+<span>Formations &amp; Parcours Académiques</span>
+<span class="text-xs px-2 py-0.5 rounded-full bg-surface-container-highest text-secondary font-bold">18</span>
+</button>
+<button class="py-3.5 px-2 border-b-2 border-on-tertiary-container text-primary font-headline-sm text-headline-sm flex items-center gap-2.5 transition-all" id="tab-btn-inscriptions" onclick="switchMainTab('inscriptions')">
+<span class="material-symbols-outlined text-xl text-on-tertiary-container" data-icon="how_to_reg">how_to_reg</span>
+<span>Inscriptions &amp; Candidatures</span>
+<span class="text-xs px-2.5 py-0.5 rounded-full bg-tertiary-container text-tertiary-fixed font-bold border border-on-tertiary-container/30">148 Actives • 8 En attente</span>
+</button>
+</div>
+<div class="flex items-center gap-2 text-label-sm font-label-md text-on-surface-variant">
+<span class="material-symbols-outlined text-sm text-emerald-600" data-icon="cloud_done">cloud_done</span>
+<span>Synchronisation bancaire UEMOA : 10:42 GMT</span>
+</div>
+</div>
+<!-- ========================================================================= -->
+<!-- 4. VIEW CONTAINER: TAB 2 - INSCRIPTIONS & CANDIDATURES (Default Active)    -->
+<!-- ========================================================================= -->
+<div class="flex flex-col lg:grid lg:grid-cols-12 gap-6 items-start" id="view-inscriptions">
+<!-- Left Column: Registry Table & Filters (8 cols) -->
+<section class="lg:col-span-8 w-full flex flex-col gap-4">
+<!-- Status Filter Pills -->
+<div class="bg-surface-container-lowest p-4 rounded-xl border border-outline-variant/30 shadow-sm flex flex-col gap-3">
+<div class="flex flex-wrap items-center justify-between gap-3">
+<span class="text-label-md font-label-md text-primary font-semibold uppercase tracking-wider flex items-center gap-1.5">
+<span class="material-symbols-outlined text-base text-secondary" data-icon="filter_list">filter_list</span>
+              Filtrer par Statut d'Admission :
+            </span>
+<div class="flex items-center gap-2">
+<select class="text-body-sm font-body-sm bg-background border border-outline-variant/40 rounded-lg px-2.5 py-1 text-on-surface focus:ring-1 focus:ring-primary">
+<option>Tous mécanismes de financement</option>
+<option>Fonds 3FPT Sénégal</option>
+<option>FDFP Côte d'Ivoire</option>
+<option>Convention Entreprise Cadre</option>
+<option>Fonds Propres &amp; Bourse VIZATI</option>
+</select>
+</div>
+</div>
+<div class="flex flex-wrap gap-2 pt-1">
+<button class="px-3 py-1 rounded-full text-label-md font-label-md bg-primary text-on-primary shadow-xs">
+              Tous les dossiers (156)
+            </button>
+<button class="px-3 py-1 rounded-full text-label-md font-label-md bg-secondary-fixed text-on-secondary-fixed hover:bg-secondary-fixed/80 border border-secondary/20 flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-blue-600"></span> Nouvelle demande (14)
+            </button>
+<button class="px-3 py-1 rounded-full text-label-md font-label-md bg-tertiary-fixed text-on-tertiary-fixed hover:bg-tertiary-fixed-dim border border-on-tertiary-container/30 flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-amber-600"></span> En attente de validation (8)
+            </button>
+<button class="px-3 py-1 rounded-full text-label-md font-label-md bg-emerald-50 text-emerald-800 border border-emerald-300 hover:bg-emerald-100 flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-emerald-500"></span> Acceptée (28)
+            </button>
+<button class="px-3 py-1 rounded-full text-label-md font-label-md bg-emerald-900 text-emerald-50 hover:bg-emerald-800 flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-emerald-300"></span> Inscrit certifié (84)
+            </button>
+<button class="px-3 py-1 rounded-full text-label-md font-label-md bg-tertiary-container text-tertiary-fixed flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-on-tertiary-container"></span> Terminé &amp; Lauréat (18)
+            </button>
+<button class="px-3 py-1 rounded-full text-label-md font-label-md bg-error-container text-on-error-container hover:bg-error-container/80 flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-error"></span> Refusée (4)
+            </button>
+</div>
+</div>
+<!-- Inscriptions Table Container -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/30 shadow-sm overflow-hidden">
+<div class="p-4 border-b border-outline-variant/20 flex items-center justify-between">
+<h3 class="text-headline-sm font-headline-sm text-primary flex items-center gap-2">
+<span>Registre Général des Candidats UEMOA / CEMAC</span>
+<span class="text-xs font-normal text-outline">Session Trimestrielle T4</span>
+</h3>
+<span class="text-label-xs font-label-xs px-2 py-0.5 rounded bg-surface-container text-secondary font-mono">156 DOSSIERS CHARGÉS</span>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left text-body-md border-collapse">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant font-label-md text-label-md border-b border-outline-variant/30 uppercase tracking-wider text-[11px]">
+<th class="py-3 px-4">Réf. Dossier</th>
+<th class="py-3 px-4">Apprenant &amp; Organisation</th>
+<th class="py-3 px-4">Formation Sollicitée</th>
+<th class="py-3 px-4">Montant &amp; Financement</th>
+<th class="py-3 px-4">Paiement</th>
+<th class="py-3 px-4">Commission</th>
+<th class="py-3 px-4 text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/15 text-body-sm font-body-sm">
+<!-- ROW 1 (Focused: Aminata Diallo) -->
+<tr class="bg-surface-container/60 hover:bg-surface-container border-l-4 border-on-tertiary-container transition-colors">
+<td class="py-3.5 px-4 font-mono font-semibold text-primary">#VZ-INS-2024-884</td>
+<td class="py-3.5 px-4">
+<div class="font-semibold text-primary">Aminata Diallo</div>
+<div class="text-xs text-outline flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]" data-icon="business">business</span>
+                      Foncier de l'Union (Sénégal)
+                    </div>
+</td>
+<td class="py-3.5 px-4">
+<span class="font-medium text-primary">Pratique des Baux Commerciaux OHADA</span>
+<div class="text-[11px] text-secondary">Cohorte Dakar B - 35h</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="font-bold text-primary font-code-num">850 000 FCFA</div>
+<div class="text-[11px] text-on-tertiary-fixed-variant bg-tertiary-fixed/60 px-1.5 py-0.5 rounded w-max">Convention FDFP CI</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-xs font-medium bg-amber-100 text-amber-900 border border-amber-300">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-600"></span> Prise en charge employeur
+                    </span>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-xs font-semibold bg-emerald-100 text-emerald-800">
+<span class="material-symbols-outlined text-xs" data-icon="check_circle">check_circle</span> Validé jury Me Fall
+                    </span>
+</td>
+<td class="py-3.5 px-4 text-right">
+<button class="px-2.5 py-1 bg-primary text-on-primary rounded text-xs font-label-md hover:bg-primary-container transition-all">
+                      Examiner
+                    </button>
+</td>
+</tr>
+<!-- ROW 2 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3.5 px-4 font-mono font-semibold text-primary">#VZ-INS-2024-885</td>
+<td class="py-3.5 px-4">
+<div class="font-semibold text-primary">Koffi Kouamé</div>
+<div class="text-xs text-outline flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]" data-icon="apartment">apartment</span>
+                      SOGEPRIM Abidjan
+                    </div>
+</td>
+<td class="py-3.5 px-4">
+<span class="font-medium text-primary">Montage d'opérations UEMOA</span>
+<div class="text-[11px] text-secondary">Certificat Exécutif - 120h</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="font-bold text-primary font-code-num">1 650 000 FCFA</div>
+<div class="text-[11px] text-outline">Fonds Propres Directs</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-xs font-medium bg-emerald-100 text-emerald-900 border border-emerald-300">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span> Payé (Virement BCEAO)
+                    </span>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-xs font-semibold bg-blue-100 text-blue-900">
+<span class="material-symbols-outlined text-xs" data-icon="school">school</span> Inscrit Définitif
+                    </span>
+</td>
+<td class="py-3.5 px-4 text-right">
+<button class="px-2.5 py-1 bg-surface-container hover:bg-surface-container-high text-primary rounded text-xs font-label-md transition-all">
+                      Détails
+                    </button>
+</td>
+</tr>
+<!-- ROW 3 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3.5 px-4 font-mono font-semibold text-primary">#VZ-INS-2024-886</td>
+<td class="py-3.5 px-4">
+<div class="font-semibold text-primary">Fatoumata Traoré</div>
+<div class="text-xs text-outline flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]" data-icon="gavel">gavel</span>
+                      Étude Notariale Traoré &amp; Associés (Bamako)
+                    </div>
+</td>
+<td class="py-3.5 px-4">
+<span class="font-medium text-primary">PropTech &amp; Sécurisation Cadastrale</span>
+<div class="text-[11px] text-secondary">Séminaire Intensif - 24h</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="font-bold text-primary font-code-num">650 000 FCFA</div>
+<div class="text-[11px] text-emerald-800 bg-emerald-50 px-1.5 py-0.5 rounded w-max">Fonds 3FPT Éligible</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-xs font-medium bg-secondary-fixed text-on-secondary-fixed">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Acompte 50% Reçu
+                    </span>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-xs font-semibold bg-amber-50 text-amber-800 border border-amber-200">
+<span class="material-symbols-outlined text-xs" data-icon="hourglass_top">hourglass_top</span> Entretien Requis
+                    </span>
+</td>
+<td class="py-3.5 px-4 text-right">
+<button class="px-2.5 py-1 bg-surface-container hover:bg-surface-container-high text-primary rounded text-xs font-label-md transition-all">
+                      Détails
+                    </button>
+</td>
+</tr>
+<!-- ROW 4 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3.5 px-4 font-mono font-semibold text-primary">#VZ-INS-2024-887</td>
+<td class="py-3.5 px-4">
+<div class="font-semibold text-primary">Cheikh Oumar Ba</div>
+<div class="text-xs text-outline flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]" data-icon="domain">domain</span>
+                      Agence Foncière Rurale (Dakar)
+                    </div>
+</td>
+<td class="py-3.5 px-4">
+<span class="font-medium text-primary">Gestionnaire de Portefeuille Locatif</span>
+<div class="text-[11px] text-secondary">Diplôme Professionnel - 60h</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="font-bold text-primary font-code-num">1 100 000 FCFA</div>
+<div class="text-[11px] text-outline">Prise en charge Institution</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-xs font-medium bg-surface-container text-on-surface-variant">
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span> Bon de commande émis
+                    </span>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-xs font-semibold bg-error-container text-on-error-container">
+<span class="material-symbols-outlined text-xs" data-icon="warning">warning</span> Pièce d'identité expirée
+                    </span>
+</td>
+<td class="py-3.5 px-4 text-right">
+<button class="px-2.5 py-1 bg-surface-container hover:bg-surface-container-high text-primary rounded text-xs font-label-md transition-all">
+                      Relancer
+                    </button>
+</td>
+</tr>
+<!-- ROW 5 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3.5 px-4 font-mono font-semibold text-primary">#VZ-INS-2024-888</td>
+<td class="py-3.5 px-4">
+<div class="font-semibold text-primary">Sylvie Akouélé Mensah</div>
+<div class="text-xs text-outline flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]" data-icon="account_balance">account_balance</span>
+                      Banque Ouest Africaine de Développement (Lomé)
+                    </div>
+</td>
+<td class="py-3.5 px-4">
+<span class="font-medium text-primary">Montage d'opérations UEMOA</span>
+<div class="text-[11px] text-secondary">Certificat Exécutif - 120h</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="font-bold text-primary font-code-num">1 650 000 FCFA</div>
+<div class="text-[11px] text-tertiary-fixed-dim bg-tertiary-container px-1.5 py-0.5 rounded w-max">Bourse d'Excellence BOAD</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-xs font-medium bg-emerald-100 text-emerald-900 border border-emerald-300">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span> Exempté convention
+                    </span>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-xs font-semibold bg-emerald-100 text-emerald-800">
+<span class="material-symbols-outlined text-xs" data-icon="verified">verified</span> Dossier Complet
+                    </span>
+</td>
+<td class="py-3.5 px-4 text-right">
+<button class="px-2.5 py-1 bg-surface-container hover:bg-surface-container-high text-primary rounded text-xs font-label-md transition-all">
+                      Détails
+                    </button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Pagination Footer -->
+<div class="p-3 bg-surface-container-lowest border-t border-outline-variant/20 flex items-center justify-between text-xs text-outline">
+<span>Affichage de 1 à 5 sur 156 inscriptions certifiées</span>
+<div class="flex items-center gap-1">
+<button class="px-2 py-1 rounded border border-outline-variant/40 bg-surface-container-low hover:bg-surface-container disabled:opacity-50" disabled="">Précédent</button>
+<button class="px-2.5 py-1 rounded bg-primary text-on-primary font-bold">1</button>
+<button class="px-2.5 py-1 rounded border border-outline-variant/40 bg-surface-container-low hover:bg-surface-container">2</button>
+<button class="px-2.5 py-1 rounded border border-outline-variant/40 bg-surface-container-low hover:bg-surface-container">3</button>
+<span class="px-1">...</span>
+<button class="px-2.5 py-1 rounded border border-outline-variant/40 bg-surface-container-low hover:bg-surface-container">31</button>
+<button class="px-2 py-1 rounded border border-outline-variant/40 bg-surface-container-low hover:bg-surface-container">Suivant</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Right Column: Focus Dossier Drawer #VZ-INS-2024-884 (4 cols) -->
+<aside class="lg:col-span-4 w-full bg-surface-container-lowest rounded-xl border border-outline-variant/30 shadow-md p-6 flex flex-col gap-5 sticky top-24">
+<!-- Candidate Dossier Header -->
+<div class="flex items-start justify-between border-b border-outline-variant/20 pb-4">
+<div>
+<div class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[11px] font-semibold bg-tertiary-fixed text-on-tertiary-fixed mb-1.5 border border-on-tertiary-container/30">
+<span class="material-symbols-outlined text-xs" data-icon="folder_special">folder_special</span> Dossier Prioritaire
+            </div>
+<h3 class="text-headline-md font-headline-md text-primary">Aminata Diallo</h3>
+<span class="text-code-num font-mono text-outline font-medium text-xs">#VZ-INS-2024-884</span>
+</div>
+<span class="material-symbols-outlined text-2xl text-on-tertiary-container" data-icon="verified_user">verified_user</span>
+</div>
+<!-- Meta Grid -->
+<div class="grid grid-cols-2 gap-3 text-body-sm font-body-sm bg-surface-container-low p-3.5 rounded-lg border border-outline-variant/20">
+<div>
+<span class="text-[11px] uppercase tracking-wide text-outline block">Entité / Employeur</span>
+<span class="font-semibold text-primary">Foncier de l'Union</span>
+</div>
+<div>
+<span class="text-[11px] uppercase tracking-wide text-outline block">Poste Actuel</span>
+<span class="font-semibold text-primary">Juriste Immobilier Sr</span>
+</div>
+<div>
+<span class="text-[11px] uppercase tracking-wide text-outline block">Lieu de Résidence</span>
+<span class="font-semibold text-primary">Dakar, Sénégal</span>
+</div>
+<div>
+<span class="text-[11px] uppercase tracking-wide text-outline block">Régime Prise en Charge</span>
+<span class="font-semibold text-on-tertiary-container">FDFP Côte d'Ivoire</span>
+</div>
+</div>
+<!-- Pièces Jointes & Certifications Vérifiées -->
+<div>
+<h4 class="text-label-md font-label-md uppercase tracking-wider text-primary font-bold mb-2 flex items-center justify-between">
+<span>Documents Soumis (Conformes)</span>
+<span class="text-[11px] text-emerald-700 font-semibold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-xs" data-icon="check">check</span> 3/3 Vérifiés
+            </span>
+</h4>
+<div class="space-y-2">
+<div class="flex items-center justify-between p-2.5 rounded-lg border border-outline-variant/30 bg-surface hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-error text-xl" data-icon="picture_as_pdf">picture_as_pdf</span>
+<div class="text-left">
+<div class="text-xs font-semibold text-primary">CV_Academique_Diallo_2024.pdf</div>
+<div class="text-[10px] text-outline">Master II Droit Notarial UCAD • 1.8 Mo</div>
+</div>
+</div>
+<button class="p-1 text-secondary hover:text-primary" title="Télécharger">
+<span class="material-symbols-outlined text-base" data-icon="download">download</span>
+</button>
+</div>
+<div class="flex items-center justify-between p-2.5 rounded-lg border border-outline-variant/30 bg-surface hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-error text-xl" data-icon="picture_as_pdf">picture_as_pdf</span>
+<div class="text-left">
+<div class="text-xs font-semibold text-primary">Engagement_Employeur_FoncierUnion.pdf</div>
+<div class="text-[10px] text-outline">Convention Cadre Signée DG • 840 Ko</div>
+</div>
+</div>
+<button class="p-1 text-secondary hover:text-primary" title="Télécharger">
+<span class="material-symbols-outlined text-base" data-icon="download">download</span>
+</button>
+</div>
+<div class="flex items-center justify-between p-2.5 rounded-lg border border-outline-variant/30 bg-surface hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-error text-xl" data-icon="picture_as_pdf">picture_as_pdf</span>
+<div class="text-left">
+<div class="text-xs font-semibold text-primary">Attestation_Accord_FDFP_CI.pdf</div>
+<div class="text-[10px] text-outline">Prise en charge validée N° 992-02 • 420 Ko</div>
+</div>
+</div>
+<button class="p-1 text-secondary hover:text-primary" title="Télécharger">
+<span class="material-symbols-outlined text-base" data-icon="download">download</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Timeline d'instruction -->
+<div>
+<h4 class="text-label-md font-label-md uppercase tracking-wider text-primary font-bold mb-2">Historique d'Instruction</h4>
+<ol class="relative border-l border-outline-variant/50 ml-2 space-y-3 text-body-sm font-body-sm">
+<li class="ml-4">
+<div class="absolute -left-1.5 mt-1.5 w-3 h-3 rounded-full border border-surface-container-lowest bg-secondary"></div>
+<time class="text-[10px] text-outline font-semibold">12 OCTOBRE 2024</time>
+<p class="text-xs font-medium text-primary">Soumission initiale du dossier en ligne</p>
+</li>
+<li class="ml-4">
+<div class="absolute -left-1.5 mt-1.5 w-3 h-3 rounded-full border border-surface-container-lowest bg-on-tertiary-container"></div>
+<time class="text-[10px] text-outline font-semibold">20 OCTOBRE 2024</time>
+<p class="text-xs font-medium text-primary">Accord de subvention employeur FDFP validé</p>
+</li>
+<li class="ml-4">
+<div class="absolute -left-1.5 mt-1.5 w-3 h-3 rounded-full border border-surface-container-lowest bg-emerald-600"></div>
+<time class="text-[10px] text-outline font-semibold">25 OCTOBRE 2024</time>
+<p class="text-xs font-medium text-primary">Avis favorable de la Commission Pédagogique (Me Fall)</p>
+</li>
+</ol>
+</div>
+<!-- Official Sign-off Actions -->
+<div class="pt-2 border-t border-outline-variant/20 flex flex-col gap-2">
+<button class="w-full py-2.5 px-4 bg-primary hover:bg-primary-container text-on-primary rounded-lg font-label-md text-label-md flex items-center justify-center gap-2 shadow-sm transition-all">
+<span class="material-symbols-outlined text-lg text-tertiary-fixed" data-icon="how_to_reg">how_to_reg</span>
+<span>Valider l'Inscription Définitive</span>
+</button>
+<button class="w-full py-2 px-4 bg-surface-container-lowest border border-outline-variant/50 hover:bg-surface-container text-primary rounded-lg font-label-md text-label-md flex items-center justify-center gap-2 transition-all">
+<span class="material-symbols-outlined text-lg" data-icon="draw">draw</span>
+<span>Émettre Convention Tripartite Signée</span>
+</button>
+<div class="flex items-center justify-between pt-1">
+<button class="text-xs text-error hover:underline flex items-center gap-1 font-medium">
+<span class="material-symbols-outlined text-sm" data-icon="cancel">cancel</span>
+              Rejeter la candidature
+            </button>
+<span class="text-[10px] text-outline font-mono">Cohorte Dakar B • Places: 7/75</span>
+</div>
+</div>
+</aside>
+</div>
+<!-- ========================================================================= -->
+<!-- 5. VIEW CONTAINER: TAB 1 - FORMATIONS & PARCOURS ACADÉMIQUES             -->
+<!-- ========================================================================= -->
+<div class="hidden flex-col gap-6" id="view-programmes">
+<!-- Catalogue Header Controls -->
+<div class="bg-surface-container-lowest p-5 rounded-xl border border-outline-variant/30 shadow-sm flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4">
+<!-- Search & Filter Badges -->
+<div class="flex flex-wrap items-center gap-3 w-full lg:w-auto">
+<div class="relative w-72">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-lg" data-icon="search">search</span>
+<input class="w-full pl-9 pr-3 py-1.5 bg-background border border-outline-variant/40 rounded-lg text-body-sm font-body-sm focus:border-primary-container" placeholder="Rechercher code, intitulé..." type="text"/>
+</div>
+<select class="text-body-sm font-body-sm bg-background border border-outline-variant/40 rounded-lg px-3 py-1.5 text-on-surface">
+<option>Toutes les catégories sectorielles</option>
+<option>Juridique OHADA</option>
+<option>Finance &amp; Investissement</option>
+<option>Gestion Locative</option>
+<option>PropTech &amp; Cadastre</option>
+</select>
+<select class="text-body-sm font-body-sm bg-background border border-outline-variant/40 rounded-lg px-3 py-1.5 text-on-surface">
+<option>Tous les statuts</option>
+<option>Publié</option>
+<option>En validation</option>
+<option>Brouillon</option>
+<option>Archivé</option>
+</select>
+</div>
+<!-- Primary Action -->
+<div class="flex items-center gap-3 shrink-0 w-full lg:w-auto justify-end">
+<button class="px-3 py-2 bg-surface-container text-primary hover:bg-surface-container-high rounded-lg font-label-md text-label-md flex items-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-base" data-icon="visibility">visibility</span>
+<span>Prévisualiser Catalogue Public</span>
+</button>
+<button class="px-4 py-2 bg-primary hover:bg-primary-container text-on-primary rounded-lg font-label-md text-label-md flex items-center gap-2 shadow-sm transition-all">
+<span class="material-symbols-outlined text-lg text-tertiary-fixed" data-icon="add_circle">add_circle</span>
+<span>+ Créer une formation</span>
+</button>
+</div>
+</div>
+<!-- Formations Table -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/30 shadow-sm overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left text-body-md border-collapse">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant font-label-md text-label-md border-b border-outline-variant/30 uppercase tracking-wider text-[11px]">
+<th class="py-3.5 px-4">Code &amp; Intitulé du Programme</th>
+<th class="py-3.5 px-4">Catégorie</th>
+<th class="py-3.5 px-4">Volume &amp; Structure</th>
+<th class="py-3.5 px-4">Formateur Référent</th>
+<th class="py-3.5 px-4">Inscriptions &amp; Cohorte</th>
+<th class="py-3.5 px-4">Statut</th>
+<th class="py-3.5 px-4">Révision</th>
+<th class="py-3.5 px-4 text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/15 text-body-sm font-body-sm">
+<!-- COURSE 1 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-4 px-4">
+<div class="flex items-start gap-2.5">
+<span class="px-1.5 py-0.5 rounded bg-primary-container text-[10px] font-mono text-on-primary font-bold">OHADA-301</span>
+<div>
+<div class="font-bold text-primary text-base">Pratique des Baux Commerciaux OHADA</div>
+<div class="text-xs text-outline">Sécurisation contractuelle, révision triennale et contentieux d'expulsion</div>
+</div>
+</div>
+</td>
+<td class="py-4 px-4">
+<span class="px-2.5 py-1 rounded-full text-xs font-semibold bg-surface-container text-secondary border border-outline-variant/40">
+                    Juridique OHADA
+                  </span>
+</td>
+<td class="py-4 px-4">
+<div class="font-medium text-primary">35h Exécutif</div>
+<div class="text-xs text-outline">6 Modules • 15 Études de cas</div>
+</td>
+<td class="py-4 px-4">
+<div class="flex items-center gap-2">
+<img class="w-7 h-7 rounded-full object-cover border border-outline-variant/40" data-alt="Portrait professionnel sérieux d'un éminent avocat d'affaires sénégalais, Maître de Conférence, costume sombre et lunettes métalliques, en salle d'audience moderne avec éclairage doux et élégant." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgnWirzaH8bYwo_ZGfPwg4ERzjXz35kqEybsoWMBmr1RNnwpiPwQLEqp4fBxzWnBm52sFeLku2YaKR3jPjULO_kMPf4xn62jIC_XiguXT_O0P58G5km-GF4F8vUEdVLPv-g8liEISohhLZVrIHXq7TE6PsOYyK2h0Vif2EW-lHrVRjTVmfszebaccql5-LmCp9yzepo1LvxU0qLjqhuR4cWWzA06NwpnI1hRDSpew"/>
+<div>
+<div class="font-medium text-primary text-xs">Me Amadou Fall</div>
+<div class="text-[10px] text-outline">Avocat au Barreau de Dakar</div>
+</div>
+</div>
+</td>
+<td class="py-4 px-4">
+<div class="flex items-center justify-between text-xs font-semibold mb-1">
+<span class="text-primary">68 / 75 inscrits</span>
+<span class="text-on-tertiary-container font-mono">91%</span>
+</div>
+<div class="w-full bg-outline-variant/20 h-2 rounded-full overflow-hidden">
+<div class="bg-on-tertiary-container h-full rounded-full" style="width: 91%"></div>
+</div>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-800">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span> Publié
+                  </span>
+</td>
+<td class="py-4 px-4 text-xs text-outline">
+<div>14 Oct 2024</div>
+<div class="text-[10px]">Par Dr. Ndiaye</div>
+</td>
+<td class="py-4 px-4 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1 hover:bg-surface-container rounded text-secondary" title="Éditer">
+<span class="material-symbols-outlined text-lg" data-icon="edit">edit</span>
+</button>
+<button class="p-1 hover:bg-surface-container rounded text-secondary" title="Dupliquer le syllabus">
+<span class="material-symbols-outlined text-lg" data-icon="content_copy">content_copy</span>
+</button>
+<button class="p-1 hover:bg-surface-container rounded text-secondary" title="Archiver">
+<span class="material-symbols-outlined text-lg" data-icon="archive">archive</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- COURSE 2 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-4 px-4">
+<div class="flex items-start gap-2.5">
+<span class="px-1.5 py-0.5 rounded bg-primary text-[10px] font-mono text-on-primary font-bold">FIN-502</span>
+<div>
+<div class="font-bold text-primary text-base">Montage d'opérations UEMOA &amp; Asset Management</div>
+<div class="text-xs text-outline">Modélisation financière des actifs tertiaires, levées obligataires et SCPI</div>
+</div>
+</div>
+</td>
+<td class="py-4 px-4">
+<span class="px-2.5 py-1 rounded-full text-xs font-semibold bg-blue-50 text-blue-800 border border-blue-200">
+                    Finance &amp; Investissement
+                  </span>
+</td>
+<td class="py-4 px-4">
+<div class="font-medium text-primary">120h Certifiant</div>
+<div class="text-xs text-outline">12 Modules • Capstone Project</div>
+</td>
+<td class="py-4 px-4">
+<div class="flex items-center gap-2">
+<img class="w-7 h-7 rounded-full object-cover border border-outline-variant/40" data-alt="Portrait corporate en gros plan d'une directrice d'investissement ouest-africaine, tailleur chic bleu nuit, bureau d'affaires à Abidjan avec gratte-ciel du Plateau en arrière-plan flouté." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1BGZcsGWdCt4t8iWCbuKstcbzXNQ2MbyPS3dF8iGqcAq7EHYeZjPgKKdmyPf3N16VV6tPnzfc3IaDyCwRDpMSG-nsKUF81gL2XXTcaYKgaKk0vpPZpjDrU7QiRCJfZvQZRsqwEkZd0aCiOjRLj05rTgh1L_5IzInwZn9Vq6SS718PDr1VzHNTjzKuhxKz6Km3-byTdqvGHEyK7GK1KEO7cIZgPYebRgOHmoirQsI"/>
+<div>
+<div class="font-medium text-primary text-xs">Aïcha Koné</div>
+<div class="text-[10px] text-outline">Ex-Directrice SGI Hudson</div>
+</div>
+</div>
+</td>
+<td class="py-4 px-4">
+<div class="flex items-center justify-between text-xs font-semibold mb-1">
+<span class="text-primary">54 / 60 inscrits</span>
+<span class="text-emerald-700 font-mono">90%</span>
+</div>
+<div class="w-full bg-outline-variant/20 h-2 rounded-full overflow-hidden">
+<div class="bg-emerald-600 h-full rounded-full" style="width: 90%"></div>
+</div>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-800">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span> Publié
+                  </span>
+</td>
+<td class="py-4 px-4 text-xs text-outline">
+<div>28 Sept 2024</div>
+<div class="text-[10px]">Par A. Koné</div>
+</td>
+<td class="py-4 px-4 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1 hover:bg-surface-container rounded text-secondary" title="Éditer">
+<span class="material-symbols-outlined text-lg" data-icon="edit">edit</span>
+</button>
+<button class="p-1 hover:bg-surface-container rounded text-secondary" title="Dupliquer le syllabus">
+<span class="material-symbols-outlined text-lg" data-icon="content_copy">content_copy</span>
+</button>
+<button class="p-1 hover:bg-surface-container rounded text-secondary" title="Archiver">
+<span class="material-symbols-outlined text-lg" data-icon="archive">archive</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- COURSE 3 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-4 px-4">
+<div class="flex items-start gap-2.5">
+<span class="px-1.5 py-0.5 rounded bg-secondary-container text-[10px] font-mono text-on-secondary-fixed font-bold">MGT-204</span>
+<div>
+<div class="font-bold text-primary text-base">Gestionnaire de Portefeuille Locatif &amp; Syndic Pro</div>
+<div class="text-xs text-outline">Pilotage des charges de copropriété, sinistralité et baux d'habitation</div>
+</div>
+</div>
+</td>
+<td class="py-4 px-4">
+<span class="px-2.5 py-1 rounded-full text-xs font-semibold bg-surface-container text-secondary border border-outline-variant/40">
+                    Gestion Locative
+                  </span>
+</td>
+<td class="py-4 px-4">
+<div class="font-medium text-primary">60h Métier</div>
+<div class="text-xs text-outline">8 Modules • Immersion Pro</div>
+</td>
+<td class="py-4 px-4">
+<div class="flex items-center gap-2">
+<img class="w-7 h-7 rounded-full object-cover border border-outline-variant/40" data-alt="Portrait en studio d'un expert-comptable ivoirien d'une quarantaine d'années, costume gris et regard confiant, fond blanc institutionnel aux tonalités chaleureuses." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJrmM1hsHzGsXn8xO8SsRdCqO79hba1aAP6fxglvokLRR7joXT7QEOhZ2mwPJh2RUomSK0UW6qaWGLrlmADOjzEwSGUt8PUpCg0YfW0OM71aOyh5HLgktxGFbhr5RkJvylkJcltm9FxmTXyg8PjeMKLA8Fge0Zc5GSrzqB8ewra6_IZ28mNDT5DSLj1EzksCRxqjV7HciOZTflWeuJehk6UgWbhQM_Lv2AgBtOUA8"/>
+<div>
+<div class="font-medium text-primary text-xs">Mamadou Gning</div>
+<div class="text-[10px] text-outline">Délégué Général UNPI</div>
+</div>
+</div>
+</td>
+<td class="py-4 px-4">
+<div class="flex items-center justify-between text-xs font-semibold mb-1">
+<span class="text-primary">18 / 40 inscrits</span>
+<span class="text-secondary font-mono">45%</span>
+</div>
+<div class="w-full bg-outline-variant/20 h-2 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 45%"></div>
+</div>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-amber-100 text-amber-800">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-600"></span> En validation
+                  </span>
+</td>
+<td class="py-4 px-4 text-xs text-outline">
+<div>Hier à 16:30</div>
+<div class="text-[10px]">Par M. Gning</div>
+</td>
+<td class="py-4 px-4 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1 hover:bg-surface-container rounded text-secondary" title="Éditer">
+<span class="material-symbols-outlined text-lg" data-icon="edit">edit</span>
+</button>
+<button class="p-1 hover:bg-surface-container rounded text-secondary" title="Dupliquer le syllabus">
+<span class="material-symbols-outlined text-lg" data-icon="content_copy">content_copy</span>
+</button>
+<button class="p-1 hover:bg-surface-container rounded text-secondary" title="Archiver">
+<span class="material-symbols-outlined text-lg" data-icon="archive">archive</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- COURSE 4 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-4 px-4">
+<div class="flex items-start gap-2.5">
+<span class="px-1.5 py-0.5 rounded bg-tertiary-container text-[10px] font-mono text-tertiary-fixed font-bold">TECH-409</span>
+<div>
+<div class="font-bold text-primary text-base">PropTech, SIG &amp; Sécurisation Cadastrale Numérique</div>
+<div class="text-xs text-outline">Systèmes d'Information Géographique, bornage GPS et blockchain foncière</div>
+</div>
+</div>
+</td>
+<td class="py-4 px-4">
+<span class="px-2.5 py-1 rounded-full text-xs font-semibold bg-amber-50 text-amber-900 border border-amber-200">
+                    PropTech &amp; Cadastre
+                  </span>
+</td>
+<td class="py-4 px-4">
+<div class="font-medium text-primary">24h Séminaire</div>
+<div class="text-xs text-outline">4 Ateliers Pratiques Lab</div>
+</td>
+<td class="py-4 px-4">
+<div class="flex items-center gap-2">
+<img class="w-7 h-7 rounded-full object-cover border border-outline-variant/40" data-alt="Portrait professionnel d'une ingénieure géomètre-topographe togolaise de 35 ans en tenue d'ingénieur moderne avec tablette tactile, arrière-plan de chantier d'aménagement urbain à Dakar sous soleil franc." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMR2cSGyjhSQYKM1zdIQ-7GJ3g6H3aMFptxuBjIPoF-TcyNSreZ4O7Yz_n5-cpv4NKFIUTxlk9EoPFrD7Kqe-8y8l3Oj7lPeuTnMHSdSIrp3lBD2fj7rKC9B0hVG-mHJJfiKaCQBCEHAaNaSm3ZDJ6WpNQAkAjrz2rieMwWQHs5VWzfPS4aUx268xJdEvubPxdkIt6icruGrNPwVxTxXuq2b5t5ovQLX7hr71Xorg"/>
+<div>
+<div class="font-medium text-primary text-xs">Ing. S. Tossou</div>
+<div class="text-[10px] text-outline">Directrice Cadastre Lab</div>
+</div>
+</div>
+</td>
+<td class="py-4 px-4">
+<div class="flex items-center justify-between text-xs font-semibold mb-1">
+<span class="text-primary">Cohorte Q1-2025</span>
+<span class="text-outline font-mono">Brouillon</span>
+</div>
+<div class="w-full bg-outline-variant/20 h-2 rounded-full overflow-hidden">
+<div class="bg-outline h-full rounded-full" style="width: 10%"></div>
+</div>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-surface-container-highest text-on-surface-variant">
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span> Brouillon
+                  </span>
+</td>
+<td class="py-4 px-4 text-xs text-outline">
+<div>02 Nov 2024</div>
+<div class="text-[10px]">Par S. Tossou</div>
+</td>
+<td class="py-4 px-4 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1 hover:bg-surface-container rounded text-secondary" title="Éditer">
+<span class="material-symbols-outlined text-lg" data-icon="edit">edit</span>
+</button>
+<button class="p-1 hover:bg-surface-container rounded text-secondary" title="Dupliquer le syllabus">
+<span class="material-symbols-outlined text-lg" data-icon="content_copy">content_copy</span>
+</button>
+<button class="p-1 hover:bg-surface-container rounded text-secondary" title="Archiver">
+<span class="material-symbols-outlined text-lg" data-icon="archive">archive</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</main>
+<!-- ========================================================================= -->
+<!-- 6. Micro-interaction Script for Tab Switching                             -->
+<!-- ========================================================================= -->
+<script>
+    function switchMainTab(tab) {
+      const viewProgrammes = document.getElementById('view-programmes');
+      const viewInscriptions = document.getElementById('view-inscriptions');
+      const btnProgrammes = document.getElementById('tab-btn-programmes');
+      const btnInscriptions = document.getElementById('tab-btn-inscriptions');
+
+      if (tab === 'programmes') {
+        viewProgrammes.classList.remove('hidden');
+        viewProgrammes.classList.add('flex');
+        viewInscriptions.classList.add('hidden');
+        viewInscriptions.classList.remove('flex', 'lg:grid');
+
+        // Style Tab Buttons
+        btnProgrammes.className = "py-3.5 px-2 border-b-2 border-on-tertiary-container text-primary font-headline-sm text-headline-sm flex items-center gap-2.5 transition-all";
+        btnInscriptions.className = "py-3.5 px-2 border-b-2 border-transparent text-on-surface-variant hover:text-primary font-headline-sm text-headline-sm flex items-center gap-2.5 transition-all";
+      } else {
+        viewProgrammes.classList.add('hidden');
+        viewProgrammes.classList.remove('flex');
+        viewInscriptions.classList.remove('hidden');
+        viewInscriptions.classList.add('flex', 'lg:grid');
+
+        // Style Tab Buttons
+        btnInscriptions.className = "py-3.5 px-2 border-b-2 border-on-tertiary-container text-primary font-headline-sm text-headline-sm flex items-center gap-2.5 transition-all";
+        btnProgrammes.className = "py-3.5 px-2 border-b-2 border-transparent text-on-surface-variant hover:text-primary font-headline-sm text-headline-sm flex items-center gap-2.5 transition-all";
+      }
+    }
+  </script>
+</body></html>

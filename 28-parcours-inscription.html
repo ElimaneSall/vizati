@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>VIZATI — Parcours d'Inscription &amp; Paiement Sécurisé</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Manrope & Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Manrope:wght@500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN with plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration verbatim -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-primary-fixed-variant": "#324864",
+            "primary-fixed": "#d3e3ff",
+            "on-tertiary-fixed-variant": "#5f4100",
+            "surface-dim": "#d0daf2",
+            "on-tertiary": "#ffffff",
+            "on-secondary-fixed-variant": "#2a486a",
+            "surface-container-highest": "#d9e3fb",
+            "on-secondary-container": "#405d80",
+            "surface": "#f9f9ff",
+            "on-secondary": "#ffffff",
+            "on-tertiary-fixed": "#271900",
+            "on-primary-fixed": "#031c37",
+            "outline-variant": "#c4c6ce",
+            "outline": "#74777e",
+            "secondary-fixed-dim": "#abc9f1",
+            "on-error-container": "#93000a",
+            "tertiary": "#201300",
+            "surface-tint": "#4a607d",
+            "secondary-fixed": "#d2e4ff",
+            "surface-container-lowest": "#ffffff",
+            "primary-container": "#142b46",
+            "secondary-container": "#b9d7ff",
+            "primary-fixed-dim": "#b2c8ea",
+            "on-error": "#ffffff",
+            "on-surface": "#111c2d",
+            "secondary": "#436083",
+            "surface-container-high": "#dfe8ff",
+            "primary": "#00162f",
+            "inverse-on-surface": "#ecf0ff",
+            "tertiary-fixed-dim": "#edbf73",
+            "background": "#f9f9ff",
+            "inverse-primary": "#b2c8ea",
+            "surface-variant": "#d9e3fb",
+            "on-secondary-fixed": "#001d37",
+            "surface-container-low": "#f0f3ff",
+            "inverse-surface": "#273143",
+            "on-surface-variant": "#44474d",
+            "surface-bright": "#f9f9ff",
+            "error": "#ba1a1a",
+            "tertiary-container": "#3a2600",
+            "on-tertiary-container": "#b38a44",
+            "on-primary": "#ffffff",
+            "surface-container": "#e8eeff",
+            "tertiary-fixed": "#ffdeab",
+            "error-container": "#ffdad6",
+            "on-background": "#111c2d",
+            "on-primary-container": "#7d93b3"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "space-sm": "0.5rem",
+            "space-lg": "1.5rem",
+            "margin": "3rem",
+            "space-md": "1rem",
+            "space-xl": "2.5rem",
+            "space-2xl": "4rem",
+            "gutter-mobile": "1rem",
+            "margin-mobile": "1rem",
+            "gutter": "1.5rem",
+            "space-xs": "0.25rem"
+          },
+          "fontFamily": {
+            "headline-xl": ["Manrope"],
+            "body-xl": ["Inter"],
+            "label-lg": ["Inter"],
+            "code-num": ["Inter"],
+            "body-md": ["Inter"],
+            "headline-sm": ["Manrope"],
+            "body-lg": ["Inter"],
+            "headline-lg": ["Manrope"],
+            "headline-md": ["Manrope"],
+            "display-hero-mobile": ["Manrope"],
+            "body-sm": ["Inter"],
+            "display-hero": ["Manrope"],
+            "headline-xl-mobile": ["Manrope"],
+            "label-md": ["Inter"],
+            "label-xs": ["Inter"]
+          },
+          "fontSize": {
+            "headline-xl": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "body-xl": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+            "code-num": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+            "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "headline-sm": ["18px", { "lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "600" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "headline-md": ["22px", { "lineHeight": "30px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "display-hero-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "display-hero": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+            "headline-xl-mobile": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "label-xs": ["10px", { "lineHeight": "14px", "letterSpacing": "0.06em", "fontWeight": "700" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .custom-scroll::-webkit-scrollbar {
+      width: 6px;
+    }
+    .custom-scroll::-webkit-scrollbar-thumb {
+      background-color: #c4c6ce;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface antialiased min-h-screen flex flex-col font-body-md text-body-md selection:bg-secondary-container selection:text-primary">
+<!-- ========================================== -->
+<!-- 1. SHARED COMPONENT: TopAppBar            -->
+<!-- ========================================== -->
+<header class="bg-surface dark:bg-primary border-b border-outline-variant dark:border-primary-container shadow-sm dark:shadow-none docked full-width top-0 z-50 sticky">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
+<!-- Brand & Leading Icon -->
+<div class="flex items-center gap-6">
+<a class="flex items-center gap-2 group" href="#">
+<span class="material-symbols-outlined text-primary dark:text-inverse-primary text-2xl" data-icon="verified_user">verified_user</span>
+<div class="flex items-baseline gap-2">
+<span class="text-headline-md font-headline-md font-bold tracking-tight text-primary dark:text-inverse-primary uppercase">VIZATI</span>
+<span class="text-label-xs font-label-xs text-on-tertiary-container tracking-widest uppercase font-bold">INSTITUT</span>
+</div>
+</a>
+<div class="hidden lg:flex items-center gap-2 px-3 py-1 rounded bg-surface-container border border-outline-variant/60">
+<span class="w-2 h-2 rounded-full bg-[#263B35]"></span>
+<span class="text-label-xs font-label-xs text-on-surface-variant font-medium">Inscription Sécurisée SSL TLS 256-bit</span>
+</div>
+</div>
+<!-- Navigation & Secondary Info -->
+<div class="flex items-center gap-6">
+<a class="hidden sm:flex items-center gap-1.5 text-on-surface-variant hover:text-primary transition-colors text-label-md font-label-md" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="arrow_back">arrow_back</span>
+<span>Retour à la formation</span>
+</a>
+<div class="h-4 w-px bg-outline-variant hidden sm:block"></div>
+<div class="flex items-center gap-4">
+<div class="hidden md:flex flex-col text-right">
+<span class="text-label-xs font-label-xs text-on-surface-variant">Hotline d'Assistance Directe</span>
+<span class="text-label-md font-label-md font-bold text-primary">+221 33 800 00 00</span>
+</div>
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-low border border-outline-variant hover:bg-surface-container text-primary dark:text-inverse-primary text-label-md font-label-md transition-all active:scale-[0.99]">
+<span class="material-symbols-outlined text-base" data-icon="support_agent">support_agent</span>
+<span>Support Sécurisé</span>
+</button>
+</div>
+</div>
+</div>
+</header>
+<!-- ========================================== -->
+<!-- MAIN APPLICATION CANVAS                     -->
+<!-- ========================================== -->
+<main class="flex-grow max-w-7xl w-full mx-auto px-6 py-8">
+<!-- 2. Stepper Horizontal en 3 Étapes -->
+<div class="bg-surface-container-lowest border border-outline-variant/60 rounded-xl p-5 mb-8 shadow-sm">
+<div class="flex flex-col md:flex-row items-center justify-between gap-4">
+<!-- Étape 1: Complétée -->
+<div class="flex items-center gap-3 w-full md:w-auto">
+<div class="w-8 h-8 rounded-full bg-[#263B35] text-on-tertiary flex items-center justify-center shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-lg font-bold" data-icon="check" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<div class="flex flex-col">
+<span class="text-label-xs font-label-xs text-on-surface-variant uppercase font-semibold">Étape 1 • Validée</span>
+<span class="text-label-md font-label-md font-bold text-on-surface">1. Informations Personnelles &amp; Professionnelles</span>
+</div>
+</div>
+<div class="hidden md:block h-px flex-1 bg-outline-variant/70 mx-4"></div>
+<!-- Étape 2: Complétée -->
+<div class="flex items-center gap-3 w-full md:w-auto">
+<div class="w-8 h-8 rounded-full bg-[#263B35] text-on-tertiary flex items-center justify-center shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-lg font-bold" data-icon="check" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<div class="flex flex-col">
+<span class="text-label-xs font-label-xs text-on-surface-variant uppercase font-semibold">Étape 2 • Validée</span>
+<span class="text-label-md font-label-md font-bold text-on-surface">2. Récapitulatif du Parcours</span>
+</div>
+</div>
+<div class="hidden md:block h-px flex-1 bg-outline-variant/70 mx-4"></div>
+<!-- Étape 3: Active (Surbrillance Dorée & Navy) -->
+<div class="flex items-center gap-3 w-full md:w-auto p-2 rounded-lg bg-surface-container-low border border-on-tertiary-container/40">
+<div class="w-8 h-8 rounded-full bg-primary-container text-on-tertiary-container border border-on-tertiary-container flex items-center justify-center shrink-0 font-bold font-headline-sm text-sm shadow-sm">
+            3
+          </div>
+<div class="flex flex-col">
+<span class="text-label-xs font-label-xs text-on-tertiary-container uppercase font-bold tracking-wider">Étape Active</span>
+<span class="text-label-md font-label-md font-bold text-primary-container">3. Règlement &amp; Modalités de Financement</span>
+</div>
+</div>
+</div>
+</div>
+<!-- 3. Agencement en 2 Colonnes (Desktop 1440px / Responsive) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- ======================================================== -->
+<!-- COLONNE GAUCHE (62% - ~7 cols on lg grid)                -->
+<!-- ======================================================== -->
+<section class="lg:col-span-7 space-y-6">
+<!-- En-tête de Section -->
+<div class="border-b border-outline-variant/50 pb-5">
+<div class="inline-flex items-center gap-2 px-2.5 py-1 rounded bg-surface-container text-primary text-label-xs font-label-xs uppercase tracking-wider mb-2 font-semibold">
+<span class="material-symbols-outlined text-sm text-on-tertiary-container" data-icon="account_balance_wallet">account_balance_wallet</span>
+            Protocole Institutionnel
+          </div>
+<h1 class="text-headline-lg font-headline-lg text-primary tracking-tight">
+            Étape 3 : Modalités de Financement &amp; Validation de l'Inscription
+          </h1>
+<p class="text-body-md font-body-md text-on-surface-variant mt-2">
+            Choisissez votre modalité de règlement. Toutes les transactions sont protégées et conformes aux protocoles bancaires de la zone UEMOA.
+          </p>
+</div>
+<!-- 4 Options de Règlement Stylisées -->
+<div class="space-y-4" id="payment-options-group">
+<!-- Option 1: Prise en charge Institutionnelle (Sélectionnée) -->
+<div class="bg-surface-container-lowest border-2 border-primary-container rounded-xl p-5 shadow-sm transition-all relative overflow-hidden group">
+<div class="absolute top-0 right-0 bg-primary-container text-on-tertiary-container px-3 py-1 rounded-bl-lg text-label-xs font-label-xs font-bold uppercase tracking-wider flex items-center gap-1">
+<span class="material-symbols-outlined text-xs" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+              Recommandé Cadres
+            </div>
+<label class="flex items-start gap-3.5 cursor-pointer">
+<input checked="" class="mt-1 w-4 h-4 text-primary-container border-outline focus:ring-primary-container" name="payment_mode" type="radio"/>
+<div class="flex-1 pr-16">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="text-headline-sm font-headline-sm text-primary">Prise en charge Institutionnelle &amp; Fonds Nationaux</span>
+<span class="bg-[#263B35]/10 text-[#263B35] border border-[#263B35]/30 text-label-xs font-label-xs font-bold px-2 py-0.5 rounded">Zéro avance requise</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-1.5">
+                  Votre entreprise finance votre cursus via les fonds de formation professionnelle agréés (FDFP Côte d'Ivoire, 3FPT Sénégal, etc.). VIZATI émet la convention tripartite sous 48h.
+                </p>
+<!-- Champs complémentaires Option 1 -->
+<div class="mt-4 pt-4 border-t border-outline-variant/40 grid grid-cols-1 md:grid-cols-2 gap-4">
+<div>
+<label class="block text-label-xs font-label-xs text-on-surface font-semibold mb-1">Numéro d'Agrément / RCCM Entreprise *</label>
+<input class="w-full text-body-md font-body-md bg-surface border border-outline-variant rounded-lg px-3 py-2 text-on-surface focus:border-primary-container focus:ring-1 focus:ring-primary-container" placeholder="Ex: SN-DKR-2018-B-1429" type="text" value="SN-DKR-2021-B-8902"/>
+</div>
+<div>
+<label class="block text-label-xs font-label-xs text-on-surface font-semibold mb-1">Contact DRH / Direction Financière *</label>
+<input class="w-full text-body-md font-body-md bg-surface border border-outline-variant rounded-lg px-3 py-2 text-on-surface focus:border-primary-container focus:ring-1 focus:ring-primary-container" placeholder="rh.direction@holding-afrique.com" type="email" value="drh.finances@groupe-baobab.sn"/>
+</div>
+</div>
+</div>
+</label>
+</div>
+<!-- Option 2: Mobile Money Régional -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-5 hover:border-primary/50 transition-all">
+<label class="flex items-start gap-3.5 cursor-pointer">
+<input class="mt-1 w-4 h-4 text-primary-container border-outline focus:ring-primary-container" name="payment_mode" type="radio"/>
+<div class="flex-1">
+<div class="flex items-center justify-between flex-wrap gap-2">
+<span class="text-headline-sm font-headline-sm text-on-surface">Mobile Money Régional (Orange Money / Wave / MTN MoMo)</span>
+<div class="flex items-center gap-1.5 bg-surface-container px-2 py-1 rounded">
+<span class="text-label-xs font-label-xs font-bold text-primary">Wave</span>
+<span class="text-outline text-label-xs">•</span>
+<span class="text-label-xs font-label-xs font-bold text-on-surface">OM</span>
+<span class="text-outline text-label-xs">•</span>
+<span class="text-label-xs font-label-xs font-bold text-on-surface-variant">MoMo</span>
+</div>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-1.5">
+                  Paiement instantané sans frais en FCFA sécurisé par passerelle bancaire agréée BCEAO avec validation par notification mobile immédiate.
+                </p>
+<div class="mt-3 flex items-center gap-3">
+<div class="max-w-xs w-full">
+<input class="w-full text-body-sm font-body-sm bg-surface border border-outline-variant rounded-lg px-3 py-1.5 text-on-surface focus:border-primary-container focus:ring-1 focus:ring-primary-container" placeholder="+221 77 000 00 00 (Numéro du payeur)" type="tel"/>
+</div>
+<span class="text-label-xs font-label-xs text-on-surface-variant">Reçu certifié envoyé par SMS</span>
+</div>
+</div>
+</label>
+</div>
+<!-- Option 3: Carte Bancaire Internationale -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-5 hover:border-primary/50 transition-all">
+<label class="flex items-start gap-3.5 cursor-pointer">
+<input class="mt-1 w-4 h-4 text-primary-container border-outline focus:ring-primary-container" name="payment_mode" type="radio"/>
+<div class="flex-1">
+<div class="flex items-center justify-between flex-wrap gap-2">
+<span class="text-headline-sm font-headline-sm text-on-surface">Carte Bancaire Internationale (Visa / Mastercard)</span>
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded bg-surface border border-outline-variant text-label-xs font-bold font-code-num text-primary">VISA</span>
+<span class="px-2 py-0.5 rounded bg-surface border border-outline-variant text-label-xs font-bold font-code-num text-primary">Mastercard</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-label-xs font-label-xs font-semibold text-primary">3D-Secure 2.0</span>
+</div>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-1.5">
+                  Chiffrement bancaire bout-en-bout via serveur de passerelle certifié PCI-DSS Niveau 1.
+                </p>
+</div>
+</label>
+</div>
+<!-- Option 4: Virement Bancaire & Bon de Commande -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-5 hover:border-primary/50 transition-all">
+<label class="flex items-start gap-3.5 cursor-pointer">
+<input class="mt-1 w-4 h-4 text-primary-container border-outline focus:ring-primary-container" name="payment_mode" type="radio"/>
+<div class="flex-1">
+<div class="flex items-center justify-between flex-wrap gap-2">
+<span class="text-headline-sm font-headline-sm text-on-surface">Virement Bancaire &amp; Bon de Commande Institutionnel</span>
+<span class="text-label-xs font-label-xs text-on-surface-variant font-medium">Comptes BOAD / BNI / SG CI</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-1.5">
+                  Émission de la facture proforma officielle VIZATI avec RIB institutionnel et justificatif sous 24h.
+                </p>
+</div>
+</label>
+</div>
+</div>
+<!-- Facilité de paiement échelonné -->
+<div class="p-4 rounded-xl bg-surface-container-low border border-outline-variant flex items-center justify-between gap-4">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-xl" data-icon="payments">payments</span>
+</div>
+<div>
+<p class="text-label-lg font-label-lg font-bold text-primary">Option de fractionnement en 3 mensualités sans frais</p>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Réglez 283 333 FCFA aujourd'hui, puis 2 mensualités identiques à J+30 et J+60.</p>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer shrink-0">
+<input class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-outline-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-container"></div>
+</label>
+</div>
+<!-- Accord & Charte Déontologique -->
+<div class="bg-surface-container-lowest p-4 rounded-xl border border-outline-variant/70 space-y-3">
+<label class="flex items-start gap-3 cursor-pointer">
+<input checked="" class="mt-1 w-4 h-4 rounded text-primary-container border-outline focus:ring-primary-container" type="checkbox"/>
+<span class="text-body-sm font-body-sm text-on-surface">
+              Je certifie l'exactitude des informations fournies et déclare accepter sans réserve le 
+              <a class="text-primary font-semibold underline hover:text-on-tertiary-container" href="#">Règlement Intérieur Académique</a> 
+              ainsi que la 
+              <a class="text-primary font-semibold underline hover:text-on-tertiary-container" href="#">Charte Déontologique des Praticiens Immobiliers VIZATI</a>.
+            </span>
+</label>
+</div>
+<!-- Boutons d'Action & Workflow -->
+<div class="pt-2 flex flex-col sm:flex-row items-center justify-between gap-4">
+<button class="w-full sm:w-auto px-5 py-3 rounded-lg border border-outline-variant bg-surface hover:bg-surface-container text-on-surface-variant hover:text-on-surface text-label-md font-label-md flex items-center justify-center gap-2 transition-all" href="./04-detail-formation.html">
+<span class="material-symbols-outlined text-lg" data-icon="arrow_back">arrow_back</span>
+<span>Étape précédente</span>
+</button>
+<button class="w-full sm:flex-1 py-3.5 px-6 rounded-lg bg-primary-container hover:bg-primary text-on-primary font-headline-sm text-headline-sm flex items-center justify-center gap-3 shadow-md hover:shadow-lg transition-all active:scale-[0.99] border border-on-tertiary-container/30" type="button">
+<span class="material-symbols-outlined text-xl text-on-tertiary-container" data-icon="lock" data-weight="fill" style="font-variation-settings: 'FILL' 1;">lock</span>
+<span>Confirmer mon inscription définitive</span>
+</button>
+</div>
+</section>
+<!-- ======================================================== -->
+<!-- COLONNE DROITE (38% - ~5 cols on lg grid) STICKY         -->
+<!-- ======================================================== -->
+<aside class="lg:col-span-5 space-y-6 lg:sticky lg:top-24">
+<!-- Carte Récapitulative Flottante -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl shadow-sm overflow-hidden">
+<div class="bg-primary-container p-5 text-on-primary border-b border-on-tertiary-container/30">
+<div class="flex items-center justify-between">
+<span class="text-label-xs font-label-xs uppercase tracking-widest text-on-tertiary-container font-bold">Dossier d'Admission #VZ-2024</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-low/10 text-label-xs font-label-xs text-on-tertiary font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                Place Réservée
+              </span>
+</div>
+<h2 class="text-headline-md font-headline-md text-white mt-1">Récapitulatif de votre inscription</h2>
+</div>
+<div class="p-5 space-y-5">
+<!-- Vignette & Intitulé de la formation -->
+<div class="flex gap-4 items-start">
+<div class="w-14 h-14 rounded-lg bg-surface-container-high border border-outline-variant/60 flex items-center justify-center shrink-0 text-primary">
+<span class="material-symbols-outlined text-2xl text-primary-container" data-icon="domain" data-weight="fill" style="font-variation-settings: 'FILL' 1;">domain</span>
+</div>
+<div>
+<span class="text-label-xs font-label-xs text-on-tertiary-container font-bold uppercase tracking-wider">Masterclass Exécutive</span>
+<h3 class="text-headline-sm font-headline-sm text-primary leading-tight mt-0.5">
+                  Gestionnaire de portefeuille locatif &amp; actifs tertiaires
+                </h3>
+</div>
+</div>
+<!-- Spécifications Académiques -->
+<div class="bg-surface-container-low p-3.5 rounded-lg border border-outline-variant/50 space-y-2 text-body-sm font-body-sm text-on-surface">
+<div class="flex items-center justify-between">
+<span class="text-on-surface-variant flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm text-primary" data-icon="calendar_month">calendar_month</span>
+                  Promotion
+                </span>
+<span class="font-bold">Automne 2024 (Cohorte Dakar / Abidjan)</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-on-surface-variant flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm text-primary" data-icon="devices">devices</span>
+                  Format
+                </span>
+<span class="font-bold">Hybride (Présentiel &amp; Plateforme SaaS)</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-on-surface-variant flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm text-primary" data-icon="schedule">schedule</span>
+                  Volume horaire
+                </span>
+<span class="font-bold font-code-num">130 Heures certifiées • 12 Modules</span>
+</div>
+<div class="flex items-center justify-between pt-1 border-t border-outline-variant/40">
+<span class="text-on-surface-variant flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm text-primary" data-icon="school">school</span>
+                  Intervenant Référent
+                </span>
+<span class="font-bold text-primary">Me Abdoulaye Fall (Expert OHADA)</span>
+</div>
+</div>
+<!-- Décomposition Financière -->
+<div class="space-y-2.5 pt-2">
+<div class="flex justify-between text-body-sm font-body-sm">
+<span class="text-on-surface-variant">Frais pédagogiques certifiés</span>
+<span class="font-code-num font-semibold text-on-surface">850 000 FCFA</span>
+</div>
+<div class="flex justify-between text-body-sm font-body-sm">
+<span class="text-on-surface-variant">Droits d'examen &amp; certification cryptographique</span>
+<span class="text-label-xs font-label-xs font-bold text-[#263B35] bg-[#263B35]/10 px-2 py-0.5 rounded">Inclus</span>
+</div>
+<div class="flex justify-between text-body-sm font-body-sm">
+<span class="text-on-surface-variant">Accès 12 mois à la bibliothèque documentaire</span>
+<span class="text-label-xs font-label-xs font-bold text-[#263B35] bg-[#263B35]/10 px-2 py-0.5 rounded">Inclus</span>
+</div>
+<!-- Total Net -->
+<div class="mt-4 pt-4 border-t border-outline-variant flex items-baseline justify-between">
+<div>
+<span class="text-label-xs font-label-xs uppercase tracking-wider text-on-surface-variant block">Total Net à Régler</span>
+<span class="text-headline-lg font-headline-lg font-bold text-primary-container">850 000 FCFA</span>
+</div>
+<div class="text-right">
+<span class="text-label-xs font-label-xs text-on-tertiary-container font-semibold block">Option Échelonnée</span>
+<span class="text-body-sm font-body-sm font-code-num font-bold text-on-surface">3 x 283 333 FCFA</span>
+</div>
+</div>
+</div>
+<!-- Encart Traçabilité & Statut Dossier -->
+<div class="bg-surface-container rounded-lg p-3.5 border-l-4 border-primary-container text-body-sm font-body-sm text-on-surface-variant">
+<div class="flex items-center gap-1.5 font-bold text-primary text-label-md font-label-md mb-1">
+<span class="material-symbols-outlined text-base text-primary" data-icon="sync_saved_locally">sync_saved_locally</span>
+                Statut actuel : En cours de validation
+              </div>
+<p class="text-body-sm font-body-sm">
+                Une fois soumis, votre référence unique de dossier <span class="font-mono text-primary font-bold">#VZ-INS-2024-884</span> sera activée avec l'ensemble des accès à l'Espace Apprenant.
+              </p>
+</div>
+</div>
+<!-- Accréditations & Réassurance Card Footer -->
+<div class="bg-surface-container-low px-5 py-3.5 border-t border-outline-variant/60 flex items-center justify-between text-on-surface-variant text-label-xs font-label-xs">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-base text-on-tertiary-container" data-icon="security">security</span>
+<span>Sceau Officiel CAMES / UEMOA</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-[#263B35]" data-icon="encrypted">encrypted</span>
+<span>TLS 256-bit</span>
+</div>
+</div>
+</div>
+<!-- Bloc d'Assistance Directe & Accompagnement -->
+<div class="bg-surface-container-lowest border border-outline-variant/70 rounded-xl p-4 flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center shrink-0 text-primary">
+<span class="material-symbols-outlined text-xl" data-icon="contact_support">contact_support</span>
+</div>
+<div class="flex-1 text-body-sm font-body-sm">
+<p class="font-bold text-primary">Besoin d'un bon de commande personnalisé ?</p>
+<p class="text-on-surface-variant text-body-sm">Nos conseillers d'admission répondent sur WhatsApp et par e-mail en moins de 15 min.</p>
+</div>
+</div>
+</aside>
+</div>
+</main>
+<!-- ========================================== -->
+<!-- 4. SHARED COMPONENT: Footer               -->
+<!-- ========================================== -->
+<footer class="bg-surface-container-low dark:bg-primary-container border-t border-outline-variant dark:border-primary-container full-width bottom-0 mt-16">
+<div class="w-full px-6 py-8 border-t border-outline-variant dark:border-primary-container max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+<!-- Brand & Copyright from JSON -->
+<div class="flex flex-col items-center md:items-start gap-1">
+<span class="text-headline-sm font-headline-sm font-bold text-primary dark:text-inverse-primary uppercase tracking-tight">VIZATI</span>
+<p class="text-body-sm font-body-sm text-on-surface-variant dark:text-outline-variant text-center md:text-left">
+          © 2024 VIZATI Intelligence &amp; Executive Academy. Conforme RGPD &amp; Cadre Réglementaire UEMOA. Chiffrement TLS 256-bit.
+        </p>
+</div>
+<!-- Links Exact Array from JSON -->
+<nav class="flex flex-wrap justify-center items-center gap-6">
+<a class="text-label-xs font-label-xs text-on-surface-variant dark:text-on-primary-container hover:text-on-surface hover:text-primary dark:hover:text-inverse-primary transition-colors duration-150" href="#">
+          Cadre Réglementaire UEMOA
+        </a>
+<a class="text-label-xs font-label-xs text-on-surface-variant dark:text-on-primary-container hover:text-on-surface hover:text-primary dark:hover:text-inverse-primary transition-colors duration-150" href="#">
+          Confidentialité &amp; Données
+        </a>
+<a class="text-label-xs font-label-xs text-on-surface-variant dark:text-on-primary-container hover:text-on-surface hover:text-primary dark:hover:text-inverse-primary transition-colors duration-150" href="#">
+          Assistance Sécurité
+        </a>
+<a class="text-label-xs font-label-xs text-on-surface-variant dark:text-on-primary-container hover:text-on-surface hover:text-primary dark:hover:text-inverse-primary transition-colors duration-150" href="#">
+          Support Administrateur
+        </a>
+</nav>
+</div>
+</footer>
+</body></html>
